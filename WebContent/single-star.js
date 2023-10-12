@@ -45,8 +45,25 @@ function handleResult(resultData) {
     let starInfoElement = jQuery("#star_info");
 
     // append two html <p> created to the h3 body, which will refresh the page
-    starInfoElement.append("<p>Star Name: " + resultData[0]["star_name"] + "</p>" +
-        "<p>Date Of Birth: " + resultData[0]["star_dob"] + "</p>");
+    let starInfo = "<p>Star Name: " + resultData["star_name"] + "</p>";
+
+
+    //setup dob
+    starInfo += "<p>Date Of Birth: "
+
+    if (resultData["star_dob"]){
+        starInfo += resultData["star_dob"]
+    }
+    else{
+        starInfo += "N/A"
+    }
+
+    starInfo += "</p>"
+
+    //end: setup dob
+
+
+    starInfoElement.append(starInfo);
 
     console.log("handleResult: populating movie table from resultData");
 
@@ -55,12 +72,18 @@ function handleResult(resultData) {
     let movieTableBodyElement = jQuery("#movie_table_body");
 
     // Concatenate the html tags with resultData jsonObject to create table rows
-    for (let i = 0; i < Math.min(10, resultData.length); i++) {
+    for (let i = 0; i < Math.min(10, resultData['movies'].length); i++) {
         let rowHTML = "";
         rowHTML += "<tr>";
-        rowHTML += "<th>" + resultData[i]["movie_title"] + "</th>";
-        rowHTML += "<th>" + resultData[i]["movie_year"] + "</th>";
-        rowHTML += "<th>" + resultData[i]["movie_director"] + "</th>";
+        rowHTML +=
+            "<th>" +
+            // Add a link to single-star.html with id passed with GET url parameter
+            '<a href="single-movie.html?id=' + resultData['movies'][i]['movie_id'] + '">'
+            + resultData['movies'][i]["movie_title"] +     // display star_name for the link text
+            '</a>' +
+            "</th>";
+        rowHTML += "<th>" + resultData['movies'][i]["movie_year"] + "</th>";
+        rowHTML += "<th>" + resultData['movies'][i]["movie_director"] + "</th>";
         rowHTML += "</tr>";
 
         // Append the row created to the table body, which will refresh the page
