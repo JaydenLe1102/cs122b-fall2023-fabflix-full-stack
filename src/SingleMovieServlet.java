@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import services.SingleMovieService;
 import services.SingleStarService;
 
 import javax.sql.DataSource;
@@ -17,9 +18,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-// Declaring a WebServlet called SingleStarServlet, which maps to url "/api/single-star"
-@WebServlet(name = "SingleStarServlet", urlPatterns = "/api/single-star")
-public class SingleStarServlet extends HttpServlet {
+// Declaring a WebServlet called SingleMovieServlet, which maps to url "/api/single-movie"
+@WebServlet(name = "SingleMovieServlet", urlPatterns = "/api/single-movie")
+public class SingleMovieServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
 
     // Create a dataSource which registered in web.xml
@@ -54,10 +55,10 @@ public class SingleStarServlet extends HttpServlet {
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource
 
-            JsonObject starObject = SingleStarService.getSingleStarById(dataSource, id);
+            JsonObject movieObject = SingleMovieService.getSingleMovieById(dataSource, id);
 
             // Write JSON string to output
-            out.write(starObject.toString());
+            out.write(movieObject.toString());
             // Set response status to 200 (OK)
             response.setStatus(200);
 
