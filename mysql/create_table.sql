@@ -1,8 +1,3 @@
--- create schema  CS122B_Proj1;
--- use CS122B_Proj1;
-
---use moviedb;
-
 CREATE TABLE movies (
     id VARCHAR(10) PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
