@@ -1,5 +1,7 @@
-create schema  CS122B_Proj1;
-use CS122B_Proj1;
+-- create schema  CS122B_Proj1;
+-- use CS122B_Proj1;
+
+use moviedb;
 
 CREATE TABLE movies (
     id VARCHAR(10) PRIMARY KEY,
@@ -36,6 +38,13 @@ CREATE TABLE genres_in_movies (
     PRIMARY KEY (genreId, movieId)
 );
 
+CREATE TABLE creditcards (
+    id VARCHAR(20) PRIMARY KEY,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL,
+    expiration DATE NOT NULL
+);
+
 
 CREATE TABLE customers (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -57,12 +66,6 @@ CREATE TABLE sales (
     FOREIGN KEY (movieId) REFERENCES movies(id)
 );
 
-CREATE TABLE creditcards (
-    id VARCHAR(20) PRIMARY KEY,
-    firstName VARCHAR(50) NOT NULL,
-    lastName VARCHAR(50) NOT NULL,
-    expiration DATE NOT NULL
-);
 
 CREATE TABLE ratings (
     movieId VARCHAR(10) NOT NULL,
