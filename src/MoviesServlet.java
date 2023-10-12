@@ -29,7 +29,7 @@ public class MoviesServlet extends HttpServlet {
 
     public void init(ServletConfig config) {
         try {
-            dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/CS122B_Proj1");
+            dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
 
         } catch (NamingException e) {
             e.printStackTrace();

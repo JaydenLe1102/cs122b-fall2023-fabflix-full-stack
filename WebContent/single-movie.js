@@ -87,8 +87,20 @@ function handleResult(resultData) {
             + resultData['stars'][i]["star_name"] +     // display star_name for the link text
             '</a>' +
             "</th>";
-        rowHTML += "<th>" + resultData['stars'][i]["star_dob"] + "</th>";
+
+        //set up star dob
+        rowHTML += "<th>"
+        if (resultData['stars'][i]["star_dob"]){
+            rowHTML += resultData['stars'][i]["star_dob"]
+        }
+        else{
+            rowHTML+= "N/A"
+        }
+        rowHTML +=   "</th>";
+
         rowHTML += "</tr>";
+
+        //end: set up star dob
 
         // Append the row created to the table body, which will refresh the page
         starTableBodyElement.append(rowHTML);
