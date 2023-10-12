@@ -42,22 +42,31 @@ function handleResult(resultData) {
 
     // populate the star info h3
     // find the empty h3 body by id "star_info"
-    let movieInfoElement = jQuery("#movie_info_info");
+    let movieInfoElement = jQuery("#movie_info");
 
     // append two html <p> created to the h3 body, which will refresh the page
-    let movieInfo = "<p>Movie Name: " + resultData["movie_title"] + "</p>" +
-                            "<p>Year: " + resultData["movie_year"] + "</p>" +
-                            "<p>Director: " + resultData["movie_director"] + "</p>" +
-                            "<p>Rating: " + resultData["movie_rating"] + "</p>";
-
+    let movieInfo = "<p>Title: " + resultData["movie_title"] + "</p>" +
+        "<p>Year: " + resultData["movie_year"] + "</p>" +
+        "<p>Director: " + resultData["movie_director"] + "</p>" +
+        "<p>Rating: " + resultData["movie_rating"] + "</p>";
 
     movieInfo += "<p>Genres: ";
 
+    const addedGenres = new Set(); // Create a Set to store added genres
+
     for (let i = 0; i < resultData['genres'].length; i++) {
-        movieInfo += resultData['genres'][i]['genre_name'] + ","
+        const genreName = resultData['genres'][i]['genre_name'];
+
+        // Check if the genre has not been added before
+        if (!addedGenres.has(genreName)) {
+            movieInfo += genreName + ", ";
+            addedGenres.add(genreName); // Add the genre to the Set
+        }
     }
 
-    movieInfo += "</p>"
+    // Remove the trailing comma and close the paragraph
+    movieInfo = movieInfo.slice(0, -2) + "</p>";
+
 
     movieInfoElement.append(movieInfo);
 

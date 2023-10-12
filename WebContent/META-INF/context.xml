@@ -3,7 +3,7 @@
 <Context>
 
     <!-- Defines a Data Source Connecting to localhost moviedbexample-->
-    <Resource name="jdbc/moviedbexample"
+    <Resource name="jdbc/CS122B_Proj1"
               auth="Container"
               driverClassName="com.mysql.cj.jdbc.Driver"
               type="javax.sql.DataSource"
