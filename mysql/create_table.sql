@@ -1,3 +1,7 @@
+create database moviedb;
+use moviedb;
+
+
 CREATE TABLE movies (
     id VARCHAR(10) PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
