@@ -19,9 +19,6 @@ function handleMovieResult(resultData) {
 	// Find the empty table body by id "star_table_body"
 	let movieTableBodyElement = jQuery('#movie_table_body')
 
-	console.log(resultData)
-	console.log('hello world hello world 12345')
-
 	// Iterate through resultData, no more than 10 entries
 	for (let i = 0; i < resultData.length; i++) {
 		// Concatenate the html tags with resultData jsonObject
