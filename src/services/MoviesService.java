@@ -2,13 +2,11 @@ package services;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import jakarta.servlet.ServletConfig;
-
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
+import constant.SQLStatements;
 import javax.sql.DataSource;
-import java.io.PrintWriter;
+
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -22,19 +20,8 @@ public class MoviesService {
             // Declare our statement
             Statement movieStatement = conn.createStatement();
 
-            String movieQuery = "SELECT\n" +
-                    "    id,\n" +
-                    "    title,\n" +
-                    "    year,\n" +
-                    "    director,\n" +
-                    "    rating\n" +
-                    "FROM movies AS m\n" +
-                    "JOIN ratings AS r ON m.id = r.movieId\n" +
-                    "ORDER BY rating DESC\n" +
-                    "LIMIT 20;";
-
             // Perform the query
-            ResultSet rsMovies = movieStatement.executeQuery(movieQuery);
+            ResultSet rsMovies = movieStatement.executeQuery(SQLStatements.TOP20MOVIES);
 
 
             JsonArray jsonArray = new JsonArray();
@@ -42,33 +29,22 @@ public class MoviesService {
             // Iterate through each row of rs
             while (rsMovies.next()) {
                 String movie_id = rsMovies.getString("id");
-                String movie_title = rsMovies.getString("title");
-                String year = rsMovies.getString("year");
-                String director = rsMovies.getString("director");
-                String rating = rsMovies.getString("rating");
-
 
                 // Create a JsonObject based on the data we retrieve from rs
                 JsonObject jsonObject = new JsonObject();
                 jsonObject.addProperty("movie_id", movie_id);
-                jsonObject.addProperty("title", movie_title);
-                jsonObject.addProperty("year", year);
-                jsonObject.addProperty("director", director);
-                jsonObject.addProperty("rating", rating);
+                jsonObject.addProperty("title", rsMovies.getString("title"));
+                jsonObject.addProperty("year", rsMovies.getString("year"));
+                jsonObject.addProperty("director", rsMovies.getString("director"));
+                jsonObject.addProperty("rating", rsMovies.getString("rating"));
 
                 // call db for genres of each movie_id
-                Statement genreStatement = conn.createStatement();
+                PreparedStatement genreStatement = conn.prepareStatement(SQLStatements.RANDOM3GENREBYMOVIEID);
 
-                String genreQuery = "SELECT g.name AS genre \n" +
-                        "FROM genres AS g \n" +
-                        "JOIN genres_in_movies AS gim ON g.id = gim.genreId \n" +
-                        "WHERE gim.movieId = '" + movie_id + "' \n" +
-                        "LIMIT 3;";
-
-
+                genreStatement.setString(1, movie_id);
 
                 // Perform the query
-                ResultSet rsGenres = genreStatement.executeQuery(genreQuery);
+                ResultSet rsGenres = genreStatement.executeQuery();
 
                 JsonArray genresList = new JsonArray();
 
@@ -86,16 +62,12 @@ public class MoviesService {
 
                 // call db for stars of each movie_id
 
-                Statement starStatement = conn.createStatement();
+                PreparedStatement starStatement = conn.prepareStatement(SQLStatements.RANDOM3STARBYMOVIEID);
 
-                String starQuery = "SELECT s.name AS star, s.id as star_id\n" +
-                        "FROM stars AS s \n" +
-                        "JOIN stars_in_movies AS sim ON s.id = sim.starId \n" +
-                        "WHERE sim.movieId = '" + movie_id + "' \n" +
-                        "LIMIT 3;";
+                starStatement.setString(1, movie_id);
 
                 // Perform the query
-                ResultSet rsStars = starStatement.executeQuery(starQuery);
+                ResultSet rsStars = starStatement.executeQuery();
 
                 JsonArray starsList = new JsonArray();
 
