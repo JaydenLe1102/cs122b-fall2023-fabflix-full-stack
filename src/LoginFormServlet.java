@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import services.LoginFormService;
 import services.MoviesService;
 import utils.ServletUtils;
@@ -61,7 +62,8 @@ public class LoginFormServlet extends HttpServlet {
 //            out.close();
 //        }
 
-
+        response.setContentType("application/json"); // Response mime type
+        PrintWriter out = response.getWriter();
 
         //get email and password
         String email = request.getParameter("email");
@@ -71,21 +73,75 @@ public class LoginFormServlet extends HttpServlet {
 
 
         try{
-            JsonObject customer = LoginFormService.validateEmailPassword(dataSource, email, password);
+            HttpSession session = request.getSession(true);
+            Integer sessionCustomerId = (Integer) session.getAttribute("customerId");
 
-            System.out.println("customer: " + customer);
-            //set up new session for customer
+            if (sessionCustomerId == null) {
+                Integer customerId = LoginFormService.validateEmailPassword(dataSource, email, password);
+
+                System.out.println("customer: " + customerId);
+
+                if (customerId == null) {
+                    //invalid login
+                    //for now just print out
+                    System.out.println("Invalid login");
+                    JsonObject responseJsonObject = new JsonObject();
+
+                    responseJsonObject.addProperty("success", false);
+                    responseJsonObject.addProperty("customerId", customerId);
+                    responseJsonObject.addProperty("message", "Invalid email or password");
+                    out.println(responseJsonObject.toString());
+                    response.setStatus(401);
+
+                }
+                else{
+                    //valid login
+                    //for now just print out
+
+
+
+                    System.out.println("Valid login");
+                    JsonObject responseJsonObject = new JsonObject();
+
+                    responseJsonObject.addProperty("success", true);
+                    responseJsonObject.addProperty("customerId", customerId);
+                    responseJsonObject.addProperty("message", "Sucessfully Login");
+                    out.println(responseJsonObject.toString());
+                    response.setStatus(200);
+
+                }
+
+                session.setAttribute("customerId", customerId);
+
+                return;
+                //set up new session for customer
 //            request.getSession().setAttribute("customer", customer);
 
+
+            }
+
+            else{
+                //already login
+                //for now just print out
+                System.out.println("Customer already login");
+
+                JsonObject responseJsonObject = new JsonObject();
+
+                responseJsonObject.addProperty("success", false);
+                responseJsonObject.addProperty("customerId", sessionCustomerId);
+                responseJsonObject.addProperty("message", "User Already Login");
+                out.println(responseJsonObject.toString());
+                response.setStatus(200);
+
+            }
         } catch (Exception e) {
+            //for now just print out
+            System.out.println("Got error: " + e);
 
         }
 
 
-        //if valid, create a session
-//        request.getSession().setAttribute("user", new User(username));
-
-
         response.sendRedirect(ServletUtils.getBaseUrl(request) + "/index.html");
+
     }
 }

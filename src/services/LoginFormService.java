@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class LoginFormService {
 
-    public static JsonObject validateEmailPassword (DataSource dataSource, String email, String password) throws  Exception{
+    public static Integer validateEmailPassword (DataSource dataSource, String email, String password) throws  Exception{
 
         // Get a connection from dataSource and let resource manager close the connection after usage.
         try (Connection conn = dataSource.getConnection()) {
@@ -25,17 +25,17 @@ public class LoginFormService {
             if (result.next()) {
                 // Valid login credentials
 
-                JsonObject customerObject = new JsonObject();
+//                JsonObject customerObject = new JsonObject();
+//
+//                customerObject.addProperty("id", result.getInt("id"));
+//                customerObject.addProperty("firstName", result.getString("firstName"));
+//                customerObject.addProperty("lastName", result.getString("lastName"));
+//                customerObject.addProperty("ccId", result.getString("ccId"));
+//                customerObject.addProperty("address", result.getString("address"));
+//                customerObject.addProperty("email", email);
+//                customerObject.addProperty("password",password);
 
-                customerObject.addProperty("id", result.getInt("id"));
-                customerObject.addProperty("firstName", result.getString("firstName"));
-                customerObject.addProperty("lastName", result.getString("lastName"));
-                customerObject.addProperty("ccId", result.getString("ccId"));
-                customerObject.addProperty("address", result.getString("address"));
-                customerObject.addProperty("email", email);
-                customerObject.addProperty("password",password);
-
-                return customerObject;
+                return result.getInt("id");
                 // Perform the login and redirection logic here
             } else {
                 return null;
