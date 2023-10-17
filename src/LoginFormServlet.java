@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import services.LoginFormService;
 import services.MoviesService;
 import utils.ServletUtils;
 
@@ -23,8 +24,6 @@ public class LoginFormServlet extends HttpServlet {
     // Create a dataSource which registered in web.
     private DataSource dataSource;
 
-    private MoviesService service;
-
     public void init(ServletConfig config) {
         try {
             dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
@@ -33,46 +32,6 @@ public class LoginFormServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-        response.setContentType("application/json"); // Response mime type
-
-        // Output stream to STDOUT
-        PrintWriter out = response.getWriter();
-
-        // Get a connection from dataSource and let resource manager close the connection after usage.
-        try  {
-            JsonArray jsonArray = service.getMoviesArray(dataSource);
-
-            // Log to localhost log
-            request.getServletContext().log("getting " + jsonArray.size() + " results");
-
-            // Write JSON string to output
-            out.write(jsonArray.toString());
-            // Set response status to 200 (OK)
-            response.setStatus(200);
-
-        } catch (Exception e) {
-
-            // Write error message JSON object to output
-            JsonObject jsonObject = new JsonObject();
-            jsonObject.addProperty("errorMessage", e.getMessage());
-            out.write(jsonObject.toString());
-
-            // Set response status to 500 (Internal Server Error)
-            response.setStatus(500);
-        } finally {
-            out.close();
-        }
-
-        // Always remember to close db connection after usage. Here it's done by try-with-resources
-
-    }
-
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -102,14 +61,25 @@ public class LoginFormServlet extends HttpServlet {
 //            out.close();
 //        }
 
-        //get username and password
-        String username = request.getParameter("username");
+
+
+        //get email and password
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
 
         //check if username and password are valid from mysql
 
 
+        try{
+            JsonObject customer = LoginFormService.validateEmailPassword(dataSource, email, password);
 
+            System.out.println("customer: " + customer);
+            //set up new session for customer
+//            request.getSession().setAttribute("customer", customer);
+
+        } catch (Exception e) {
+
+        }
 
 
         //if valid, create a session
