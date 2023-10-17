@@ -2,6 +2,7 @@ package services;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import constant.SQLStatements;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -14,13 +15,8 @@ public class SingleMovieService {
 
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource
-
-            // Construct a query with parameter represented by "?"
-            String query = "SELECT m.id, m.title, m.year, m.director, s.id, s.name, s.birthYear, g.id, g.name, r.rating from stars as s, stars_in_movies as sim, movies as m, genres as g, genres_in_movies as gim, ratings as r " +
-                    "where g.id = gim.genreId and gim.movieId = m.id and m.id = sim.movieId and sim.starId = s.id and r.movieId = m.id and m.id = ?";
-
             // Declare our statement
-            PreparedStatement statement = conn.prepareStatement(query);
+            PreparedStatement statement = conn.prepareStatement(SQLStatements.SINGLEMOVIEBYMOVIEID);
 
             // Set the parameter represented by "?" in the query to the id we get from url,
             // num 1 indicates the first "?" in the query
