@@ -3,6 +3,7 @@ import com.google.gson.JsonObject;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -72,7 +73,7 @@ public class LoginFormServlet extends HttpServlet {
         //check if username and password are valid from mysql
 
 
-        try{
+        try {
             HttpSession session = request.getSession(true);
             Integer sessionCustomerId = (Integer) session.getAttribute("customerId");
 
@@ -93,11 +94,9 @@ public class LoginFormServlet extends HttpServlet {
                     out.println(responseJsonObject.toString());
                     response.setStatus(401);
 
-                }
-                else{
+                } else {
                     //valid login
                     //for now just print out
-
 
 
                     System.out.println("Valid login");
@@ -118,9 +117,7 @@ public class LoginFormServlet extends HttpServlet {
 //            request.getSession().setAttribute("customer", customer);
 
 
-            }
-
-            else{
+            } else {
                 //already login
                 //for now just print out
                 System.out.println("Customer already login");
@@ -136,12 +133,11 @@ public class LoginFormServlet extends HttpServlet {
             }
         } catch (Exception e) {
             //for now just print out
+            //return a fail response
             System.out.println("Got error: " + e);
 
+        } finally {
+            out.close();
         }
-
-
-        response.sendRedirect(ServletUtils.getBaseUrl(request) + "/index.html");
-
     }
 }

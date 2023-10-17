@@ -1,3 +1,19 @@
+function handleResult(resultData) {
+    console.log(resultData)
+
+    if (resultData["success"] === true) {
+        alert('Login Success')
+        window.location.replace(".")
+    } else {
+        alert('Login Fail')
+        // Clear all form fields
+        document.getElementById('email').value = ''
+        document.getElementById('password').value = ''
+    }
+
+}
+
+
 document
     .getElementById('login-form')
     .addEventListener('submit', function (event) {
@@ -10,17 +26,27 @@ document
         // Validate form values
         // Send form values to server
 
-        // jQuery.ajax({
-        //     dataType: "json",  // Setting return data type
-        //     method: "POST",// Setting request method
-        //     url: "api/single-movie?email=" + email, // Setting request url, which is mapped by StarsServlet in Stars.java
-        //     success: (resultData) => handleResult(resultData) // Setting callback function to handle data returned successfully by the SingleStarServlet
-        // });
+        jQuery.ajax({
+            dataType: "json",  // Setting return data type
+            method: "POST",// Setting request method
+            url: "api/login?email=" + email + "&password=" + password, // Setting request url, which is mapped by StarsServlet in Stars.java
+            success: (resultData) => handleResult(resultData), // Setting callback function to handle data returned successfully by the SingleStarServlet
+            error: function (jqXHR, textStatus, errorThrown) {
+                // Callback for a failed request
+                console.error("Error: " + errorThrown);
+
+                // Access JSON error response, if available
+                if (jqXHR.responseJSON) {
+                    // You can access the error JSON here
+                    console.log("Error JSON:", jqXHR.responseJSON);
+                    handleResult(jqXHR.responseJSON)
+                }
+
+                // You can also access other error information
+                console.log("Status Code:", jqXHR.status);
+                console.log("Status Text:", jqXHR.statusText);
+            }
+        });
 
 
-        // Clear all form fields
-        document.getElementById('email').value = ''
-        document.getElementById('password').value = ''
-
-        alert('')
     })
