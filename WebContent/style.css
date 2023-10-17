@@ -1,0 +1,20 @@
+html, body {
+    margin: 0;
+    background-color: rgb(160, 218, 241);
+    max-width: 100%;
+
+}
+
+.intro_login {
+    display: flex;
+    background-color: rgb(160, 218, 241);
+}
+
+.login-form {
+    background-color: #fff; /* White form background color */
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+    justify-content: center;
+}
+

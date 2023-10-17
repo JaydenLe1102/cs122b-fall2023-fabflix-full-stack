@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Login Fablix</title>
+
+		<link rel="stylesheet" href="style.css" />
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<div
+			class="intro_login justify-content-center"
+			style="height: 100%; min-width: fit-content"
+		>
+			<div class="col-md-4">
+				<div class="login-form" style="min-width: fit-content">
+					<h2 class="text-center google_font">Login</h2>
+					<form id="login-form" method="POST" action="api/login">
+						<div class="form-group">
+							<label for="email">Your Email:</label>
+							<input
+								type="email"
+								class="form-control"
+								id="email"
+								name="email"
+								required
+							/>
+						</div>
+						<div class="form-group">
+							<label for="password">Your Password:</label>
+							<input
+								class="form-control"
+								id="password"
+								name="password"
+								rows="4"
+								required
+								type="password"
+							/>
+						</div>
+						<div class="d-flex justify-content-center">
+							<button
+								type="submit"
+								class="btn btn-primary btn-block center mx-auto text-center"
+								style="margin-top: 2%"
+							>
+								Login
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+
+<!--        <script>-->
+<!--            // JavaScript to clear form fields upon submission-->
+<!--            document-->
+<!--                .getElementById('login-form')-->
+<!--                .addEventListener('submit', function (event) {-->
+<!--                    event.preventDefault() // Prevent form submission-->
+
+<!--                    // Clear all form fields-->
+<!--                    document.getElementById('email').value = ''-->
+<!--                    document.getElementById('password').value = ''-->
+
+<!--                    alert('Thank you so much for your message. It was sent to Jayden!')-->
+<!--                })-->
+<!--        </script>-->
+
+        <script src="loginForm.js"></script>
+
+	</body>
+</html>
