@@ -5,7 +5,15 @@ function handleResult(resultData) {
         alert('Login Success')
         window.location.replace(".")
     } else {
-        alert('Login Fail')
+        if (resultData['reason'] === 'email') {
+            alert('Email does not exist')
+        } else if (resultData['reason'] === 'password') {
+            alert('Password is incorrect')
+        } else if (resultData['reason'] === 'already') {
+            alert('You have already logged in')
+        } else {
+            alert('Login Failed')
+        }
         // Clear all form fields
         document.getElementById('email').value = ''
         document.getElementById('password').value = ''

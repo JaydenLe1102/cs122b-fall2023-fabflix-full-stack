@@ -38,5 +38,5 @@ public class SQLStatements {
             "where m.id = sim.movieId and sim.starId = s.id and s.id = ?";
 
 
-    public static String VALICATE_EMAIL_PASSWORD = "SELECT id FROM customers WHERE email = ? AND password = ?";
+    public static String VALICATE_EMAIL_PASSWORD = "SELECT * FROM customers WHERE email = ?";
 }

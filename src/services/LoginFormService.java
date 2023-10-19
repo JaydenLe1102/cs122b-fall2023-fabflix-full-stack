@@ -11,13 +11,12 @@ import java.sql.SQLException;
 
 public class LoginFormService {
 
-    public static Integer validateEmailPassword (DataSource dataSource, String email, String password) throws  Exception{
+    public static Integer validateEmailPassword(DataSource dataSource, String email, String password) throws Exception {
 
         // Get a connection from dataSource and let resource manager close the connection after usage.
         try (Connection conn = dataSource.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(SQLStatements.VALICATE_EMAIL_PASSWORD);
             statement.setString(1, email);
-            statement.setString(2, password);
 
 
             ResultSet result = statement.executeQuery();
@@ -35,16 +34,31 @@ public class LoginFormService {
 //                customerObject.addProperty("email", email);
 //                customerObject.addProperty("password",password);
 
-                return result.getInt("id");
+                //check password
+
+                if (!password.equals(result.getString("password"))) {
+                    return -2;
+                }
+
+
+                Integer customerId = result.getInt("id");
+
+                result.close();
+                conn.close();
+                statement.close();
+
+                return customerId;
                 // Perform the login and redirection logic here
             } else {
-                return null;
+                //return -1 if no email exist
+                return -1;
                 // Invalid login credentials, show an error or redirect to a login page
             }
         } catch (SQLException e) {
             // Handle any database-related exceptions
             throw e;
         }
+
 
     }
 
