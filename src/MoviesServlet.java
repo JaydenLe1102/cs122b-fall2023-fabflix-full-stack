@@ -25,8 +25,6 @@ public class MoviesServlet extends HttpServlet {
     // Create a dataSource which registered in web.
     private DataSource dataSource;
 
-    private MoviesService service;
-
     public void init(ServletConfig config) {
         try {
             dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
@@ -48,7 +46,7 @@ public class MoviesServlet extends HttpServlet {
 
         // Get a connection from dataSource and let resource manager close the connection after usage.
         try  {
-            JsonArray jsonArray = service.getMoviesArray(dataSource);
+            JsonArray jsonArray = MoviesService.getMoviesArray(dataSource);
 
             // Log to localhost log
             request.getServletContext().log("getting " + jsonArray.size() + " results");

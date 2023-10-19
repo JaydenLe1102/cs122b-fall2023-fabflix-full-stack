@@ -90,13 +90,12 @@ function handleResult(resultData) {
 
         //set up star dob
         rowHTML += "<th>"
-        if (resultData['stars'][i]["star_dob"]){
+        if (resultData['stars'][i]["star_dob"]) {
             rowHTML += resultData['stars'][i]["star_dob"]
+        } else {
+            rowHTML += "N/A"
         }
-        else{
-            rowHTML+= "N/A"
-        }
-        rowHTML +=   "</th>";
+        rowHTML += "</th>";
 
         rowHTML += "</tr>";
 
@@ -114,10 +113,32 @@ function handleResult(resultData) {
 // Get id from URL
 let movieId = getParameterByName('id');
 
+
+function handleLoggedIn(resultData, callback) {
+
+    console.log(resultData)
+
+    if (resultData["isLoggedIn"] === true) {
+        console.log("User is logged in")
+        // Makes the HTTP GET request and registers on success callback function handleStarResult
+// Makes the HTTP GET request and registers on success callback function handleResult
+        jQuery.ajax({
+            dataType: "json",  // Setting return data type
+            method: "GET",// Setting request method
+            url: "api/single-movie?id=" + movieId, // Setting request url, which is mapped by StarsServlet in Stars.java
+            success: (resultData) => callback(resultData) // Setting callback function to handle data returned successfully by the SingleStarServlet
+        });
+    } else {
+        console.log("User is not logged in")
+        window.location.replace("loginForm.html")
+    }
+}
+
 // Makes the HTTP GET request and registers on success callback function handleResult
 jQuery.ajax({
     dataType: "json",  // Setting return data type
     method: "GET",// Setting request method
-    url: "api/single-movie?id=" + movieId, // Setting request url, which is mapped by StarsServlet in Stars.java
-    success: (resultData) => handleResult(resultData) // Setting callback function to handle data returned successfully by the SingleStarServlet
+    url: "api/login", // Setting request url, which is mapped by StarsServlet in Stars.java
+    success: (resultData) => handleLoggedIn(resultData, handleResult) // Setting callback function to handle data returned successfully by the SingleStarServlet
 });
+

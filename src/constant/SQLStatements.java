@@ -37,4 +37,6 @@ public class SQLStatements {
     public static String SINGLE_STAR_BY_STARID = "SELECT * from stars as s, stars_in_movies as sim, movies as m " +
             "where m.id = sim.movieId and sim.starId = s.id and s.id = ?";
 
+
+    public static String VALICATE_EMAIL_PASSWORD = "SELECT * FROM customers WHERE email = ?";
 }
