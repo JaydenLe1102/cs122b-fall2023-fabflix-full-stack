@@ -39,4 +39,19 @@ public class SQLStatements {
 
 
     public static String VALICATE_EMAIL_PASSWORD = "SELECT * FROM customers WHERE email = ?";
+
+    public static String BROWSE_BY_GENRE = "SELECT *\n" +
+            "FROM movies as mv\n" +
+            "INNER JOIN genres_in_movies as gim ON mv.id = gim.movieId\n" +
+            "INNER JOIN genres g ON gim.genreId = g.id\n" +
+            "WHERE LOWER(g.name) = LOWER(?);";
+    public static String BROWSE_BY_TITLE_NON_ALPHANUMERIC = "SELECT *\n" +
+            "FROM movies\n" +
+            "WHERE title REGEXP '^[^a-zA-Z0-9]';";
+
+    public static String BROWSE_BY_TITLE_ALPHANUMERIC = "SELECT *\n" +
+            "FROM movies\n" +
+            "WHERE LOWER(title) LIKE ?;";
+
+    public static String ALL_GENRES = "SELECT name FROM genres;";
 }

@@ -1,14 +1,6 @@
-<!-- This example is following frontend and backend separation.
-
-This .html performs two steps:
-1. Create a html template skeleton, with all the elements defined (some left empty) and named with ids.
-2. Load single-star.js to populate the data into empty elements.
--->
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta
             name="viewport"
@@ -22,10 +14,44 @@ This .html performs two steps:
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
     />
+    <title>Searching and Browsing</title>
+    <style>
+        /* Center-align the container */
+        .list-container {
+            text-align: center;
+            /*background-color: rgb(160, 218, 241);*/
+            padding: 20px;
+        }
 
-    <title>Single Star</title>
+        /* Style for the list items */
+        ulMain {
+            list-style: none;
+            padding: 0;
+        }
+
+        .liMain {
+            display: inline-block;
+            width: 10%; /* Smaller width for each item */
+            margin: 1%;
+            font-size: 18px; /* Smaller font size */
+            background-color: rgb(160, 218, 241);
+            color: #333; /* Text color */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .liMain {
+                width: 20%; /* Adjusted for smaller screens */
+                font-size: 16px; /* Adjusted font size */
+            }
+        }
+    </style>
 </head>
 <body>
+
 <!--nav bar start-->
 
 <nav
@@ -78,36 +104,20 @@ This .html performs two steps:
 
 <!--nav bar end-->
 
-<div style="margin: 3%">
-    <div
-            style="
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					height: 100%;
-					margin-bottom: 2%;
-				"
-    >
-        <h1>Single Star Page</h1>
-    </div>
+<div class="list-container">
 
-    <!-- H3 body is left empty here, will be populated with the data retrieved with single-star.js -->
-    <!-- single-star.js will find this html element by it's id "star_info" -->
-    <h3 id="star_info"></h3>
-    <table id="movie_table" class="table table-striped">
-        <thead>
-        <tr>
-            <th>Movie Title</th>
-            <th>Release Year</th>
-            <th>Director</th>
-            <th></th>
-        </tr>
-        </thead>
+    <h1>Browse Movies</h1>
 
-        <!-- Table body is left empty here, will be populated with the data retrieved with single-star.js -->
-        <!-- single-star.js will find this html element by it's id "movie_table_body" -->
-        <tbody id="movie_table_body"></tbody>
-    </table>
+    <!-- Numeric List -->
+    <h2>Numeric List</h2>
+    <ul class="ulMain" id="BrowseNumber"></ul>
+
+    <!-- Alphabetical List -->
+    <h2>Alphabetical List</h2>
+    <ul class="ulMain" id="BrowseLetter"></ul>
+
+    <h2>Genre List</h2>
+    <ul class="ulMain" id="GenreList"></ul>
 </div>
 
 <!-- Load jQuery and Bootstrap JS -->
@@ -115,10 +125,6 @@ This .html performs two steps:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-<!-- Load our own JS file -->
-<!-- The path is relative to single-star.html, since these two files are in the same directory -->
-<!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path
-otherwise the url is relative to the root path-->
-<script src="single-star.js"></script>
+<script src="main-page.js"></script>
 </body>
 </html>

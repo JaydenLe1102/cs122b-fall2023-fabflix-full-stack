@@ -3,7 +3,7 @@ function handleResult(resultData) {
 
     if (resultData["success"] === true) {
         alert('Login Success')
-        window.location.replace(".")
+        window.location.replace("./main-page.html")
     } else {
         if (resultData['reason'] === 'email') {
             alert('Email does not exist')
