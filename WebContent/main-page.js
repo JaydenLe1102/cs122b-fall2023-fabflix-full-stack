@@ -14,13 +14,15 @@
  */
 
 
+
+
 function handleGenres(resultData) {
     console.log(resultData)
     let genreList = jQuery('#GenreList')
     for (let i = 0; i < resultData.length; i++) {
         const genre = resultData[i]
         genreList.append(
-            '<a href="movie-list.html?genre=' +
+            '<a href="movie-list.html?browse_genre=' +
             genre +
             '" ' +
             "style='color: black' " +
@@ -43,7 +45,7 @@ function handleLoggedIn(resultData) {
         let numberList = jQuery('#BrowseNumber')
         for (let i = 0; i <= 9; i++) {
             numberList.append(
-                '<a href="movie-list.html?title=' +
+                '<a href="movie-list.html?browse_title=' +
                 i +
                 '" ' +
                 "style='color: black' " +
@@ -59,7 +61,7 @@ function handleLoggedIn(resultData) {
         for (let i = 65; i <= 90; i++) {
             const letter = String.fromCharCode(i)
             letterList.append(
-                '<a href="movie-list.html?title=' +
+                '<a href="movie-list.html?browse_title=' +
                 letter +
                 '" ' +
                 "style='color: black' " +

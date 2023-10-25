@@ -47,9 +47,10 @@ public class BrowseByTitleService {
                 JsonObject movieObject = new JsonObject();
                 String movieId = rs.getString("id");
                 movieObject.addProperty("movie_id", movieId);
-                movieObject.addProperty("movie_title", rs.getString("title"));
+                movieObject.addProperty("title", rs.getString("title"));
                 movieObject.addProperty("year", rs.getString("year"));
                 movieObject.addProperty("director", rs.getString("director"));
+                movieObject.addProperty("rating", rs.getString("rating"));
                 movieObject.add("genres", Random3Service.getRandom3GenreByMovieId(dataSource, movieId));
                 movieObject.add("stars", Random3Service.getRandom3StarsByMovieId(dataSource, movieId));
 
