@@ -32,7 +32,7 @@ function getParameterByName(target) {
 
 function handleMovieResult(resultData) {
     console.log('handleMovieResult: populating movie table from resultData')
-
+    console.log(resultData)
     // Populate the star table
     // Find the empty table body by id "star_table_body"
     let movieTableBodyElement = jQuery('#movie_table_body')
@@ -132,6 +132,14 @@ function handleLoggedIn(resultData, callback) {
                 url: 'api/browse/title?title=' + browseTitle, // Setting request url
                 success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
             })
+        } else if (searchTitle || searchDirector || searchYear || searchStar) {
+            // Makes the HTTP GET request and registers on success callback function handleStarResult
+            jQuery.ajax({
+                dataType: 'json', // Setting return data type
+                method: 'GET', // Setting request method
+                url: 'api/search?title=' + searchTitle + '&year=' + searchYear + '&director=' + searchDirector + '&star=' + searchStar, // Setting request url
+                success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+            })
         }
 
     } else {
@@ -149,10 +157,16 @@ console.log('hello')
 const browseGenre = getParameterByName('browse_genre');
 
 const browseTitle = getParameterByName('browse_title');
+
 console.log(browseTitle)
 console.log(browseGenre)
 // TODO: get params for searching
-
+const searchTitle = getParameterByName('search_title');
+const searchYear = getParameterByName('search_year');
+const searchDirector = getParameterByName('search_director');
+const searchStar = getParameterByName('search_star');
+console.log(searchTitle)
+console.log(searchStar)
 
 //perform browsing for the page
 jQuery.ajax({
