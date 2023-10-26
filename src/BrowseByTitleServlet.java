@@ -19,57 +19,59 @@ import java.io.PrintWriter;
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
 @WebServlet(name = "BrowseByTitleServlet", urlPatterns = "/api/browse/title")
 public class BrowseByTitleServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    // Create a dataSource which registered in web.
-    private DataSource dataSource;
+	// Create a dataSource which registered in web.
+	private DataSource dataSource;
 
-    public void init(ServletConfig config) {
-        try {
-            dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
+	public void init(ServletConfig config) {
+		try {
+			dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
 
-        } catch (NamingException e) {
-            e.printStackTrace();
-        }
-    }
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+	}
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setContentType("application/json"); // Response mime type
+		response.setContentType("application/json"); // Response mime type
 
-        // Output stream to STDOUT
-        PrintWriter out = response.getWriter();
+		// Output stream to STDOUT
+		PrintWriter out = response.getWriter();
 
+		// Get a connection from dataSource and let resource manager close the
+		// connection after usage.
+		try {
+			JsonArray jsonArray = BrowseByTitleService.getMovieListByTitle(dataSource, request.getParameter("title"));
 
-        // Get a connection from dataSource and let resource manager close the connection after usage.
-        try {
-            JsonArray jsonArray = BrowseByTitleService.getMovieListByTitle(dataSource, request.getParameter("title"));
+			// Log to localhost log
+			request.getServletContext().log("getting " + jsonArray.size() + " results");
 
-            // Log to localhost log
-            request.getServletContext().log("getting " + jsonArray.size() + " results");
+			// Write JSON string to output
+			out.write(jsonArray.toString());
+			// Set response status to 200 (OK)
+			response.setStatus(200);
 
-            // Write JSON string to output
-            out.write(jsonArray.toString());
-            // Set response status to 200 (OK)
-            response.setStatus(200);
+		} catch (Exception e) {
 
-        } catch (Exception e) {
+			// Write error message JSON object to output
+			JsonObject jsonObject = new JsonObject();
+			jsonObject.addProperty("errorMessage", e.getMessage());
+			out.write(jsonObject.toString());
 
-            // Write error message JSON object to output
-            JsonObject jsonObject = new JsonObject();
-            jsonObject.addProperty("errorMessage", e.getMessage());
-            out.write(jsonObject.toString());
+			// Set response status to 500 (Internal Server Error)
+			response.setStatus(500);
+		} finally {
+			out.close();
+		}
 
-            // Set response status to 500 (Internal Server Error)
-            response.setStatus(500);
-        } finally {
-            out.close();
-        }
+		// Always remember to close db connection after usage. Here it's done by
+		// try-with-resources
 
-        // Always remember to close db connection after usage. Here it's done by try-with-resources
-
-    }
+	}
 }

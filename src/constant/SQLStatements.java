@@ -13,17 +13,23 @@ public class SQLStatements {
             "JOIN ratings AS r ON m.id = r.movieId\n" +
             "ORDER BY rating DESC\n" +
             "LIMIT 20;";
-    public static String RANDOM3GENREBYMOVIEID = "SELECT g.name AS genre \n" +
-            "FROM genres AS g \n" +
-            "JOIN genres_in_movies AS gim ON g.id = gim.genreId \n" +
-            "WHERE gim.movieId = ? \n" +
-            "LIMIT 3;";
+    public static String RANDOM3GENREBYMOVIEID = "SELECT g.name AS genre\n" +
+            "FROM genres AS g\n" +
+            "JOIN genres_in_movies AS gim ON g.id = gim.genreId\n" +
+            "WHERE gim.movieId = ?\n" +
+            "ORDER BY g.name\n" +
+            "LIMIT 3;\n";
 
-    public static String RANDOM3STARBYMOVIEID = "SELECT s.name AS star, s.id as star_id\n" +
-            "FROM stars AS s \n" +
-            "JOIN stars_in_movies AS sim ON s.id = sim.starId \n" +
-            "WHERE sim.movieId = ? \n" +
-            "LIMIT 3;";
+    public static String RANDOM3STARBYMOVIEID = "SELECT s.name AS star, s.id AS star_id\n" +
+            "FROM stars AS s\n" +
+            "JOIN stars_in_movies AS sim ON s.id = sim.starId\n" +
+            "WHERE sim.movieId = ?\n" +
+            "ORDER BY (\n" +
+            "  SELECT COUNT(*)\n" +
+            "  FROM stars_in_movies AS sim_count\n" +
+            "  WHERE sim_count.starId = s.id\n" +
+            ") DESC, s.name\n" +
+            "LIMIT 3;\n";
 
     // end: MoviesService
 
@@ -57,4 +63,16 @@ public class SQLStatements {
             "WHERE LOWER(title) LIKE ?;";
 
     public static String ALL_GENRES = "SELECT name FROM genres;";
+
+    public static String SEARCH = "SELECT DISTINCT m.id AS id, m.title AS title, m.director AS director, m.year AS year, r.rating AS rating\n" +
+            "FROM movies m\n" +
+            "JOIN stars_in_movies sm ON m.id = sm.movieId\n" +
+            "JOIN stars s ON sm.starId = s.id\n" +
+            "LEFT JOIN ratings r ON m.id = r.movieId\n" +
+            "WHERE\n" +
+            "    ((? = '' OR m.title LIKE CONCAT('%', ?, '%'))\n" +
+            "     AND (? = '' OR m.director LIKE CONCAT('%', ?, '%'))\n" +
+            "     AND (? = '' OR s.name LIKE CONCAT('%', ?, '%'))\n" +
+            "     AND (? = '' OR m.year = ?));\n";
 }
+
