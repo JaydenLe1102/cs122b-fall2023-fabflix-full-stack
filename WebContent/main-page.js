@@ -73,6 +73,17 @@ function handleLoggedIn(resultData) {
             )
         }
 
+        letterList.append(
+            '<a href="movie-list.html?browse_title=*' +
+            '" ' +
+            "style='color: black' " +
+            '>' +
+            '<li class ="liMain">' +
+            '*' +
+            '</li>' +
+            '</a>'
+        )
+
         jQuery.ajax({
             dataType: 'json', // Setting return data type
             method: 'GET', // Setting request method

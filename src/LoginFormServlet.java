@@ -128,10 +128,9 @@ public class LoginFormServlet extends HttpServlet {
                     responseJsonObject.addProperty("message", "Sucessfully Login");
                     out.println(responseJsonObject.toString());
                     response.setStatus(200);
+                    session.setAttribute("customerId", customerId);
 
                 }
-
-                session.setAttribute("customerId", customerId);
 
 
             } else {

@@ -51,21 +51,21 @@ public class SQLStatements {
 			"INNER JOIN genres_in_movies as gim ON mv.id = gim.movieId\n" +
 			"INNER JOIN genres g ON gim.genreId = g.id\n" +
 			"JOIN ratings AS r ON mv.id = r.movieId\n" +
-			"WHERE LOWER(g.name) = LOWER(?);";
+			"WHERE LOWER(g.name) = LOWER(?)\n";
 	public static String BROWSE_BY_TITLE_NON_ALPHANUMERIC = "SELECT *\n" +
 			"FROM movies\n" +
 			"JOIN ratings AS r ON movies.id = r.movieId\n" +
-			"WHERE title REGEXP '^[^a-zA-Z0-9]';";
+			"WHERE title REGEXP '^[^a-zA-Z0-9]'\n";
 
 	public static String BROWSE_BY_TITLE_ALPHANUMERIC = "SELECT *\n" +
 			"FROM movies\n" +
 			"JOIN ratings AS r ON movies.id = r.movieId\n" +
-			"WHERE LOWER(title) LIKE ?;";
+			"WHERE LOWER(title) LIKE ?\n";
 
 	public static String ALL_GENRES = "SELECT name FROM genres;";
 
 	public static String PAGINATION = "LIMIT ?\n" +
-			"OFFSET ?\n";
+			"OFFSET ?\n;";
 	public static String SEARCH = "SELECT DISTINCT m.id AS id, m.title AS title, m.director AS director, m.year AS year, r.rating AS rating\n"
 			+
 			"FROM movies m\n" +
@@ -76,5 +76,5 @@ public class SQLStatements {
 			"    ((? = '' OR m.title LIKE CONCAT('%', ?, '%'))\n" +
 			"     AND (? = '' OR m.director LIKE CONCAT('%', ?, '%'))\n" +
 			"     AND (? = '' OR s.name LIKE CONCAT('%', ?, '%'))\n" +
-			"     AND (? = '' OR m.year = ?));\n";
+			"     AND (? = '' OR m.year = ?))\n";
 }

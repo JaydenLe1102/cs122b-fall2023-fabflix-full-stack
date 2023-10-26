@@ -13,6 +13,55 @@
  * @param resultData jsonObject
  */
 
+function updateTable(page_number, page_size, callback) {
+	//empty old table
+	let movieTableBodyElement = jQuery('#movie_table_body')
+	movieTableBodyElement.empty()
+
+	//Items per page change
+	if (browseGenre) {
+		// Makes the HTTP GET request and registers on success callback function handleStarResult
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: `api/browse/genre?genre=${browseGenre}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
+	} else if (browseTitle) {
+		// Makes the HTTP GET request and registers on success callback function handleStarResult
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: `api/browse/title?title=${browseTitle}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
+	} else if (searchTitle || searchDirector || searchYear || searchStar) {
+		// Makes the HTTP GET request and registers on success callback function handleStarResult
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
+	}
+}
+
+function updateSelectedItem(itemText, id) {
+	//update text
+	document.getElementById(id).textContent = itemText + ' '
+
+	if (id === 'ItemsPerPage') {
+		//reset movie list
+
+		page_size = Number(itemText)
+
+		document.getElementById('pageText').innerText = 1
+		page_number = 1
+
+		updateTable(1, page_size, handleMovieResult)
+	}
+}
+
 function getParameterByName(target) {
 	// Get request URL
 	let url = window.location.href
@@ -30,6 +79,7 @@ function getParameterByName(target) {
 }
 
 function handleMovieResult(resultData) {
+	console.log(resultData)
 	console.log('handleMovieResult: populating movie table from resultData')
 	// Populate the star table
 	// Find the empty table body by id "star_table_body"
@@ -39,7 +89,9 @@ function handleMovieResult(resultData) {
 	for (let i = 0; i < resultData.length; i++) {
 		// Concatenate the html tags with resultData jsonObject
 
-		const ranking = i + 1
+		offset = (page_number - 1) * page_size
+
+		const ranking = offset + i + 1
 
 		let rowHTML = ''
 
@@ -102,10 +154,14 @@ function handleMovieResult(resultData) {
 		rowHTML += '<th>' + resultData[i]['rating'] + '</th>'
 		rowHTML += '</tr>'
 
-		console.log(rowHTML)
-
 		// Append the row created to the table body, which will refresh the page
 		movieTableBodyElement.append(rowHTML)
+	}
+
+	if (resultData.length < page_size) {
+		document.getElementById('NextLi').classList.add('disabled')
+	} else {
+		document.getElementById('NextLi').classList.remove('disabled')
 	}
 }
 
@@ -113,39 +169,7 @@ function handleLoggedIn(resultData, callback) {
 	console.log(resultData)
 	console.log('User is logged in')
 	if (resultData['isLoggedIn'] === true) {
-		if (browseGenre) {
-			// Makes the HTTP GET request and registers on success callback function handleStarResult
-			jQuery.ajax({
-				dataType: 'json', // Setting return data type
-				method: 'GET', // Setting request method
-				url: 'api/browse/genre?genre=' + browseGenre, // Setting request url
-				success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
-			})
-		} else if (browseTitle) {
-			// Makes the HTTP GET request and registers on success callback function handleStarResult
-			jQuery.ajax({
-				dataType: 'json', // Setting return data type
-				method: 'GET', // Setting request method
-				url: 'api/browse/title?title=' + browseTitle, // Setting request url
-				success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
-			})
-		} else if (searchTitle || searchDirector || searchYear || searchStar) {
-			// Makes the HTTP GET request and registers on success callback function handleStarResult
-			jQuery.ajax({
-				dataType: 'json', // Setting return data type
-				method: 'GET', // Setting request method
-				url:
-					'api/search?title=' +
-					searchTitle +
-					'&year=' +
-					searchYear +
-					'&director=' +
-					searchDirector +
-					'&star=' +
-					searchStar, // Setting request url
-				success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
-			})
-		}
+		updateTable(1, 10, callback)
 	} else {
 		console.log('User is not logged in')
 		window.location.replace('loginForm.html')
@@ -156,15 +180,44 @@ function handleLoggedIn(resultData, callback) {
  * Once this .js is loaded, following scripts will be executed by the browser
  */
 
+// Attach the onclick event to the link
+document.getElementById('NextBtn').onclick = () => {
+	const newPageNum = Number(document.getElementById('pageText').innerText) + 1
+	page_number = newPageNum
+	document.getElementById('pageText').innerText = newPageNum
+
+	if (newPageNum > 1) {
+		document.getElementById('PrevLi').classList.remove('disabled')
+	}
+
+	updateTable(newPageNum, page_size, handleMovieResult)
+
+	// alert('Link clicked!Page: ' + document.getElementById('pageText').innerText)
+}
+
+document.getElementById('PrevBtn').onclick = () => {
+	const newPageNum = Number(document.getElementById('pageText').innerText) - 1
+	page_number = newPageNum
+	document.getElementById('pageText').innerText = newPageNum
+
+	if (newPageNum === 1) {
+		document.getElementById('PrevLi').classList.add('disabled')
+	}
+
+	updateTable(newPageNum, page_size, handleMovieResult)
+}
+
+let page_number = 1
+let page_size = 10
+
 // get params for browsing;
-console.log('hello')
 const browseGenre = getParameterByName('browse_genre')
 
 const browseTitle = getParameterByName('browse_title')
 
 console.log(browseTitle)
 console.log(browseGenre)
-// TODO: get params for searching
+// Done: get params for searching
 const searchTitle = getParameterByName('search_title')
 const searchYear = getParameterByName('search_year')
 const searchDirector = getParameterByName('search_director')

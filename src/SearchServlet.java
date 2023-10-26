@@ -48,7 +48,9 @@ public class SearchServlet extends HttpServlet {
 		// connection after usage.
 		try {
 			JsonArray jsonArray = SearchService.getMovieListByTitleYearDirectorStar(dataSource, request.getParameter("title"),
-					request.getParameter("year"), request.getParameter("director"), request.getParameter("star"));
+					request.getParameter("year"), request.getParameter("director"), request.getParameter("star"),
+					Integer.parseInt(request.getParameter("page_number")),
+					Integer.parseInt(request.getParameter("page_size")));
 
 			// Log to localhost log
 			request.getServletContext().log("getting " + jsonArray.size() + " results");

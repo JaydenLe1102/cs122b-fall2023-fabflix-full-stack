@@ -12,7 +12,7 @@ import constant.SQLStatements;
 
 public class BrowseByTitleService {
 
-    public static JsonArray getMovieListByTitle(DataSource dataSource, String title) throws Exception {
+    public static JsonArray getMovieListByTitle(DataSource dataSource, String title, Integer page_number, Integer page_size) throws Exception {
 
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource
@@ -26,13 +26,21 @@ public class BrowseByTitleService {
             }
 
             // Declare our statement
-            PreparedStatement statement = conn.prepareStatement(sql);
+            PreparedStatement statement = conn.prepareStatement(sql + SQLStatements.PAGINATION);
 
             // Set the parameter represented by "?" in the query to the id we get from url,
             // num 1 indicates the first "?" in the query
             if (!title.equals("*")) {
                 statement.setString(1, title + "%");
+                statement.setInt(2, page_size);
+                statement.setInt(3, (page_number - 1) * page_size);
+            } else {
+                statement.setInt(1, page_size);
+                statement.setInt(2, (page_number - 1) * page_size);
             }
+
+            System.out.println(statement);
+
 
             // Perform the query
             ResultSet rs = statement.executeQuery();
