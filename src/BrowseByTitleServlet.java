@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import services.BrowseByTitleService;
 import services.MoviesService;
 
@@ -50,6 +51,10 @@ public class BrowseByTitleServlet extends HttpServlet {
 
             // Log to localhost log
             request.getServletContext().log("getting " + jsonArray.size() + " results");
+
+            HttpSession session = request.getSession(true);
+
+            session.setAttribute("currentList", jsonArray);
 
             // Write JSON string to output
             out.write(jsonArray.toString());
