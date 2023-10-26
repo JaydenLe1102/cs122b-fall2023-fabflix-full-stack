@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import services.BrowseByTitleService;
+import services.SearchService;
 import services.MoviesService;
 
 import javax.sql.DataSource;
@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
-@WebServlet(name = "BrowseByTitleServlet", urlPatterns = "/api/browse/title")
-public class BrowseByTitleServlet extends HttpServlet {
+@WebServlet(name = "SearchServlet", urlPatterns = "/api/search")
+public class SearchServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // Create a dataSource which registered in web.
@@ -43,10 +43,9 @@ public class BrowseByTitleServlet extends HttpServlet {
         // Output stream to STDOUT
         PrintWriter out = response.getWriter();
 
-
         // Get a connection from dataSource and let resource manager close the connection after usage.
         try {
-            JsonArray jsonArray = BrowseByTitleService.getMovieListByTitle(dataSource, request.getParameter("title"));
+            JsonArray jsonArray = SearchService.getMovieListByTitleYearDirectorStar(dataSource, request.getParameter("title"), request.getParameter("year"), request.getParameter("director"), request.getParameter("star"));
 
             // Log to localhost log
             request.getServletContext().log("getting " + jsonArray.size() + " results");

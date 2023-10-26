@@ -57,4 +57,14 @@ public class SQLStatements {
             "WHERE LOWER(title) LIKE ?;";
 
     public static String ALL_GENRES = "SELECT name FROM genres;";
+
+    public static String SEARCH = "SELECT m.*\n" +
+            "FROM movies m\n" +
+            "JOIN stars_in_movies sim ON m.id = sim.movieId\n" +
+            "JOIN stars s ON sim.starId = s.id\n" +
+            "WHERE \n" +
+            "    m.title LIKE CONCAT('%', ?, '%')\n" +
+            "    AND m.year = ?\n" +
+            "    AND m.director LIKE CONCAT('%', ?, '%')\n" +
+            "    AND s.name LIKE CONCAT('%', ?, '%');";
 }
