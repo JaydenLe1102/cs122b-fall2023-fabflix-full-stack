@@ -57,4 +57,9 @@ public class SQLStatements {
             "WHERE LOWER(title) LIKE ?;";
 
     public static String ALL_GENRES = "SELECT name FROM genres;";
+
+
+    public static String PAGINATION = "LIMIT ?\n" +
+            "OFFSET ?\n";
 }
+
