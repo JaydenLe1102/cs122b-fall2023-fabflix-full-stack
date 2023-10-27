@@ -99,6 +99,50 @@
                     >
                 </li>
             </ul>
+            <!-- Search form -->
+            <form id="search-form" method="GET" action="movie-list.html">
+                <div class="form-row align-items-right">
+                    <div class="col">
+                        <input
+                                type="text"
+                                class="form-control form-control-sm"
+                                placeholder="Search Title"
+                                id="titleSearch"
+                                name="search_title"
+                        />
+                    </div>
+                    <div class="col">
+                        <input
+                                type="text"
+                                class="form-control form-control-sm"
+                                placeholder="Search Year"
+                                id="yearSearch"
+                                name="search_year"
+                        />
+                    </div>
+                    <div class="col">
+                        <input
+                                type="text"
+                                class="form-control form-control-sm"
+                                placeholder="Search Director"
+                                id="directorSearch"
+                                name="search_director"
+                        />
+                    </div>
+                    <div class="col">
+                        <input
+                                type="text"
+                                class="form-control form-control-sm"
+                                placeholder="Search Star"
+                                id="starSearch"
+                                name="search_star"
+                        />
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </nav>
@@ -192,6 +236,7 @@
             <th>Genres</th>
             <th>Stars</th>
             <th>Rating</th>
+            <th>Cart</th>
         </tr>
         </thead>
         <!-- Table body is left empty here, will be populated with the data retrieved with index.js -->

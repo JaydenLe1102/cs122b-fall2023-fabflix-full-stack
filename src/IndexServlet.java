@@ -24,7 +24,6 @@ public class IndexServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String sessionId = session.getId();
         long lastAccessTime = session.getLastAccessedTime();
-
         JsonObject responseJsonObject = new JsonObject();
         responseJsonObject.addProperty("sessionID", sessionId);
         responseJsonObject.addProperty("lastAccessTime", new Date(lastAccessTime).toString());
@@ -37,8 +36,8 @@ public class IndexServlet extends HttpServlet {
         request.getServletContext().log("getting " + previousItems.size() + " items");
         JsonArray previousItemsJsonArray = new JsonArray();
         previousItems.forEach(previousItemsJsonArray::add);
-        responseJsonObject.add("previousItems", previousItemsJsonArray);
 
+        responseJsonObject.add("previousItems", previousItemsJsonArray);
         // write all the data into the jsonObject
         response.getWriter().write(responseJsonObject.toString());
     }
@@ -48,7 +47,6 @@ public class IndexServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String item = request.getParameter("item");
-        System.out.println(item);
         HttpSession session = request.getSession();
 
         // get the previous items in a ArrayList
@@ -70,7 +68,28 @@ public class IndexServlet extends HttpServlet {
         JsonArray previousItemsJsonArray = new JsonArray();
         previousItems.forEach(previousItemsJsonArray::add);
         responseJsonObject.add("previousItems", previousItemsJsonArray);
+        response.getWriter().write(responseJsonObject.toString());
+    }
 
+    /**
+     * handles DELETE requests to remove an item from the session
+     */
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String item = request.getParameter("item");
+        HttpSession session = request.getSession();
+
+        // Get the previous items in an ArrayList
+        ArrayList<String> previousItems = (ArrayList<String>) session.getAttribute("previousItems");
+        if (previousItems != null) {
+            previousItems.remove(item); // Check if 'remove' returns true or false.out.println("Previous items after deletion: " + previousItems); // Check items after attempted deletion
+        }
+
+        JsonObject responseJsonObject = new JsonObject();
+        JsonArray previousItemsJsonArray = new JsonArray();
+        if (previousItems != null) {
+            previousItems.forEach(previousItemsJsonArray::add);
+        }
+        responseJsonObject.add("previousItems", previousItemsJsonArray);
         response.getWriter().write(responseJsonObject.toString());
     }
 }

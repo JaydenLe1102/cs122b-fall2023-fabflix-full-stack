@@ -1,106 +1,84 @@
-let cart = $("#cart");
+$(document).ready(function () {
+    // Create an object to store item quantities
+    var itemQuantities = {};
 
-/**
- * Handle the data returned by IndexServlet
- * @param resultDataString jsonObject, consists of session info
- */
-function handleSessionData(resultDataString) {
-    let resultDataJson = JSON.parse(resultDataString);
+    // Function to retrieve the shopping cart items
+    function getShoppingCartItems() {
+        $.get('api/index', function (data) {
+            let dataJson = JSON.parse(data);
+            // Clear the cart table
+            $('#cart-table-body').empty();
+            console.log(dataJson);
+            console.log(dataJson["previousItems"]);
+            // Calculate total price
+            var totalPrice = 0;
 
-    console.log("handle session response");
-    console.log(resultDataJson);
-    console.log(resultDataJson["sessionID"]);
+            // Populate the cart table
+            dataJson["previousItems"].forEach(function (item) {
+                var movieTitle = item;
+                var price = 100; // Default price per item
 
-    // show the session information
-    $("#sessionID").text("Session ID: " + resultDataJson["sessionID"]);
-    $("#lastAccessTime").text("Last access time: " + resultDataJson["lastAccessTime"]);
+                var row = $('<tr>');
+                row.append($('<td>').text(movieTitle));
+                var quantity = itemQuantities[movieTitle] || 1;
+                var quantityCell = $('<td>');
+                quantityCell.append(
+                    $('<button>').addClass('btn btn-sm btn-secondary').text('-').click(function () {
+                        // Decrease quantity
+                        if (quantity > 1) {
+                            quantity--;
+                            updateCartTable(movieTitle, quantity);
+                        }
+                    })
+                );
+                quantityCell.append($('<span>').text(quantity));
+                quantityCell.append(
+                    $('<button>').addClass('btn btn-sm btn-secondary').text('+').click(function () {
+                        // Increase quantity
+                        quantity++;
+                        updateCartTable(movieTitle, quantity);
+                    })
+                );
+                row.append(quantityCell);
+                row.append($('<td>').text('$' + price.toFixed(2)));
+                row.append($('<td>').text('$' + (price * quantity).toFixed(2)));
+                var deleteButton = $('<button>').addClass('btn btn-sm btn-danger').text('Delete');
+                deleteButton.click(function () {
+                    $.ajax({
+                        url: 'api/index?item=' + movieTitle, // Adjust the URL to include the item
+                        method: 'DELETE', // Ensure the method is set as 'DELETE'
+                        success: function () {
+                            getShoppingCartItems();
+                        },
+                    });
 
-    // show cart information
-    handleCartArray(resultDataJson["previousItems"]);
-}
+                });
+                row.append($('<td>').append(deleteButton));
+                $('#cart-table-body').append(row);
 
-/**
- * Handle the items in item list
- * @param resultArray jsonObject, needs to be parsed to html
- */
-function handleCartArray(resultArray) {
-    console.log(resultArray);
-    let item_list = $("#item_list");
-    // change it to html list
-    let res = "<ul>";
-    for (let i = 0; i < resultArray.length; i++) {
-        // each item will be in a bullet point
-        res += "<li>" + resultArray[i] + "</li>";
+                // Update total price
+                totalPrice += price * quantity;
+            });
+
+            // Update the total price
+            $('#total-price').text(totalPrice.toFixed(2));
+        });
     }
-    res += "</ul>";
 
-    // clear the old array and show the new array in the frontend
-    item_list.html("");
-    item_list.append(res);
-}
+    // Function to update the cart table with new quantity
+    function updateCartTable(movieTitle, quantity) {
+        // Update the quantity in the itemQuantities object
+        itemQuantities[movieTitle] = quantity;
+        // Update the cart table without making an additional AJAX request
+        getShoppingCartItems();
+    }
 
-/**
- * Submit form content with POST method
- * @param cartEvent
- */
-function handleCartInfo(cartEvent) {
-    console.log("submit cart form");
-    /**
-     * When users click the submit button, the browser will not direct
-     * users to the URL defined in the HTML form. Instead, it will call this
-     * event handler when the event is triggered.
-     */
-    cartEvent.preventDefault();
+    // Initial update of the cart table
+    getShoppingCartItems();
 
-    $.ajax("api/index", {
-        method: "POST",
-        data: cart.serialize(),
-        success: resultDataString => {
-            let resultDataJson = JSON.parse(resultDataString);
-            handleCartArray(resultDataJson["previousItems"]);
-        }
+    // Proceed to payment button
+    $('#proceed-to-payment').click(function () {
+        // Redirect to the payment page
+        window.location.href = 'payment.html';
     });
-
-    // clear input form
-    cart[0].reset();
-}
-
-$.ajax("api/index", {
-    method: "GET",
-    success: function (resultDataString) {
-        handleSessionData(resultDataString);
-        updateCartTable(); // Call this function to load the shopping cart table
-    }
 });
-
-// Bind the submit action of the form to an event handler function
-cart.submit(handleCartInfo);
-
-// Function to update the shopping cart table
-function updateCartTable() {
-    // Make an AJAX GET request to fetch shopping cart items
-    $.ajax("/api/index", {
-        method: "GET",
-        success: function (resultDataString) {
-            let resultDataJson = JSON.parse(resultDataString);
-            let cartTableBody = $("#cart-table-body");
-            cartTableBody.empty();
-
-            // Loop through shopping cart items and populate the table
-            for (let item of resultDataJson.previousItems) {
-                // Create a new row in the table for each item
-                let row = $("<tr></tr>");
-                row.append("<td>" + item.title + "</td>");
-                row.append("<td><button class='btn btn-secondary decrease-quantity' data-title='" + item.title + "'>-</button> " + item.quantity + " <button class='btn btn-secondary increase-quantity' data-title='" + item.title + "'>+</button></td>");
-                row.append("<td>$" + item.price.toFixed(2) + "</td>");
-
-                // Calculate the item's total price based on quantity
-                let itemTotalPrice = item.price * item.quantity;
-                row.append("<td>$" + itemTotalPrice.toFixed(2) + "</td>");
-                // Add a delete button that calls a function to remove the item
-                row.append("<td><button class='btn btn-danger delete-item' data-title='" + item.title + "'>Delete</button></td>");
-                cartTableBody.append(row);
-            }
-        }
-    });
-}
