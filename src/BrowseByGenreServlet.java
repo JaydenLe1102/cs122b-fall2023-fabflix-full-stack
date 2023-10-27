@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import services.BrowseByGenreService;
 import services.MoviesService;
 
@@ -47,10 +48,22 @@ public class BrowseByGenreServlet extends HttpServlet {
 		// Get a connection from dataSource and let resource manager close the
 		// connection after usage.
 		try {
-			JsonArray jsonArray = BrowseByGenreService.getMovieListByGenre(dataSource, request.getParameter("genre"));
 
-			// Log to localhost log
+			String browse_genre = request.getParameter("genre");
+			Integer page_number = Integer.parseInt(request.getParameter("page_number"));
+			Integer page_size = Integer.parseInt(request.getParameter("page_size"));
+
+			JsonArray jsonArray = BrowseByGenreService.getMovieListByGenre(dataSource, browse_genre, page_number, page_size);
+
 			request.getServletContext().log("getting " + jsonArray.size() + " results");
+
+			HttpSession session = request.getSession(true);
+
+			session.setAttribute("page_number", page_number);
+			session.setAttribute("page_size", page_size);
+			session.setAttribute("browse_genre", browse_genre);
+			session.setAttribute("isBrowsed", true);
+			session.setAttribute("isSearch", false);
 
 			// Write JSON string to output
 			out.write(jsonArray.toString());

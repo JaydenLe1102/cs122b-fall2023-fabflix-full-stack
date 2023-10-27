@@ -22,6 +22,15 @@
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
     />
+		<style>
+			.pagination-container {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-top: 20px;
+			}
+	</style>
+
 
     <title>Movies</title>
 </head>
@@ -71,12 +80,22 @@
                     ><h3>Top 20</h3></a
                     >
                 </li>
+								<li class="nav-item">
+									<a
+													class="nav-link"
+													aria-current="page"
+													href="./movie-list.html"
+													style="color: black"
+									><h3>Movies List</h3></a
+									>
+							</li>
             </ul>
         </div>
     </div>
 </nav>
 
 <!--nav bar end-->
+
 
 <div style="margin: 3%">
     <div
@@ -86,10 +105,70 @@
 					align-items: center;
 					height: 100%;
 					margin-bottom: 2%;
+					flex-direction: row;
 				"
     >
         <h1>Movies</h1>
+
+
     </div>
+
+    <div style="display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 100%;
+					margin-bottom: 2%;
+					flex-direction: row;">
+
+        <h3 class=" float-right"> Items per page: </h3>
+
+        <div class="dropdown float-right"
+             style="margin-left: 1%; margin-right: 4%;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="ItemsPerPage"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    style="background-color: rgb(160, 218, 241); color: black;">
+                10
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('10','ItemsPerPage')">10</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('25','ItemsPerPage')">25</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('50','ItemsPerPage')">50</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('100','ItemsPerPage')">100</a>
+
+            </div>
+        </div>
+
+
+        <h3 class=" float-right">Sort By: </h3>
+
+        <div class="dropdown float-right" style="margin-left: 1%">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="SortByBtn"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    style="background-color: rgb(160, 218, 241); color: black;">
+                Title ↑, Rating ↑
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('Title ↑, Rating ↑','SortByBtn')">Title ↑,
+                    Rating ↑</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('Title ↑, Rating ↓','SortByBtn')">Title ↑,
+                    Rating ↓</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('Title ↓, Rating ↑','SortByBtn')">Title ↓,
+                    Rating ↑</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('Title ↓, Rating ↓','SortByBtn')">Title ↓,
+                    Rating ↓</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('Rating ↑, Title ↑','SortByBtn')">Rating
+                    ↑, Title ↑</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('Rating ↑, Title ↓','SortByBtn')">Rating
+                    ↑, Title ↓</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('Rating ↓, Title ↑','SortByBtn')">Rating
+                    ↓, Title ↑</a>
+                <a class="dropdown-item" href="#" onclick="updateSelectedItem('Rating ↓, Title ↓','SortByBtn')">Rating
+                    ↓, Title ↓</a>
+
+            </div>
+        </div>
+    </div>
+
 
     <!-- Id "star_table" is useful for jQuery to find the html element with id, class here is mapping to Bootstrap defined class CSS -->
     <table id="movies_table" class="table table-striped">
@@ -97,7 +176,7 @@
         <thead>
         <tr>
             <!-- Titles of each column-->
-            <th>Rank</th>
+            <th>#</th>
             <th>Title</th>
             <th>Year</th>
             <th>Director</th>
@@ -112,7 +191,19 @@
     </table>
 </div>
 
+<div class="pagination-container">
+	<ul class="pagination">
+			<li class="page-item disabled" id="PrevLi"><a class="page-link" id="PrevBtn">Previous</a></li>
+			<li class="page-item disabled"><a class="page-link" id="pageText">1</a></li>
+			<li class="page-item" id="NextLi"><a class="page-link" id="NextBtn">Next</a></li>
+	</ul>
+</div>
+
+
 <footer>
+
+</div>
+    
     <div
             class="container-fluid bg-body-secondary"
             style="background-color: rgb(160, 218, 241)"
