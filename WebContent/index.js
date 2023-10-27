@@ -78,8 +78,9 @@ function handleMovieResult(resultData) {
         // end: single star link set up
 
         rowHTML += '<th>' + resultData[i]['rating'] + '</th>'
+        rowHTML += '<th><a class="add-to-cart" href="javascript:void(0);" data-movie-id="' + resultData[i]['movie_id'] + '">Add</a></th>';
         rowHTML += '</tr>'
-
+        console.log("Hello")
         console.log(rowHTML)
 
         // Append the row created to the table body, which will refresh the page
@@ -118,6 +119,33 @@ jQuery.ajax({
     url: 'api/login', // Setting request url, which is mapped by StarsServlet in Stars.java
     success: (resultData) => handleLoggedIn(resultData, handleMovieResult), // Setting callback function to handle data returned successfully by the StarsServlet
 })
+
+// Add event listener to the "Add" buttons
+$(document).ready(function () {
+    // Add event listener to the "Add" buttons
+    jQuery('.add-to-cart').on('click', function () {
+        const movieId = jQuery(this).data('movie-id');
+        // Make an AJAX POST request to add the movie to the shopping cart
+        jQuery.ajax({
+            dataType: 'json',
+            method: 'POST',
+            url: 'api/index', // Change the URL to match your servlet mapping
+            data: { item: movieId }, // Send the movie ID as the "item" parameter
+            success: function (response) {
+                // Handle the response from the server
+                if (response && response.previousItems) {
+                    // Display a success message or update the UI to reflect the change in the shopping cart
+                    console.log('Item added to the shopping cart');
+                } else {
+                    console.error('Failed to add item to the shopping cart');
+                }
+            },
+            error: function () {
+                console.error('Failed to add item to the shopping cart');
+            }
+        });
+    });
+});
 
 
 
