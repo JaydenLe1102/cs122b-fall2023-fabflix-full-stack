@@ -13,6 +13,57 @@
  * @param resultData jsonObject
  */
 
+function handleSessionData(resultData) {
+	console.log('handleSessionData: populating session data from resultData')
+	console.log('resultData: ' + JSON.stringify(resultData, null, 4))
+
+	page_number = resultData['page_number']
+	page_size = resultData['page_size']
+
+	document.getElementById('ItemsPerPage').innerText = resultData['page_size']
+	document.getElementById('pageText').innerText = resultData['page_number']
+
+	if (page_number === 1) {
+		document.getElementById('PrevLi').classList.add('disabled')
+	} else {
+		document.getElementById('PrevLi').classList.remove('disabled')
+	}
+
+	if (resultData['isBrowsed']) {
+		if (resultData['browse_genre'] != null) {
+			browseGenre = resultData['browse_genre']
+
+			jQuery.ajax({
+				dataType: 'json', // Setting return data type
+				method: 'GET', // Setting request method
+				url: `api/browse/genre?genre=${resultData['browse_genre']}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+				success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+			})
+		} else {
+			browseTitle = resultData['browse_title']
+
+			jQuery.ajax({
+				dataType: 'json', // Setting return data type
+				method: 'GET', // Setting request method
+				url: `api/browse/title?title=${resultData['browse_title']}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+				success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+			})
+		}
+	} else if (resultData['isSearch']) {
+		searchTitle = resultData['search_title']
+		searchYear = resultData['search_year']
+		searchDirector = resultData['search_director']
+		searchStar = resultData['search_star']
+
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+			success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
+	}
+}
+
 function updateTable(page_number, page_size, callback) {
 	//empty old table
 	let movieTableBodyElement = jQuery('#movie_table_body')
@@ -42,6 +93,14 @@ function updateTable(page_number, page_size, callback) {
 			method: 'GET', // Setting request method
 			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
 			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
+	} else {
+		// Makes the HTTP GET request and registers on success callback function handleStarResult
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: 'api/movielist', // Setting request url
+			success: (resultData) => handleSessionData(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 		})
 	}
 }
@@ -143,7 +202,7 @@ function handleMovieResult(resultData) {
 				resultData[i]['stars'][j]['name'] + // display star_name for the link text
 				'</a>'
 
-			if (j != resultData[i]['stars'].length - 1) {
+			if (j !== resultData[i]['stars'].length - 1) {
 				rowHTML += ', '
 			}
 		}
@@ -211,17 +270,17 @@ let page_number = 1
 let page_size = 10
 
 // get params for browsing;
-const browseGenre = getParameterByName('browse_genre')
+let browseGenre = getParameterByName('browse_genre')
 
-const browseTitle = getParameterByName('browse_title')
+let browseTitle = getParameterByName('browse_title')
 
 console.log(browseTitle)
 console.log(browseGenre)
 // Done: get params for searching
-const searchTitle = getParameterByName('search_title')
-const searchYear = getParameterByName('search_year')
-const searchDirector = getParameterByName('search_director')
-const searchStar = getParameterByName('search_star')
+let searchTitle = getParameterByName('search_title')
+let searchYear = getParameterByName('search_year')
+let searchDirector = getParameterByName('search_director')
+let searchStar = getParameterByName('search_star')
 console.log(searchTitle)
 console.log(searchStar)
 

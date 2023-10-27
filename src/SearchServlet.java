@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import services.SearchService;
 import services.MoviesService;
 
@@ -47,13 +48,30 @@ public class SearchServlet extends HttpServlet {
 		// Get a connection from dataSource and let resource manager close the
 		// connection after usage.
 		try {
-			JsonArray jsonArray = SearchService.getMovieListByTitleYearDirectorStar(dataSource, request.getParameter("title"),
-					request.getParameter("year"), request.getParameter("director"), request.getParameter("star"),
-					Integer.parseInt(request.getParameter("page_number")),
-					Integer.parseInt(request.getParameter("page_size")));
+
+			String search_title = request.getParameter("title");
+			String search_year = request.getParameter("year");
+			String search_director = request.getParameter("director");
+			String search_star = request.getParameter("star");
+			Integer page_number = Integer.parseInt(request.getParameter("page_number"));
+			Integer page_size = Integer.parseInt(request.getParameter("page_size"));
+
+			JsonArray jsonArray = SearchService.getMovieListByTitleYearDirectorStar(dataSource, search_title, search_year,
+					search_director, search_star, page_number, page_size);
 
 			// Log to localhost log
 			request.getServletContext().log("getting " + jsonArray.size() + " results");
+
+			HttpSession session = request.getSession(true);
+
+			session.setAttribute("page_number", page_number);
+			session.setAttribute("page_size", page_size);
+			session.setAttribute("search_title", search_title);
+			session.setAttribute("search_year", search_year);
+			session.setAttribute("search_director", search_director);
+			session.setAttribute("search_star", search_star);
+			session.setAttribute("isSearch", true);
+			session.setAttribute("isBrowsed", false);
 
 			// Write JSON string to output
 			out.write(jsonArray.toString());

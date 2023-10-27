@@ -32,10 +32,7 @@ public class BrowseByGenreService {
 
 			JsonArray jsonArray = new JsonArray();
 
-			// Iterate through each row of rs
 			while (rs.next()) {
-				// Create a JsonObject based on the data we retrieve from rs
-
 				JsonObject movieObject = new JsonObject();
 				String movieId = rs.getString("id");
 				movieObject.addProperty("movie_id", movieId);
