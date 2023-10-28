@@ -105,6 +105,10 @@ function handleResult(resultData) {
 		}
 		rowHTML += '</th>'
 
+		rowHTML += '<th>'
+		rowHTML += resultData['stars'][i]['movie_count']
+		rowHTML += '</th>'
+
 		rowHTML += '</tr>'
 
 		//end: set up star dob
@@ -120,7 +124,7 @@ function handleResult(resultData) {
 
 // Get id from URL
 let movieId = getParameterByName('id')
-let movieTitle = ""
+let movieTitle = ''
 
 function handleLoggedIn(resultData, callback) {
 	console.log(resultData)
@@ -150,10 +154,10 @@ jQuery.ajax({
 })
 
 // Click event for the "Add to Cart" button
-$('.add-to-cart').click(function() {
+$('.add-to-cart').click(function () {
 	// Call the addToCart function when the button is clicked
-	addToCart();
-});
+	addToCart()
+})
 
 // Add event listener to the "Add" buttons
 function addToCart() {
@@ -167,14 +171,13 @@ function addToCart() {
 			// Handle the response from the server
 			if (response && response.previousItems) {
 				// Display a success message or update the UI to reflect the change in the shopping cart
-				alert('Item added to the shopping cart');
+				alert('Item added to the shopping cart')
 			} else {
-				console.error('Failed to add item to the shopping cart');
+				console.error('Failed to add item to the shopping cart')
 			}
 		},
 		error: function () {
-			console.error('Failed to add item to the shopping cart');
-		}
-	});
+			console.error('Failed to add item to the shopping cart')
+		},
+	})
 }
-

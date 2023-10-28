@@ -13,13 +13,14 @@ import constant.SQLStatements;
 public class BrowseByGenreService {
 
 	public static JsonArray getMovieListByGenre(DataSource dataSource, String genre, Integer page_number,
-			Integer page_size) throws Exception {
+			Integer page_size, Integer sort_option) throws Exception {
 
 		try (Connection conn = dataSource.getConnection()) {
 			// Get a connection from dataSource
 
 			// Declare our statement
-			PreparedStatement statement = conn.prepareStatement(SQLStatements.BROWSE_BY_GENRE + SQLStatements.PAGINATION);
+			PreparedStatement statement = conn.prepareStatement(
+					SQLStatements.BROWSE_BY_GENRE + SQLStatements.SORTING[sort_option] + SQLStatements.PAGINATION);
 
 			// Set the parameter represented by "?" in the query to the id we get from url,
 			// num 1 indicates the first "?" in the query
@@ -27,6 +28,7 @@ public class BrowseByGenreService {
 			statement.setInt(2, page_size);
 			statement.setInt(3, (page_number - 1) * page_size);
 
+			System.out.println(statement);
 			// Perform the query
 			ResultSet rs = statement.executeQuery();
 
