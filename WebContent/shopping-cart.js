@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Create an object to store item quantities
     var itemQuantities = {};
-
+    var totalPrice = 0;
     // Function to retrieve the shopping cart items
     function getShoppingCartItems() {
         $.get('api/index', function (data) {
@@ -11,13 +11,11 @@ $(document).ready(function () {
             console.log(dataJson);
             console.log(dataJson["previousItems"]);
             // Calculate total price
-            var totalPrice = 0;
-
+            totalPrice = 0
             // Populate the cart table
             dataJson["previousItems"].forEach(function (item) {
                 var movieTitle = item;
                 var price = 100; // Default price per item
-
                 var row = $('<tr>');
                 row.append($('<td>').text(movieTitle));
                 var quantity = itemQuantities[movieTitle] || 1;
@@ -51,15 +49,11 @@ $(document).ready(function () {
                             getShoppingCartItems();
                         },
                     });
-
                 });
                 row.append($('<td>').append(deleteButton));
                 $('#cart-table-body').append(row);
-
-                // Update total price
                 totalPrice += price * quantity;
             });
-
             // Update the total price
             $('#total-price').text(totalPrice.toFixed(2));
         });
@@ -78,7 +72,10 @@ $(document).ready(function () {
 
     // Proceed to payment button
     $('#proceed-to-payment').click(function () {
-        // Redirect to the payment page
-        window.location.href = 'payment.html';
+        // Get the total price (assuming you have the total price stored in a variable named totalPrice)
+        const tot = totalPrice; // Replace this with your actual total price
+
+        // Redirect to the payment page (payment.html) with the total price as a URL parameter
+        window.location.href = `payment.html?totalPrice=${tot}`;
     });
 });
