@@ -36,11 +36,12 @@ public class LoginFormServlet extends HttpServlet {
     }
 
     /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     * response)
      */
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //return if user is logged in
+        // return if user is logged in
 
         try {
             response.setContentType("application/json"); // Response mime type
@@ -72,19 +73,19 @@ public class LoginFormServlet extends HttpServlet {
     }
 
     /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setContentType("application/json"); // Response mime type
         PrintWriter out = response.getWriter();
 
-        //get email and password
+        // get email and password
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        //check if username and password are valid from mysql
-
+        // check if username and password are valid from mysql
 
         try {
             HttpSession session = request.getSession(true);
@@ -96,8 +97,8 @@ public class LoginFormServlet extends HttpServlet {
                 System.out.println("customer: " + customerId);
 
                 if (customerId == -1) {
-                    //invalid login
-                    //for now just print out
+                    // invalid login
+                    // for now just print out
                     System.out.println("Invalid email");
                     JsonObject responseJsonObject = new JsonObject();
 
@@ -129,28 +130,18 @@ public class LoginFormServlet extends HttpServlet {
                     out.println(responseJsonObject.toString());
                     response.setStatus(200);
                     session.setAttribute("customerId", customerId);
-
+					
                 }
 
-
             } else {
-                //already login
-                //for now just print out
+                // already login
+                // for now just print out
                 System.out.println("Customer already login");
-
-                JsonObject responseJsonObject = new JsonObject();
-
-                responseJsonObject.addProperty("success", false);
-                responseJsonObject.addProperty("customerId", (Number) null);
-                responseJsonObject.addProperty("reason", "already");
-                responseJsonObject.addProperty("message", "User Already Login");
-                out.println(responseJsonObject.toString());
-                response.setStatus(200);
 
             }
         } catch (Exception e) {
-            //for now just print out
-            //return a fail response
+            // for now just print out
+            // return a fail response
             System.out.println("Got error: " + e);
 
             JsonObject responseJsonObject = new JsonObject();

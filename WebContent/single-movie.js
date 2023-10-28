@@ -41,7 +41,7 @@ function handleResult(resultData) {
 	// populate the star info h3
 	// find the empty h3 body by id "star_info"
 	let movieInfoElement = jQuery('#movie_info')
-
+	movieTitle = resultData['movie_title']
 	// append two html <p> created to the h3 body, which will refresh the page
 	let movieInfo =
 		'<p>Title: ' +
@@ -124,6 +124,7 @@ function handleResult(resultData) {
 
 // Get id from URL
 let movieId = getParameterByName('id')
+let movieTitle = ''
 
 function handleLoggedIn(resultData, callback) {
 	console.log(resultData)
@@ -151,3 +152,32 @@ jQuery.ajax({
 	url: 'api/login', // Setting request url, which is mapped by StarsServlet in Stars.java
 	success: (resultData) => handleLoggedIn(resultData, handleResult), // Setting callback function to handle data returned successfully by the SingleStarServlet
 })
+
+// Click event for the "Add to Cart" button
+$('.add-to-cart').click(function () {
+	// Call the addToCart function when the button is clicked
+	addToCart()
+})
+
+// Add event listener to the "Add" buttons
+function addToCart() {
+	// Make an AJAX POST request to add the movie to the shopping cart
+	jQuery.ajax({
+		dataType: 'json',
+		method: 'POST',
+		url: 'api/index', // Change the URL to match your servlet mapping
+		data: { item: movieTitle }, // Send the movie ID as the "item" parameter
+		success: function (response) {
+			// Handle the response from the server
+			if (response && response.previousItems) {
+				// Display a success message or update the UI to reflect the change in the shopping cart
+				alert('Item added to the shopping cart')
+			} else {
+				console.error('Failed to add item to the shopping cart')
+			}
+		},
+		error: function () {
+			console.error('Failed to add item to the shopping cart')
+		},
+	})
+}

@@ -251,6 +251,12 @@ function handleMovieResult(resultData) {
 		// end: single star link set up
 
 		rowHTML += '<th>' + resultData[i]['rating'] + '</th>'
+		rowHTML +=
+			'<th><button class="btn btn-success add-to-cart" data-movie-title="' +
+			resultData[i]['title'] +
+			'" onclick="addToCart(\'' +
+			resultData[i]['title'] +
+			'\')">Add</button></th>'
 		rowHTML += '</tr>'
 
 		// Append the row created to the table body, which will refresh the page
@@ -332,3 +338,26 @@ jQuery.ajax({
 	url: 'api/login', // Setting request url, which is mapped by StarsServlet in Stars.java
 	success: (resultData) => handleLoggedIn(resultData, handleMovieResult), // Setting callback function to handle data returned successfully by the StarsServlet
 })
+
+// Add event listener to the "Add" buttons
+function addToCart(movieTitle) {
+	// Make an AJAX POST request to add the movie to the shopping cart
+	jQuery.ajax({
+		dataType: 'json',
+		method: 'POST',
+		url: 'api/index', // Change the URL to match your servlet mapping
+		data: { item: movieTitle }, // Send the movie ID as the "item" parameter
+		success: function (response) {
+			// Handle the response from the server
+			if (response && response.previousItems) {
+				// Display a success message or update the UI to reflect the change in the shopping cart
+				alert('Item added to the shopping cart')
+			} else {
+				console.error('Failed to add item to the shopping cart')
+			}
+		},
+		error: function () {
+			console.error('Failed to add item to the shopping cart')
+		},
+	})
+}

@@ -98,4 +98,7 @@ public class SQLStatements {
 			"     AND (? = '' OR s.name LIKE CONCAT('%', ?, '%'))\n" +
 			"     AND (? = '' OR m.year = ?))\n";
 
+	public static String GETMOVIEID = "SELECT id AS movieId\n" +
+			"FROM movies\n" +
+			"WHERE title = ?;";
 }
