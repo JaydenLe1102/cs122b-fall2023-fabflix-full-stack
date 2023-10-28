@@ -67,4 +67,21 @@ public class Random3Service {
         }
     }
 
+    public static String getMovieIdByMovieTitle(DataSource dataSource, String movieTitle) throws Exception {
+        try (Connection conn = dataSource.getConnection()) {
+            PreparedStatement movieStatement = conn.prepareStatement(SQLStatements.GETMOVIEID);
+            movieStatement.setString(1, movieTitle);
+
+            ResultSet rsId = movieStatement.executeQuery();
+            if (rsId.next()) {
+                String id = rsId.getString("movieId");
+                System.out.println(id);
+                return id;
+            } else {
+                throw new Exception("No movie ID found for the title: " + movieTitle);
+            }
+        }
+    }
+
+
 }
