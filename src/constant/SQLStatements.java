@@ -97,5 +97,4 @@ public class SQLStatements {
 			"     AND (? = '' OR m.director LIKE CONCAT('%', ?, '%'))\n" +
 			"     AND (? = '' OR s.name LIKE CONCAT('%', ?, '%'))\n" +
 			"     AND (? = '' OR m.year = ?))\n";
-
 }

@@ -12,11 +12,11 @@ import constant.SQLStatements;
 
 public class BrowseByGenreService {
 
-    public static JsonArray getMovieListByGenre(DataSource dataSource, String genre, Integer page_number,
+	public static JsonArray getMovieListByGenre(DataSource dataSource, String genre, Integer page_number,
                                                 Integer page_size, Integer sort_option) throws Exception {
 
-        try (Connection conn = dataSource.getConnection()) {
-            // Get a connection from dataSource
+		try (Connection conn = dataSource.getConnection()) {
+			// Get a connection from dataSource
 
             // Declare our statement
             PreparedStatement statement = conn.prepareStatement(
@@ -32,7 +32,7 @@ public class BrowseByGenreService {
             // Perform the query
             ResultSet rs = statement.executeQuery();
 
-            JsonArray jsonArray = new JsonArray();
+			JsonArray jsonArray = new JsonArray();
 
             while (rs.next()) {
                 JsonObject movieObject = new JsonObject();
@@ -45,8 +45,7 @@ public class BrowseByGenreService {
                 movieObject.add("genres", Random3Service.getRandom3GenreByMovieId(dataSource, movieId));
                 movieObject.add("stars", Random3Service.getRandom3StarsByMovieId(dataSource, movieId));
 
-                jsonArray.add(movieObject);
-            }
+			return jsonArray;
 
             rs.close();
             statement.close();
