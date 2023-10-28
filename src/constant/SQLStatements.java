@@ -41,28 +41,48 @@ public class SQLStatements {
 	// end: SingleMovieService
 
 	// SingleStarService
-	public static String SINGLE_STAR_BY_STARID = "SELECT * from stars as s, stars_in_movies as sim, movies as m " +
-			"where m.id = sim.movieId and sim.starId = s.id and s.id = ?";
+	public static String SINGLE_STAR_BY_STARID = "SELECT *\n" +
+			"FROM stars AS s\n" +
+			"JOIN stars_in_movies AS sim ON s.id = sim.starId\n" +
+			"JOIN movies AS m ON sim.movieId = m.id\n" +
+			"WHERE s.id = ?\n" +
+			"ORDER BY m.year DESC, m.title ASC;";
+
+	public static String STAR_COUNT_MOVIE = "SELECT starId, COUNT(*) AS movieCount\n" +
+			"FROM stars_in_movies\n" +
+			"WHERE starId = ?;";
 
 	public static String VALICATE_EMAIL_PASSWORD = "SELECT * FROM customers WHERE email = ?";
 
 	public static String BROWSE_BY_GENRE = "SELECT *\n" +
-			"FROM movies as mv\n" +
-			"INNER JOIN genres_in_movies as gim ON mv.id = gim.movieId\n" +
+			"FROM movies as m\n" +
+			"INNER JOIN genres_in_movies as gim ON m.id = gim.movieId\n" +
 			"INNER JOIN genres g ON gim.genreId = g.id\n" +
-			"JOIN ratings AS r ON mv.id = r.movieId\n" +
+			"JOIN ratings AS r ON m.id = r.movieId\n" +
 			"WHERE LOWER(g.name) = LOWER(?)\n";
+
 	public static String BROWSE_BY_TITLE_NON_ALPHANUMERIC = "SELECT *\n" +
-			"FROM movies\n" +
-			"JOIN ratings AS r ON movies.id = r.movieId\n" +
+			"FROM movies AS m\n" +
+			"JOIN ratings AS r ON m.id = r.movieId\n" +
 			"WHERE title REGEXP '^[^a-zA-Z0-9]'\n";
 
 	public static String BROWSE_BY_TITLE_ALPHANUMERIC = "SELECT *\n" +
-			"FROM movies\n" +
-			"JOIN ratings AS r ON movies.id = r.movieId\n" +
+			"FROM movies AS m\n" +
+			"JOIN ratings AS r ON m.id = r.movieId\n" +
 			"WHERE LOWER(title) LIKE ?\n";
 
 	public static String ALL_GENRES = "SELECT name FROM genres;";
+
+	public static String[] SORTING = {
+			"ORDER BY Title ASC, Rating ASC\n",
+			"ORDER BY Title ASC, Rating DESC\n",
+			"ORDER BY Title DESC, Rating ASC\n",
+			"ORDER BY Title DESC, Rating DESC\n",
+			"ORDER BY Rating ASC, Title ASC\n",
+			"ORDER BY Rating ASC, Title DESC\n",
+			"ORDER BY Rating DESC, Title ASC\n",
+			"ORDER BY Rating DESC, Title DESC\n"
+	};
 
 	public static String PAGINATION = "LIMIT ?\n" +
 			"OFFSET ?\n;";
@@ -77,4 +97,5 @@ public class SQLStatements {
 			"     AND (? = '' OR m.director LIKE CONCAT('%', ?, '%'))\n" +
 			"     AND (? = '' OR s.name LIKE CONCAT('%', ?, '%'))\n" +
 			"     AND (? = '' OR m.year = ?))\n";
+
 }

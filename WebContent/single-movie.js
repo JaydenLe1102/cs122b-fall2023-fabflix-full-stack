@@ -105,6 +105,10 @@ function handleResult(resultData) {
 		}
 		rowHTML += '</th>'
 
+		rowHTML += '<th>'
+		rowHTML += resultData['stars'][i]['movie_count']
+		rowHTML += '</th>'
+
 		rowHTML += '</tr>'
 
 		//end: set up star dob

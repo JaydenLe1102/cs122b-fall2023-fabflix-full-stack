@@ -52,8 +52,10 @@ public class BrowseByTitleServlet extends HttpServlet {
 			String browse_title = request.getParameter("title");
 			Integer page_number = Integer.parseInt(request.getParameter("page_number"));
 			Integer page_size = Integer.parseInt(request.getParameter("page_size"));
+			Integer sort_option = Integer.parseInt(request.getParameter("sort_option"));
 
-			JsonArray jsonArray = BrowseByTitleService.getMovieListByTitle(dataSource, browse_title, page_number, page_size);
+			JsonArray jsonArray = BrowseByTitleService.getMovieListByTitle(dataSource, browse_title, page_number, page_size,
+					sort_option);
 
 			// Log to localhost log
 			request.getServletContext().log("getting " + jsonArray.size() + " results");
@@ -62,6 +64,7 @@ public class BrowseByTitleServlet extends HttpServlet {
 
 			session.setAttribute("page_number", page_number);
 			session.setAttribute("page_size", page_size);
+			session.setAttribute("sort_option", sort_option);
 			session.setAttribute("browse_title", browse_title);
 			session.setAttribute("isBrowsed", true);
 			session.setAttribute("isSearch", false);

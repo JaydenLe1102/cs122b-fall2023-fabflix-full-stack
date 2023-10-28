@@ -14,13 +14,14 @@ public class SearchService {
 
 	public static JsonArray getMovieListByTitleYearDirectorStar(DataSource dataSource, String title, String year,
 			String director, String star, Integer page_number,
-			Integer page_size) throws Exception {
+			Integer page_size, Integer sort_option) throws Exception {
 		try (Connection conn = dataSource.getConnection()) {
 			System.out.println("Connection established"); // Add this print statement
 
 			// Get a connection from dataSource
 			// Declare our statement
-			PreparedStatement statement = conn.prepareStatement(SQLStatements.SEARCH + SQLStatements.PAGINATION);
+			PreparedStatement statement = conn
+					.prepareStatement(SQLStatements.SEARCH + SQLStatements.SORTING[sort_option] + SQLStatements.PAGINATION);
 			System.out.println("PreparedStatement created"); // Add this print statement
 
 			// Set the parameter represented by "?" in the query to the id we get from url,

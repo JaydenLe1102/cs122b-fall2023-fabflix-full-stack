@@ -13,13 +13,29 @@
  * @param resultData jsonObject
  */
 
+const SORT_OPTION = [
+	'Title ↑, Rating ↑',
+	'Title ↑, Rating ↓',
+	'Title ↓, Rating ↑',
+	'Title ↓, Rating ↓',
+	'Rating ↑, Title ↑',
+	'Rating ↑, Title ↓',
+	'Rating ↓, Title ↑',
+	'Rating ↓, Title ↓',
+]
+
 function handleSessionData(resultData) {
 	console.log('handleSessionData: populating session data from resultData')
 	console.log('resultData: ' + JSON.stringify(resultData, null, 4))
 
 	page_number = resultData['page_number']
 	page_size = resultData['page_size']
+	sort_option = resultData['sort_option']
 
+	console.log('hello')
+	console.log(sort_option)
+
+	document.getElementById('SortByBtn').innerText = SORT_OPTION[sort_option]
 	document.getElementById('ItemsPerPage').innerText = resultData['page_size']
 	document.getElementById('pageText').innerText = resultData['page_number']
 
@@ -36,7 +52,7 @@ function handleSessionData(resultData) {
 			jQuery.ajax({
 				dataType: 'json', // Setting return data type
 				method: 'GET', // Setting request method
-				url: `api/browse/genre?genre=${resultData['browse_genre']}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+				url: `api/browse/genre?genre=${resultData['browse_genre']}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 				success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 			})
 		} else {
@@ -45,7 +61,7 @@ function handleSessionData(resultData) {
 			jQuery.ajax({
 				dataType: 'json', // Setting return data type
 				method: 'GET', // Setting request method
-				url: `api/browse/title?title=${resultData['browse_title']}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+				url: `api/browse/title?title=${resultData['browse_title']}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 				success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 			})
 		}
@@ -58,7 +74,7 @@ function handleSessionData(resultData) {
 		jQuery.ajax({
 			dataType: 'json', // Setting return data type
 			method: 'GET', // Setting request method
-			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 			success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 		})
 	}
@@ -75,7 +91,7 @@ function updateTable(page_number, page_size, callback) {
 		jQuery.ajax({
 			dataType: 'json', // Setting return data type
 			method: 'GET', // Setting request method
-			url: `api/browse/genre?genre=${browseGenre}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+			url: `api/browse/genre?genre=${browseGenre}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 		})
 	} else if (browseTitle) {
@@ -83,7 +99,7 @@ function updateTable(page_number, page_size, callback) {
 		jQuery.ajax({
 			dataType: 'json', // Setting return data type
 			method: 'GET', // Setting request method
-			url: `api/browse/title?title=${browseTitle}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+			url: `api/browse/title?title=${browseTitle}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 		})
 	} else if (searchTitle || searchDirector || searchYear || searchStar) {
@@ -91,7 +107,7 @@ function updateTable(page_number, page_size, callback) {
 		jQuery.ajax({
 			dataType: 'json', // Setting return data type
 			method: 'GET', // Setting request method
-			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}`, // Setting request url
+			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 		})
 	} else {
@@ -118,6 +134,30 @@ function updateSelectedItem(itemText, id) {
 		page_number = 1
 
 		updateTable(1, page_size, handleMovieResult)
+	} else if (id === 'SortByBtn') {
+		//reset movie list
+		if (itemText === 'Title ↑, Rating ↑') {
+			sort_option = 0
+		} else if (itemText === 'Title ↑, Rating ↓') {
+			sort_option = 1
+		} else if (itemText === 'Title ↓, Rating ↑') {
+			sort_option = 2
+		} else if (itemText === 'Title ↓, Rating ↓') {
+			sort_option = 3
+		} else if (itemText === 'Rating ↑, Title ↑') {
+			sort_option = 4
+		} else if (itemText === 'Rating ↑, Title ↓') {
+			sort_option = 5
+		} else if (itemText === 'Rating ↓, Title ↑') {
+			sort_option = 6
+		} else if (itemText === 'Rating ↓, Title ↓') {
+			sort_option = 7
+		}
+
+		document.getElementById('pageText').innerText = 1
+		page_number = 1
+
+		updateTable(page_number, page_size, handleMovieResult)
 	}
 }
 
@@ -268,6 +308,7 @@ document.getElementById('PrevBtn').onclick = () => {
 
 let page_number = 1
 let page_size = 10
+let sort_option = 0
 
 // get params for browsing;
 let browseGenre = getParameterByName('browse_genre')

@@ -55,9 +55,10 @@ public class SearchServlet extends HttpServlet {
 			String search_star = request.getParameter("star");
 			Integer page_number = Integer.parseInt(request.getParameter("page_number"));
 			Integer page_size = Integer.parseInt(request.getParameter("page_size"));
+			Integer sort_option = Integer.parseInt(request.getParameter("sort_option"));
 
 			JsonArray jsonArray = SearchService.getMovieListByTitleYearDirectorStar(dataSource, search_title, search_year,
-					search_director, search_star, page_number, page_size);
+					search_director, search_star, page_number, page_size, sort_option);
 
 			// Log to localhost log
 			request.getServletContext().log("getting " + jsonArray.size() + " results");
@@ -66,6 +67,7 @@ public class SearchServlet extends HttpServlet {
 
 			session.setAttribute("page_number", page_number);
 			session.setAttribute("page_size", page_size);
+			session.setAttribute("sort_option", sort_option);
 			session.setAttribute("search_title", search_title);
 			session.setAttribute("search_year", search_year);
 			session.setAttribute("search_director", search_director);

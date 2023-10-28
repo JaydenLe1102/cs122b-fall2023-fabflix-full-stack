@@ -60,6 +60,10 @@ public class MovieListSessionServlet extends HttpServlet {
 					? (Integer) session.getAttribute("page_size")
 					: 10;
 
+			Integer sort_option = (Integer) session.getAttribute("sort_option") != null
+					? (Integer) session.getAttribute("sort_option")
+					: 0;
+
 			System.out.println("page_number: " + page_number);
 			System.out.println("page_size: " + page_size);
 			System.out.println("isBrowsed: " + isBrowsed);
@@ -69,6 +73,7 @@ public class MovieListSessionServlet extends HttpServlet {
 
 			responseJsonObject.addProperty("page_number", page_number);
 			responseJsonObject.addProperty("page_size", page_size);
+			responseJsonObject.addProperty("sort_option", sort_option);
 			responseJsonObject.addProperty("isBrowsed", isBrowsed);
 			responseJsonObject.addProperty("isSearch", isSearch);
 
