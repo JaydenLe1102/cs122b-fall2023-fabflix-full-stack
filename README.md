@@ -6,7 +6,7 @@ This repository build Fablix Movie Project
 
 #### Project 1: https://www.youtube.com/watch?v=Yx577l4Oh8o
 
-#### Project 2: After record
+#### Project 2: https://youtu.be/nDvWTj4hUrA
 
 ### Project Contribution
 
