@@ -46,13 +46,19 @@ function handlePayment(customerID) {
             contentType: 'application/json',
             success: function(response) {
                 if (response.success) {
-                    alert('Transaction Successful!');
+                    // Get the sales data from the response and convert it to a string
+                    var salesData = JSON.stringify(response.sales);
+                    console.log(salesData);
+                    // URL encode the JSON string
+                    const encodedSalesData = encodeURIComponent(salesData);
+                    // Redirect to confirmation.html with sales data as a query parameter
+                    window.location.href = `confirmation.html?salesData=${encodedSalesData}`;
                 } else {
-                    alert('Transaction Failed: ' + response.error);
+                    alert('Transaction Failed: ' + response.error + ". Reenter Payment information");
                 }
             },
             error: function(xhr, status, error) {
-                alert('Error processing payment: ' + error);
+                alert('Error processing payment: ' + error + ". Reenter Payment information");
             }
         });
     });

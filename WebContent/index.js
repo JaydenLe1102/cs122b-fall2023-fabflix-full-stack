@@ -133,11 +133,11 @@ function addToCart(movieTitle) {
                 // Display a success message or update the UI to reflect the change in the shopping cart
                 alert('Item added to the shopping cart');
             } else {
-                console.error('Failed to add item to the shopping cart');
+                alert('Failed to add item to the shopping cart');
             }
         },
         error: function () {
-            console.error('Failed to add item to the shopping cart');
+            alert('Failed to add item to the shopping cart');
         }
     });
 }

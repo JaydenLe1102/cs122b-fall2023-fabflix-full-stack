@@ -31,19 +31,33 @@ public class PaymentService {
         if (isValid) {
             try (Connection connection = dataSource.getConnection()) {
                 ArrayList<String> previousItems = (ArrayList<String>) request.getSession().getAttribute("previousItems");
-                System.out.println(previousItems);
+                ArrayList<String> quantities = (ArrayList<String>) request.getSession().getAttribute("quantities");
+
                 if (previousItems != null && previousItems.size() > 0) {
+                    JsonObject salesObject = new JsonObject(); // Create a JSON object to store sales
+
                     boolean allSalesRecorded = true;
 
-                    for (String movie : previousItems) {
-                        System.out.println("In for loop");
+                    for (int i = 0; i < previousItems.size(); i++) {
+                        String movie = previousItems.get(i);
                         String movieId = Random3Service.getMovieIdByMovieTitle(dataSource, movie);
-                        System.out.println(movieId);
-                        boolean saleRecorded = recordSale(connection, customerId, movieId);
+                        int quantitySold = Integer.parseInt(quantities.get(i));
 
-                        if (!saleRecorded) {
+                        // Call the recordSale method and capture the sale ID returned
+                        int saleId = recordSale(connection, customerId, movieId);
+
+                        if (saleId != -1) {
+                            // Construct a JSON object for each sale
+                            JsonObject saleDetails = new JsonObject();
+                            saleDetails.addProperty("saleId", saleId);
+                            saleDetails.addProperty("movieTitle", movie);
+                            saleDetails.addProperty("quantity", quantitySold);
+
+                            // Add this sale to the sales object
+                            salesObject.add("sale" + i, saleDetails);
+                        } else {
                             allSalesRecorded = false;
-                            break; // Exit the loop if any sale recording fails
+                            break; // Exit the loop if sale recording fails
                         }
                     }
 
@@ -54,6 +68,9 @@ public class PaymentService {
                     } else {
                         response.addProperty("error", "Failed to record sale(s). Please try again.");
                     }
+
+                    // Add the 'sales' object to the main response
+                    response.add("sales", salesObject);
                 } else {
                     response.addProperty("error", "No movies in the shopping list.");
                 }
@@ -65,6 +82,7 @@ public class PaymentService {
             response.addProperty("error", "Invalid credit card information.");
         }
         return response;
+
     }
 
     private static boolean validateCreditCardDetails(Connection conn, String ccId, String firstName, String lastName, String expiration) {
@@ -89,17 +107,30 @@ public class PaymentService {
         }
     }
 
-    private static boolean recordSale(Connection conn, String customerId, String movieId) {
+    private static int recordSale(Connection conn, String customerId, String movieId) {
         String insertQuery = "INSERT INTO sales (customerId, movieId, saleDate) VALUES (?, ?, CURDATE())";
-        try (PreparedStatement statement = conn.prepareStatement(insertQuery)) {
+        try (PreparedStatement statement = conn.prepareStatement(insertQuery, PreparedStatement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, customerId);
             statement.setString(2, movieId);
-            return statement.executeUpdate() > 0;
+            int affectedRows = statement.executeUpdate();
+
+            if (affectedRows == 0) {
+                throw new SQLException("Creating sale failed, no rows affected.");
+            }
+
+            try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    return generatedKeys.getInt(1); // Retrieving the auto-generated sale ID
+                } else {
+                    throw new SQLException("Creating sale failed, no ID obtained.");
+                }
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            return -1; // Or any other error code or specific value to denote a failure
         }
     }
+
 }
 
 
