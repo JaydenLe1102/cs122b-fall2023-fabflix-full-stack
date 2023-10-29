@@ -17,79 +17,110 @@ import java.util.Date;
 @WebServlet(name = "IndexServlet", urlPatterns = "/api/index")
 public class IndexServlet extends HttpServlet {
 
-    /**
-     * handles GET requests to store session information
-     */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        HttpSession session = request.getSession();
-        String sessionId = session.getId();
-        long lastAccessTime = session.getLastAccessedTime();
-        JsonObject responseJsonObject = new JsonObject();
-        responseJsonObject.addProperty("sessionID", sessionId);
-        responseJsonObject.addProperty("lastAccessTime", new Date(lastAccessTime).toString());
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
+		JsonObject responseJsonObject = new JsonObject();
 
-        ArrayList<String> previousItems = (ArrayList<String>) session.getAttribute("previousItems");
-        if (previousItems == null) {
-            previousItems = new ArrayList<String>();
-        }
-        // Log to localhost log
-        request.getServletContext().log("getting " + previousItems.size() + " items");
-        JsonArray previousItemsJsonArray = new JsonArray();
-        previousItems.forEach(previousItemsJsonArray::add);
+		ArrayList<String> previousItems = (ArrayList<String>) session.getAttribute("previousItems");
+		ArrayList<String> quantities = (ArrayList<String>) session.getAttribute("quantities");
 
-        responseJsonObject.add("previousItems", previousItemsJsonArray);
-        // write all the data into the jsonObject
-        response.getWriter().write(responseJsonObject.toString());
-    }
+		if (previousItems == null || quantities == null || previousItems.isEmpty() || quantities.isEmpty()) {
+			responseJsonObject.addProperty("message", "No movies in the shopping list.");
+		} else {
+			JsonArray previousItemsJsonArray = new JsonArray();
+			for (int i = 0; i < previousItems.size(); i++) {
+				JsonObject itemObject = new JsonObject();
+				itemObject.addProperty("item", previousItems.get(i));
+				itemObject.addProperty("quantity", quantities.get(i));
+				previousItemsJsonArray.add(itemObject);
+			}
 
-    /**
-     * handles POST requests to add and show the item list information
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String item = request.getParameter("item");
-        HttpSession session = request.getSession();
+			responseJsonObject.add("previousItems", previousItemsJsonArray);
+		}
 
-        // get the previous items in a ArrayList
-        ArrayList<String> previousItems = (ArrayList<String>) session.getAttribute("previousItems");
-        if (previousItems == null) {
-            previousItems = new ArrayList<String>();
-            previousItems.add(item);
-            session.setAttribute("previousItems", previousItems);
-        } else {
-            // prevent corrupted states through sharing under multi-threads
-            // will only be executed by one thread at a time
-            synchronized (previousItems) {
-                previousItems.add(item);
-            }
-        }
+		response.getWriter().write(responseJsonObject.toString());
+	}
 
-        JsonObject responseJsonObject = new JsonObject();
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String item = request.getParameter("item");
+		String quantityStr = request.getParameter("quantity");
 
-        JsonArray previousItemsJsonArray = new JsonArray();
-        previousItems.forEach(previousItemsJsonArray::add);
-        responseJsonObject.add("previousItems", previousItemsJsonArray);
-        response.getWriter().write(responseJsonObject.toString());
-    }
+		int quantity = 1;
+		if (quantityStr != null && !quantityStr.isEmpty()) {
+			try {
+				quantity = Integer.parseInt(quantityStr);
+			} catch (NumberFormatException e) {
+				// Handle parsing exception here if needed
+			}
+		}
 
-    /**
-     * handles DELETE requests to remove an item from the session
-     */
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String item = request.getParameter("item");
-        HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
+		ArrayList<String> previousItems = (ArrayList<String>) session.getAttribute("previousItems");
+		ArrayList<String> quantities = (ArrayList<String>) session.getAttribute("quantities");
 
-        // Get the previous items in an ArrayList
-        ArrayList<String> previousItems = (ArrayList<String>) session.getAttribute("previousItems");
-        if (previousItems != null) {
-            previousItems.remove(item); // Check if 'remove' returns true or false.out.println("Previous items after deletion: " + previousItems); // Check items after attempted deletion
-        }
+		if (previousItems == null) {
+			previousItems = new ArrayList<>();
+			quantities = new ArrayList<>();
+		}
 
-        JsonObject responseJsonObject = new JsonObject();
-        JsonArray previousItemsJsonArray = new JsonArray();
-        if (previousItems != null) {
-            previousItems.forEach(previousItemsJsonArray::add);
-        }
-        responseJsonObject.add("previousItems", previousItemsJsonArray);
-        response.getWriter().write(responseJsonObject.toString());
-    }
+		int index = previousItems.indexOf(item);
+		if (index != -1) {
+			int updatedQuantity = Integer.parseInt(quantities.get(index));
+
+			if (quantity > 0) {
+				updatedQuantity += 1; // Increment quantity by 1
+			} else if (quantity < 0 && updatedQuantity > 1) {
+				updatedQuantity -= 1; // Decrement quantity by 1, not exceeding 1
+			}
+
+			quantities.set(index, String.valueOf(updatedQuantity));
+		} else {
+			previousItems.add(item);
+			quantities.add(String.valueOf(quantity));
+		}
+
+		session.setAttribute("previousItems", previousItems);
+		session.setAttribute("quantities", quantities);
+
+		JsonObject responseJsonObject = new JsonObject();
+		JsonArray previousItemsJsonArray = new JsonArray();
+		for (int i = 0; i < previousItems.size(); i++) {
+			JsonObject itemJson = new JsonObject();
+			itemJson.addProperty("item", previousItems.get(i));
+			itemJson.addProperty("quantity", quantities.get(i));
+			previousItemsJsonArray.add(itemJson);
+		}
+		responseJsonObject.add("previousItems", previousItemsJsonArray);
+		response.getWriter().write(responseJsonObject.toString());
+	}
+
+	/**
+	 * handles DELETE requests to remove an item from the session
+	 */
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String item = request.getParameter("item");
+		HttpSession session = request.getSession();
+
+		ArrayList<String> previousItems = (ArrayList<String>) session.getAttribute("previousItems");
+		ArrayList<String> quantities = (ArrayList<String>) session.getAttribute("quantities");
+
+		if (previousItems != null && quantities != null) {
+			int index = previousItems.indexOf(item);
+			if (index != -1) {
+				previousItems.remove(index);
+				quantities.remove(index);
+			}
+		}
+
+		JsonObject responseJsonObject = new JsonObject();
+		JsonArray previousItemsJsonArray = new JsonArray();
+		for (int i = 0; i < previousItems.size(); i++) {
+			JsonObject itemJson = new JsonObject();
+			itemJson.addProperty("item", previousItems.get(i));
+			itemJson.addProperty("quantity", quantities.get(i));
+			previousItemsJsonArray.add(itemJson);
+		}
+		responseJsonObject.add("previousItems", previousItemsJsonArray);
+		response.getWriter().write(responseJsonObject.toString());
+	}
 }
