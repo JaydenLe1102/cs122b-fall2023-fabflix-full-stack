@@ -3,6 +3,7 @@ import com.google.gson.JsonObject;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,6 +18,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import static utils.ServletUtils.checkLogin;
+
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
 @WebServlet(name = "MoviesServlet", urlPatterns = "/api/movies")
 public class MoviesServlet extends HttpServlet {
@@ -24,8 +27,6 @@ public class MoviesServlet extends HttpServlet {
 
     // Create a dataSource which registered in web.
     private DataSource dataSource;
-
-    private MoviesService service;
 
     public void init(ServletConfig config) {
         try {
@@ -37,18 +38,20 @@ public class MoviesServlet extends HttpServlet {
     }
 
     /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     * response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
+        checkLogin(request, response);
         response.setContentType("application/json"); // Response mime type
 
         // Output stream to STDOUT
         PrintWriter out = response.getWriter();
 
-        // Get a connection from dataSource and let resource manager close the connection after usage.
-        try  {
-            JsonArray jsonArray = service.getMoviesArray(dataSource);
+        // Get a connection from dataSource and let resource manager close the
+        // connection after usage.
+        try {
+            JsonArray jsonArray = MoviesService.getMoviesArray(dataSource);
 
             // Log to localhost log
             request.getServletContext().log("getting " + jsonArray.size() + " results");
@@ -71,7 +74,8 @@ public class MoviesServlet extends HttpServlet {
             out.close();
         }
 
-        // Always remember to close db connection after usage. Here it's done by try-with-resources
+        // Always remember to close db connection after usage. Here it's done by
+        // try-with-resources
 
     }
 }

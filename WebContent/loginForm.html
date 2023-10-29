@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Login Fablix</title>
+
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+    />
+</head>
+<body>
+<div
+        class="intro_login justify-content-center"
+        style="height: 100%; min-width: fit-content"
+>
+    <div class="col-md-4">
+        <div class="login-form" style="min-width: fit-content">
+            <h2 class="text-center google_font">Login</h2>
+            <form id="login-form" method="POST" action="api/login">
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password">Your Password:</label>
+                    <input
+                            class="form-control"
+                            id="password"
+                            name="password"
+                            rows="4"
+                            required
+                            type="password"
+                    />
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button
+                            type="submit"
+                            class="btn btn-primary btn-block center mx-auto text-center"
+                            style="margin-top: 2%"
+                    >
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="loginForm.js"></script>
+
+</body>
+</html>

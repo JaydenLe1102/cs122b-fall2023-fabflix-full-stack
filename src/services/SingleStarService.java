@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import constant.SQLStatements;
+
 public class SingleStarService {
 
     public static JsonObject getSingleStarById (DataSource dataSource, String id) throws  Exception{
@@ -15,12 +17,8 @@ public class SingleStarService {
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource
 
-            // Construct a query with parameter represented by "?"
-            String query = "SELECT * from stars as s, stars_in_movies as sim, movies as m " +
-                    "where m.id = sim.movieId and sim.starId = s.id and s.id = ?";
-
             // Declare our statement
-            PreparedStatement statement = conn.prepareStatement(query);
+            PreparedStatement statement = conn.prepareStatement(SQLStatements.SINGLE_STAR_BY_STARID);
 
             // Set the parameter represented by "?" in the query to the id we get from url,
             // num 1 indicates the first "?" in the query
@@ -35,28 +33,18 @@ public class SingleStarService {
 
             // Iterate through each row of rs
             while (rs.next()) {
-
-                String starId = rs.getString("starId");
-                String starName = rs.getString("name");
-                String starDob = rs.getString("birthYear");
-
-                String movieId = rs.getString("movieId");
-                String movieTitle = rs.getString("title");
-                String movieYear = rs.getString("year");
-                String movieDirector = rs.getString("director");
-
                 // Create a JsonObject based on the data we retrieve from rs
 
-                starObject.addProperty("star_id", starId);
-                starObject.addProperty("star_name", starName);
-                starObject.addProperty("star_dob", starDob);
+                starObject.addProperty("star_id", rs.getString("starId"));
+                starObject.addProperty("star_name", rs.getString("name"));
+                starObject.addProperty("star_dob", rs.getString("birthYear"));
 
                 JsonObject movieObject = new JsonObject();
 
-                movieObject.addProperty("movie_id", movieId);
-                movieObject.addProperty("movie_title", movieTitle);
-                movieObject.addProperty("movie_year", movieYear);
-                movieObject.addProperty("movie_director", movieDirector);
+                movieObject.addProperty("movie_id", rs.getString("movieId"));
+                movieObject.addProperty("movie_title", rs.getString("title"));
+                movieObject.addProperty("movie_year", rs.getString("year"));
+                movieObject.addProperty("movie_director", rs.getString("director"));
 
                 jsonArray.add(movieObject);
             }

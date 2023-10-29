@@ -51,10 +51,9 @@ function handleResult(resultData) {
     //setup dob
     starInfo += "<p>Date Of Birth: "
 
-    if (resultData["star_dob"]){
+    if (resultData["star_dob"]) {
         starInfo += resultData["star_dob"]
-    }
-    else{
+    } else {
         starInfo += "N/A"
     }
 
@@ -98,10 +97,30 @@ function handleResult(resultData) {
 // Get id from URL
 let starId = getParameterByName('id');
 
+
+function handleLoggedIn(resultData, callback) {
+
+    console.log(resultData)
+
+    if (resultData["isLoggedIn"] === true) {
+        console.log("User is logged in")
+        // Makes the HTTP GET request and registers on success callback function handleStarResult
+        jQuery.ajax({
+            dataType: "json",  // Setting return data type
+            method: "GET",// Setting request method
+            url: "api/single-star?id=" + starId, // Setting request url, which is mapped by StarsServlet in Stars.java
+            success: (resultData) => callback(resultData) // Setting callback function to handle data returned successfully by the SingleStarServlet
+        });
+    } else {
+        console.log("User is not logged in")
+        window.location.replace("loginForm.html")
+    }
+}
+
 // Makes the HTTP GET request and registers on success callback function handleResult
 jQuery.ajax({
     dataType: "json",  // Setting return data type
     method: "GET",// Setting request method
-    url: "api/single-star?id=" + starId, // Setting request url, which is mapped by StarsServlet in Stars.java
-    success: (resultData) => handleResult(resultData) // Setting callback function to handle data returned successfully by the SingleStarServlet
+    url: "api/login", // Setting request url, which is mapped by StarsServlet in Stars.java
+    success: (resultData) => handleLoggedIn(resultData, handleResult) // Setting callback function to handle data returned successfully by the SingleStarServlet
 });

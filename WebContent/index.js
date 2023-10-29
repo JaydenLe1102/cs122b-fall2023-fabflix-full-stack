@@ -45,10 +45,11 @@ function handleMovieResult(resultData) {
 
 		rowHTML += '<th>'
 
+		let j
 		for (j = 0; j < resultData[i]['genres'].length; j++) {
 			rowHTML += resultData[i]['genres'][j]
 
-			if (j != resultData[i]['genres'].length - 1) {
+			if (j !== resultData[i]['genres'].length - 1) {
 				rowHTML += ', '
 			}
 		}
@@ -77,8 +78,13 @@ function handleMovieResult(resultData) {
 		// end: single star link set up
 
 		rowHTML += '<th>' + resultData[i]['rating'] + '</th>'
+		rowHTML +=
+			'<th><button class="btn btn-success add-to-cart" data-movie-title="' +
+			resultData[i]['title'] +
+			'" onclick="addToCart(\'' +
+			resultData[i]['title'] +
+			'\')">Add</button></th>'
 		rowHTML += '</tr>'
-
 		console.log(rowHTML)
 
 		// Append the row created to the table body, which will refresh the page
@@ -86,14 +92,54 @@ function handleMovieResult(resultData) {
 	}
 }
 
+function handleLoggedIn(resultData, callback) {
+	console.log(resultData)
+
+	if (resultData['isLoggedIn'] === true) {
+		console.log('User is logged in')
+		// Makes the HTTP GET request and registers on success callback function handleStarResult
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: 'api/movies', // Setting request url, which is mapped by StarsServlet in Stars.java
+			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
+	} else {
+		console.log('User is not logged in')
+		window.location.replace('loginForm.html')
+	}
+}
+
 /**
  * Once this .js is loaded, following scripts will be executed by the browser
  */
 
-// Makes the HTTP GET request and registers on success callback function handleStarResult
 jQuery.ajax({
 	dataType: 'json', // Setting return data type
 	method: 'GET', // Setting request method
-	url: 'api/movies', // Setting request url, which is mapped by StarsServlet in Stars.java
-	success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+	url: 'api/login', // Setting request url, which is mapped by StarsServlet in Stars.java
+	success: (resultData) => handleLoggedIn(resultData, handleMovieResult), // Setting callback function to handle data returned successfully by the StarsServlet
 })
+
+// Add event listener to the "Add" buttons
+function addToCart(movieTitle) {
+	// Make an AJAX POST request to add the movie to the shopping cart
+	jQuery.ajax({
+		dataType: 'json',
+		method: 'POST',
+		url: 'api/index', // Change the URL to match your servlet mapping
+		data: { item: movieTitle }, // Send the movie ID as the "item" parameter
+		success: function (response) {
+			// Handle the response from the server
+			if (response && response.previousItems) {
+				// Display a success message or update the UI to reflect the change in the shopping cart
+				alert('Item added to the shopping cart')
+			} else {
+				alert('Failed to add item to the shopping cart')
+			}
+		},
+		error: function () {
+			alert('Failed to add item to the shopping cart')
+		},
+	})
+}

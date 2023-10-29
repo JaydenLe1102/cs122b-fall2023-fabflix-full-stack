@@ -33,11 +33,11 @@ This .html performs two steps:
 			style="background-color: rgb(160, 218, 241)"
 		>
 			<div class="container-fluid">
-				<a class="navbar-brand" href=".">
+				<a class="navbar-brand" href="./main-page.html">
 					<img
 						src="public/Fablix_logo.png"
 						alt="Fablix logo"
-						style="height: 80px"
+						style="height: 75px"
 					/>
 				</a>
 				<button
@@ -57,12 +57,92 @@ This .html performs two steps:
 							<a
 								class="nav-link"
 								aria-current="page"
-								href="."
+								href="./main-page.html"
 								style="color: black"
-								><h3>Home</h3></a
+								><h4>Home</h4></a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								aria-current="page"
+								href="./index.html"
+								style="color: black"
+								><h4>Top 20</h4></a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								aria-current="page"
+								href="./movie-list.html"
+								style="color: black"
+								><h4>Movies List</h4></a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								aria-current="page"
+								href="./shopping-cart.html"
+								style="color: black"
+								><h4>Checkout</h4></a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								aria-current="page"
+								href="./shopping-cart.html"
+								style="color: black"
+								><h4>Checkout</h4></a
 							>
 						</li>
 					</ul>
+					<!-- Search form -->
+					<form id="search-form" method="GET" action="movie-list.html">
+						<div class="form-row align-items-right">
+							<div class="col">
+								<input
+									type="text"
+									class="form-control form-control-sm"
+									placeholder="Search Title"
+									id="titleSearch"
+									name="search_title"
+								/>
+							</div>
+							<div class="col">
+								<input
+									type="text"
+									class="form-control form-control-sm"
+									placeholder="Search Year"
+									id="yearSearch"
+									name="search_year"
+								/>
+							</div>
+							<div class="col">
+								<input
+									type="text"
+									class="form-control form-control-sm"
+									placeholder="Search Director"
+									id="directorSearch"
+									name="search_director"
+								/>
+							</div>
+							<div class="col">
+								<input
+									type="text"
+									class="form-control form-control-sm"
+									placeholder="Search Star"
+									id="starSearch"
+									name="search_star"
+								/>
+							</div>
+							<div class="col-auto">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</nav>
@@ -109,7 +189,7 @@ This .html performs two steps:
 		<!-- Load our own JS file -->
 		<!-- The path is relative to single-star.html, since these two files are in the same directory -->
 		<!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path
-     otherwise the url is relative to the root path-->
+otherwise the url is relative to the root path-->
 		<script src="single-star.js"></script>
 	</body>
 </html>

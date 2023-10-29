@@ -2,25 +2,27 @@ package services;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import constant.SQLStatements;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class SingleMovieService {
 
-    public static JsonObject getSingleMovieById (DataSource dataSource, String id) throws  Exception{
+    public static JsonObject getSingleMovieById(DataSource dataSource, String id) throws Exception {
 
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource
-
-            // Construct a query with parameter represented by "?"
-            String query = "SELECT m.id, m.title, m.year, m.director, s.id, s.name, s.birthYear, g.id, g.name, r.rating from stars as s, stars_in_movies as sim, movies as m, genres as g, genres_in_movies as gim, ratings as r " +
-                    "where g.id = gim.genreId and gim.movieId = m.id and m.id = sim.movieId and sim.starId = s.id and r.movieId = m.id and m.id = ?";
-
             // Declare our statement
-            PreparedStatement statement = conn.prepareStatement(query);
+            PreparedStatement statement = conn.prepareStatement(SQLStatements.SINGLEMOVIEBYMOVIEID);
 
             // Set the parameter represented by "?" in the query to the id we get from url,
             // num 1 indicates the first "?" in the query
@@ -32,6 +34,9 @@ public class SingleMovieService {
             JsonArray jsonArray1 = new JsonArray();
 
             JsonArray jsonArray2 = new JsonArray();
+
+            Set<String> starIds = new HashSet<>();
+            Set<String> genreIds = new HashSet<>();
 
             JsonObject movieObject = new JsonObject();
 
@@ -59,30 +64,97 @@ public class SingleMovieService {
                 movieObject.addProperty("movie_director", movieDirector);
                 movieObject.addProperty("movie_rating", movieRating);
 
-                JsonObject starObject = new JsonObject();
+                if (!starIds.contains(starId)) {
+                    starIds.add(starId);
+                    PreparedStatement starMovieStatement = conn.prepareStatement(SQLStatements.STAR_COUNT_MOVIE);
+                    starMovieStatement.setString(1, starId);
 
-                starObject.addProperty("star_id", starId);
-                starObject.addProperty("star_name", starName);
-                starObject.addProperty("star_dob", starDob);
+                    ResultSet starMovieRs = starMovieStatement.executeQuery();
+                    JsonObject starObject = new JsonObject();
 
-                jsonArray1.add(starObject);
+                    while (starMovieRs.next()) {
+                        String starMovieCount = starMovieRs.getString("movieCount");
+                        starObject.addProperty("movie_count", starMovieCount);
+                    }
 
-                JsonObject genreObject = new JsonObject();
+                    starMovieStatement.close();
+                    starMovieRs.close();
 
-                genreObject.addProperty("genre_id", genreId);
-                genreObject.addProperty("genre_name", genreName);
+                    starObject.addProperty("star_id", starId);
+                    starObject.addProperty("star_name", starName);
+                    starObject.addProperty("star_dob", starDob);
+                    jsonArray1.add(starObject);
+                }
 
-                jsonArray2.add(genreObject);
+                if (!genreIds.contains(genreId)) {
+                    JsonObject genreObject = new JsonObject();
+
+                    genreObject.addProperty("genre_id", genreId);
+                    genreObject.addProperty("genre_name", genreName);
+                    genreIds.add(genreId);
+                    jsonArray2.add(genreObject);
+                }
+
             }
 
-            movieObject.add("stars", jsonArray1);
-            movieObject.add("genres", jsonArray2);
+            JsonArray sortedJsonArray1 = sortStarArray(jsonArray1);
+
+            // Convert the JSON objects to a list for sorting
+            JsonArray sortedJsonArray = sortGenreArray(jsonArray2);
+
+            movieObject.add("stars", sortedJsonArray1);
+            movieObject.add("genres", sortedJsonArray);
+
             rs.close();
             statement.close();
 
             return movieObject;
 
         }
+    }
+
+    private static JsonArray sortGenreArray(JsonArray jsonArray2) {
+        List<JsonObject> jsonObjectList = new ArrayList<>();
+        for (int i = 0; i < jsonArray2.size(); i++) {
+            jsonObjectList.add(jsonArray2.get(i).getAsJsonObject());
+        }
+
+        // Sort the list by "genre_name" in alphabetical order
+        Collections.sort(jsonObjectList, Comparator.comparing(obj -> obj.get("genre_name").getAsString()));
+
+        // Create a new JsonArray with sorted JSON objects
+        JsonArray sortedJsonArray = new JsonArray();
+        for (JsonObject jsonObject : jsonObjectList) {
+            sortedJsonArray.add(jsonObject);
+        }
+        return sortedJsonArray;
+    }
+
+    private static JsonArray sortStarArray(JsonArray jsonArray1) {
+        List<JsonObject> jsonObjectList = new ArrayList<>();
+        for (int i = 0; i < jsonArray1.size(); i++) {
+            jsonObjectList.add(jsonArray1.get(i).getAsJsonObject());
+        }
+
+        // Sort the list in decreasing order of "movie_count" and use alphabetical order
+        // for ties
+        Collections.sort(jsonObjectList, (obj1, obj2) -> {
+            int movieCount1 = obj2.get("movie_count").getAsInt();
+            int movieCount2 = obj1.get("movie_count").getAsInt(); // Reverse order
+            int nameComparison = obj1.get("star_name").getAsString().compareTo(obj2.get("star_name").getAsString());
+
+            if (movieCount1 != movieCount2) {
+                return movieCount1 - movieCount2;
+            }
+            return nameComparison;
+        });
+
+        // Create a new JsonArray with sorted JSON objects
+        JsonArray sortedJsonArray1 = new JsonArray();
+        for (JsonObject jsonObject : jsonObjectList) {
+            sortedJsonArray1.add(jsonObject);
+        }
+        return sortedJsonArray1;
     }
 
 }
