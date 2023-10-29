@@ -250,7 +250,15 @@ function handleMovieResult(resultData) {
 		rowHTML += '</th>'
 		// end: single star link set up
 
-		rowHTML += '<th>' + resultData[i]['rating'] + '</th>'
+		rowHTML += '<th>'
+
+		if (resultData[i]['rating'] === null) {
+			rowHTML += 'N/A'
+		} else {
+			rowHTML += resultData[i]['rating']
+		}
+
+		rowHTML += '</th>'
 		rowHTML +=
 			'<th><button class="btn btn-success add-to-cart" data-movie-title="' +
 			resultData[i]['title'] +

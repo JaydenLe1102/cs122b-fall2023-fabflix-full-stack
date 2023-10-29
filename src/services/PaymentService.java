@@ -45,7 +45,7 @@ public class PaymentService {
 						int quantitySold = Integer.parseInt(quantities.get(i));
 
 						// Call the recordSale method and capture the sale ID returned
-						int saleId = recordSale(connection, customerId, movieId);
+						int saleId = recordSale(connection, customerId, movieId, quantitySold);
 
 						if (saleId != -1) {
 							// Construct a JSON object for each sale
@@ -108,11 +108,16 @@ public class PaymentService {
 		}
 	}
 
-	private static int recordSale(Connection conn, String customerId, String movieId) {
-		String insertQuery = "INSERT INTO sales (customerId, movieId, saleDate) VALUES (?, ?, CURDATE())";
+	private static int recordSale(Connection conn, String customerId, String movieId, Integer quantitySold) {
+		String insertQuery = "INSERT INTO sales (customerId, movieId, saleDate, quantity) VALUES (?, ?, CURDATE(), ?)";
 		try (PreparedStatement statement = conn.prepareStatement(insertQuery, PreparedStatement.RETURN_GENERATED_KEYS)) {
 			statement.setString(1, customerId);
 			statement.setString(2, movieId);
+			statement.setInt(3, quantitySold);
+
+			System.out.println("Insert statement");
+			System.out.println(statement);
+
 			int affectedRows = statement.executeUpdate();
 
 			if (affectedRows == 0) {
