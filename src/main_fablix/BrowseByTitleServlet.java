@@ -1,3 +1,5 @@
+package main_fablix;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -9,7 +11,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import services.AllGenresService;
+import jakarta.servlet.http.HttpSession;
+import services.BrowseByTitleService;
+import services.MoviesService;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -18,8 +22,8 @@ import java.io.PrintWriter;
 import static utils.ServletUtils.checkLogin;
 
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
-@WebServlet(name = "AllGenresServlet", urlPatterns = "/api/genres")
-public class AllGenresServlet extends HttpServlet {
+@WebServlet(name = "main_fablix.BrowseByTitleServlet", urlPatterns = "/api/browse/title")
+public class BrowseByTitleServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // Create a dataSource which registered in web.
@@ -49,14 +53,29 @@ public class AllGenresServlet extends HttpServlet {
         // Get a connection from dataSource and let resource manager close the
         // connection after usage.
         try {
-            JsonArray jsonArray = AllGenresService.getAllGenres(dataSource);
+
+            String browse_title = request.getParameter("title");
+            Integer page_number = Integer.parseInt(request.getParameter("page_number"));
+            Integer page_size = Integer.parseInt(request.getParameter("page_size"));
+            Integer sort_option = Integer.parseInt(request.getParameter("sort_option"));
+
+            JsonArray jsonArray = BrowseByTitleService.getMovieListByTitle(dataSource, browse_title, page_number, page_size,
+                    sort_option);
 
             // Log to localhost log
             request.getServletContext().log("getting " + jsonArray.size() + " results");
 
-            // Write JSON string to output
+            HttpSession session = request.getSession(true);
+
+            session.setAttribute("page_number", page_number);
+            session.setAttribute("page_size", page_size);
+            session.setAttribute("sort_option", sort_option);
+            session.setAttribute("browse_title", browse_title);
+            session.setAttribute("isBrowsed", true);
+            session.setAttribute("isSearch", false);
+
             out.write(jsonArray.toString());
-            // Set response status to 200 (OK)
+
             response.setStatus(200);
 
         } catch (Exception e) {

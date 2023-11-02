@@ -1,3 +1,5 @@
+package main_fablix;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -10,7 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import services.SearchService;
+import services.BrowseByGenreService;
 import services.MoviesService;
 
 import javax.sql.DataSource;
@@ -20,8 +22,8 @@ import java.io.PrintWriter;
 import static utils.ServletUtils.checkLogin;
 
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
-@WebServlet(name = "SearchServlet", urlPatterns = "/api/search")
-public class SearchServlet extends HttpServlet {
+@WebServlet(name = "main_fablix.BrowseByGenreServlet", urlPatterns = "/api/browse/genre")
+public class BrowseByGenreServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // Create a dataSource which registered in web.
@@ -52,18 +54,14 @@ public class SearchServlet extends HttpServlet {
         // connection after usage.
         try {
 
-            String search_title = request.getParameter("title");
-            String search_year = request.getParameter("year");
-            String search_director = request.getParameter("director");
-            String search_star = request.getParameter("star");
+            String browse_genre = request.getParameter("genre");
             Integer page_number = Integer.parseInt(request.getParameter("page_number"));
             Integer page_size = Integer.parseInt(request.getParameter("page_size"));
             Integer sort_option = Integer.parseInt(request.getParameter("sort_option"));
 
-            JsonArray jsonArray = SearchService.getMovieListByTitleYearDirectorStar(dataSource, search_title, search_year,
-                    search_director, search_star, page_number, page_size, sort_option);
+            JsonArray jsonArray = BrowseByGenreService.getMovieListByGenre(dataSource, browse_genre, page_number, page_size,
+                    sort_option);
 
-            // Log to localhost log
             request.getServletContext().log("getting " + jsonArray.size() + " results");
 
             HttpSession session = request.getSession(true);
@@ -71,12 +69,9 @@ public class SearchServlet extends HttpServlet {
             session.setAttribute("page_number", page_number);
             session.setAttribute("page_size", page_size);
             session.setAttribute("sort_option", sort_option);
-            session.setAttribute("search_title", search_title);
-            session.setAttribute("search_year", search_year);
-            session.setAttribute("search_director", search_director);
-            session.setAttribute("search_star", search_star);
-            session.setAttribute("isSearch", true);
-            session.setAttribute("isBrowsed", false);
+            session.setAttribute("browse_genre", browse_genre);
+            session.setAttribute("isBrowsed", true);
+            session.setAttribute("isSearch", false);
 
             // Write JSON string to output
             out.write(jsonArray.toString());

@@ -1,3 +1,5 @@
+package main_fablix;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -22,7 +24,7 @@ import java.io.PrintWriter;
 import static utils.ServletUtils.checkLogin;
 
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
-@WebServlet(name = "MovieListSessionServlet", urlPatterns = "/api/movielist")
+@WebServlet(name = "main_fablix.MovieListSessionServlet", urlPatterns = "/api/movielist")
 public class MovieListSessionServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

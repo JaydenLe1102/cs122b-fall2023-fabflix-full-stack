@@ -1,3 +1,5 @@
+package main_fablix;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -21,8 +23,8 @@ import java.sql.ResultSet;
 
 import static utils.ServletUtils.checkLogin;
 
-// Declaring a WebServlet called SingleMovieServlet, which maps to url "/api/single-movie"
-@WebServlet(name = "PaymentServlet", urlPatterns = "/api/payment")
+// Declaring a WebServlet called main_fablix.SingleMovieServlet, which maps to url "/api/single-movie"
+@WebServlet(name = "main_fablix.PaymentServlet", urlPatterns = "/api/payment")
 public class PaymentServlet extends HttpServlet {
     private static final long serialVersionUID = 2L;
     private DataSource dataSource;

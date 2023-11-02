@@ -1,3 +1,5 @@
+package main_fablix;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -14,10 +16,10 @@ import java.util.Date;
 import static utils.ServletUtils.checkLogin;
 
 /**
- * This IndexServlet is declared in the web annotation below,
+ * This main_fablix.IndexServlet is declared in the web annotation below,
  * which is mapped to the URL pattern /api/index.
  */
-@WebServlet(name = "IndexServlet", urlPatterns = "/api/index")
+@WebServlet(name = "main_fablix.IndexServlet", urlPatterns = "/api/index")
 public class IndexServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

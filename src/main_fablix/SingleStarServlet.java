@@ -1,3 +1,5 @@
+package main_fablix;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -9,29 +11,28 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import services.MoviesService;
+import services.SingleStarService;
 
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 import static utils.ServletUtils.checkLogin;
 
-// Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
-@WebServlet(name = "MoviesServlet", urlPatterns = "/api/movies")
-public class MoviesServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+// Declaring a WebServlet called main_fablix.SingleStarServlet, which maps to url "/api/single-star"
+@WebServlet(name = "main_fablix.SingleStarServlet", urlPatterns = "/api/single-star")
+public class SingleStarServlet extends HttpServlet {
+    private static final long serialVersionUID = 2L;
 
-    // Create a dataSource which registered in web.
+    // Create a dataSource which registered in web.xml
     private DataSource dataSource;
 
     public void init(ServletConfig config) {
         try {
             dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
-
         } catch (NamingException e) {
             e.printStackTrace();
         }
@@ -43,31 +44,38 @@ public class MoviesServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         checkLogin(request, response);
+
         response.setContentType("application/json"); // Response mime type
+
+        // Retrieve parameter id from url request.
+        String id = request.getParameter("id");
+
+        // The log message can be found in localhost log
+        request.getServletContext().log("getting id: " + id);
 
         // Output stream to STDOUT
         PrintWriter out = response.getWriter();
 
         // Get a connection from dataSource and let resource manager close the
         // connection after usage.
-        try {
-            JsonArray jsonArray = MoviesService.getMoviesArray(dataSource);
+        try (Connection conn = dataSource.getConnection()) {
+            // Get a connection from dataSource
 
-            // Log to localhost log
-            request.getServletContext().log("getting " + jsonArray.size() + " results");
+            JsonObject starObject = SingleStarService.getSingleStarById(dataSource, id);
 
             // Write JSON string to output
-            out.write(jsonArray.toString());
+            out.write(starObject.toString());
             // Set response status to 200 (OK)
             response.setStatus(200);
 
         } catch (Exception e) {
-
             // Write error message JSON object to output
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("errorMessage", e.getMessage());
             out.write(jsonObject.toString());
 
+            // Log error to localhost log
+            request.getServletContext().log("Error:", e);
             // Set response status to 500 (Internal Server Error)
             response.setStatus(500);
         } finally {
@@ -78,4 +86,5 @@ public class MoviesServlet extends HttpServlet {
         // try-with-resources
 
     }
+
 }
