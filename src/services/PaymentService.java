@@ -2,6 +2,8 @@ package services;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+
+import constant.SQLStatements;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -87,13 +89,13 @@ public class PaymentService {
 
 	private static boolean validateCreditCardDetails(Connection conn, String ccId, String firstName, String lastName,
 			String expiration) {
-		String query = "SELECT * FROM creditcards WHERE id = ? AND firstName = ? AND lastName = ? AND expiration = ?";
 
 		System.out.println(ccId);
 		System.out.println(firstName);
 		System.out.println(lastName);
 		System.out.println(expiration);
-		try (PreparedStatement statement = conn.prepareStatement(query)) {
+
+		try (PreparedStatement statement = conn.prepareStatement(SQLStatements.VALIDATE_CREDITCARDS)) {
 			statement.setString(1, ccId);
 			statement.setString(2, firstName);
 			statement.setString(3, lastName);
@@ -109,8 +111,9 @@ public class PaymentService {
 	}
 
 	private static int recordSale(Connection conn, String customerId, String movieId, Integer quantitySold) {
-		String insertQuery = "INSERT INTO sales (customerId, movieId, saleDate, quantity) VALUES (?, ?, CURDATE(), ?)";
-		try (PreparedStatement statement = conn.prepareStatement(insertQuery, PreparedStatement.RETURN_GENERATED_KEYS)) {
+
+		try (PreparedStatement statement = conn.prepareStatement(SQLStatements.INSERT_NEW_SALES,
+				PreparedStatement.RETURN_GENERATED_KEYS)) {
 			statement.setString(1, customerId);
 			statement.setString(2, movieId);
 			statement.setInt(3, quantitySold);
