@@ -1,9 +1,6 @@
-import com.google.gson.JsonArray;
+package employee_dashboard;
+
 import com.google.gson.JsonObject;
-
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,16 +8,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import services.LoginFormService;
-import services.MoviesService;
 import utils.RecaptchaVerifyUtils;
 
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
-@WebServlet(name = "LoginFormServlet", urlPatterns = "/api/login")
-public class LoginFormServlet extends HttpServlet {
+@WebServlet(name = "dashboard.DashboardLoginFormServlet", urlPatterns = "/_dashboard/api/login")
+public class DashboardLoginFormServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // Create a dataSource which registered in web.
