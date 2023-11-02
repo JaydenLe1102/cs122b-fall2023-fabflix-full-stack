@@ -89,7 +89,7 @@ public class LoginFormServlet extends HttpServlet {
         try {
             RecaptchaVerifyUtils.verify(gRecaptchaResponse);
         } catch (Exception e) {
-            
+
             System.out.println("Got recaptcha error: " + e);
 
             JsonObject responseJsonObject = new JsonObject();
@@ -117,7 +117,7 @@ public class LoginFormServlet extends HttpServlet {
             Integer sessionCustomerId = (Integer) session.getAttribute("customerId");
 
             if (sessionCustomerId == null) {
-                Integer customerId = LoginFormService.validateEmailPassword(dataSource, email, password);
+                Integer customerId = LoginFormService.verifyCredentials(email, password, dataSource);
 
                 System.out.println("customer: " + customerId);
 
