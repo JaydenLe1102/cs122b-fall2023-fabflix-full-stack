@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<link rel="stylesheet" href="style.css" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous"
+		/>
+
+		<title>Database Metadata</title>
+		<style>
+			table {
+				border-collapse: collapse;
+				width: 80%;
+				margin: 20px;
+			}
+
+			table,
+			th,
+			td {
+				border: 1px solid black;
+			}
+
+			th,
+			td {
+				padding: 8px;
+				text-align: left;
+			}
+			.table-container {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--nav bar start-->
+
+		<nav
+			class="navbar navbar-expand-lg bg-body-tertiary"
+			style="background-color: rgb(160, 218, 241)"
+		>
+			<div class="container-fluid">
+				<a class="navbar-brand" href="../main-page.html">
+					<img
+						src="../public/Fablix_logo.png"
+						alt="Fablix logo"
+						style="height: 75px"
+					/>
+				</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								aria-current="page"
+								href="./metadata.html"
+								style="color: black"
+								><h3>Dashboard</h3></a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								aria-current="page"
+								href="../main-page.html"
+								style="color: black"
+								><h4>Home</h4></a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								aria-current="page"
+								href="./addMovie.html"
+								style="color: black"
+								><h4>Add A Movie</h4></a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								aria-current="page"
+								href="./addStar.html"
+								style="color: black"
+								><h4>Add A Star</h4></a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								aria-current="page"
+								href="../main-page.html"
+								style="color: black"
+								><h4>Browsing Movies</h4></a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!--nav bar end-->
+
+		<div id="metadata-container" style="padding: 20px"></div>
+
+		<!-- Load jQuery and Bootstrap JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<!-- Load our JS file -->
+		<script src="metadata.js"></script>
+	</body>
+</html>

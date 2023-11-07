@@ -2,6 +2,8 @@ package constant;
 
 public class SQLStatements {
 
+    // main_fablix package
+
     // MoviesService
     public static final String TOP20MOVIES = "SELECT\n" +
             "    id,\n" +
@@ -105,4 +107,9 @@ public class SQLStatements {
     public static final String VALIDATE_CREDITCARDS = "SELECT * FROM creditcards WHERE id = ? AND firstName = ? AND lastName = ? AND expiration = ?";
     public static final String INSERT_NEW_SALES = "INSERT INTO sales (customerId, movieId, saleDate, quantity) VALUES (?, ?, CURDATE(), ?)";
 
+    // employee_dashboard package
+    public static final String GET_MOVIEDB_METADATA = "SELECT table_name as table_name, column_name as column_name, data_type as data_type\n" +
+            "FROM information_schema.columns\n" +
+            "WHERE table_schema = 'moviedb'" +
+            "ORDER BY table_name, ordinal_position;";
 }

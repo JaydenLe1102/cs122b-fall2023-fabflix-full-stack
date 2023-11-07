@@ -10,7 +10,7 @@ function handleResult(resultData) {
         console.log("Current Root: " + currentRoot);
         alert('Login Success')
 		
-        window.location.replace('./main-page.html')
+        window.location.replace('./metadata.html')
     } else {
         if (resultData['reason'] === 'email') {
             alert('Email does not exist')

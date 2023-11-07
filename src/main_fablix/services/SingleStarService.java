@@ -1,4 +1,4 @@
-package services;
+package main_fablix.services;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -12,7 +12,7 @@ import constant.SQLStatements;
 
 public class SingleStarService {
 
-    public static JsonObject getSingleStarById (DataSource dataSource, String id) throws  Exception{
+    public static JsonObject getSingleStarById(DataSource dataSource, String id) throws Exception {
 
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource

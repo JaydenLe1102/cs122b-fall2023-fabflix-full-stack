@@ -1,4 +1,4 @@
-package services;
+package main_fablix.services;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -7,7 +7,6 @@ import constant.SQLStatements;
 import javax.sql.DataSource;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 

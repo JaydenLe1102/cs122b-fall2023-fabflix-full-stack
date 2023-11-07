@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import services.LoginFormService;
+import main_fablix.services.LoginFormService;
 import utils.RecaptchaVerifyUtils;
 
 import javax.naming.InitialContext;
