@@ -1,6 +1,5 @@
 package main_fablix;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import javax.naming.InitialContext;
@@ -12,8 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import services.LoginFormService;
-import services.MoviesService;
+import main_fablix.services.LoginFormService;
 import utils.RecaptchaVerifyUtils;
 
 import javax.sql.DataSource;

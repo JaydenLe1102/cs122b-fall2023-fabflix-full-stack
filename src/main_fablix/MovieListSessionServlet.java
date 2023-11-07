@@ -1,6 +1,5 @@
 package main_fablix;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import javax.naming.InitialContext;
@@ -12,10 +11,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import services.BrowseByGenreService;
-import services.BrowseByTitleService;
-import services.MoviesService;
-import services.SearchService;
 
 import javax.sql.DataSource;
 import java.io.IOException;
