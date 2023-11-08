@@ -32,10 +32,10 @@ public class UpdateSecurePasswordEmployee {
 		Connection connection = DriverManager.getConnection(loginUrl, loginUser, loginPasswd);
 		Statement statement = connection.createStatement();
 
-		// change the customers table password column from VARCHAR(20) to VARCHAR(128)
+		// change the employees table password column from VARCHAR(20) to VARCHAR(128)
 		String alterQuery = "ALTER TABLE employees MODIFY COLUMN password VARCHAR(128)";
 		int alterResult = statement.executeUpdate(alterQuery);
-		System.out.println("altering customers table schema completed, " + alterResult + " rows affected");
+		System.out.println("altering employees table schema completed, " + alterResult + " rows affected");
 
 		// get the email and password for each customer
 		String query = "SELECT email, password from employees";
@@ -60,12 +60,13 @@ public class UpdateSecurePasswordEmployee {
 			String encryptedPassword = passwordEncryptor.encryptPassword(password);
 
 			// generate the update query
-			String updateQuery = String.format("UPDATE customers SET password='%s' WHERE email=%s;", encryptedPassword,
+			String updateQuery = String.format("UPDATE employees SET password='%s' WHERE email='%s';", encryptedPassword,
 					email);
 			updateQueryList.add(updateQuery);
 		}
 		rs.close();
 
+		System.out.println(updateQueryList);
 		// execute the update queries to update the password
 		System.out.println("updating password");
 		int count = 0;

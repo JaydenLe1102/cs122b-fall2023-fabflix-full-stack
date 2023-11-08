@@ -1,13 +1,20 @@
 function handleAddMovie(resultData) {
-	console.log(resultData)
+	console.log('add movie result: ' + JSON.stringify(resultData, null, 2))
 
 	if (resultData['success'] === true) {
 		alert('Add Movie Success')
-		document.getElementById('starName').value = ''
-		document.getElementById('birthYear').value = ''
 	} else {
 		alert('Add Movie Failed')
 	}
+
+	// Clear all form fields
+
+	document.getElementById('movieTitle').value = ''
+	document.getElementById('year').value = ''
+	document.getElementById('director').value = ''
+	document.getElementById('starName').value = ''
+	document.getElementById('birthYear').value = ''
+	document.getElementById('genreName').value = ''
 }
 
 function registerSubmitEvent() {
@@ -45,6 +52,15 @@ function registerSubmitEvent() {
 					genreName,
 				},
 				success: (resultData) => handleAddMovie(resultData),
+				error: function (jqXHR, textStatus, errorThrown) {
+					console.log('Status Code:', jqXHR.status)
+					console.log('Status Text:', jqXHR.statusText)
+
+					if (jqXHR.responseJSON) {
+						console.log('Error JSON:', jqXHR.responseJSON)
+						handleAddMovie(jqXHR.responseJSON)
+					}
+				},
 			})
 		})
 }
