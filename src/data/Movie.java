@@ -6,18 +6,16 @@ public class Movie {
     private String title;
     private int year;
     private String director;
-    private String genre;
 
     public Movie() {
 
     }
 
-    public Movie(String id, String title, int year, String director, String genre) {
+    public Movie(String id, String title, int year, String director) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.director = director;
-        this.genre = genre;
     }
 
     // Getters and Setters for Movie fields
@@ -53,17 +51,8 @@ public class Movie {
         this.director = director;
     }
 
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
     public String toString() {
         return "Movie Details - Id: " + getId() + ", Title: " + getTitle() +
-                ", Year: " + getYear() + ", Director: " + getDirector() +
-                ", Genre: " + getGenre();
+                ", Year: " + getYear() + ", Director: " + getDirector();
     }
 }
