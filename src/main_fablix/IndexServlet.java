@@ -22,7 +22,9 @@ import static utils.ServletUtils.checkLogin;
 public class IndexServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		checkLogin(request, response);
+		if (!checkLogin(request, response)) {
+			return;
+		}
 
 		HttpSession session = request.getSession();
 		JsonObject responseJsonObject = new JsonObject();
@@ -48,7 +50,9 @@ public class IndexServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		checkLogin(request, response);
+		if (!checkLogin(request, response)) {
+			return;
+		}
 
 		String item = request.getParameter("item");
 		String quantityStr = request.getParameter("quantity");
@@ -106,7 +110,9 @@ public class IndexServlet extends HttpServlet {
 	 * handles DELETE requests to remove an item from the session
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		checkLogin(request, response);
+		if (!checkLogin(request, response)) {
+			return;
+		}
 
 		String item = request.getParameter("item");
 		HttpSession session = request.getSession();

@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import employee_dashboard.services.AddStarService;
 import employee_dashboard.services.MetaDataService;
 
 import javax.sql.DataSource;
@@ -20,8 +21,8 @@ import java.io.PrintWriter;
 import static utils.ServletUtils.checkLogin;
 
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
-@WebServlet(name = "MetaDataServlet", urlPatterns = "/_dashboard/api/metadata")
-public class MetaDataServlet extends HttpServlet {
+@WebServlet(name = "AddStarServlet", urlPatterns = "/_dashboard/api/addStar")
+public class AddStarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	// Create a dataSource which registered in web.
@@ -37,10 +38,11 @@ public class MetaDataServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
 		if (!checkLogin(request, response)) {
 			return;
 		}
@@ -48,14 +50,25 @@ public class MetaDataServlet extends HttpServlet {
 		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 
+		String name = request.getParameter("name");
+		String birthYear = request.getParameter("birthYear");
+
 		try {
-			JsonArray jsonArray = MetaDataService.getMetaData(dataSource);
+			int result = AddStarService.addStar(dataSource, name, birthYear);
 
-			request.getServletContext().log("getting " + jsonArray.size() + " results");
-
-			out.write(jsonArray.toString());
-			response.setStatus(200);
-
+			if (result == 0) {
+				JsonObject jsonObject = new JsonObject();
+				jsonObject.addProperty("success", true);
+				jsonObject.addProperty("message", "Successfully added star " + name);
+				out.write(jsonObject.toString());
+				response.setStatus(201);
+			} else {
+				JsonObject jsonObject = new JsonObject();
+				jsonObject.addProperty("success", false);
+				jsonObject.addProperty("errorMessage", "Failed to add star " + name);
+				out.write(jsonObject.toString());
+				response.setStatus(202);
+			}
 		} catch (Exception e) {
 
 			JsonObject jsonObject = new JsonObject();
