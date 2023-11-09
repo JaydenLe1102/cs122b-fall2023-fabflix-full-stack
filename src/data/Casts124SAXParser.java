@@ -75,6 +75,6 @@ public class Casts124SAXParser extends DefaultHandler {
         List<StarsInMovie> starsInMovies = parser.getStarsInMovies();
 
         DatabaseHandler databaseHandler = new DatabaseHandler();
-        databaseHandler.insertStarsInMovies(starsInMovies);
+        databaseHandler.insertStarsInMoviesBatch(starsInMovies);
     }
 }

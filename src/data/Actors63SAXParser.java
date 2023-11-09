@@ -113,7 +113,7 @@ public class Actors63SAXParser extends DefaultHandler {
         List<Star> stars = parser.stars;
 
         DatabaseHandler databaseHandler = new DatabaseHandler();
-        databaseHandler.insertStars(stars);
+        databaseHandler.insertStarsBatch(stars);
     }
 }
 

@@ -177,8 +177,8 @@ public class Mains243SAXParser extends DefaultHandler {
         List<GenresInMovie> genresInMovies = parser.getGenresInMovies();
 
         DatabaseHandler databaseHandler = new DatabaseHandler();
-        databaseHandler.insertMovies(movies);
-        databaseHandler.insertGenres(genres);
-        databaseHandler.insertGenresInMovies(genresInMovies);
+        databaseHandler.insertMoviesBatch(movies);
+        databaseHandler.insertGenresBatch(genres);
+        databaseHandler.insertGenresInMoviesBatch(genresInMovies);
     }
 }
