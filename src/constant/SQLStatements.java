@@ -65,17 +65,17 @@ public class SQLStatements {
             "FROM movies as m\n" +
             "INNER JOIN genres_in_movies as gim ON m.id = gim.movieId\n" +
             "INNER JOIN genres g ON gim.genreId = g.id\n" +
-            "JOIN ratings AS r ON m.id = r.movieId\n" +
+            "LEFT JOIN ratings AS r ON m.id = r.movieId\n" +
             "WHERE LOWER(g.name) = LOWER(?)\n";
 
     public static final String BROWSE_BY_TITLE_NON_ALPHANUMERIC = "SELECT *\n" +
             "FROM movies AS m\n" +
-            "JOIN ratings AS r ON m.id = r.movieId\n" +
+            "LEFT JOIN ratings AS r ON m.id = r.movieId\n" +
             "WHERE title REGEXP '^[^a-zA-Z0-9]'\n";
 
     public static final String BROWSE_BY_TITLE_ALPHANUMERIC = "SELECT *\n" +
             "FROM movies AS m\n" +
-            "JOIN ratings AS r ON m.id = r.movieId\n" +
+            "LEFT JOIN ratings AS r ON m.id = r.movieId\n" +
             "WHERE LOWER(title) LIKE ?\n";
 
     public static final String ALL_GENRES = "SELECT name FROM genres;";
