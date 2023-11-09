@@ -36,9 +36,14 @@ public class SQLStatements {
     // end: MoviesService
 
     // SingleMovieService
-    public static final String SINGLEMOVIEBYMOVIEID = "SELECT m.id, m.title, m.year, m.director, s.id, s.name, s.birthYear, g.id, g.name, r.rating from stars as s, stars_in_movies as sim, movies as m, genres as g, genres_in_movies as gim, ratings as r "
-            +
-            "where g.id = gim.genreId and gim.movieId = m.id and m.id = sim.movieId and sim.starId = s.id and r.movieId = m.id and m.id = ?";
+    public static final String SINGLEMOVIEBYMOVIEID = "SELECT m.id, m.title, m.year, m.director, s.id, s.name, s.birthYear, g.id, g.name, r.rating \n" +
+            "FROM movies AS m\n" +
+            "JOIN stars_in_movies AS sim ON m.id = sim.movieId\n" +
+            "JOIN stars AS s ON sim.starId = s.id\n" +
+            "JOIN genres_in_movies AS gim ON m.id = gim.movieId\n" +
+            "JOIN genres AS g ON gim.genreId = g.id\n" +
+            "LEFT JOIN ratings AS r ON m.id = r.movieId\n" +
+            "WHERE m.id = ?;";
 
     // end: SingleMovieService
 
