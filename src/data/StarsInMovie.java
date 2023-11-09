@@ -2,25 +2,25 @@ package data;
 
 import java.util.*;
 public class StarsInMovie {
-    private String starId;
+    private String starName;
     private String movieId;
 
     public StarsInMovie() {
 
     }
 
-    public StarsInMovie(String starId, String movieId) {
-        this.starId = starId;
+    public StarsInMovie(String starName, String movieId) {
+        this.starName = starName;
         this.movieId = movieId;
     }
 
     // Getters and Setters for StarsInMovies fields
-    public String getStarId() {
-        return starId;
+    public String getStarName() {
+        return starName;
     }
 
-    public void setStarId(String starId) {
-        this.starId = starId;
+    public void setStarName(String starName) {
+        this.starName = starName;
     }
 
     public String getMovieId() {
@@ -32,6 +32,6 @@ public class StarsInMovie {
     }
 
     public String toString() {
-        return "StarsInMovie - Star ID: " + getStarId() + ", Movie ID: " + getMovieId();
+        return "StarsInMovie - Star Name: " + getStarName() + ", Movie ID: " + getMovieId();
     }
 }

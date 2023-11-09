@@ -1,8 +1,10 @@
 package data;
 
+import com.google.protobuf.NullValue;
+
 import java.util.*;
 public class Star {
-    private int id;
+    private String id;
     private String name;
     private int birthYear;
 
@@ -10,18 +12,23 @@ public class Star {
 
     }
 
-    public Star(int id, String name, int birthYear) {
+    public Star(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Star(String id, String name, int birthYear) {
         this.id = id;
         this.name = name;
         this.birthYear = birthYear;
     }
 
     // Getters and Setters for Star fields
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
