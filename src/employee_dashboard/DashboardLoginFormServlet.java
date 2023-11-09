@@ -1,6 +1,8 @@
 package employee_dashboard;
 
 import com.google.gson.JsonObject;
+
+import employee_dashboard.services.DashboardLoginFormService;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -45,22 +47,22 @@ public class DashboardLoginFormServlet extends HttpServlet {
 			response.setContentType("application/json"); // Response mime type
 			PrintWriter out = response.getWriter();
 			HttpSession session = request.getSession(true);
-			Integer sessionCustomerId = (Integer) session.getAttribute("customerId");
+			String sessionEmployeeEmail = (String) session.getAttribute("employeeEmail");
 
-			if (sessionCustomerId != null) {
+			if (sessionEmployeeEmail != null) {
 				JsonObject responseJsonObject = new JsonObject();
 
 				responseJsonObject.addProperty("isLoggedIn", true);
-				responseJsonObject.addProperty("customerId", sessionCustomerId);
-				responseJsonObject.addProperty("message", "Customer Already Login");
+				responseJsonObject.addProperty("employeeEmail", sessionEmployeeEmail);
+				responseJsonObject.addProperty("message", "Employee Already Login");
 				out.println(responseJsonObject.toString());
 				response.setStatus(200);
 			} else {
 				JsonObject responseJsonObject = new JsonObject();
 
 				responseJsonObject.addProperty("isLoggedIn", false);
-				responseJsonObject.addProperty("customerId", (Integer) null);
-				responseJsonObject.addProperty("message", "Customer not logged in");
+				responseJsonObject.addProperty("employeeEmail", (String) null);
+				responseJsonObject.addProperty("message", "Employee not logged in");
 				out.println(responseJsonObject.toString());
 				response.setStatus(200);
 			}
@@ -92,7 +94,7 @@ public class DashboardLoginFormServlet extends HttpServlet {
 			JsonObject responseJsonObject = new JsonObject();
 
 			responseJsonObject.addProperty("success", false);
-			responseJsonObject.addProperty("customerId", (String) null);
+			responseJsonObject.addProperty("employeeEmail", (String) null);
 			responseJsonObject.addProperty("reason", "recaptcha verification error");
 			responseJsonObject.addProperty("message", "Got error: " + e);
 			out.println(responseJsonObject.toString());
@@ -110,32 +112,32 @@ public class DashboardLoginFormServlet extends HttpServlet {
 
 		try {
 			HttpSession session = request.getSession(true);
-			Integer sessionCustomerId = (Integer) session.getAttribute("customerId");
+			String sessionEmployeeEmail = (String) session.getAttribute("employeeEmail");
 
-			if (sessionCustomerId == null) {
-				Integer customerId = LoginFormService.verifyCredentials(email, password, dataSource);
+			if (sessionEmployeeEmail == null) {
+				String employeeEmail = DashboardLoginFormService.verifyCredentials(email, password, dataSource);
 
-				System.out.println("customer: " + customerId);
+				System.out.println("employeeEmail: " + employeeEmail);
 
-				if (customerId == -1) {
+				if ("-1".equals(employeeEmail)) {
 					// invalid login
 					// for now just print out
 					System.out.println("Invalid email");
 					JsonObject responseJsonObject = new JsonObject();
 
 					responseJsonObject.addProperty("success", false);
-					responseJsonObject.addProperty("customerId", (Number) null);
+					responseJsonObject.addProperty("employeeEmail", (Number) null);
 					responseJsonObject.addProperty("reason", "email");
 					responseJsonObject.addProperty("message", "Email does not exist");
 					out.println(responseJsonObject.toString());
 					response.setStatus(401);
 
-				} else if (customerId == -2) {
+				} else if ("-2".equals(employeeEmail)) {
 					System.out.println("Invalid Password");
 					JsonObject responseJsonObject = new JsonObject();
 
 					responseJsonObject.addProperty("success", false);
-					responseJsonObject.addProperty("customerId", (Number) null);
+					responseJsonObject.addProperty("employeeEmail", (Number) null);
 					responseJsonObject.addProperty("reason", "password");
 					responseJsonObject.addProperty("message", "Password does not exist");
 					out.println(responseJsonObject.toString());
@@ -146,23 +148,24 @@ public class DashboardLoginFormServlet extends HttpServlet {
 					JsonObject responseJsonObject = new JsonObject();
 
 					responseJsonObject.addProperty("success", true);
-					responseJsonObject.addProperty("customerId", customerId);
+					responseJsonObject.addProperty("employeeEmail", employeeEmail);
 					responseJsonObject.addProperty("message", "Sucessfully Login");
 					out.println(responseJsonObject.toString());
 					response.setStatus(200);
-					session.setAttribute("customerId", customerId);
+					session.setAttribute("employeeEmail", employeeEmail);
+					session.setAttribute("customerId", -999);
 
 				}
 
 			} else {
 				// already login
 				// for now just print out
-				System.out.println("Customer already login");
+				System.out.println("Employee already login");
 
 				JsonObject responseJsonObject = new JsonObject();
 
 				responseJsonObject.addProperty("success", false);
-				responseJsonObject.addProperty("customerId", (Number) null);
+				responseJsonObject.addProperty("employeeEmail", (String) null);
 				responseJsonObject.addProperty("reason", "already");
 				responseJsonObject.addProperty("message", "User Already Login");
 				out.println(responseJsonObject.toString());
@@ -177,7 +180,7 @@ public class DashboardLoginFormServlet extends HttpServlet {
 			JsonObject responseJsonObject = new JsonObject();
 
 			responseJsonObject.addProperty("success", false);
-			responseJsonObject.addProperty("customerId", (String) null);
+			responseJsonObject.addProperty("employeeEmail", (String) null);
 			responseJsonObject.addProperty("reason", "error");
 			responseJsonObject.addProperty("message", "Got error: " + e);
 			out.println(responseJsonObject.toString());

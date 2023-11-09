@@ -40,7 +40,9 @@ public class SingleMovieServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		checkLogin(request, response);
+		if (!checkLogin(request, response)) {
+			return;
+		}
 
 		response.setContentType("application/json"); // Response mime type
 

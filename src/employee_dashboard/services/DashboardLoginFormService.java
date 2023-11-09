@@ -1,22 +1,23 @@
-package main_fablix.services;
+package employee_dashboard.services;
 
-import constant.SQLStatements;
-import org.jasypt.util.password.StrongPasswordEncryptor;
-
-import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginFormService {
+import javax.sql.DataSource;
 
-	public static Integer verifyCredentials(String email, String password, DataSource dataSource) throws Exception {
+import constant.SQLStatements;
+import org.jasypt.util.password.StrongPasswordEncryptor;
 
-		int re = 0;
+public class DashboardLoginFormService {
+
+	public static String verifyCredentials(String email, String password, DataSource dataSource) throws Exception {
+
+		String re;
 
 		try (Connection conn = dataSource.getConnection()) {
-			try (PreparedStatement statement = conn.prepareStatement(SQLStatements.VALIDATE_EMAIL_PASSWORD)) {
+			try (PreparedStatement statement = conn.prepareStatement(SQLStatements.VALIDATE_EMPLOYEE_EMAIL_PASSWORD)) {
 				statement.setString(1, email);
 				try (ResultSet rs = statement.executeQuery()) {
 					boolean success = false;
@@ -32,18 +33,18 @@ public class LoginFormService {
 
 						if (!success) {
 							// return -2 if password is wrong
-							re = -2;
+							re = "-2";
 						} else {
 							System.out.println("verify " + email + " - " + password);
 
-							Integer customerId = rs.getInt("id");
+							String employeeEmail = rs.getString("email");
 
-							re = customerId;
+							re = employeeEmail;
 						}
 
 					} else {
 						// return -1 if no email exist
-						re = -1;
+						re = "-1";
 					}
 				}
 			}
