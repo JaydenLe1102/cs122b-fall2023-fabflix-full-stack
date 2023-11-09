@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import static utils.ServletUtils.checkLogin;
+import static utils.ServletUtils.checkLoginEmployee;
 
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
 @WebServlet(name = "AddStarServlet", urlPatterns = "/_dashboard/api/addStar")
@@ -43,7 +43,7 @@ public class AddStarServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		if (!checkLogin(request, response)) {
+		if (!checkLoginEmployee(request, response)) {
 			return;
 		}
 

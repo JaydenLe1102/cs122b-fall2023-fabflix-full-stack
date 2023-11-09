@@ -1,6 +1,8 @@
 package employee_dashboard;
 
 import com.google.gson.JsonObject;
+
+import employee_dashboard.services.DashboardLoginFormService;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,172 +21,173 @@ import java.io.PrintWriter;
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
 @WebServlet(name = "dashboard.DashboardLoginFormServlet", urlPatterns = "/_dashboard/api/login")
 public class DashboardLoginFormServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	// Create a dataSource which registered in web.
-	private DataSource dataSource;
+    // Create a dataSource which registered in web.
+    private DataSource dataSource;
 
-	public void init(ServletConfig config) {
-		try {
-			dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
+    public void init(ServletConfig config) {
+        try {
+            dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
 
-		} catch (NamingException e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		// return if user is logged in
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        // return if user is logged in
 
-		try {
-			response.setContentType("application/json"); // Response mime type
-			PrintWriter out = response.getWriter();
-			HttpSession session = request.getSession(true);
-			Integer sessionCustomerId = (Integer) session.getAttribute("customerId");
+        try {
+            response.setContentType("application/json"); // Response mime type
+            PrintWriter out = response.getWriter();
+            HttpSession session = request.getSession(true);
+            String sessionEmployeeEmail = (String) session.getAttribute("employeeEmail");
 
-			if (sessionCustomerId != null) {
-				JsonObject responseJsonObject = new JsonObject();
+            if (sessionEmployeeEmail != null) {
+                JsonObject responseJsonObject = new JsonObject();
 
-				responseJsonObject.addProperty("isLoggedIn", true);
-				responseJsonObject.addProperty("customerId", sessionCustomerId);
-				responseJsonObject.addProperty("message", "Customer Already Login");
-				out.println(responseJsonObject.toString());
-				response.setStatus(200);
-			} else {
-				JsonObject responseJsonObject = new JsonObject();
+                responseJsonObject.addProperty("isLoggedIn", true);
+                responseJsonObject.addProperty("employeeEmail", sessionEmployeeEmail);
+                responseJsonObject.addProperty("message", "Employee Already Login");
+                out.println(responseJsonObject.toString());
+                response.setStatus(200);
+            } else {
+                JsonObject responseJsonObject = new JsonObject();
 
-				responseJsonObject.addProperty("isLoggedIn", false);
-				responseJsonObject.addProperty("customerId", (Integer) null);
-				responseJsonObject.addProperty("message", "Customer not logged in");
-				out.println(responseJsonObject.toString());
-				response.setStatus(200);
-			}
-		} catch (Exception e) {
-			System.out.println("Got error: " + e);
-			response.setStatus(500);
-		}
-	}
+                responseJsonObject.addProperty("isLoggedIn", false);
+                responseJsonObject.addProperty("employeeEmail", (String) null);
+                responseJsonObject.addProperty("message", "Employee not logged in");
+                out.println(responseJsonObject.toString());
+                response.setStatus(200);
+            }
+        } catch (Exception e) {
+            System.out.println("Got error: " + e);
+            response.setStatus(500);
+        }
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		response.setContentType("application/json"); // Response mime type
-		String gRecaptchaResponse = request.getParameter("reCaptchaToken");
-		System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
+        response.setContentType("application/json"); // Response mime type
+        String gRecaptchaResponse = request.getParameter("reCaptchaToken");
+        System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
 
-		PrintWriter out = response.getWriter();
+        PrintWriter out = response.getWriter();
 
-		// Verify reCAPTCHA
-		try {
-			RecaptchaVerifyUtils.verify(gRecaptchaResponse);
-		} catch (Exception e) {
+        // Verify reCAPTCHA
+        try {
+            RecaptchaVerifyUtils.verify(gRecaptchaResponse);
+        } catch (Exception e) {
 
-			System.out.println("Got recaptcha error: " + e);
+            System.out.println("Got recaptcha error: " + e);
 
-			JsonObject responseJsonObject = new JsonObject();
+            JsonObject responseJsonObject = new JsonObject();
 
-			responseJsonObject.addProperty("success", false);
-			responseJsonObject.addProperty("customerId", (String) null);
-			responseJsonObject.addProperty("reason", "recaptcha verification error");
-			responseJsonObject.addProperty("message", "Got error: " + e);
-			out.println(responseJsonObject.toString());
-			response.setStatus(498);
+            responseJsonObject.addProperty("success", false);
+            responseJsonObject.addProperty("employeeEmail", (String) null);
+            responseJsonObject.addProperty("reason", "recaptcha verification error");
+            responseJsonObject.addProperty("message", "Got error: " + e);
+            out.println(responseJsonObject.toString());
+            response.setStatus(498);
 
-			out.close();
-			return;
-		}
+            out.close();
+            return;
+        }
 
-		// get email and password
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+        // get email and password
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
 
-		// check if username and password are valid from mysql
+        // check if username and password are valid from mysql
 
-		try {
-			HttpSession session = request.getSession(true);
-			Integer sessionCustomerId = (Integer) session.getAttribute("customerId");
+        try {
+            HttpSession session = request.getSession(true);
+            String sessionEmployeeEmail = (String) session.getAttribute("employeeEmail");
 
-			if (sessionCustomerId == null) {
-				Integer customerId = LoginFormService.verifyCredentials(email, password, dataSource);
+            if (sessionEmployeeEmail == null) {
+                String employeeEmail = DashboardLoginFormService.verifyCredentials(email, password, dataSource);
 
-				System.out.println("customer: " + customerId);
+                System.out.println("employeeEmail: " + employeeEmail);
 
-				if (customerId == -1) {
-					// invalid login
-					// for now just print out
-					System.out.println("Invalid email");
-					JsonObject responseJsonObject = new JsonObject();
+                if ("-1".equals(employeeEmail)) {
+                    // invalid login
+                    // for now just print out
+                    System.out.println("Invalid email");
+                    JsonObject responseJsonObject = new JsonObject();
 
-					responseJsonObject.addProperty("success", false);
-					responseJsonObject.addProperty("customerId", (Number) null);
-					responseJsonObject.addProperty("reason", "email");
-					responseJsonObject.addProperty("message", "Email does not exist");
-					out.println(responseJsonObject.toString());
-					response.setStatus(401);
+                    responseJsonObject.addProperty("success", false);
+                    responseJsonObject.addProperty("employeeEmail", (Number) null);
+                    responseJsonObject.addProperty("reason", "email");
+                    responseJsonObject.addProperty("message", "Email does not exist");
+                    out.println(responseJsonObject.toString());
+                    response.setStatus(401);
 
-				} else if (customerId == -2) {
-					System.out.println("Invalid Password");
-					JsonObject responseJsonObject = new JsonObject();
+                } else if ("-2".equals(employeeEmail)) {
+                    System.out.println("Invalid Password");
+                    JsonObject responseJsonObject = new JsonObject();
 
-					responseJsonObject.addProperty("success", false);
-					responseJsonObject.addProperty("customerId", (Number) null);
-					responseJsonObject.addProperty("reason", "password");
-					responseJsonObject.addProperty("message", "Password does not exist");
-					out.println(responseJsonObject.toString());
-					response.setStatus(401);
-				} else {
+                    responseJsonObject.addProperty("success", false);
+                    responseJsonObject.addProperty("employeeEmail", (Number) null);
+                    responseJsonObject.addProperty("reason", "password");
+                    responseJsonObject.addProperty("message", "Password does not exist");
+                    out.println(responseJsonObject.toString());
+                    response.setStatus(401);
+                } else {
 
-					System.out.println("Valid login");
-					JsonObject responseJsonObject = new JsonObject();
+                    System.out.println("Valid login");
+                    JsonObject responseJsonObject = new JsonObject();
 
-					responseJsonObject.addProperty("success", true);
-					responseJsonObject.addProperty("customerId", customerId);
-					responseJsonObject.addProperty("message", "Sucessfully Login");
-					out.println(responseJsonObject.toString());
-					response.setStatus(200);
-					session.setAttribute("customerId", customerId);
+                    responseJsonObject.addProperty("success", true);
+                    responseJsonObject.addProperty("employeeEmail", employeeEmail);
+                    responseJsonObject.addProperty("message", "Sucessfully Login");
+                    out.println(responseJsonObject.toString());
+                    response.setStatus(200);
+                    session.setAttribute("employeeEmail", employeeEmail);
+                    session.setAttribute("customerId", -999);
 
-				}
+                }
 
-			} else {
-				// already login
-				// for now just print out
-				System.out.println("Customer already login");
+            } else {
+                // already login
+                // for now just print out
+                System.out.println("Employee already login");
 
-				JsonObject responseJsonObject = new JsonObject();
+                JsonObject responseJsonObject = new JsonObject();
 
-				responseJsonObject.addProperty("success", false);
-				responseJsonObject.addProperty("customerId", (Number) null);
-				responseJsonObject.addProperty("reason", "already");
-				responseJsonObject.addProperty("message", "User Already Login");
-				out.println(responseJsonObject.toString());
-				response.setStatus(200);
+                responseJsonObject.addProperty("success", false);
+                responseJsonObject.addProperty("employeeEmail", (String) null);
+                responseJsonObject.addProperty("reason", "already");
+                responseJsonObject.addProperty("message", "User Already Login");
+                out.println(responseJsonObject.toString());
+                response.setStatus(200);
 
-			}
-		} catch (Exception e) {
-			// for now just print out
-			// return a fail response
-			System.out.println("Got error: " + e);
+            }
+        } catch (Exception e) {
+            // for now just print out
+            // return a fail response
+            System.out.println("Got error: " + e);
 
-			JsonObject responseJsonObject = new JsonObject();
+            JsonObject responseJsonObject = new JsonObject();
 
-			responseJsonObject.addProperty("success", false);
-			responseJsonObject.addProperty("customerId", (String) null);
-			responseJsonObject.addProperty("reason", "error");
-			responseJsonObject.addProperty("message", "Got error: " + e);
-			out.println(responseJsonObject.toString());
-			response.setStatus(500);
+            responseJsonObject.addProperty("success", false);
+            responseJsonObject.addProperty("employeeEmail", (String) null);
+            responseJsonObject.addProperty("reason", "error");
+            responseJsonObject.addProperty("message", "Got error: " + e);
+            out.println(responseJsonObject.toString());
+            response.setStatus(500);
 
-		} finally {
-			out.close();
-		}
-	}
+        } finally {
+            out.close();
+        }
+    }
 }

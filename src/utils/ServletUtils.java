@@ -30,4 +30,16 @@ public class ServletUtils {
 			return false;
 		}
 	}
+
+	public static Boolean checkLoginEmployee(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			if (request.getSession().getAttribute("employeeEmail") == null) {
+				response.sendRedirect(getBaseUrl(request) + "/loginForm.html");
+				return false;
+			}
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 }
