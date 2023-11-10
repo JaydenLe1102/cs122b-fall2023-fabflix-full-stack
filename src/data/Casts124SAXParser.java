@@ -44,10 +44,17 @@ public class Casts124SAXParser extends DefaultHandler {
     public void characters(char[] ch, int start, int length) {
         String value = new String(ch, start, length).trim();
         if (!value.isEmpty()) {
-            if (currentElement.equalsIgnoreCase("f")) {
-                movieId = value;
-            } else if (currentElement.equalsIgnoreCase("a") && !"s a".equalsIgnoreCase(value)) {
-                starName = value;
+            try {
+                if (currentElement.equalsIgnoreCase("f")) {
+                    movieId = value;
+                } else if (currentElement.equalsIgnoreCase("a") && !"s a".equalsIgnoreCase(value)) {
+                    starName = value;
+                }
+            } catch (Exception e) {
+                // Log and handle any inconsistencies in data
+                System.out.println("Parsing error for value: " + value);
+                System.out.println("Element Name: " + currentElement);
+                // Handle inconsistencies as NULL or skip, based on specific context
             }
         }
     }

@@ -41,21 +41,34 @@ public class Actors63SAXParser extends DefaultHandler {
     public void characters(char[] ch, int start, int length) {
         String value = new String(ch, start, length).trim();
         if (!value.isEmpty()) {
-            if (currentElement.equalsIgnoreCase("stagename")) {
-                stagename = value;
-            } else if (currentElement.equalsIgnoreCase("dob")) {
-                dob = value;
+            try {
+                if (currentElement.equalsIgnoreCase("stagename")) {
+                    stagename = value;
+                } else if (currentElement.equalsIgnoreCase("dob")) {
+                    dob = value;
+                }
+            } catch (NumberFormatException e) {
+                // Log and handle NumberFormatException for non-numeric values
+                System.out.println("Parsing error for value: " + value);
+                System.out.println("Element Name: " + currentElement);
+                // Handle the parsing error as NULL or skip, based on specific context
             }
         }
     }
 
     private Integer parseBirthYear(String dob) {
         if (dob == null || dob.isEmpty() || !isNumeric(dob)) {
+            // Log the error for inconsistent dob data
+            System.out.println("Inconsistent value for dob: " + dob);
+            System.out.println("Element Name: " + currentElement);
             return null; // For null, empty, or non-integer values, return null
         } else {
             try {
                 return Integer.parseInt(dob);
             } catch (NumberFormatException e) {
+                // Log and handle parsing errors
+                System.out.println("Parsing error for dob: " + dob);
+                System.out.println("Element Name: " + currentElement);
                 return null; // For parsing errors, return null
             }
         }

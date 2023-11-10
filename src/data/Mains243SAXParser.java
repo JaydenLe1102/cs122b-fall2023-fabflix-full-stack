@@ -80,7 +80,9 @@ public class Mains243SAXParser extends DefaultHandler {
                     } else {
                         // Log the error for inconsistent year data
                         System.out.println("Inconsistent value for year: " + value);
-                        year = null; // Set to NULL if inconsistent
+                        System.out.println("Element Name: " + currentElement);
+                        // Handle the inconsistent year by setting it to NULL or as per your application's logic
+                        year = null;
                     }
                 } else if (currentElement.equalsIgnoreCase("cat")) {
                     categories.add(value);
@@ -90,7 +92,8 @@ public class Mains243SAXParser extends DefaultHandler {
             } catch (NumberFormatException e) {
                 // Log and handle NumberFormatException for non-numeric values
                 System.out.println("Parsing error for value: " + value);
-                // Handle as NULL or skip, based on specific context
+                System.out.println("Element Name: " + currentElement);
+                // Handle the parsing error as NULL or skip, based on specific context
             }
         }
     }
