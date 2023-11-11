@@ -35,10 +35,10 @@ public class SQLStatements {
 
 	// end: MoviesService
 
-    // SingleMovieService
-    public static final String SINGLEMOVIEBYMOVIEID = "SELECT m.id, m.title, m.year, m.director, s.id, s.name, s.birthYear, g.id, g.name, r.rating from stars as s, stars_in_movies as sim, movies as m, genres as g, genres_in_movies as gim, ratings as r "
-            +
-            "where g.id = gim.genreId and gim.movieId = m.id and m.id = sim.movieId and sim.starId = s.id and r.movieId = m.id and m.id = ?";
+	// SingleMovieService
+	public static final String SINGLEMOVIEBYMOVIEID = "SELECT m.id, m.title, m.year, m.director, s.id, s.name, s.birthYear, g.id, g.name, r.rating from stars as s, stars_in_movies as sim, movies as m, genres as g, genres_in_movies as gim, ratings as r "
+			+
+			"where g.id = gim.genreId and gim.movieId = m.id and m.id = sim.movieId and sim.starId = s.id and r.movieId = m.id and m.id = ?";
 
 	// end: SingleMovieService
 
@@ -58,22 +58,22 @@ public class SQLStatements {
 
 	public static final String VALIDATE_EMPLOYEE_EMAIL_PASSWORD = "SELECT * FROM employees WHERE email = ?";
 
-    public static final String BROWSE_BY_GENRE = "SELECT *\n" +
-            "FROM movies as m\n" +
-            "INNER JOIN genres_in_movies as gim ON m.id = gim.movieId\n" +
-            "INNER JOIN genres g ON gim.genreId = g.id\n" +
-            "JOIN ratings AS r ON m.id = r.movieId\n" +
-            "WHERE LOWER(g.name) = LOWER(?)\n";
+	public static final String BROWSE_BY_GENRE = "SELECT *\n" +
+			"FROM movies as m\n" +
+			"INNER JOIN genres_in_movies as gim ON m.id = gim.movieId\n" +
+			"INNER JOIN genres g ON gim.genreId = g.id\n" +
+			"JOIN ratings AS r ON m.id = r.movieId\n" +
+			"WHERE LOWER(g.name) = LOWER(?)\n";
 
-    public static final String BROWSE_BY_TITLE_NON_ALPHANUMERIC = "SELECT *\n" +
-            "FROM movies AS m\n" +
-            "JOIN ratings AS r ON m.id = r.movieId\n" +
-            "WHERE title REGEXP '^[^a-zA-Z0-9]'\n";
+	public static final String BROWSE_BY_TITLE_NON_ALPHANUMERIC = "SELECT *\n" +
+			"FROM movies AS m\n" +
+			"JOIN ratings AS r ON m.id = r.movieId\n" +
+			"WHERE title REGEXP '^[^a-zA-Z0-9]'\n";
 
-    public static final String BROWSE_BY_TITLE_ALPHANUMERIC = "SELECT *\n" +
-            "FROM movies AS m\n" +
-            "JOIN ratings AS r ON m.id = r.movieId\n" +
-            "WHERE LOWER(title) LIKE ?\n";
+	public static final String BROWSE_BY_TITLE_ALPHANUMERIC = "SELECT *\n" +
+			"FROM movies AS m\n" +
+			"JOIN ratings AS r ON m.id = r.movieId\n" +
+			"WHERE LOWER(title) LIKE ?\n";
 
 	public static final String ALL_GENRES = "SELECT name FROM genres;";
 
