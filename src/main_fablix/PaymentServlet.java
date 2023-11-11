@@ -34,7 +34,9 @@ public class PaymentServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		checkLogin(request, response);
+		if (!checkLogin(request, response)) {
+			return;
+		}
 
 		response.setContentType("application/json");
 
