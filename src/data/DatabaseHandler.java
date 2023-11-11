@@ -10,7 +10,7 @@ import java.util.List;
 public class DatabaseHandler {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/moviedb";
     private static final String DB_USER = "mytestuser";
-    private static final String DB_PASSWORD = "My6$Password";
+    private static final String DB_PASSWORD = "12345";
 
     private static Connection getConnection() {
         try {
