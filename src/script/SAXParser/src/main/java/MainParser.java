@@ -45,7 +45,7 @@ public class MainParser {
         String jdbcUrl = "jdbc:mysql://localhost:3306/moviedb";
         String username = "mytestuser";
         String password = "12345";
-        int maxConnections = 10; // Adjust as needed
+        int maxConnections = 20; // Adjust as needed
 
         return new HikariConnectionPool(jdbcUrl, username, password, maxConnections);
     }
