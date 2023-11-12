@@ -7,48 +7,72 @@ import java.util.Set;
 
 public class DatabaseHandler {
     private ConnectionPool connectionPool;
+    private static final String INSERT_STARS_IN_MOVIES_SQL = "INSERT INTO stars_in_movies (starId, movieId) VALUES (?, ?)";
+    private PreparedStatement insertStarsInMoviesStatement;
+
     public DatabaseHandler(ConnectionPool connectionPool) {
         this.connectionPool = connectionPool;
+        initializeStatements();
     }
 
-public void insertMoviesBatch(List<Movie> movies, Mains243SAXParser parser) {
-    try (Connection conn = connectionPool.getConnection();
-         PreparedStatement pstmt = conn.prepareStatement("INSERT INTO movies (id, title, year, director) VALUES (?, ?, ?, ?)")) {
-        conn.setAutoCommit(false);
-
-        Set<String> uniqueMovieIds = new HashSet<>();
-
-        for (Movie movie : movies) {
-            String movieId = movie.getId();
-            String movieTitle = movie.getTitle();
-            Integer movieYear = movie.getYear();
-            String movieDirector = movie.getDirector();
-
-            if (movieId == null || movieTitle == null || movieYear == null || movieDirector == null) {
-                parser.moviesWithNullAttributesCount++;
-                continue;
-            }
-
-            if (!filmIdExists(conn, movieId) && uniqueMovieIds.add(movieId)) {
-                pstmt.setString(1, movieId);
-                pstmt.setString(2, movieTitle);
-                pstmt.setInt(3, movieYear);
-                pstmt.setString(4, movieDirector);
-                pstmt.addBatch();
-                parser.insertedMoviesCount++;
-            } else if (filmIdExists(conn, movieId)) {
-                parser.moviesWithInvalidIdCount++;
-            } else {
-                // Handle the case where movieId is already in the batch
-                // You can skip, log, or handle it according to your application's logic
-            }
+    private void initializeStatements() {
+        try {
+            Connection conn = connectionPool.getConnection();
+            insertStarsInMoviesStatement = conn.prepareStatement(INSERT_STARS_IN_MOVIES_SQL);
+            // Don't close the connection here; close it when it's no longer needed
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        pstmt.executeBatch();
-        conn.commit();
-    } catch (SQLException e) {
-        e.printStackTrace();
     }
-}
+
+    public void closeStatements() {
+        try {
+            if (insertStarsInMoviesStatement != null) {
+                insertStarsInMoviesStatement.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void insertMoviesBatch(List<Movie> movies, Mains243SAXParser parser) {
+        try (Connection conn = connectionPool.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO movies (id, title, year, director) VALUES (?, ?, ?, ?)")) {
+            conn.setAutoCommit(false);
+
+            Set<String> uniqueMovieIds = new HashSet<>();
+
+            for (Movie movie : movies) {
+                String movieId = movie.getId();
+                String movieTitle = movie.getTitle();
+                Integer movieYear = movie.getYear();
+                String movieDirector = movie.getDirector();
+
+                if (movieId == null || movieTitle == null || movieYear == null || movieDirector == null) {
+                    parser.moviesWithNullAttributesCount++;
+                    continue;
+                }
+
+                if (!filmIdExists(conn, movieId) && uniqueMovieIds.add(movieId)) {
+                    pstmt.setString(1, movieId);
+                    pstmt.setString(2, movieTitle);
+                    pstmt.setInt(3, movieYear);
+                    pstmt.setString(4, movieDirector);
+                    pstmt.addBatch();
+                    parser.insertedMoviesCount++;
+                } else if (filmIdExists(conn, movieId)) {
+                    parser.moviesWithInvalidIdCount++;
+                } else {
+                    // Handle the case where movieId is already in the batch
+                    // You can skip, log, or handle it according to your application's logic
+                }
+            }
+            pstmt.executeBatch();
+            conn.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public static boolean filmIdExists(Connection conn, String filmId) {
@@ -196,42 +220,45 @@ public void insertMoviesBatch(List<Movie> movies, Mains243SAXParser parser) {
 
 
     public void insertStarsInMoviesBatch(List<StarsInMovie> starsInMovies, Casts124SAXParser parser) {
-        try (Connection conn = connectionPool.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO stars_in_movies (starId, movieId) VALUES (?, ?)")) {
+        try (Connection conn = connectionPool.getConnection()) {
             conn.setAutoCommit(false);
-    
+
             Set<String> uniqueStarMoviePairs = new HashSet<>();
-    
-            for (StarsInMovie starsInMovie : starsInMovies) {
-                String movieId = starsInMovie.getMovieId();
-                String starName = starsInMovie.getStarName();
-    
-                if (movieIdExists(conn, movieId) && starName != null && !starName.isEmpty()) {
-                    String starId = getStarId(starName);
-    
-                    if (starId != null && uniqueStarMoviePairs.add(starId + movieId)) {
-                        pstmt.setString(1, starId);
-                        pstmt.setString(2, movieId);
-                        pstmt.addBatch();
-                        parser.insertedStarsInMoviesCount++;
+
+            try {
+                for (StarsInMovie starsInMovie : starsInMovies) {
+                    String movieId = starsInMovie.getMovieId();
+                    String starName = starsInMovie.getStarName();
+
+                    if (movieIdExists(conn, movieId) && starName != null && !starName.isEmpty()) {
+                        String starId = getStarId(starName);
+
+                        if (starId != null && uniqueStarMoviePairs.add(starId + movieId)) {
+                            insertStarsInMoviesStatement.setString(1, starId);
+                            insertStarsInMoviesStatement.setString(2, movieId);
+                            insertStarsInMoviesStatement.addBatch();
+                            parser.insertedStarsInMoviesCount++;
+                        } else {
+                            parser.duplicateStarsInMoviesCount++;
+                            // You can optionally log or handle the case where the starId-movieId pair is a duplicate
+                        }
                     } else {
-                        parser.duplicateStarsInMoviesCount++;
-                        // You can optionally log or handle the case where the starId-movieId pair is a duplicate
+                        parser.inconsistentValuesCount++;
+                        // You can optionally log or handle the case where movieId doesn't exist or starName is null/empty
                     }
-                } else {
-                    parser.inconsistentValuesCount++;
-                    // You can optionally log or handle the case where movieId doesn't exist or starName is null/empty
                 }
+
+                insertStarsInMoviesStatement.executeBatch();
+                conn.commit();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            pstmt.executeBatch();
-            conn.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    
 
-    public String getStarId(String starName) {
+public String getStarId(String starName) {
         String starId = null;
         try (Connection conn = connectionPool.getConnection();
              PreparedStatement pstmt = conn.prepareStatement("SELECT id FROM stars WHERE name = ?")) {
