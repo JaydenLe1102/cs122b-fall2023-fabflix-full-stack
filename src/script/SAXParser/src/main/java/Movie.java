@@ -1,5 +1,6 @@
+package data;
 
-
+import java.util.*;
 public class Movie {
     private String id;
     private String title;

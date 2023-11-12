@@ -1,6 +1,6 @@
+package data;
 
-
-
+import java.util.*;
 public class GenresInMovie {
     private String genreName;
     private String movieId;

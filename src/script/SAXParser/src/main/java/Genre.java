@@ -1,6 +1,6 @@
+package data;
 
-
-
+import java.util.*;
 public class Genre {
     private String name;
 
