@@ -1,4 +1,4 @@
-package data;
+;
 
 import com.google.protobuf.NullValue;
 
