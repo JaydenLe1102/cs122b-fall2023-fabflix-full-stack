@@ -8,54 +8,13 @@ import java.sql.*;
 import java.util.List;
 
 public class DatabaseHandler {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/moviedb";
-    private static final String DB_USER = "mytestuser";
-    private static final String DB_PASSWORD = "My6$Password";
-
-    private static Connection getConnection() {
-        try {
-            return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Failed to connect to the database.");
-        }
+    private ConnectionPool connectionPool;
+    public DatabaseHandler(ConnectionPool connectionPool) {
+        this.connectionPool = connectionPool;
     }
 
-    public static void insertMovies(List<Movie> movies) {
-        try (Connection conn = getConnection()) {
-            String insertMovieQuery = "INSERT INTO movies (id, title, year, director) VALUES (?, ?, ?, ?)";
-
-            try (PreparedStatement pstmt = conn.prepareStatement(insertMovieQuery)) {
-                for (Movie movie : movies) {
-                    String movieId = movie.getId();
-                    String movieTitle = movie.getTitle();
-                    Integer movieYear = movie.getYear();
-                    String movieDirector = movie.getDirector();
-
-                    // If any attribute is null, skip inserting the record
-                    if (movieId == null || movieTitle == null || movieYear == null || movieDirector == null) {
-                        System.out.println("Skipping movie with null attributes: " + movie.getTitle());
-                        continue;
-                    }
-
-                    // Check if the film ID already exists
-                    if (!filmIdExists(conn, movieId)) {
-                        pstmt.setString(1, movieId);
-                        pstmt.setString(2, movieTitle);
-                        pstmt.setInt(3, movieYear);
-                        pstmt.setString(4, movieDirector);
-
-                        pstmt.executeUpdate();
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void insertMoviesBatch(List<Movie> movies) {
-        try (Connection conn = getConnection();
+    public void insertMoviesBatch(List<Movie> movies, Mains243SAXParser parser) {
+        try (Connection conn = connectionPool.getConnection();
              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO movies (id, title, year, director) VALUES (?, ?, ?, ?)")) {
             conn.setAutoCommit(false);
 
@@ -66,7 +25,7 @@ public class DatabaseHandler {
                 String movieDirector = movie.getDirector();
 
                 if (movieId == null || movieTitle == null || movieYear == null || movieDirector == null) {
-                    System.out.println("Skipping movie with null attributes: " + movie.getTitle());
+                    parser.moviesWithNullAttributesCount++;
                     continue;
                 }
 
@@ -76,6 +35,9 @@ public class DatabaseHandler {
                     pstmt.setInt(3, movieYear);
                     pstmt.setString(4, movieDirector);
                     pstmt.addBatch();
+                    parser.insertedMoviesCount++;
+                } else {
+                    parser.moviesWithInvalidIdCount++;
                 }
             }
             pstmt.executeBatch();
@@ -97,25 +59,13 @@ public class DatabaseHandler {
         return false;
     }
 
-    public static void insertGenres(List<Genre> genres) {
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO genres (name) VALUES (?)")) {
-
-            for (Genre genre : genres) {
-                pstmt.setString(1, genre.getName());
-                pstmt.executeUpdate();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void insertGenresBatch(List<Genre> genres) {
-        try (Connection conn = getConnection();
+    public void insertGenresBatch(List<Genre> genres, Mains243SAXParser parser) {
+        try (Connection conn = connectionPool.getConnection();
              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO genres (name) VALUES (?)")) {
             conn.setAutoCommit(false);
 
             for (Genre genre : genres) {
+                parser.insertedGenresCount++;
                 pstmt.setString(1, genre.getName());
                 pstmt.addBatch();
             }
@@ -126,33 +76,8 @@ public class DatabaseHandler {
         }
     }
 
-    public static void insertGenresInMovies(List<GenresInMovie> genresInMovies) {
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO genres_in_movies (genreId, movieId) VALUES (?, ?) " +
-                     "ON DUPLICATE KEY UPDATE genreId = VALUES(genreId)")) {
-
-            for (GenresInMovie gim : genresInMovies) {
-                // Get the movieId from the GenresInMovie object
-                String movieId = gim.getMovieId();
-
-                // Check if the movieId exists in the movies table
-                if (movieIdExists(conn, movieId)) {
-                    // Insert into genres_in_movies only if the movieId is valid
-                    pstmt.setString(1, getGenreId(gim.getGenreName()));  // Get the genreId
-                    pstmt.setString(2, movieId);  // Insert the movieId
-                    pstmt.executeUpdate();
-                } else {
-                    System.out.println("Skipping invalid movieId: " + movieId);
-                    // Handle invalid movieId (e.g., log, skip, or other handling)
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void insertGenresInMoviesBatch(List<GenresInMovie> genresInMovies) {
-        try (Connection conn = getConnection();
+    public void insertGenresInMoviesBatch(List<GenresInMovie> genresInMovies, Mains243SAXParser parser) {
+        try (Connection conn = connectionPool.getConnection();
              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO genres_in_movies (genreId, movieId) VALUES (?, ?) " +
                      "ON DUPLICATE KEY UPDATE genreId = VALUES(genreId)")) {
             conn.setAutoCommit(false);
@@ -160,11 +85,12 @@ public class DatabaseHandler {
             for (GenresInMovie gim : genresInMovies) {
                 String movieId = gim.getMovieId();
                 if (movieIdExists(conn, movieId)) {
+                    parser.insertedGenresInMoviesCount++;
                     pstmt.setString(1, getGenreId(gim.getGenreName()));
                     pstmt.setString(2, movieId);
                     pstmt.addBatch();
                 } else {
-                    System.out.println("Skipping invalid movieId: " + movieId);
+                    parser.moviesWithInvalidIdCount++;
                 }
             }
             pstmt.executeBatch();
@@ -186,9 +112,9 @@ public class DatabaseHandler {
         return false;
     }
 
-    public static String getGenreId(String genreName) {
+    public String getGenreId(String genreName) {
         String genreId = null;
-        try (Connection conn = getConnection();
+        try (Connection conn = connectionPool.getConnection();
              PreparedStatement pstmt = conn.prepareStatement("SELECT id FROM genres WHERE name = ?")) {
             pstmt.setString(1, genreName);
 
@@ -202,37 +128,8 @@ public class DatabaseHandler {
         return genreId;
     }
 
-    public void insertStars(List<Star> stars) {
-        try (Connection conn = getConnection()) {
-            String insertStarQuery = "INSERT INTO stars (id, name, birthYear) VALUES (?, ?, ?)";
-
-            try (PreparedStatement pstmt = conn.prepareStatement(insertStarQuery)) {
-                for (Star star : stars) {
-                    String stagename = star.getName();
-                    Integer birthYear = star.getBirthYear();
-                    int dob = (birthYear != null) ? star.getBirthYear() : 0;
-
-                    // Check if the actor name (stagename) is unique before inserting
-                    if (isActorNameUnique(conn, stagename)) {
-                        pstmt.setString(1, star.getId());
-                        pstmt.setString(2, stagename);
-                        pstmt.setInt(3, dob);
-
-                        pstmt.executeUpdate();
-                    } else {
-                        System.out.println("Skipping insertion: Actor name already exists - " + stagename);
-                        // Handle the situation where the actor name is not unique
-                        // You might want to log or handle it according to your needs
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void insertStarsBatch(List<Star> stars) {
-        try (Connection conn = getConnection();
+    public void insertStarsBatch(List<Star> stars, Actors63SAXParser parser) {
+        try (Connection conn = connectionPool.getConnection();
              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO stars (id, name, birthYear) VALUES (?, ?, ?)")) {
             conn.setAutoCommit(false);
 
@@ -246,8 +143,9 @@ public class DatabaseHandler {
                     pstmt.setString(2, stagename);
                     pstmt.setInt(3, dob);
                     pstmt.addBatch();
+                    parser.insertedStarsCount++;
                 } else {
-                    System.out.println("Skipping insertion: Actor name already exists - " + stagename);
+                    parser.duplicateActorCount++;
                 }
             }
             pstmt.executeBatch();
@@ -274,42 +172,9 @@ public class DatabaseHandler {
         return false;
     }
 
-    public static void insertStarsInMovies(List<StarsInMovie> starsInMovies) {
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO stars_in_movies (starId, movieId) VALUES (?, ?)")) {
 
-            for (StarsInMovie starsInMovie : starsInMovies) {
-                String movieId = starsInMovie.getMovieId();
-                String starName = starsInMovie.getStarName();
-
-                if (movieIdExists(conn, movieId) && starName != null && !starName.isEmpty()) {
-                    String starId = getStarId(starName);
-
-                    if (starId != null) {
-                        if (!starsInMovieExists(conn, starId, movieId)) {
-                            pstmt.setString(1, starId);
-                            pstmt.setString(2, movieId);
-                            pstmt.executeUpdate();
-                        } else {
-                            System.out.println("Stars in Movies entry already exists for star ID: " + starId + " and movie ID: " + movieId);
-                            // Handle the existing entry (e.g., log, skip, or other handling)
-                        }
-                    } else {
-                        System.out.println("Star ID not found for star name: " + starName);
-                        // Handle the missing starId (e.g., log, skip, or other handling)
-                    }
-                } else {
-                    System.out.println("Skipping invalid movieId or starName");
-                    // Handle invalid movieId or starName (e.g., log, skip, or other handling)
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void insertStarsInMoviesBatch(List<StarsInMovie> starsInMovies) {
-        try (Connection conn = getConnection();
+    public void insertStarsInMoviesBatch(List<StarsInMovie> starsInMovies, Casts124SAXParser parser) {
+        try (Connection conn = connectionPool.getConnection();
              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO stars_in_movies (starId, movieId) VALUES (?, ?)")) {
             conn.setAutoCommit(false);
 
@@ -324,11 +189,12 @@ public class DatabaseHandler {
                         pstmt.setString(1, starId);
                         pstmt.setString(2, movieId);
                         pstmt.addBatch();
+                        parser.insertedStarsInMoviesCount++;
                     } else {
-                        System.out.println("Skipping insertion: Stars in Movies entry already exists or star ID not found for star name - " + starName);
+                        parser.duplicateStarsInMoviesCount++;
                     }
                 } else {
-                    System.out.println("Skipping invalid movieId or starName");
+                    parser.inconsistentValuesCount++;
                 }
             }
             pstmt.executeBatch();
@@ -338,9 +204,9 @@ public class DatabaseHandler {
         }
     }
 
-    public static String getStarId(String starName) {
+    public String getStarId(String starName) {
         String starId = null;
-        try (Connection conn = getConnection();
+        try (Connection conn = connectionPool.getConnection();
              PreparedStatement pstmt = conn.prepareStatement("SELECT id FROM stars WHERE name = ?")) {
             pstmt.setString(1, starName);
 

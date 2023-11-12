@@ -18,6 +18,10 @@ public class Actors63SAXParser extends DefaultHandler {
     private List<Star> stars;
     private String currentElement;
 
+    public int insertedStarsCount = 0;
+    public int inconsistentValuesCount = 0;
+    public int duplicateActorCount = 0;
+
     public Actors63SAXParser() {
         stars = new ArrayList<>();
     }
@@ -48,10 +52,7 @@ public class Actors63SAXParser extends DefaultHandler {
                     dob = value;
                 }
             } catch (NumberFormatException e) {
-                // Log and handle NumberFormatException for non-numeric values
-                System.out.println("Parsing error for value: " + value);
-                System.out.println("Element Name: " + currentElement);
-                // Handle the parsing error as NULL or skip, based on specific context
+                inconsistentValuesCount++;
             }
         }
     }
@@ -59,16 +60,14 @@ public class Actors63SAXParser extends DefaultHandler {
     private Integer parseBirthYear(String dob) {
         if (dob == null || dob.isEmpty() || !isNumeric(dob)) {
             // Log the error for inconsistent dob data
-            System.out.println("Inconsistent value for dob: " + dob);
-            System.out.println("Element Name: " + currentElement);
+            inconsistentValuesCount++;
             return null; // For null, empty, or non-integer values, return null
         } else {
             try {
                 return Integer.parseInt(dob);
             } catch (NumberFormatException e) {
                 // Log and handle parsing errors
-                System.out.println("Parsing error for dob: " + dob);
-                System.out.println("Element Name: " + currentElement);
+                inconsistentValuesCount++;
                 return null; // For parsing errors, return null
             }
         }
@@ -119,14 +118,15 @@ public class Actors63SAXParser extends DefaultHandler {
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        Actors63SAXParser parser = new Actors63SAXParser();
-        parser.parseDocument();
+    public List<Star> getStars() {
+        return stars;
+    }
 
-        List<Star> stars = parser.stars;
-
-        DatabaseHandler databaseHandler = new DatabaseHandler();
-        databaseHandler.insertStarsBatch(stars);
+    public void printCountSummary() {
+        System.out.println("Actors Summary:");
+        System.out.println("1. Stars Inserted: " + insertedStarsCount);
+        System.out.println("4. Inconsistent Values (Not Inserted): " + inconsistentValuesCount);
+        System.out.println("5. Duplicate Stars: " + duplicateActorCount);
     }
 }
 

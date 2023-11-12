@@ -24,6 +24,14 @@ public class Mains243SAXParser extends DefaultHandler {
     private String currentElement;
     private String directorName;
 
+    // Counters
+    public int insertedMoviesCount = 0;
+    public int insertedGenresCount = 0;
+    public int insertedGenresInMoviesCount = 0;
+    public int inconsistentValuesCount = 0;
+    public int moviesWithNullAttributesCount = 0;
+    public int moviesWithInvalidIdCount = 0;
+
     public Mains243SAXParser() {
         movies = new ArrayList<>();
         genresMap = new HashMap<>();
@@ -78,9 +86,8 @@ public class Mains243SAXParser extends DefaultHandler {
                     if (isNumeric(value)) {
                         year = value;
                     } else {
+                        inconsistentValuesCount++;
                         // Log the error for inconsistent year data
-                        System.out.println("Inconsistent value for year: " + value);
-                        System.out.println("Element Name: " + currentElement);
                         // Handle the inconsistent year by setting it to NULL or as per your application's logic
                         year = null;
                     }
@@ -90,9 +97,8 @@ public class Mains243SAXParser extends DefaultHandler {
                     directorName = value;
                 }
             } catch (NumberFormatException e) {
+                inconsistentValuesCount++;
                 // Log and handle NumberFormatException for non-numeric values
-                System.out.println("Parsing error for value: " + value);
-                System.out.println("Element Name: " + currentElement);
                 // Handle the parsing error as NULL or skip, based on specific context
             }
         }
@@ -171,17 +177,13 @@ public class Mains243SAXParser extends DefaultHandler {
         return genresInMovies;
     }
 
-    public static void main(String[] args) {
-        Mains243SAXParser parser = new Mains243SAXParser();
-        parser.parseDocument();
-
-        List<Movie> movies = parser.getMovies();
-        List<Genre> genres = parser.getGenres();
-        List<GenresInMovie> genresInMovies = parser.getGenresInMovies();
-
-        DatabaseHandler databaseHandler = new DatabaseHandler();
-        databaseHandler.insertMoviesBatch(movies);
-        databaseHandler.insertGenresBatch(genres);
-        databaseHandler.insertGenresInMoviesBatch(genresInMovies);
+    public void printCountSummary() {
+        System.out.println("Mains Summary:");
+        System.out.println("1. Movies Inserted: " + insertedMoviesCount);
+        System.out.println("2. Genres Inserted: " + insertedGenresCount);
+        System.out.println("3. Genres In Movies Inserted: " + insertedGenresInMoviesCount);
+        System.out.println("4. Inconsistent Values (Not Inserted): " + inconsistentValuesCount);
+        System.out.println("5. Movies with Null Attributes: " + moviesWithNullAttributesCount);
+        System.out.println("6. Movies with Invalid ID: " + moviesWithInvalidIdCount);
     }
 }
