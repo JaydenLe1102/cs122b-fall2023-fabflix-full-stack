@@ -19,7 +19,7 @@ public class MainParser {
         // Create an ExecutorService for concurrent execution
         ExecutorService executorService = Executors.newFixedThreadPool(3);
 
-// Run parsers concurrently
+        // Run parsers concurrently
         executorService.submit(() -> mains243Parser.parseDocument());
         executorService.submit(() -> actors63Parser.parseDocument());
         executorService.submit(() -> casts124Parser.parseDocument());
@@ -93,6 +93,7 @@ public class MainParser {
             List<StarsInMovie> starsInMovies = castsParser.getStarsInMovies();
             DatabaseHandler databaseHandlerCasts = new DatabaseHandler(connectionPoolCasts);
             databaseHandlerCasts.insertStarsInMoviesBatch(starsInMovies, castsParser);
+            databaseHandlerCasts.closeStatements();
         } catch (InterruptedException e) {
             e.printStackTrace(); // Handle the exception according to your needs
         }
