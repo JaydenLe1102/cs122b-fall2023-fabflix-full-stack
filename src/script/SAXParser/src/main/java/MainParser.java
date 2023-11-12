@@ -5,6 +5,7 @@ import com.zaxxer.hikari.HikariConfig;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class MainParser {
     public static void main(String[] args) {
@@ -55,31 +56,45 @@ public class MainParser {
         ConnectionPool connectionPoolCasts = createConnectionPool();
 
         try {
-            List<Movie> movies = mainsParser.getMovies();
-            List<Genre> genres = mainsParser.getGenres();
-            List<GenresInMovie> genresInMovies = mainsParser.getGenresInMovies();
+            ExecutorService executorService = Executors.newFixedThreadPool(2);
 
-            //this block 1
-            DatabaseHandler databaseHandlerMains = new DatabaseHandler(connectionPoolMains);
-            databaseHandlerMains.insertMoviesBatch(movies, mainsParser);
-            databaseHandlerMains.insertGenresBatch(genres, mainsParser);
-            databaseHandlerMains.insertGenresInMoviesBatch(genresInMovies, mainsParser);
+            // Block 1
+            executorService.submit(() -> {
+                try {
+                    List<Movie> movies = mainsParser.getMovies();
+                    List<Genre> genres = mainsParser.getGenres();
+                    List<GenresInMovie> genresInMovies = mainsParser.getGenresInMovies();
 
-            //block 1
-            List<Star> stars = actorsParser.getStars();
-            DatabaseHandler databaseHandlerActors = new DatabaseHandler(connectionPoolActors);
-            databaseHandlerActors.insertStarsBatch(stars, actorsParser);
+                    DatabaseHandler databaseHandlerMains = new DatabaseHandler(connectionPoolMains);
+                    databaseHandlerMains.insertMoviesBatch(movies, mainsParser);
+                    databaseHandlerMains.insertGenresBatch(genres, mainsParser);
+                    databaseHandlerMains.insertGenresInMoviesBatch(genresInMovies, mainsParser);
+                } catch (Exception e) {
+                    e.printStackTrace(); // Handle the exception according to your needs
+                }
+            });
 
-            //block 2
+            // Block 2
+            executorService.submit(() -> {
+                try {
+                    List<Star> stars = actorsParser.getStars();
+                    DatabaseHandler databaseHandlerActors = new DatabaseHandler(connectionPoolActors);
+                    databaseHandlerActors.insertStarsBatch(stars, actorsParser);
+                } catch (Exception e) {
+                    e.printStackTrace(); // Handle the exception according to your needs
+                }
+            });
+
+            // Wait for Block 1 and Block 2 to complete
+            executorService.shutdown();
+            executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+
+            // Block 3
             List<StarsInMovie> starsInMovies = castsParser.getStarsInMovies();
             DatabaseHandler databaseHandlerCasts = new DatabaseHandler(connectionPoolCasts);
             databaseHandlerCasts.insertStarsInMoviesBatch(starsInMovies, castsParser);
-        } finally {
-            // Close the connection pools in a finally block to ensure they are always closed,
-            // even if an exception occurs
-            connectionPoolMains.close();
-            connectionPoolActors.close();
-            connectionPoolCasts.close();
+        } catch (InterruptedException e) {
+            e.printStackTrace(); // Handle the exception according to your needs
         }
     }
 }
