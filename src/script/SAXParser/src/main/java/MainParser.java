@@ -95,6 +95,9 @@ public class MainParser {
             databaseHandlerCasts.insertStarsInMoviesBatch(starsInMovies, castsParser);
         } catch (InterruptedException e) {
             e.printStackTrace(); // Handle the exception according to your needs
+            connectionPoolMains.close();
+            connectionPoolActors.close();
+            connectionPoolCasts.close();
         }
     }
 }
