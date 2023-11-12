@@ -43,7 +43,7 @@ public class MainParser {
     private static ConnectionPool createConnectionPool() {
         String jdbcUrl = "jdbc:mysql://localhost:3306/moviedb";
         String username = "mytestuser";
-        String password = "My6$Password";
+        String password = "12345";
         int maxConnections = 10; // Adjust as needed
 
         return new HikariConnectionPool(jdbcUrl, username, password, maxConnections);
@@ -59,15 +59,18 @@ public class MainParser {
             List<Genre> genres = mainsParser.getGenres();
             List<GenresInMovie> genresInMovies = mainsParser.getGenresInMovies();
 
+            //this block 1
             DatabaseHandler databaseHandlerMains = new DatabaseHandler(connectionPoolMains);
             databaseHandlerMains.insertMoviesBatch(movies, mainsParser);
             databaseHandlerMains.insertGenresBatch(genres, mainsParser);
             databaseHandlerMains.insertGenresInMoviesBatch(genresInMovies, mainsParser);
 
+            //block 1
             List<Star> stars = actorsParser.getStars();
             DatabaseHandler databaseHandlerActors = new DatabaseHandler(connectionPoolActors);
             databaseHandlerActors.insertStarsBatch(stars, actorsParser);
 
+            //block 2
             List<StarsInMovie> starsInMovies = castsParser.getStarsInMovies();
             DatabaseHandler databaseHandlerCasts = new DatabaseHandler(connectionPoolCasts);
             databaseHandlerCasts.insertStarsInMoviesBatch(starsInMovies, castsParser);
