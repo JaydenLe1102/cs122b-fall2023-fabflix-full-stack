@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,7 +40,7 @@ public class Demo {
 
 
             cstmt.setString(1, "AA13");
-            cstmt.setString(2, "JWilfrid Lawson");
+            cstmt.setString(2, "Wilfrid Lawson");
 
 //            cstmt.registerOutParameter(1, Types.INTEGER);
 
@@ -50,13 +51,9 @@ public class Demo {
             int[] updateCounts = cstmt.executeBatch();
 
 
-            // Retrieve the return values
-            for (int i = 0; i < updateCounts.length; i++) {
-                
-                // Process the return value as needed
-                System.out.println("This is return value: ");
-                System.out.println(updateCounts[i]);
-            }
+            System.out.println("This is return value: ");
+            System.out.println(Arrays.toString(updateCounts));
+
 
             conn.commit();
         } catch (SQLException ex) {
