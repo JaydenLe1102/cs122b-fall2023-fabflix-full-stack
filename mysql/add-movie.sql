@@ -6,7 +6,7 @@ BEGIN
     DECLARE v_maxMovieId VARCHAR(10);
     DECLARE v_nextMovieId INT;
 
-    SELECT MAX(id) INTO v_maxMovieId FROM moviedb.movies;
+    SELECT MAX(id) FROM moviedb.movies WHERE id LIKE 'tt%' AND id REGEXP '^tt[0-9]+$';
 
     SET v_nextMovieId = CAST(SUBSTRING(v_maxMovieId, 3) AS SIGNED) + 1;
 
@@ -22,7 +22,7 @@ READS SQL DATA
 BEGIN
     DECLARE v_maxStarId VARCHAR(10);
     DECLARE v_nextStarId INT;
-    SELECT MAX(id) INTO v_maxStarId FROM moviedb.stars;
+    SELECT MAX(id) INTO v_maxStarId FROM moviedb.stars WHERE id LIKE 'nm%' AND id REGEXP '^nm[0-9]+$';
     SET v_nextStarId = CAST(SUBSTRING(v_maxStarId, 3) AS SIGNED) + 1;
     SET v_maxStarId = CONCAT('nm', v_nextStarId);
     RETURN v_maxStarId;

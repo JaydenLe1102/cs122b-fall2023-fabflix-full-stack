@@ -17,67 +17,69 @@ import employee_dashboard.services.MetaDataService;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 import static utils.ServletUtils.checkLoginEmployee;
 
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
 @WebServlet(name = "AddStarServlet", urlPatterns = "/_dashboard/api/addStar")
 public class AddStarServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	// Create a dataSource which registered in web.
-	private DataSource dataSource;
+    // Create a dataSource which registered in web.
+    private DataSource dataSource;
 
-	public void init(ServletConfig config) {
-		try {
-			dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
+    public void init(ServletConfig config) {
+        try {
+            dataSource = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/moviedb");
 
-		} catch (NamingException e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		if (!checkLoginEmployee(request, response)) {
-			return;
-		}
+        if (!checkLoginEmployee(request, response)) {
+            return;
+        }
 
-		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
 
-		String name = request.getParameter("name");
-		String birthYear = request.getParameter("birthYear");
+        String name = request.getParameter("name");
+        String birthYear = request.getParameter("birthYear");
 
-		try {
-			int result = AddStarService.addStar(dataSource, name, birthYear);
+        try {
+            String result = AddStarService.addStar(dataSource, name, birthYear);
 
-			if (result == 0) {
-				JsonObject jsonObject = new JsonObject();
-				jsonObject.addProperty("success", true);
-				jsonObject.addProperty("message", "Successfully added star " + name);
-				out.write(jsonObject.toString());
-				response.setStatus(201);
-			} else {
-				JsonObject jsonObject = new JsonObject();
-				jsonObject.addProperty("success", false);
-				jsonObject.addProperty("errorMessage", "Failed to add star " + name);
-				out.write(jsonObject.toString());
-				response.setStatus(202);
-			}
-		} catch (Exception e) {
+            if (!result.isEmpty()) {
+                JsonObject jsonObject = new JsonObject();
+                jsonObject.addProperty("success", true);
+                jsonObject.addProperty("message", "Successfully added star " + name);
+                jsonObject.addProperty("starId", result);
+                out.write(jsonObject.toString());
+                response.setStatus(201);
+            } else {
+                JsonObject jsonObject = new JsonObject();
+                jsonObject.addProperty("success", false);
+                jsonObject.addProperty("errorMessage", "Failed to add star " + name);
+                out.write(jsonObject.toString());
+                response.setStatus(202);
+            }
+        } catch (Exception e) {
 
-			JsonObject jsonObject = new JsonObject();
-			jsonObject.addProperty("errorMessage", e.getMessage());
-			out.write(jsonObject.toString());
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty("errorMessage", e.getMessage());
+            out.write(jsonObject.toString());
 
-			response.setStatus(500);
-		} finally {
-			out.close();
-		}
-	}
+            response.setStatus(500);
+        } finally {
+            out.close();
+        }
+    }
 }
