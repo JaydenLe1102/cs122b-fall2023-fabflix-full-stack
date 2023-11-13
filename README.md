@@ -8,6 +8,8 @@ This repository build Fablix Movie Project
 
 #### Project 2: https://youtu.be/nDvWTj4hUrA
 
+#### Project 3: 
+
 ### Project Contribution
 
 #### Project 1:
@@ -29,6 +31,8 @@ This repository build Fablix Movie Project
 - Kashyap Patel:
   - Implement SearchServlet (endpoint) and Search on the Frontend
   - Implement Shopping Cart
+
+### Additional Notes
 
 #### Substring Matching Design:
 
@@ -53,3 +57,55 @@ This repository build Fablix Movie Project
   AND (? = '' OR s.name LIKE CONCAT('%', ?, '%'))  
   AND (? = '' OR m.year = ?)  
   )
+
+#### List of Files that use Prepared Statement:
+- 2023-fall-cs122b-bobaholic/src/script/SAXParser/src/main/java/DatabaseHandler.java
+- 2023-fall-cs122b-bobaholic/src/employee_dashboard/services/DashboardLoginFormService.java
+- 2023-fall-cs122b-bobaholic/src/employee_dashboard/services/AddStarService.java
+- 2023-fall-cs122b-bobaholic/src/main_fablix/services/BrowseByGenreService.java
+- 2023-fall-cs122b-bobaholic/src/main_fablix/services/BrowseByTitleService.java
+- 2023-fall-cs122b-bobaholic/src/main_fablix/services/LoginFormService.java
+- 2023-fall-cs122b-bobaholic/src/main_fablix/services/PaymentService.java
+- 2023-fall-cs122b-bobaholic/src/main_fablix/services/Random3Service.java
+- 2023-fall-cs122b-bobaholic/src/main_fablix/services/SearchService.java
+- 2023-fall-cs122b-bobaholic/src/main_fablix/services/SingleMovieService.java
+- 2023-fall-cs122b-bobaholic/src/main_fablix/services/SingleStarService.java
+- 2023-fall-cs122b-bobaholic/src/main_fablix/AllGenresServlet.java
+
+#### XML Parsing Assumptions:
+- Only the stars that are in actors.xml are added to the database (not casts.xml)
+  
+#### Optimization Report:
+
+- Implemented connection pooling using HikariCP. Connection pooling optimizes the management
+  of database connections. Instead of opening and closing a new connection for each database
+  operation, a pool of connections is maintained. This reduces the overhead of opening and
+  closing connections and improves the overall efficiency of database operations.
+- Implemented ExecutorService along with submit to run parsers concurrently, taking advantage
+  of parallel processing. Concurrent execution of parsers improves overall performance by
+  utilizing multiple threads. This allows for better resource utilization, especially in
+  scenarios where parsers can execute independently. The ExecutorService manages the threads
+  and simplifies the coordination of concurrent tasks.
+- Implemented batch processing for inserting records into the database using addBatch and
+  executeBatch methods for statements. Batch processing optimizes database insertions by
+  grouping multiple SQL statements into a single batch. This reduces the number of round-trips
+  between the application and the database, resulting in improved performance.
+- Before implementing the above three optimizations, the time to XML parse took around 25 minutes locally.
+- After implementing the above three optimizations, the time to XML parse took 7 minutes locally
+  for a time reduction of around 18 minutes.
+
+#### Inconsistency Data:
+
+##### Mains Summary:
+- Movies Inserted: 12030
+- Genres Inserted: 124
+- Genres In Movies Inserted: 9797
+- Inconsistent Values (Not Inserted): 112
+##### Actors Summary:
+- Stars Inserted: 6863
+- Inconsistent Values (Not Inserted): 73
+- Duplicate Stars: 0
+##### Casts Summary:
+- Stars in Movies Inserted: 32614
+- Inconsistent Values (Not Inserted): 755
+- Duplicate Stars In Movies: 13683
