@@ -8,12 +8,15 @@ import javax.sql.DataSource;
 
 import java.sql.CallableStatement;
 
+import com.google.gson.JsonObject;
 import constant.SQLStatements;
 
 public class AddMovieService {
 
-    public static int addMovie(DataSource dataSource, String movieTitle, String movieYear, String movieDirector,
-                               String starName, String starBirthYear, String genreName) {
+    public static String[] addMovie(DataSource dataSource, String movieTitle, String movieYear, String movieDirector,
+                                    String starName, String starBirthYear, String genreName) {
+
+        String[] result = new String[4];
 
         try (Connection conn = dataSource.getConnection()) {
             try (CallableStatement statement = conn.prepareCall(SQLStatements.INSERT_NEW_MOVIE)) {
@@ -36,22 +39,43 @@ public class AddMovieService {
                 try (ResultSet rs = statement.executeQuery()) {
                     if (rs.next()) {
                         int affectedRows = rs.getInt("result");
+                        String movieId = rs.getString("movieId");
+                        String starId = rs.getString("starId");
+                        String genreId = rs.getString("genreId");
 
                         System.out.println("add-movie Sp Affected rows: " + Integer.toString(affectedRows));
 
                         if (affectedRows < 3 || affectedRows > 5) {
-                            return -1;
+
+                            result[0] = "-1";
+
+                            //return -1;
+                            return result;
                         }
-                        return 0;
+
+                        result[0] = "0";
+
+                        result[1] = movieId;
+
+                        result[2] = starId;
+                        result[3] = genreId;
+
+                        return result;
                     } else {
-                        return -1;
+                        result[0] = "-1";
+
+                        //return -1;
+                        return result;
                     }
                 }
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return -1; // Or any other error code or specific value to denote a failure
+            result[0] = "-1";
+
+            //return -1;
+            return result;
         }
     }
 }

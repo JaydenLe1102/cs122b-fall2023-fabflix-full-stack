@@ -90,6 +90,6 @@ BEGIN
         ROLLBACK;
     END IF;
 
-    SELECT v_success as result;
+    SELECT v_success as result, v_movieId as movieId, v_starId as starId, v_genreId as genreId;
 END //
 DELIMITER ;
