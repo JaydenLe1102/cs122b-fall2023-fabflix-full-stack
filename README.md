@@ -48,8 +48,8 @@ This repository build Fablix Movie Project
   JOIN stars s ON sm.starId = s.id  
   LEFT JOIN ratings r ON m.id = r.movieId  
   WHERE (  
-   (? = '' OR m.title LIKE CONCAT('%', ?, '%'))  
-   AND (? = '' OR m.director LIKE CONCAT('%', ?, '%'))  
-   AND (? = '' OR s.name LIKE CONCAT('%', ?, '%'))  
-   AND (? = '' OR m.year = ?)  
+  (? = '' OR m.title LIKE CONCAT('%', ?, '%'))  
+  AND (? = '' OR m.director LIKE CONCAT('%', ?, '%'))  
+  AND (? = '' OR s.name LIKE CONCAT('%', ?, '%'))  
+  AND (? = '' OR m.year = ?)  
   )
