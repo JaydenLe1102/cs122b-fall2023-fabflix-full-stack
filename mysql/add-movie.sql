@@ -6,7 +6,7 @@ BEGIN
     DECLARE v_maxMovieId VARCHAR(10);
     DECLARE v_nextMovieId INT;
 
-    SELECT MAX(id) FROM moviedb.movies WHERE id LIKE 'tt%' AND id REGEXP '^tt[0-9]+$';
+    SELECT MAX(id) INTO v_maxMovieId FROM moviedb.movies WHERE id LIKE 'tt%' AND id REGEXP '^tt[0-9]+$';
 
     SET v_nextMovieId = CAST(SUBSTRING(v_maxMovieId, 3) AS SIGNED) + 1;
 
