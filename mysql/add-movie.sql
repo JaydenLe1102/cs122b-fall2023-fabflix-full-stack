@@ -47,6 +47,13 @@ BEGIN
     DECLARE v_success INT DEFAULT 0;
 		
 
+    -- Check if the movie already exists
+    IF EXISTS (SELECT 1 FROM moviedb.movies WHERE title = p_title AND year = p_year) THEN
+        SELECT 0 as result, NULL as movieId, NULL as starId, NULL as genreId; 
+        LEAVE;
+    END IF;
+
+
     START TRANSACTION;
 
     SET v_movieId = GetNextMovieId();
