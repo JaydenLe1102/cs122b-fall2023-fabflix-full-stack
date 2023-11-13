@@ -57,14 +57,14 @@ BEGIN
 
         SET v_nextStarId = GetNextStarId();
 
-        IF p_birthYear IS NULL THEN
+        IF p_birthYear = -1 THEN
             SELECT id INTO v_starId FROM moviedb.stars WHERE name = p_starName AND birthYear IS NULL LIMIT 1;
         ELSE
             SELECT id INTO v_starId FROM moviedb.stars WHERE name = p_starName AND birthYear = p_birthYear LIMIT 1;
         END IF;
 
         IF v_starId IS NULL THEN
-            IF p_birthYear IS NULL THEN
+            IF p_birthYear = -1 THEN
                 INSERT INTO moviedb.stars (id, name, birthYear) VALUES (v_nextStarId, p_starName, NULL);
             ELSE
                 INSERT INTO moviedb.stars (id, name, birthYear) VALUES (v_nextStarId, p_starName, p_birthYear);
