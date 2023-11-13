@@ -37,13 +37,13 @@ public class SQLStatements {
 
     // SingleMovieService
     public static final String SINGLEMOVIEBYMOVIEID = "SELECT m.id, m.title, m.year, m.director, s.id, s.name, s.birthYear, g.id, g.name, r.rating\n" + //
-                    "FROM stars AS s\n" + //
-                    "JOIN stars_in_movies AS sim ON s.id = sim.starId\n" + //
-                    "JOIN movies AS m ON m.id = sim.movieId\n" + //
-                    "JOIN genres_in_movies AS gim ON m.id = gim.movieId\n" + //
-                    "JOIN genres AS g ON g.id = gim.genreId\n" + //
-                    "LEFT JOIN ratings AS r ON m.id = r.movieId\n" + //
-                    "WHERE m.id = ?;";
+            "FROM stars AS s\n" + //
+            "JOIN stars_in_movies AS sim ON s.id = sim.starId\n" + //
+            "JOIN movies AS m ON m.id = sim.movieId\n" + //
+            "JOIN genres_in_movies AS gim ON m.id = gim.movieId\n" + //
+            "JOIN genres AS g ON g.id = gim.genreId\n" + //
+            "LEFT JOIN ratings AS r ON m.id = r.movieId\n" + //
+            "WHERE m.id = ?;";
 
     // end: SingleMovieService
 
@@ -67,17 +67,17 @@ public class SQLStatements {
             "FROM movies as m\n" +
             "INNER JOIN genres_in_movies as gim ON m.id = gim.movieId\n" +
             "INNER JOIN genres g ON gim.genreId = g.id\n" +
-            "JOIN ratings AS r ON m.id = r.movieId\n" +
+            "LEFT JOIN ratings AS r ON m.id = r.movieId\n" +
             "WHERE LOWER(g.name) = LOWER(?)\n";
 
     public static final String BROWSE_BY_TITLE_NON_ALPHANUMERIC = "SELECT *\n" +
             "FROM movies AS m\n" +
-            "JOIN ratings AS r ON m.id = r.movieId\n" +
+            "LEFT JOIN ratings AS r ON m.id = r.movieId\n" +
             "WHERE title REGEXP '^[^a-zA-Z0-9]'\n";
 
     public static final String BROWSE_BY_TITLE_ALPHANUMERIC = "SELECT *\n" +
             "FROM movies AS m\n" +
-            "JOIN ratings AS r ON m.id = r.movieId\n" +
+            "LEFT JOIN ratings AS r ON m.id = r.movieId\n" +
             "WHERE LOWER(title) LIKE ?\n";
 
     public static final String ALL_GENRES = "SELECT name FROM genres;";
