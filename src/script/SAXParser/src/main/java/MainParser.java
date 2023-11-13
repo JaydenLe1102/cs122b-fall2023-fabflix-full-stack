@@ -2,6 +2,8 @@
 
 import com.zaxxer.hikari.HikariConfig;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -9,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainParser {
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
 
         // Create parsers
         Mains243SAXParser mains243Parser = new Mains243SAXParser();
@@ -26,6 +29,8 @@ public class MainParser {
 
         // Shutdown the executorService when all tasks are complete
         executorService.shutdown();
+        
+        try {
 
         // Wait for all tasks to finish
         while (!executorService.isTerminated()) {
@@ -39,6 +44,16 @@ public class MainParser {
         mains243Parser.printCountSummary();
         actors63Parser.printCountSummary();
         casts124Parser.printCountSummary();
+    } finally {
+        // Record the end time
+        long endTime = System.currentTimeMillis();
+
+        // Calculate total execution time
+        long totalTime = endTime - startTime;
+
+        // Print the ending local time and total execution time
+        printEndTimeAndTotalTime(startTime, endTime, totalTime);
+    }
     }
 
     private static ConnectionPool createConnectionPool() {
@@ -99,5 +114,19 @@ public class MainParser {
             connectionPoolActors.close();
             connectionPoolCasts.close();
         }
+    }
+
+
+    private static void printEndTimeAndTotalTime(long startTime, long endTime, long totalTime) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String startLocalTime = sdf.format(new Date(startTime));
+        String endLocalTime = sdf.format(new Date(endTime));
+        System.out.println();
+        System.out.println("--------------------------------------------------");
+        System.out.println();
+
+        System.out.println("Execution started at: " + startLocalTime);
+        System.out.println("Execution ended at: " + endLocalTime);
+        System.out.println("Total execution time: " + totalTime + " milliseconds");
     }
 }
