@@ -1,4 +1,4 @@
-
+;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -16,6 +16,10 @@ public class Casts124SAXParser extends DefaultHandler {
     private List<StarsInMovie> starsInMovies;
     private String movieId;
     private String starName;
+    public int insertedStarsInMoviesCount = 0;
+    public int inconsistentValuesCount = 0;
+    public int duplicateStarsInMoviesCount = 0;
+
 
     public Casts124SAXParser() {
         starsInMovies = new ArrayList<>();
@@ -44,10 +48,16 @@ public class Casts124SAXParser extends DefaultHandler {
     public void characters(char[] ch, int start, int length) {
         String value = new String(ch, start, length).trim();
         if (!value.isEmpty()) {
-            if (currentElement.equalsIgnoreCase("f")) {
-                movieId = value;
-            } else if (currentElement.equalsIgnoreCase("a") && !"s a".equalsIgnoreCase(value)) {
-                starName = value;
+            try {
+                if (currentElement.equalsIgnoreCase("f")) {
+                    movieId = value;
+                } else if (currentElement.equalsIgnoreCase("a") && !"s a".equalsIgnoreCase(value)) {
+                    starName = value;
+                }
+            } catch (Exception e) {
+                // Log and handle any inconsistencies in data
+                inconsistentValuesCount++;
+                // Handle inconsistencies as NULL or skip, based on specific context
             }
         }
     }
@@ -68,13 +78,10 @@ public class Casts124SAXParser extends DefaultHandler {
         return starsInMovies;
     }
 
-    public static void main(String[] args) {
-        Casts124SAXParser parser = new Casts124SAXParser();
-        parser.parseDocument();
-
-        List<StarsInMovie> starsInMovies = parser.getStarsInMovies();
-
-        DatabaseHandler databaseHandler = new DatabaseHandler();
-        databaseHandler.insertStarsInMoviesBatch(starsInMovies);
+    public void printCountSummary() {
+        System.out.println("Casts Summary:");
+        System.out.println("1. Stars in Movies Inserted: " + insertedStarsInMoviesCount);
+        System.out.println("4. Inconsistent Values (Not Inserted): " + inconsistentValuesCount);
+        System.out.println("5. Duplicate Stars In Movies: " + duplicateStarsInMoviesCount);
     }
 }

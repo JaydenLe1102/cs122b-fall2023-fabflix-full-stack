@@ -1,8 +1,8 @@
+;
 
+import com.google.protobuf.NullValue;
 
-
-
-
+import java.util.*;
 public class Star {
     private String id;
     private String name;
