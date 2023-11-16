@@ -2,6 +2,8 @@ package edu.uci.ics.fabflixmobile.ui.movielist;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -11,6 +13,8 @@ import android.os.Bundle;
 
 import edu.uci.ics.fabflixmobile.R;
 import edu.uci.ics.fabflixmobile.data.model.Movie;
+import edu.uci.ics.fabflixmobile.databinding.ActivityMainPageBinding;
+import edu.uci.ics.fabflixmobile.databinding.ActivityMovielistBinding;
 import edu.uci.ics.fabflixmobile.ui.main_page.MainPageActivity;
 import edu.uci.ics.fabflixmobile.ui.single_movie.SingleMovieActivity;
 
@@ -27,7 +31,9 @@ public class MovieListActivity extends AppCompatActivity {
         movies.add(new Movie("The Terminal", (short) 2004));
         movies.add(new Movie("The Final Season", (short) 2007));
         MovieListViewAdapter adapter = new MovieListViewAdapter(this, movies);
+
         ListView listView = findViewById(R.id.list);
+
         listView.setAdapter(adapter);
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Movie movie = movies.get(position);
@@ -40,5 +46,9 @@ public class MovieListActivity extends AppCompatActivity {
 
             startActivity(SingleMoviePage);
         });
+    }
+
+    public void goBack(View view) {
+        onBackPressed();
     }
 }

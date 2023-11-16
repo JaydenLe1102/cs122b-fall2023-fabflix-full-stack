@@ -31,9 +31,12 @@ public class MainPageActivity extends AppCompatActivity {
         searhBox = binding.searchBox;
         final Button searchButton = binding.search;
 
+
         //assign a listener to call a function to handle the user request when clicking a button
         searchButton.setOnClickListener(view -> search());
+
     }
+
 
     @SuppressLint("SetTextI18n")
     public void search() {
@@ -42,6 +45,12 @@ public class MainPageActivity extends AppCompatActivity {
 
 
         Intent MovieListPage = new Intent(MainPageActivity.this, MovieListActivity.class);
+
+        // call api to get search result and pass it to the next page
+
+        String title = searhBox.getText().toString();
+
+
         // activate the list page.
 
 
