@@ -13,7 +13,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import edu.uci.ics.fabflixmobile.data.NetworkManager;
 import edu.uci.ics.fabflixmobile.databinding.ActivityLoginBinding;
+import edu.uci.ics.fabflixmobile.ui.main_page.MainPageActivity;
 import edu.uci.ics.fabflixmobile.ui.movielist.MovieListActivity;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,10 +66,15 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("login.success", response);
                     //Complete and destroy login activity once successful
                     finish();
-                    // initialize the activity(page)/destination
-                    Intent MovieListPage = new Intent(LoginActivity.this, MovieListActivity.class);
-                    // activate the list page.
-                    startActivity(MovieListPage);
+//                    // initialize the activity(page)/destination
+//                    Intent MovieListPage = new Intent(LoginActivity.this, MovieListActivity.class);
+//                    // activate the list page.
+//                    startActivity(MovieListPage);
+
+
+                    Intent MainPage = new Intent(LoginActivity.this, MainPageActivity.class);
+                    startActivity(MainPage);
+
                 },
                 error -> {
                     // error

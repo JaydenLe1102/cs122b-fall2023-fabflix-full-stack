@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="70dp"
+        tools:context=".ui.single_movie.SingleMovieActivity">
+
+    <!-- Movie Title -->
+    <TextView
+            android:id="@+id/movieTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movie Title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"/>
+
+    <!-- Year -->
+    <TextView
+            android:id="@+id/movieYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year: 2023"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/movieTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+    <!-- Director -->
+    <TextView
+            android:id="@+id/movieDirector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Director: John Doe"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/movieYear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+    <!-- Genres -->
+    <TextView
+            android:id="@+id/movieGenres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genres: Action, Drama"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/movieDirector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+    <TableLayout
+            android:id="@+id/starTable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/movieGenres"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <TableRow>
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Star Name"/>
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Year of Birth"/>
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Movie Count"/>
+        </TableRow>
+
+        <!-- Table body is left empty here, will be populated with data dynamically -->
+        <TableRow
+                android:id="@+id/starTableRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -30,6 +30,8 @@ public class MovieListActivity extends AppCompatActivity {
             Movie movie = movies.get(position);
             @SuppressLint("DefaultLocale") String message = String.format("Clicked on position: %d, name: %s, %d", position, movie.getName(), movie.getYear());
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+            
+            
         });
     }
 }
