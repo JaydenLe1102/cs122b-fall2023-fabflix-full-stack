@@ -13,6 +13,7 @@
             android:usesCleartextTraffic="true">
         <activity android:name=".ui.movielist.MovieListActivity"/>
         <activity android:name=".ui.main_page.MainPageActivity"/>
+        <activity android:name=".ui.single_movie.SingleMovieActivity"/>
         <activity
                 android:name=".ui.login.LoginActivity"
                 android:exported="true">
