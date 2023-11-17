@@ -9,6 +9,16 @@ import java.net.CookieHandler;
 import java.net.CookieManager;
 
 public class NetworkManager {
+
+    /*
+      In Android, localhost is the address of the device or the emulator.
+      To connect to your machine, you need to use the below IP address
+     */
+    private static final String host = "10.0.2.2";
+    private static final String port = "8080";
+    private static final String domain = "cs122b_project2_login_cart_example_war";
+    public static final String baseURL = "http://" + host + ":" + port + "/" + domain;
+
     private static NetworkManager instance = null;
     public RequestQueue queue;
 
