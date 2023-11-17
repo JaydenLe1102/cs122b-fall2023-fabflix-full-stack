@@ -15,6 +15,8 @@ import edu.uci.ics.fabflixmobile.data.NetworkManager;
 import edu.uci.ics.fabflixmobile.databinding.ActivityLoginBinding;
 import edu.uci.ics.fabflixmobile.ui.main_page.MainPageActivity;
 import edu.uci.ics.fabflixmobile.ui.movielist.MovieListActivity;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,39 +46,64 @@ public class LoginActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void login() {
-        message.setText("Trying to login");
+        message.setText("Trying to logging");
         // use the same network queue across our application
         final RequestQueue queue = NetworkManager.sharedManager(this).queue;
+
+
         // request type is POST
         final StringRequest loginRequest = new StringRequest(
                 Request.Method.POST,
                 NetworkManager.baseURL + "/api/login",
                 response -> {
-                    // TODO: should parse the json response to redirect to appropriate functions
-                    //  upon different response value.
                     Log.d("login.success", response);
                     //Complete and destroy login activity once successful
-                    finish();
-//                    // initialize the activity(page)/destination
-//                    Intent MovieListPage = new Intent(LoginActivity.this, MovieListActivity.class);
-//                    // activate the list page.
-//                    startActivity(MovieListPage);
 
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        String success = jsonObject.getString("success");
 
-                    Intent MainPage = new Intent(LoginActivity.this, MainPageActivity.class);
-                    startActivity(MainPage);
+                        if (success.equals("true")) {
+                            finish();
+                            Intent mainPageIntent = new Intent(LoginActivity.this, MainPageActivity.class);
+                            startActivity(mainPageIntent);
+                        } else {
+                            String reason = jsonObject.optString("reason", ""); // Get the "reason" field from JSON
+
+                            switch (reason) {
+                                case "email":
+                                    message.setText("Email does not exist");
+                                    break;
+                                case "password":
+                                    message.setText("Password is incorrect");
+                                    break;
+                                case "already":
+                                    message.setText("You have already logged in");
+                                    break;
+                                default:
+                                    message.setText("Login Failed");
+                                    break;
+                            }
+                        }
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+
 
                 },
                 error -> {
                     // error
                     Log.d("login.error", error.toString());
-                }) {
+
+                    message.setText("Failed to logged in");
+        }) {
             @Override
             protected Map<String, String> getParams() {
                 // POST request form data
                 final Map<String, String> params = new HashMap<>();
-                params.put("username", username.getText().toString());
+                params.put("email", username.getText().toString());
                 params.put("password", password.getText().toString());
+                params.put("isAndroid", String.valueOf(true));
                 return params;
             }
         };

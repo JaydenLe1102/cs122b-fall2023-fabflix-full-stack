@@ -1,5 +1,6 @@
 package edu.uci.ics.fabflixmobile.ui.movielist;
 
+import android.text.TextUtils;
 import edu.uci.ics.fabflixmobile.R;
 import edu.uci.ics.fabflixmobile.data.model.Movie;
 
@@ -19,7 +20,10 @@ public class MovieListViewAdapter extends ArrayAdapter<Movie> {
     // View lookup cache
     private static class ViewHolder {
         TextView title;
-        TextView subtitle;
+        TextView year;
+        TextView director;
+        TextView stars;
+        TextView genres;
     }
 
     public MovieListViewAdapter(Context context, ArrayList<Movie> movies) {
@@ -40,7 +44,11 @@ public class MovieListViewAdapter extends ArrayAdapter<Movie> {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.movielist_row, parent, false);
             viewHolder.title = convertView.findViewById(R.id.title);
-            viewHolder.subtitle = convertView.findViewById(R.id.subtitle);
+//            viewHolder.year = convertView.findViewById(R.id.year);
+//            viewHolder.director = convertView.findViewById(R.id.director);
+//            viewHolder.stars = convertView.findViewById(R.id.stars);
+//            viewHolder.genres = convertView.findViewById(R.id.genres);
+
             // Cache the viewHolder object inside the fresh view
             convertView.setTag(viewHolder);
         } else {
@@ -49,9 +57,17 @@ public class MovieListViewAdapter extends ArrayAdapter<Movie> {
         }
         // Populate the data from the data object via the viewHolder object
         // into the template view.
-        viewHolder.title.setText(movie.getName());
-        viewHolder.subtitle.setText(movie.getYear() + "");
-        // Return the completed view to render on screen
+        viewHolder.title.setText(movie.getTitle());
+//        viewHolder.year.setText("(" + movie.getYear() + ")");
+//        viewHolder.director.setText("Director: " + movie.getDirector());
+//
+//        // Assuming there is a method to convert an array to a comma-separated string
+//        viewHolder.stars.setText("Stars: " + arrayToString(movie.getStars()));
+//        viewHolder.genres.setText("Genres: " + arrayToString(movie.getGenres()));
         return convertView;
+    }
+
+    private String arrayToString(Object[] array) {
+        return array != null ? TextUtils.join(", ", array) : "";
     }
 }
