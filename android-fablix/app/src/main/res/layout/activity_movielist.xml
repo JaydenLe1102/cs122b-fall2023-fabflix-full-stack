@@ -46,10 +46,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Previous"
-                android:onClick="loadPreviousPage"/>
+                android:onClick="loadPreviousPage"
+                android:enabled="false"/>
 
         <TextView
-                android:id="@+id/pageNumberTextView"
+                android:id="@+id/pageNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Page 1"

@@ -3,16 +3,23 @@ package edu.uci.ics.fabflixmobile.ui.movielist;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
 import edu.uci.ics.fabflixmobile.R;
+import edu.uci.ics.fabflixmobile.data.NetworkManager;
 import edu.uci.ics.fabflixmobile.data.model.Movie;
 import edu.uci.ics.fabflixmobile.data.model.Star;
+import edu.uci.ics.fabflixmobile.ui.main_page.MainPageActivity;
 import edu.uci.ics.fabflixmobile.ui.single_movie.SingleMovieActivity;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,6 +27,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class MovieListActivity extends AppCompatActivity {
+    ArrayList<Movie> movies;
+    String searchText;
+    TextView pageNumberView;
+    Button nextBtn ;
+    Button prevBtn;
+    Integer pageNumber = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +42,23 @@ public class MovieListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final String responseMovies = intent.getStringExtra("responseMovies");
+        searchText = intent.getStringExtra("searchText");
 
         System.out.println(responseMovies);
 
-        final ArrayList<Movie> movies = parseMovieList(responseMovies);
+
+
+        pageNumberView = findViewById(R.id.pageNumber);
+
+        nextBtn = findViewById(R.id.btnNext);
+        prevBtn = findViewById(R.id.btnPrevious);
+
+
+        setListView(responseMovies);
+    }
+
+    private void setListView(String responseMovies) {
+        movies = parseMovieList(responseMovies);
 
         MovieListViewAdapter adapter = new MovieListViewAdapter(this, movies);
 
@@ -47,9 +73,18 @@ public class MovieListActivity extends AppCompatActivity {
             Intent SingleMoviePage = new Intent(MovieListActivity.this, SingleMovieActivity.class);
             // activate the list page.
 
+            
+
 
             startActivity(SingleMoviePage);
         });
+
+        if (movies.size() < 10){
+            nextBtn.setEnabled(false);
+        }
+        else{
+            nextBtn.setEnabled(true);
+        }
     }
 
     public void goBack(View view) {
@@ -93,5 +128,74 @@ public class MovieListActivity extends AppCompatActivity {
         }
 
         return movieList;
+    }
+
+
+
+    @SuppressLint("SetTextI18n")
+    public void loadNextPage(View view) {
+        pageNumber = pageNumber + 1;
+        pageNumberView.setText("Page " + pageNumber);
+        if (pageNumber > 1){
+            prevBtn.setEnabled(true);
+        }
+
+
+        search(pageNumber);
+
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void loadPreviousPage(View view) {
+        pageNumber = pageNumber - 1;
+        pageNumberView.setText("Page " + pageNumber);
+
+        if (pageNumber == 1){
+            prevBtn.setEnabled(false);
+        }
+
+        search(pageNumber);
+
+    }
+
+
+    @SuppressLint("SetTextI18n")
+    public void search(Integer pageNumber) {
+        // initialize the activity(page)/destination
+        //call api to get search result and pass it to the next page
+
+//        message.setText("Searching" + NetworkManager.baseURL + "/api/search");
+
+        final RequestQueue queue = NetworkManager.sharedManager(this).queue;
+
+
+        String baseUrl = NetworkManager.baseURL + "/api/search";
+        String title =  searchText;
+        String year = "";
+        String director = "";
+        String star = "";
+        int pageSize = 10;
+        int sortOption = 7;
+
+        @SuppressLint("DefaultLocale") String constructedUrl = String.format("%s?title=%s&year=%s&director=%s&star=%s&page_number=%d&page_size=%d&sort_option=%d",
+                baseUrl, title, year, director, star, pageNumber, pageSize, sortOption);
+
+        final StringRequest searchRequest = new StringRequest(
+                Request.Method.GET,
+                constructedUrl,
+                response -> {
+                    setListView(response);
+                },
+                error -> {
+//                        message.setText("Fail to search with error: " + error.toString());
+//                        message.setText("Searching" + NetworkManager.baseURL + "/api/search");
+
+                }
+        ){
+        };
+
+        queue.add(searchRequest);
+
     }
 }

@@ -10,5 +10,6 @@
     <color name="red">#FFCC0000</color>
 
     <color name="skyblue">#A0DAF1</color>
+    <color name="lightGray">#e0e0e0</color>
 
 </resources>

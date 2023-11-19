@@ -87,6 +87,7 @@ public class MainPageActivity extends AppCompatActivity {
 
 
                         MovieListPage.putExtra("responseMovies", response);
+                        MovieListPage.putExtra("searchText",  searhBox.getText().toString());
 
                         // activate the list page.
 
