@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Go Back"
-            android:onClick="onGoBackClick"
+            android:onClick="goBack"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -87,18 +87,26 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Star Name"/>
+                    android:gravity="center"
+                    android:text="Star Name"
+                    android:textStyle="bold"/>
             <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Year of Birth"/>
+                    android:gravity="center"
+                    android:text="Year of Birth"
+                    android:textStyle="bold"/>
             <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Movie Count"/>
+                    android:gravity="center"
+                    android:text="Movie Count"
+                    android:textStyle="bold"/>
         </TableRow>
+
+
 
         <!-- Table body is left empty here, will be populated with data dynamically -->
         <TableRow

@@ -69,14 +69,8 @@ public class MovieListActivity extends AppCompatActivity {
             Movie movie = movies.get(position);
             @SuppressLint("DefaultLocale") String message = String.format("Clicked on position: %d, name: %s, %d", position, movie.getTitle(), movie.getYear());
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+            getSingleMoviePageInfo(movie.getMovie_id());
 
-            Intent SingleMoviePage = new Intent(MovieListActivity.this, SingleMovieActivity.class);
-            // activate the list page.
-
-            
-
-
-            startActivity(SingleMoviePage);
         });
 
         if (movies.size() < 10){
@@ -190,6 +184,7 @@ public class MovieListActivity extends AppCompatActivity {
                 error -> {
 //                        message.setText("Fail to search with error: " + error.toString());
 //                        message.setText("Searching" + NetworkManager.baseURL + "/api/search");
+                    Toast.makeText(getApplicationContext(), "Fail to get page information", Toast.LENGTH_SHORT).show();
 
                 }
         ){
@@ -197,5 +192,39 @@ public class MovieListActivity extends AppCompatActivity {
 
         queue.add(searchRequest);
 
+    }
+
+    public void getSingleMoviePageInfo(String movieId){
+        final RequestQueue queue = NetworkManager.sharedManager(this).queue;
+
+
+        String baseUrl = NetworkManager.baseURL + "/api/single-movie";
+
+        @SuppressLint("DefaultLocale") String constructedUrl = String.format("%s?id=%s",
+                baseUrl, movieId);
+
+        final StringRequest searchRequest = new StringRequest(
+                Request.Method.GET,
+                constructedUrl,
+                response -> {
+
+                    Intent SingleMoviePage = new Intent(MovieListActivity.this, SingleMovieActivity.class);
+                    // activate the list page.
+
+
+                    SingleMoviePage.putExtra("singleMovieResponse", response);
+
+
+                    startActivity(SingleMoviePage);
+                },
+                error -> {
+//                        message.setText("Fail to search with error: " + error.toString());
+//                        message.setText("Searching" + NetworkManager.baseURL + "/api/search");
+                    Toast.makeText(getApplicationContext(), "Fail to get single movie page information", Toast.LENGTH_SHORT).show();
+                }
+        ){
+        };
+
+        queue.add(searchRequest);
     }
 }
