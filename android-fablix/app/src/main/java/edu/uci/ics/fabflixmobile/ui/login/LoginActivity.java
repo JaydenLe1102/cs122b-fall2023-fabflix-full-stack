@@ -13,7 +13,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import edu.uci.ics.fabflixmobile.data.NetworkManager;
 import edu.uci.ics.fabflixmobile.databinding.ActivityLoginBinding;
+import edu.uci.ics.fabflixmobile.ui.main_page.MainPageActivity;
 import edu.uci.ics.fabflixmobile.ui.movielist.MovieListActivity;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,15 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText username;
     private EditText password;
     private TextView message;
-
-    /*
-      In Android, localhost is the address of the device or the emulator.
-      To connect to your machine, you need to use the below IP address
-     */
-    private final String host = "10.0.2.2";
-    private final String port = "8080";
-    private final String domain = "cs122b_project2_login_cart_example_war";
-    private final String baseURL = "http://" + host + ":" + port + "/" + domain;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,34 +46,64 @@ public class LoginActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void login() {
-        message.setText("Trying to login");
+        message.setText("Trying to logging");
         // use the same network queue across our application
         final RequestQueue queue = NetworkManager.sharedManager(this).queue;
+
+
         // request type is POST
         final StringRequest loginRequest = new StringRequest(
                 Request.Method.POST,
-                baseURL + "/api/login",
+                NetworkManager.baseURL + "/api/login",
                 response -> {
-                    // TODO: should parse the json response to redirect to appropriate functions
-                    //  upon different response value.
                     Log.d("login.success", response);
                     //Complete and destroy login activity once successful
-                    finish();
-                    // initialize the activity(page)/destination
-                    Intent MovieListPage = new Intent(LoginActivity.this, MovieListActivity.class);
-                    // activate the list page.
-                    startActivity(MovieListPage);
+
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        String success = jsonObject.getString("success");
+
+                        if (success.equals("true")) {
+                            finish();
+                            Intent mainPageIntent = new Intent(LoginActivity.this, MainPageActivity.class);
+                            startActivity(mainPageIntent);
+                        } else {
+                            String reason = jsonObject.optString("reason", ""); // Get the "reason" field from JSON
+
+                            switch (reason) {
+                                case "email":
+                                    message.setText("Email does not exist");
+                                    break;
+                                case "password":
+                                    message.setText("Password is incorrect");
+                                    break;
+                                case "already":
+                                    message.setText("You have already logged in");
+                                    break;
+                                default:
+                                    message.setText("Login Failed");
+                                    break;
+                            }
+                        }
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+
+
                 },
                 error -> {
                     // error
                     Log.d("login.error", error.toString());
-                }) {
+
+                    message.setText("Failed to logged in");
+        }) {
             @Override
             protected Map<String, String> getParams() {
                 // POST request form data
                 final Map<String, String> params = new HashMap<>();
-                params.put("username", username.getText().toString());
+                params.put("email", username.getText().toString());
                 params.put("password", password.getText().toString());
+                params.put("isAndroid", String.valueOf(true));
                 return params;
             }
         };

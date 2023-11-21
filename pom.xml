@@ -28,7 +28,7 @@
             <version>2.10.1</version>
         </dependency>
         <dependency>
-            <groupId>org.jasypt</groupId>
+            <groupId>org.jasypt</groupId>ant
             <artifactId>jasypt</artifactId>
             <version>1.9.3</version>
         </dependency>
