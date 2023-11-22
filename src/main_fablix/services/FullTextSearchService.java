@@ -24,9 +24,9 @@ public class FullTextSearchService {
             // Add the dynamically generated conditions
             for (int i = 0; i < tokens.length; i++) {
                 if (i == 0) {
-                    queryBuilder.append("m.title LIKE ?");
+                    queryBuilder.append("(m.title LIKE ? OR m.title LIKE ?)");
                 } else {
-                    queryBuilder.append(" AND m.title LIKE ?");
+                    queryBuilder.append(" AND (m.title LIKE ? OR m.title LIKE ?)");
                 }
             }
             queryBuilder.append(SQLStatements.SORTING[sort_option]).append(SQLStatements.PAGINATION);
@@ -35,11 +35,16 @@ public class FullTextSearchService {
             PreparedStatement statement = conn.prepareStatement(queryBuilder.toString());
 
             // Set parameters for each token
+            int index = 1;
             for (int i = 0; i < tokens.length; i++) {
-                statement.setString(i + 1,  "% " + tokens[i] + "%");
+                statement.setString(index,  "% " + tokens[i] + "%");
+                index++;
+                statement.setString(index,  tokens[i] + "%");
+                index++;
             }
-            statement.setInt(tokens.length + 1, page_size);
-            statement.setInt(tokens.length + 2, (page_number - 1) * page_size);
+            statement.setInt(index, page_size);
+            index++;
+            statement.setInt(index, (page_number - 1) * page_size);
 
             // Execute the query
             ResultSet rs = statement.executeQuery();
