@@ -77,6 +77,14 @@ function handleSessionData(resultData) {
 			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 			success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 		})
+	} else if (resultData['isFullSearch']) {
+		movieQuery = resultData['movie_query']
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: `api/full-search?query=${movieQuery}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
+			success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
 	}
 }
 
@@ -108,6 +116,15 @@ function updateTable(page_number, page_size, callback) {
 			dataType: 'json', // Setting return data type
 			method: 'GET', // Setting request method
 			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
+			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
+	} else if (movieQuery) {
+		console.log("In Full Search")
+		// Makes the HTTP GET request and registers on success callback function handleStarResult
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: `api/full-search?movie_query=${movieQuery}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 		})
 	} else {
@@ -338,6 +355,10 @@ let searchDirector = getParameterByName('search_director')
 let searchStar = getParameterByName('search_star')
 console.log(searchTitle)
 console.log(searchStar)
+
+// get params for full search
+let movieQuery = getParameterByName('movie_query')
+console.log(movieQuery)
 
 //perform browsing for the page
 jQuery.ajax({

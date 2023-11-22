@@ -54,6 +54,7 @@ public class MovieListSessionServlet extends HttpServlet {
 
 			Boolean isBrowsed = (Boolean) session.getAttribute("isBrowsed");
 			Boolean isSearch = (Boolean) session.getAttribute("isSearch");
+			Boolean isFullSearch = (Boolean) session.getAttribute("isFullSearch");
 
 			Integer page_number = (Integer) session.getAttribute("page_number") != null
 					? (Integer) session.getAttribute("page_number")
@@ -70,6 +71,7 @@ public class MovieListSessionServlet extends HttpServlet {
 			System.out.println("page_size: " + page_size);
 			System.out.println("isBrowsed: " + isBrowsed);
 			System.out.println("isSearch: " + isSearch);
+			System.out.println("isFullSearch: " + isFullSearch);
 
 			JsonObject responseJsonObject = new JsonObject();
 
@@ -78,6 +80,7 @@ public class MovieListSessionServlet extends HttpServlet {
 			responseJsonObject.addProperty("sort_option", sort_option);
 			responseJsonObject.addProperty("isBrowsed", isBrowsed);
 			responseJsonObject.addProperty("isSearch", isSearch);
+			responseJsonObject.addProperty("isFullSearch", isFullSearch);
 
 			responseJsonObject.addProperty("browse_genre", (String) session.getAttribute("browse_genre"));
 			responseJsonObject.addProperty("browse_title", (String) session.getAttribute("browse_title"));
@@ -86,6 +89,7 @@ public class MovieListSessionServlet extends HttpServlet {
 			responseJsonObject.addProperty("search_year", (String) session.getAttribute("search_year"));
 			responseJsonObject.addProperty("search_director", (String) session.getAttribute("search_director"));
 			responseJsonObject.addProperty("search_star", (String) session.getAttribute("search_star"));
+			responseJsonObject.addProperty("movie_query", (String) session.getAttribute("movie_query"));
 
 			out.write(responseJsonObject.toString());
 			response.setStatus(200);
