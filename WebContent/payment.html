@@ -8,6 +8,10 @@
 			content="width=device-width, initial-scale=1, shrink-to-fit=no"
 		/>
 
+		<!-- jQuery is required -->
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
+		<link rel="stylesheet" href="style.css">
 		<!-- Bootstrap CSS -->
 		<link
 			rel="stylesheet"
@@ -87,7 +91,7 @@
 							<div class="col">
 								<input
 										type="text"
-										class="form-control form-control-sm"
+										class="autocomplete-searchbox form-control form-control-sm"
 										placeholder="Movie"
 										id="movieQuery"
 										name="movie_query"
@@ -166,8 +170,6 @@
 			</form>
 		</div>
 
-		<!-- include your own JS file -->
-		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript" src="payment.js"></script>
 
 		<script>

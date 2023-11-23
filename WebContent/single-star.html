@@ -15,6 +15,10 @@ This .html performs two steps:
 			content="width=device-width, initial-scale=1, shrink-to-fit=no"
 		/>
 
+		<!-- jQuery is required -->
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
+		<link rel="stylesheet" href="style.css">
 		<!-- Bootstrap CSS -->
 		<link
 			rel="stylesheet"
@@ -89,15 +93,6 @@ This .html performs two steps:
 								><h4>Checkout</h4></a
 							>
 						</li>
-						<li class="nav-item">
-							<a
-								class="nav-link"
-								aria-current="page"
-								href="./shopping-cart.html"
-								style="color: black"
-								><h4>Checkout</h4></a
-							>
-						</li>
 					</ul>
 					<!-- Search form -->
 					<form id="full-text-search-form" method="GET" action="movie-list.html">
@@ -105,7 +100,7 @@ This .html performs two steps:
 							<div class="col">
 								<input
 										type="text"
-										class="form-control form-control-sm"
+										class="autocomplete-searchbox form-control form-control-sm"
 										placeholder="Movie"
 										id="movieQuery"
 										name="movie_query"
@@ -153,11 +148,6 @@ This .html performs two steps:
 				<tbody id="movie_table_body"></tbody>
 			</table>
 		</div>
-
-		<!-- Load jQuery and Bootstrap JS -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 		<!-- Load our own JS file -->
 		<!-- The path is relative to single-star.html, since these two files are in the same directory -->

@@ -15,6 +15,10 @@
 			content="width=device-width, initial-scale=1, shrink-to-fit=no"
 		/>
 
+		<!-- jQuery is required -->
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
+		<link rel="stylesheet" href="style.css">
 		<!-- Bootstrap CSS -->
 		<link
 			rel="stylesheet"
@@ -90,13 +94,12 @@
 							>
 						</li>
 					</ul>
-					<!-- Search form -->
 					<form id="full-text-search-form" method="GET" action="movie-list.html">
 						<div class="form-row align-items-right">
 							<div class="col">
 								<input
 										type="text"
-										class="form-control form-control-sm"
+										class="autocomplete-searchbox form-control form-control-sm"
 										placeholder="Movie"
 										id="movieQuery"
 										name="movie_query"
@@ -147,10 +150,6 @@
 			</table>
 		</div>
 
-		<!-- Load jQuery and Bootstrap JS -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 		<!-- Load our JS file -->
 		<script src="confirmation.js"></script>
 	</body>
