@@ -21,6 +21,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
+
 import edu.uci.ics.fabflixmobile.data.model.Movie;
 import edu.uci.ics.fabflixmobile.data.model.Star;
 
@@ -62,50 +63,46 @@ public class MainPageActivity extends AppCompatActivity {
 //        message.setText("Searching" + NetworkManager.baseURL + "/api/search");
 
         final RequestQueue queue = NetworkManager.sharedManager(this).queue;
+//full-search?movie_query=s%20lov
 
-
-        String baseUrl = NetworkManager.baseURL + "/api/search";
-        String title =  searhBox.getText().toString();
-        String year = "";
-        String director = "";
-        String star = "";
+        String baseUrl = NetworkManager.baseURL + "/api/full-search";
+        String movie_query = searhBox.getText().toString();
         int pageNumber = 1;
         int pageSize = 10;
         int sortOption = 7;
 
-        String constructedUrl = String.format("%s?title=%s&year=%s&director=%s&star=%s&page_number=%d&page_size=%d&sort_option=%d",
-                baseUrl, title, year, director, star, pageNumber, pageSize, sortOption);
+        String constructedUrl = String.format("%s?movie_query=%s&page_number=%d&page_size=%d&sort_option=%d",
+                baseUrl, movie_query, pageNumber, pageSize, sortOption);
 
         final StringRequest searchRequest = new StringRequest(
-                    Request.Method.GET,
-                    constructedUrl,
-                    response -> {
+                Request.Method.GET,
+                constructedUrl,
+                response -> {
 
 
-                        Intent MovieListPage = new Intent(MainPageActivity.this, MovieListActivity.class);
+                    Intent MovieListPage = new Intent(MainPageActivity.this, MovieListActivity.class);
 
 
+                    MovieListPage.putExtra("responseMovies", response);
+                    MovieListPage.putExtra("searchText", searhBox.getText().toString());
 
-                        MovieListPage.putExtra("responseMovies", response);
-                        MovieListPage.putExtra("searchText",  searhBox.getText().toString());
-
-                        // activate the list page.
-
-
-                        startActivity(MovieListPage);
-                        message.setText("");
+                    // activate the list page.
 
 
-                    },
-                    error -> {
+                    startActivity(MovieListPage);
+                    message.setText("");
+
+
+                },
+                error -> {
 //                        message.setText("Fail to search with error: " + error.toString());
 //                        message.setText("Searching" + NetworkManager.baseURL + "/api/search");
 
-                    }
-            ){
-            };
+                }
+        ) {
+        };
 
-            queue.add(searchRequest);
+        queue.add(searchRequest);
 
     }
 

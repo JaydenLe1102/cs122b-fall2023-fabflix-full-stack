@@ -30,7 +30,7 @@ public class MovieListActivity extends AppCompatActivity {
     ArrayList<Movie> movies;
     String searchText;
     TextView pageNumberView;
-    Button nextBtn ;
+    Button nextBtn;
     Button prevBtn;
     Integer pageNumber = 1;
 
@@ -45,7 +45,6 @@ public class MovieListActivity extends AppCompatActivity {
         searchText = intent.getStringExtra("searchText");
 
         System.out.println(responseMovies);
-
 
 
         pageNumberView = findViewById(R.id.pageNumber);
@@ -73,10 +72,9 @@ public class MovieListActivity extends AppCompatActivity {
 
         });
 
-        if (movies.size() < 10){
+        if (movies.size() < 10) {
             nextBtn.setEnabled(false);
-        }
-        else{
+        } else {
             nextBtn.setEnabled(true);
         }
     }
@@ -125,12 +123,11 @@ public class MovieListActivity extends AppCompatActivity {
     }
 
 
-
     @SuppressLint("SetTextI18n")
     public void loadNextPage(View view) {
         pageNumber = pageNumber + 1;
         pageNumberView.setText("Page " + pageNumber);
-        if (pageNumber > 1){
+        if (pageNumber > 1) {
             prevBtn.setEnabled(true);
         }
 
@@ -145,7 +142,7 @@ public class MovieListActivity extends AppCompatActivity {
         pageNumber = pageNumber - 1;
         pageNumberView.setText("Page " + pageNumber);
 
-        if (pageNumber == 1){
+        if (pageNumber == 1) {
             prevBtn.setEnabled(false);
         }
 
@@ -164,16 +161,13 @@ public class MovieListActivity extends AppCompatActivity {
         final RequestQueue queue = NetworkManager.sharedManager(this).queue;
 
 
-        String baseUrl = NetworkManager.baseURL + "/api/search";
-        String title =  searchText;
-        String year = "";
-        String director = "";
-        String star = "";
+        String baseUrl = NetworkManager.baseURL + "/api/full-search";
+        String movie_query = searchText;
         int pageSize = 10;
         int sortOption = 7;
 
-        @SuppressLint("DefaultLocale") String constructedUrl = String.format("%s?title=%s&year=%s&director=%s&star=%s&page_number=%d&page_size=%d&sort_option=%d",
-                baseUrl, title, year, director, star, pageNumber, pageSize, sortOption);
+        String constructedUrl = String.format("%s?movie_query=%s&page_number=%d&page_size=%d&sort_option=%d",
+                baseUrl, movie_query, pageNumber, pageSize, sortOption);
 
         final StringRequest searchRequest = new StringRequest(
                 Request.Method.GET,
@@ -187,14 +181,14 @@ public class MovieListActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Fail to get page information", Toast.LENGTH_SHORT).show();
 
                 }
-        ){
+        ) {
         };
 
         queue.add(searchRequest);
 
     }
 
-    public void getSingleMoviePageInfo(String movieId){
+    public void getSingleMoviePageInfo(String movieId) {
         final RequestQueue queue = NetworkManager.sharedManager(this).queue;
 
 
@@ -222,7 +216,7 @@ public class MovieListActivity extends AppCompatActivity {
 //                        message.setText("Searching" + NetworkManager.baseURL + "/api/search");
                     Toast.makeText(getApplicationContext(), "Fail to get single movie page information", Toast.LENGTH_SHORT).show();
                 }
-        ){
+        ) {
         };
 
         queue.add(searchRequest);

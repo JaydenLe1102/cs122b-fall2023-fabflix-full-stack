@@ -16,7 +16,7 @@ public class NetworkManager {
      */
     private static final String host = "10.0.2.2";
     private static final String port = "8080";
-    private static final String domain = "2023_fall_cs122b_bobaholic";
+    private static final String domain = "2023_fall_cs122b_bobaholic_war";
     public static final String baseURL = "http://" + host + ":" + port + "/" + domain;
 
     private static NetworkManager instance = null;
