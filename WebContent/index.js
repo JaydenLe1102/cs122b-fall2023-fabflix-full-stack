@@ -65,7 +65,18 @@ function handleLookupAjaxSuccess(data, query, doneCallback) {
 
 function handleSelectSuggestion(suggestion) {
 	// TODO: jump to the specific result page based on the selected suggestion
-	window.location.href = 'movie-list.html?movie_query=' + suggestion["value"];
+	jQuery.ajax({
+		method: "GET",
+		url: "api/movie-from-id?title=" + escape(suggestion["value"]),
+		success: function (data) {
+			console.log(data);
+			window.location.href = 'single-movie.html?id=' + data["id"];
+		},
+		error: function (errorData) {
+			console.log("Lookup AJAX error");
+			console.log(errorData);
+		},
+	});
 }
 
 $(document).ready(function () {
