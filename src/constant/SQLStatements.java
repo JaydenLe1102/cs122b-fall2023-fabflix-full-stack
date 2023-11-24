@@ -130,4 +130,13 @@ public class SQLStatements {
     public static final String INSERT_NEW_STAR_WITHOUT_BIRTHYEAR = "INSERT INTO stars (id, name) VALUES (?, ?);";
 
     public static final String INSERT_NEW_MOVIE = "CALL add_movie(?, ?, ?, ?, ?, ?);";
+
+    public static final String FULLTEXTSEARCH =
+            "SELECT DISTINCT m.id AS id, m.title AS title, m.director AS director, m.year AS year, r.rating AS rating\n"
+                    +
+                    "FROM movies m\n" +
+                    "JOIN stars_in_movies sm ON m.id = sm.movieId\n" +
+                    "JOIN stars s ON sm.starId = s.id\n" +
+                    "LEFT JOIN ratings r ON m.id = r.movieId\n" +
+                    "WHERE\n";
 }
