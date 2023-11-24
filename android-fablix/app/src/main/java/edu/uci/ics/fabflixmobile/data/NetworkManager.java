@@ -14,10 +14,10 @@ public class NetworkManager {
       In Android, localhost is the address of the device or the emulator.
       To connect to your machine, you need to use the below IP address
      */
-    private static final String host = "10.0.2.2";
-    private static final String port = "8080";
-    private static final String domain = "2023_fall_cs122b_bobaholic_war";
-    public static final String baseURL = "http://" + host + ":" + port + "/" + domain;
+    private static final String host = "13.57.219.206";
+    private static final String port = "8443";
+    private static final String domain = "2023_fall_cs122b_bobaholic";
+    public static final String baseURL = "https://" + host + ":" + port + "/" + domain;
 
     private static NetworkManager instance = null;
     public RequestQueue queue;

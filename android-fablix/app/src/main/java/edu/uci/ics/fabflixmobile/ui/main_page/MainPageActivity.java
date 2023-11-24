@@ -3,9 +3,12 @@ package edu.uci.ics.fabflixmobile.ui.main_page;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -51,6 +54,20 @@ public class MainPageActivity extends AppCompatActivity {
 
         //assign a listener to call a function to handle the user request when clicking a button
         searchButton.setOnClickListener(view -> search());
+
+        searhBox.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if ((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Perform action on key press
+                    search();
+                    return true;
+                }
+                return false;
+            }
+
+        });
 
     }
 
