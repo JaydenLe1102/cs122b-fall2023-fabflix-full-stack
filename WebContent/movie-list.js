@@ -25,15 +25,10 @@ const SORT_OPTION = [
 ]
 
 function handleSessionData(resultData) {
-	console.log('handleSessionData: populating session data from resultData')
-	console.log('resultData: ' + JSON.stringify(resultData, null, 4))
 
 	page_number = resultData['page_number']
 	page_size = resultData['page_size']
 	sort_option = resultData['sort_option']
-
-	console.log('hello')
-	console.log(sort_option)
 
 	document.getElementById('SortByBtn').innerText = SORT_OPTION[sort_option]
 	document.getElementById('ItemsPerPage').innerText = resultData['page_size']
@@ -77,6 +72,14 @@ function handleSessionData(resultData) {
 			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 			success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 		})
+	} else if (resultData['isFullSearch']) {
+		movieQuery = resultData['movie_query']
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: `api/full-search?query=${movieQuery}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
+			success: (resultData) => handleMovieResult(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
 	}
 }
 
@@ -108,6 +111,14 @@ function updateTable(page_number, page_size, callback) {
 			dataType: 'json', // Setting return data type
 			method: 'GET', // Setting request method
 			url: `api/search?title=${searchTitle}&year=${searchYear}&director=${searchDirector}&star=${searchStar}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
+			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
+		})
+	} else if (movieQuery) {
+		// Makes the HTTP GET request and registers on success callback function handleStarResult
+		jQuery.ajax({
+			dataType: 'json', // Setting return data type
+			method: 'GET', // Setting request method
+			url: `api/full-search?movie_query=${movieQuery}&page_number=${page_number}&page_size=${page_size}&sort_option=${sort_option}`, // Setting request url
 			success: (resultData) => callback(resultData), // Setting callback function to handle data returned successfully by the StarsServlet
 		})
 	} else {
@@ -178,8 +189,7 @@ function getParameterByName(target) {
 }
 
 function handleMovieResult(resultData) {
-	console.log(resultData)
-	console.log('handleMovieResult: populating movie table from resultData')
+
 	// Populate the star table
 	// Find the empty table body by id "star_table_body"
 	let movieTableBodyElement = jQuery('#movie_table_body')
@@ -279,8 +289,6 @@ function handleMovieResult(resultData) {
 }
 
 function handleLoggedIn(resultData, callback) {
-	console.log(resultData)
-	console.log('User is logged in')
 	if (resultData['isLoggedIn'] === true) {
 		updateTable(1, 10, callback)
 	} else {
@@ -329,15 +337,14 @@ let browseGenre = getParameterByName('browse_genre')
 
 let browseTitle = getParameterByName('browse_title')
 
-console.log(browseTitle)
-console.log(browseGenre)
 // Done: get params for searching
 let searchTitle = getParameterByName('search_title')
 let searchYear = getParameterByName('search_year')
 let searchDirector = getParameterByName('search_director')
 let searchStar = getParameterByName('search_star')
-console.log(searchTitle)
-console.log(searchStar)
+
+// get params for full search
+let movieQuery = getParameterByName('movie_query')
 
 //perform browsing for the page
 jQuery.ajax({
@@ -369,3 +376,83 @@ function addToCart(movieTitle) {
 		},
 	})
 }
+
+function handleLookup(query, doneCallback) {
+	console.log("Autocomplete initiated");
+
+	// Check if the query is in the cache
+	var cachedData = localStorage.getItem(query);
+	if (cachedData) {
+		console.log("Using cached data for query: " + query);
+		handleLookupAjaxSuccess(JSON.parse(cachedData), query, doneCallback);
+	} else {
+		console.log("Sending AJAX request to backend Java Servlet");
+		// If not in cache, send the HTTP GET request to the Java Servlet endpoint hero-suggestion
+		// with the query data
+		jQuery.ajax({
+			method: "GET",
+			url: "api/autocomplete?query=" + escape(query),
+			success: function (data) {
+				// Store the data in the cache
+				localStorage.setItem(query, JSON.stringify(data));
+
+				// Pass the data, query, and doneCallback function into the success handler
+				handleLookupAjaxSuccess(data, query, doneCallback);
+			},
+			error: function (errorData) {
+				console.log("Lookup AJAX error");
+				console.log(errorData);
+			},
+		});
+	}
+}
+
+function handleLookupAjaxSuccess(data, query, doneCallback) {
+
+	// Assuming data is already an object, not a JSON string
+	var jsonData = data.slice(0, 10);
+
+	// Transform movie data into suggestion objects
+	var suggestions = jsonData.map(function (movie) {
+		return {
+			value: movie.title,
+			data: movie,
+		};
+	});
+
+	console.log("Used suggestion list: ", suggestions);
+
+	// Call the callback function provided by the autocomplete library
+	doneCallback({ suggestions: suggestions });
+}
+
+function handleSelectSuggestion(suggestion) {
+	// TODO: jump to the specific result page based on the selected suggestion
+	window.location.href = 'movie-list.html?movie_query=' + suggestion["value"];
+}
+
+$(document).ready(function () {
+	$('#movieQuery').autocomplete({
+		lookup: function (query, doneCallback) {
+			handleLookup(query, doneCallback);
+		},
+		onSelect: function (suggestion) {
+			handleSelectSuggestion(suggestion);
+		},
+		deferRequestBy: 300,
+		minChars: 3,
+	});
+});
+
+
+function handleNormalSearch(query) {
+	window.location.href = 'movie-list.html?movie_query=' + encodeURIComponent(query);
+}
+
+$('#full-text-search-form').keypress(function(event) {
+	// keyCode 13 is the enter key
+	if (event.keyCode == 13) {
+		// pass the value of the input box to the handler function
+		handleNormalSearch($('#full-text-search-form').val())
+	}
+})
