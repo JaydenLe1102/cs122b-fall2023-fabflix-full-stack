@@ -10,6 +10,8 @@ This repository build Fablix Movie Project
 
 #### Project 3: https://www.youtube.com/watch?v=wsa0w256PfE
 
+#### Project 4: https://youtu.be/SDwas2kEY2E
+
 ### Project Contribution
 
 #### Project 1:
@@ -40,6 +42,13 @@ This repository build Fablix Movie Project
   - Finalize and record video
 - Kashyap Patel:
   - Implement Task 6
+  
+#### Project 4:
+- Trinh Nhu Khang (Jayden) Le:
+  - Implement Task 2
+  - Finalize and record video
+- Kashyap Patel:
+  - Implement Task 1
 
 ### Additional Notes
 
