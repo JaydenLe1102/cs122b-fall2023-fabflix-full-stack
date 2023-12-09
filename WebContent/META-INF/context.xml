@@ -2,7 +2,24 @@
 
 <Context>
 
-    <!-- Defines a Data Source Connecting to localhost moviedbexample-->
+    <!-- Master (Write) DataSource -->
+    <Resource name="jdbc/moviedbMaster"
+              auth="Container"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              type="javax.sql.DataSource"
+              username="mytestuser"
+              password="12345"
+              url="jdbc:mysql://172.31.27.194:3306/moviedb"/>
+
+    <!-- Slave (Read) DataSource -->
+    <Resource name="jdbc/moviedbSlave"
+              auth="Container"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              type="javax.sql.DataSource"
+              username="mytestuser"
+              password="12345"
+              url="jdbc:mysql:/172.31.16.191:3306/moviedb"/>
+
     <Resource name="jdbc/moviedb"
               auth="Container"
               driverClassName="com.mysql.cj.jdbc.Driver"
@@ -10,4 +27,5 @@
               username="mytestuser"
               password="12345"
               url="jdbc:mysql://localhost:3306/moviedb"/>
+
 </Context>
