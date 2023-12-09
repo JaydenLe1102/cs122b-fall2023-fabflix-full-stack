@@ -66,7 +66,7 @@ public class AddMovieServlet extends HttpServlet {
         System.out.println("genreName: " + genreName);
 
         try {
-            String[] resultlist = AddMovieService.addMovie(dataSource, movieTitle, movieYear, movieDirector, starName,
+            String[] resultlist = AddMovieService.addMovie(movieTitle, movieYear, movieDirector, starName,
                     starBirthYear, genreName);
 
             int result = Integer.parseInt(resultlist[0]);

@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 
 import constant.SQLStatements;
 import jakarta.servlet.http.HttpServletRequest;
+import utils.DatabaseUtil;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -14,10 +15,12 @@ import java.util.ArrayList;
 
 public class PaymentService {
 
-    public static JsonObject processPayment(DataSource dataSource, HttpServletRequest request, String customerId,
-                                            String ccId, String firstName, String lastName, String expiration) {
+    public static JsonObject processPayment(HttpServletRequest request, String customerId,
+                                            String ccId, String firstName, String lastName, String expiration) throws SQLException {
         JsonObject response = new JsonObject();
         boolean isValid = false;
+
+        DataSource dataSource = DatabaseUtil.getDataSource(true);
 
         try (Connection connection = dataSource.getConnection()) {
             isValid = validateCreditCardDetails(connection, ccId, firstName, lastName, expiration);
@@ -28,6 +31,9 @@ public class PaymentService {
         }
 
         if (isValid) {
+
+            dataSource = DatabaseUtil.getDataSource(false);
+
             try (Connection connection = dataSource.getConnection()) {
                 ArrayList<String> previousItems = (ArrayList<String>) request.getSession().getAttribute("previousItems");
                 ArrayList<String> quantities = (ArrayList<String>) request.getSession().getAttribute("quantities");
@@ -39,7 +45,7 @@ public class PaymentService {
 
                     for (int i = 0; i < previousItems.size(); i++) {
                         String movie = previousItems.get(i);
-                        String movieId = Random3Service.getMovieIdByMovieTitle(dataSource, movie);
+                        String movieId = Random3Service.getMovieIdByMovieTitle(movie);
                         int quantitySold = Integer.parseInt(quantities.get(i));
 
                         // Call the recordSale method and capture the sale ID returned

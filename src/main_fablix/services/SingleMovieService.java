@@ -3,6 +3,7 @@ package main_fablix.services;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import constant.SQLStatements;
+import utils.DatabaseUtil;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -17,8 +18,8 @@ import java.util.Set;
 
 public class SingleMovieService {
 
-    public static JsonObject getSingleMovieById(DataSource dataSource, String id) throws Exception {
-
+    public static JsonObject getSingleMovieById(String id) throws Exception {
+        DataSource dataSource = DatabaseUtil.getDataSource(true);
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource
             // Declare our statement

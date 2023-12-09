@@ -16,8 +16,6 @@ public class AllGenresService {
 
         DataSource dataSource = DatabaseUtil.getDataSource(true);
 
-        System.out.println(dataSource);
-
         try (Connection conn = dataSource.getConnection()) {
             Statement statement = conn.createStatement();
 

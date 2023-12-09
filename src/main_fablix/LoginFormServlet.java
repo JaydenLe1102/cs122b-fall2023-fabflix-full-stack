@@ -119,7 +119,7 @@ public class LoginFormServlet extends HttpServlet {
 			Integer sessionCustomerId = (Integer) session.getAttribute("customerId");
 
 			if (sessionCustomerId == null) {
-				Integer customerId = LoginFormService.verifyCredentials(email, password, dataSource);
+				Integer customerId = LoginFormService.verifyCredentials(email, password);
 
 				System.out.println("customer: " + customerId);
 

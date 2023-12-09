@@ -115,7 +115,7 @@ public class DashboardLoginFormServlet extends HttpServlet {
 			String sessionEmployeeEmail = (String) session.getAttribute("employeeEmail");
 
 			if (sessionEmployeeEmail == null) {
-				String employeeEmail = DashboardLoginFormService.verifyCredentials(email, password, dataSource);
+				String employeeEmail = DashboardLoginFormService.verifyCredentials(email, password);
 
 				System.out.println("employeeEmail: " + employeeEmail);
 

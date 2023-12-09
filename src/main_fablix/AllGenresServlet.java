@@ -56,7 +56,6 @@ public class AllGenresServlet extends HttpServlet {
 		// Get a connection from dataSource and let resource manager close the
 		// connection after usage.
 		try {
-//			JsonArray jsonArray = AllGenresService.getAllGenres(dataSource);
 			JsonArray jsonArray = AllGenresService.getAllGenres();
 
 			// Log to localhost log

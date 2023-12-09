@@ -57,10 +57,10 @@ public class SingleMovieServlet extends HttpServlet {
 
 		// Get a connection from dataSource and let resource manager close the
 		// connection after usage.
-		try (Connection conn = dataSource.getConnection()) {
+		try {
 			// Get a connection from dataSource
 
-			JsonObject movieObject = SingleMovieService.getSingleMovieById(dataSource, id);
+			JsonObject movieObject = SingleMovieService.getSingleMovieById(id);
 
 			// Write JSON string to output
 			out.write(movieObject.toString());

@@ -24,16 +24,11 @@ public class DatabaseUtil {
     public static DataSource getDataSource(boolean isReadOperation) throws SQLException {
         if (isReadOperation) {
             if (random.nextBoolean()) {
-                System.out.println("Get master");
                 return masterDataSource;
             } else {
-                System.out.println("Get slave");
-
                 return slaveDataSource;
             }
         } else {
-            System.out.println("Get master");
-
             return masterDataSource;
         }
     }
