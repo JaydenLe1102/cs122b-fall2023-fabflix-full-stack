@@ -14,7 +14,7 @@ public class LoginFormService {
 	public static Integer verifyCredentials(String email, String password, DataSource dataSource) throws Exception {
 
 		int re = 0;
-
+		System.out.println("Hello");
 		try (Connection conn = dataSource.getConnection()) {
 			try (PreparedStatement statement = conn.prepareStatement(SQLStatements.VALIDATE_EMAIL_PASSWORD)) {
 				statement.setString(1, email);
@@ -48,8 +48,7 @@ public class LoginFormService {
 				}
 			}
 		} catch (SQLException e) {
-			// Handle any database-related exceptions
-			throw e;
+			e.printStackTrace();
 		}
 
 		return re;
