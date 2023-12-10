@@ -9,11 +9,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import constant.SQLStatements;
+import utils.DatabaseUtil;
 
 public class SingleStarService {
 
-    public static JsonObject getSingleStarById(DataSource dataSource, String id) throws Exception {
-
+    public static JsonObject getSingleStarById( String id) throws Exception {
+        DataSource dataSource = DatabaseUtil.getDataSource(true);
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource
 

@@ -9,11 +9,13 @@ import java.sql.ResultSet;
 
 import com.google.gson.JsonObject;
 import constant.SQLStatements;
+import utils.DatabaseUtil;
 
 public class Random3Service {
 
-    public static JsonArray getRandom3GenreByMovieId(DataSource dataSource, String movieId) throws Exception {
+    public static JsonArray getRandom3GenreByMovieId(String movieId) throws Exception {
 
+        DataSource dataSource = DatabaseUtil.getDataSource(true);
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource
 
@@ -38,8 +40,9 @@ public class Random3Service {
         }
     }
 
-    public static JsonArray getRandom3StarsByMovieId(DataSource dataSource, String movieId) throws Exception {
+    public static JsonArray getRandom3StarsByMovieId(String movieId) throws Exception {
 
+        DataSource dataSource = DatabaseUtil.getDataSource(true);
         try (Connection conn = dataSource.getConnection()) {
             // Get a connection from dataSource
 
@@ -67,7 +70,8 @@ public class Random3Service {
         }
     }
 
-    public static String getMovieIdByMovieTitle(DataSource dataSource, String movieTitle) throws Exception {
+    public static String getMovieIdByMovieTitle(String movieTitle) throws Exception {
+        DataSource dataSource = DatabaseUtil.getDataSource(true);
         try (Connection conn = dataSource.getConnection()) {
             PreparedStatement movieStatement = conn.prepareStatement(SQLStatements.GETMOVIEID);
             movieStatement.setString(1, movieTitle);

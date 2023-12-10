@@ -3,6 +3,7 @@ package main_fablix.services;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import constant.SQLStatements;
+import utils.DatabaseUtil;
 
 import javax.sql.DataSource;
 
@@ -12,9 +13,12 @@ import java.sql.Statement;
 
 public class MoviesService {
 
-    public static JsonArray getMoviesArray(DataSource dataSource) throws Exception {
+    public static JsonArray getMoviesArray() throws Exception {
 
         // Get a connection from dataSource and let resource manager close the connection after usage.
+
+        DataSource dataSource = DatabaseUtil.getDataSource(true);
+
         try (Connection conn = dataSource.getConnection()) {
 
             // Declare our statement
@@ -39,10 +43,10 @@ public class MoviesService {
                 jsonObject.addProperty("rating", rsMovies.getString("rating"));
 
 
-                jsonObject.add("genres", Random3Service.getRandom3GenreByMovieId(dataSource, movie_id));
+                jsonObject.add("genres", Random3Service.getRandom3GenreByMovieId(movie_id));
 
 
-                jsonObject.add("stars", Random3Service.getRandom3StarsByMovieId(dataSource, movie_id));
+                jsonObject.add("stars", Random3Service.getRandom3StarsByMovieId(movie_id));
 
 
                 jsonArray.add(jsonObject);

@@ -58,7 +58,7 @@ public class AutocompleteServlet extends HttpServlet {
             String query = request.getParameter("query");
             System.out.println(query);
 
-            JsonArray jsonArray = AutocompleteService.getMovieListByQuery(dataSource, query);
+            JsonArray jsonArray = AutocompleteService.getMovieListByQuery(query);
 
             // Log to localhost log
             request.getServletContext().log("getting " + jsonArray.size() + " results");

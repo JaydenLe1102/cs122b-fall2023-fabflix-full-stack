@@ -10,14 +10,15 @@ import java.sql.CallableStatement;
 
 import com.google.gson.JsonObject;
 import constant.SQLStatements;
+import utils.DatabaseUtil;
 
 public class AddMovieService {
 
-    public static String[] addMovie(DataSource dataSource, String movieTitle, String movieYear, String movieDirector,
-                                    String starName, String starBirthYear, String genreName) {
+    public static String[] addMovie(String movieTitle, String movieYear, String movieDirector,
+                                    String starName, String starBirthYear, String genreName) throws SQLException {
 
         String[] result = new String[4];
-
+        DataSource dataSource = DatabaseUtil.getDataSource(false);
         try (Connection conn = dataSource.getConnection()) {
             try (CallableStatement statement = conn.prepareCall(SQLStatements.INSERT_NEW_MOVIE)) {
 

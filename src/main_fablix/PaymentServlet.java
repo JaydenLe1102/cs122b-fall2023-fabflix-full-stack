@@ -54,7 +54,7 @@ public class PaymentServlet extends HttpServlet {
 
 		try (Connection conn = dataSource.getConnection()) {
 			System.out.println("In payment servlet");
-			JsonObject paymentResponse = PaymentService.processPayment(dataSource, request, customerId, ccId, firstName,
+			JsonObject paymentResponse = PaymentService.processPayment(request, customerId, ccId, firstName,
 					lastName, expiration);
 			out.write(paymentResponse.toString());
 			response.setStatus(200);

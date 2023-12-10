@@ -8,10 +8,11 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 import constant.SQLStatements;
+import utils.DatabaseUtil;
 
 public class AddStarService {
 
-    public static String addStar(DataSource dataSource, String name, String birthYear) {
+    public static String addStar( String name, String birthYear) throws SQLException {
 
         String query;
 
@@ -20,6 +21,9 @@ public class AddStarService {
         } else {
             query = SQLStatements.INSERT_NEW_STAR_WITH_BIRTHYEAR;
         }
+
+        DataSource dataSource = DatabaseUtil.getDataSource(false);
+
         try (Connection conn = dataSource.getConnection()) {
             try (PreparedStatement statement = conn.prepareStatement(query)) {
 

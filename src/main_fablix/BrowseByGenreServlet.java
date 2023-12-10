@@ -60,7 +60,7 @@ public class BrowseByGenreServlet extends HttpServlet {
 			Integer page_size = Integer.parseInt(request.getParameter("page_size"));
 			Integer sort_option = Integer.parseInt(request.getParameter("sort_option"));
 
-			JsonArray jsonArray = BrowseByGenreService.getMovieListByGenre(dataSource, browse_genre, page_number, page_size,
+			JsonArray jsonArray = BrowseByGenreService.getMovieListByGenre(browse_genre, page_number, page_size,
 					sort_option);
 
 			request.getServletContext().log("getting " + jsonArray.size() + " results");

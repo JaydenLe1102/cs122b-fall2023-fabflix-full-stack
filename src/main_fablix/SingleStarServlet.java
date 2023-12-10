@@ -57,10 +57,10 @@ public class SingleStarServlet extends HttpServlet {
 
 		// Get a connection from dataSource and let resource manager close the
 		// connection after usage.
-		try (Connection conn = dataSource.getConnection()) {
+		try  {
 			// Get a connection from dataSource
 
-			JsonObject starObject = SingleStarService.getSingleStarById(dataSource, id);
+			JsonObject starObject = SingleStarService.getSingleStarById(id);
 
 			// Write JSON string to output
 			out.write(starObject.toString());

@@ -63,7 +63,7 @@ public class SearchServlet extends HttpServlet {
 			Integer page_size = Integer.parseInt(request.getParameter("page_size"));
 			Integer sort_option = Integer.parseInt(request.getParameter("sort_option"));
 
-			JsonArray jsonArray = SearchService.getMovieListByTitleYearDirectorStar(dataSource, search_title, search_year,
+			JsonArray jsonArray = SearchService.getMovieListByTitleYearDirectorStar(search_title, search_year,
 					search_director, search_star, page_number, page_size, sort_option);
 
 			// Log to localhost log

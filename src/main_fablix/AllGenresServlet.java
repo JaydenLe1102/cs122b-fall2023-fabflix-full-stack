@@ -17,7 +17,10 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import static utils.ServletUtils.checkLogin;
+import  utils.ServletUtils;
+
+//import utils.ServletUtils.checkLogin;
+
 
 // Declaring a WebServlet called StarsServlet, which maps to url "/api/stars"
 @WebServlet(name = "AllGenresServlet", urlPatterns = "/api/genres")
@@ -41,7 +44,7 @@ public class AllGenresServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		if (!checkLogin(request, response)) {
+		if (!ServletUtils.checkLogin(request, response)) {
 			return;
 		}
 
@@ -53,7 +56,7 @@ public class AllGenresServlet extends HttpServlet {
 		// Get a connection from dataSource and let resource manager close the
 		// connection after usage.
 		try {
-			JsonArray jsonArray = AllGenresService.getAllGenres(dataSource);
+			JsonArray jsonArray = AllGenresService.getAllGenres();
 
 			// Log to localhost log
 			request.getServletContext().log("getting " + jsonArray.size() + " results");

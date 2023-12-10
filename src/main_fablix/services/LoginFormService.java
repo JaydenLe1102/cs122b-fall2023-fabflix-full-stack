@@ -2,6 +2,7 @@ package main_fablix.services;
 
 import constant.SQLStatements;
 import org.jasypt.util.password.StrongPasswordEncryptor;
+import utils.DatabaseUtil;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -11,10 +12,12 @@ import java.sql.SQLException;
 
 public class LoginFormService {
 
-	public static Integer verifyCredentials(String email, String password, DataSource dataSource) throws Exception {
+	public static Integer verifyCredentials(String email, String password) throws Exception {
 
 		int re = 0;
-		System.out.println("Hello");
+
+		DataSource dataSource = DatabaseUtil.getDataSource(true);
+
 		try (Connection conn = dataSource.getConnection()) {
 			try (PreparedStatement statement = conn.prepareStatement(SQLStatements.VALIDATE_EMAIL_PASSWORD)) {
 				statement.setString(1, email);

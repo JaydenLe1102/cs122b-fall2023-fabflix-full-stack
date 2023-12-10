@@ -61,7 +61,7 @@ public class FullTextSearchServlet extends HttpServlet {
             Integer page_size = Integer.parseInt(request.getParameter("page_size"));
             Integer sort_option = Integer.parseInt(request.getParameter("sort_option"));
 
-            JsonArray jsonArray = FullTextSearchService.getMovieListByQuery(dataSource, movie_query, page_number, page_size, sort_option);
+            JsonArray jsonArray = FullTextSearchService.getMovieListByQuery(movie_query, page_number, page_size, sort_option);
 
             // Log to localhost log
             request.getServletContext().log("getting " + jsonArray.size() + " results");
