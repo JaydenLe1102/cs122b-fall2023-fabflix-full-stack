@@ -9,11 +9,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import constant.SQLStatements;
+import utils.DatabaseUtil;
 
 public class FullTextSearchService {
 
-    public static JsonArray getMovieListByQuery(DataSource dataSource, String movie_query, Integer page_number,
+    public static JsonArray getMovieListByQuery(String movie_query, Integer page_number,
                                                 Integer page_size, Integer sort_option) throws Exception {
+
+
+        DataSource dataSource = DatabaseUtil.getDataSource(true);
+
+
         try (Connection conn = dataSource.getConnection()) {
             // Tokenize the input query
             String[] tokens = movie_query.split("\\s+");
@@ -61,8 +67,8 @@ public class FullTextSearchService {
                 movieObject.addProperty("year", rs.getString("year"));
                 movieObject.addProperty("director", rs.getString("director"));
                 movieObject.addProperty("rating", rs.getString("rating"));
-                movieObject.add("genres", Random3Service.getRandom3GenreByMovieId(dataSource, movieId));
-                movieObject.add("stars", Random3Service.getRandom3StarsByMovieId(dataSource, movieId));
+                movieObject.add("genres", Random3Service.getRandom3GenreByMovieId(movieId));
+                movieObject.add("stars", Random3Service.getRandom3StarsByMovieId(movieId));
 
                 jsonArray.add(movieObject);
             }

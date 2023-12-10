@@ -3,6 +3,7 @@ package employee_dashboard.services;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import constant.SQLStatements;
+import utils.DatabaseUtil;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -12,9 +13,9 @@ import java.sql.Statement;
 
 public class MetaDataService {
 
-	public static JsonArray getMetaData(DataSource dataSource) throws SQLException {
+	public static JsonArray getMetaData() throws SQLException {
 		JsonArray jsonArray = new JsonArray();
-
+		DataSource dataSource = DatabaseUtil.getDataSource(true);
 		try (Connection conn = dataSource.getConnection()) {
 			try (Statement statement = conn.createStatement()) {
 				try (ResultSet result = statement.executeQuery(SQLStatements.GET_MOVIEDB_METADATA)) {

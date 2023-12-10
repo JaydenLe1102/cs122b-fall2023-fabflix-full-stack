@@ -52,7 +52,7 @@ public class MoviesServlet extends HttpServlet {
 		// Get a connection from dataSource and let resource manager close the
 		// connection after usage.
 		try {
-			JsonArray jsonArray = MoviesService.getMoviesArray(dataSource);
+			JsonArray jsonArray = MoviesService.getMoviesArray();
 
 			// Log to localhost log
 			request.getServletContext().log("getting " + jsonArray.size() + " results");

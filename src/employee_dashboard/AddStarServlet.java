@@ -55,7 +55,7 @@ public class AddStarServlet extends HttpServlet {
         String birthYear = request.getParameter("birthYear");
 
         try {
-            String result = AddStarService.addStar(dataSource, name, birthYear);
+            String result = AddStarService.addStar( name, birthYear);
 
             if (!result.isEmpty()) {
                 JsonObject jsonObject = new JsonObject();

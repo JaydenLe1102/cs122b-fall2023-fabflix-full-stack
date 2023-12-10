@@ -60,7 +60,7 @@ public class BrowseByTitleServlet extends HttpServlet {
 			Integer page_size = Integer.parseInt(request.getParameter("page_size"));
 			Integer sort_option = Integer.parseInt(request.getParameter("sort_option"));
 
-			JsonArray jsonArray = BrowseByTitleService.getMovieListByTitle(dataSource, browse_title, page_number, page_size,
+			JsonArray jsonArray = BrowseByTitleService.getMovieListByTitle( browse_title, page_number, page_size,
 					sort_option);
 
 			// Log to localhost log

@@ -9,12 +9,14 @@ import javax.sql.DataSource;
 
 import constant.SQLStatements;
 import org.jasypt.util.password.StrongPasswordEncryptor;
+import utils.DatabaseUtil;
 
 public class DashboardLoginFormService {
 
-	public static String verifyCredentials(String email, String password, DataSource dataSource) throws Exception {
+	public static String verifyCredentials(String email, String password) throws Exception {
 
 		String re;
+		DataSource dataSource = DatabaseUtil.getDataSource(true);
 
 		try (Connection conn = dataSource.getConnection()) {
 			try (PreparedStatement statement = conn.prepareStatement(SQLStatements.VALIDATE_EMPLOYEE_EMAIL_PASSWORD)) {

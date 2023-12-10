@@ -61,7 +61,7 @@ public class MovieFromIdServlet extends HttpServlet {
             // Get a connection from dataSource
             JsonObject jsonObject = new JsonObject();
             System.out.println(title);
-            String id = Random3Service.getMovieIdByMovieTitle(dataSource, title);
+            String id = Random3Service.getMovieIdByMovieTitle(title);
             System.out.println(id);
             jsonObject.addProperty("id", id);
 

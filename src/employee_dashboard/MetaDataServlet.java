@@ -49,7 +49,7 @@ public class MetaDataServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		try {
-			JsonArray jsonArray = MetaDataService.getMetaData(dataSource);
+			JsonArray jsonArray = MetaDataService.getMetaData();
 
 			request.getServletContext().log("getting " + jsonArray.size() + " results");
 
