@@ -127,7 +127,7 @@ public class FullTextSearchServlet extends HttpServlet {
     private void logToFile(String message) {
         try {
             // Specify the file path
-            String filePath = "/Users/kashmoney/gitclones/2023-fall-cs122b-bobaholic/src/logs/logfile.txt";
+            String filePath = "~/code/2023-fall-cs122b-bobaholic/src/logs/logfile.txt";
 
             // Create or append to the log file
             FileWriter fileWriter = new FileWriter(filePath, true);
