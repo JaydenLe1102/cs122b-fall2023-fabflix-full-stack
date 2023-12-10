@@ -17,6 +17,9 @@ import main_fablix.services.FullTextSearchService;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.File;
 
 import static utils.ServletUtils.checkLogin;
 
@@ -51,6 +54,8 @@ public class FullTextSearchServlet extends HttpServlet {
         // Output stream to STDOUT
         PrintWriter out = response.getWriter();
 
+        long servletStartTime = System.nanoTime(); // Start time for the servlet
+
         // Get a connection from dataSource and let resource manager close the
         // connection after usage.
         try {
@@ -61,7 +66,14 @@ public class FullTextSearchServlet extends HttpServlet {
             Integer page_size = Integer.parseInt(request.getParameter("page_size"));
             Integer sort_option = Integer.parseInt(request.getParameter("sort_option"));
 
+            long jdbcStartTime = System.nanoTime(); // Start time for JDBC execution
             JsonArray jsonArray = FullTextSearchService.getMovieListByQuery(dataSource, movie_query, page_number, page_size, sort_option);
+
+            long jdbcEndTime = System.nanoTime(); // End time for JDBC execution
+            long jdbcElapsedTime = jdbcEndTime - jdbcStartTime;
+
+            // Log JDBC execution time
+            logToConsole("JDBC execution time: " + jdbcElapsedTime + " ns");
 
             // Log to localhost log
             request.getServletContext().log("getting " + jsonArray.size() + " results");
@@ -91,12 +103,45 @@ public class FullTextSearchServlet extends HttpServlet {
             // Set response status to 500 (Internal Server Error)
             response.setStatus(500);
         } finally {
+            long servletEndTime = System.nanoTime(); // End time for the servlet
+            long servletElapsedTime = servletEndTime - servletStartTime;
+
+            // Log total execution time
+            logToConsole("Search servlet total execution time: " + servletElapsedTime + " ns");
             out.close();
         }
 
         // Always remember to close db connection after usage. Here it's done by
         // try-with-resources
 
+    }
+
+    private void logToConsole(String message) {
+        // Log message to console
+        System.out.println(message);
+
+        // Log message to file (optional)
+        logToFile(message);
+    }
+
+    private void logToFile(String message) {
+        try {
+            // Specify the file path
+            String filePath = "/Users/kashmoney/gitclones/2023-fall-cs122b-bobaholic/src/logs/logfile.txt";
+
+            // Create or append to the log file
+            FileWriter fileWriter = new FileWriter(filePath, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            // Write the message to the file
+            bufferedWriter.write(message);
+            bufferedWriter.newLine();
+
+            // Close the file writer
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 
