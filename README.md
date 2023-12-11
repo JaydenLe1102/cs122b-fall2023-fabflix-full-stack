@@ -54,11 +54,12 @@ This repository build Fablix Movie Project
 
 #### Project 5:
 - Trinh Nhu Khang (Jayden) Le:
-  - Implement Task 2
-  - Implement Task 3
+  - Implement Task 2 (Master/Slave)
+  - Implement Task 3 (Log Balancing)
+  - Finalize and record video
 - Kashyap Patel:
   - Implement Task 1 (JDBC Connection Pooling)
-  - Implement Task 4 (JMeter, lof files, processing script)
+  - Implement Task 4 (JMeter plan, log files, processing script)
 
 ### Additional Notes
 
@@ -88,17 +89,20 @@ This repository build Fablix Movie Project
 
 #### List of Files that use Prepared Statement:
 - 2023-fall-cs122b-bobaholic/src/script/SAXParser/src/main/java/DatabaseHandler.java
-- 2023-fall-cs122b-bobaholic/src/employee_dashboard/services/DashboardLoginFormService.java
-- 2023-fall-cs122b-bobaholic/src/employee_dashboard/services/AddStarService.java
-- 2023-fall-cs122b-bobaholic/src/main_fablix/services/BrowseByGenreService.java
-- 2023-fall-cs122b-bobaholic/src/main_fablix/services/BrowseByTitleService.java
-- 2023-fall-cs122b-bobaholic/src/main_fablix/services/LoginFormService.java
-- 2023-fall-cs122b-bobaholic/src/main_fablix/services/PaymentService.java
-- 2023-fall-cs122b-bobaholic/src/main_fablix/services/Random3Service.java
-- 2023-fall-cs122b-bobaholic/src/main_fablix/services/SearchService.java
-- 2023-fall-cs122b-bobaholic/src/main_fablix/services/SingleMovieService.java
-- 2023-fall-cs122b-bobaholic/src/main_fablix/services/SingleStarService.java
-- 2023-fall-cs122b-bobaholic/src/main_fablix/AllGenresServlet.java
+  - 2023-fall-cs122b-bobaholic/src/employee_dashboard/services/DashboardLoginFormService.java
+  - 2023-fall-cs122b-bobaholic/src/employee_dashboard/services/AddStarService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/BrowseByGenreService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/BrowseByTitleService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/LoginFormService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/PaymentService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/Random3Service.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/SearchService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/SingleMovieService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/SingleStarService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/AutocompleteService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/MoviesService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/FullTextSearchService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/AllGenresServlet.java
 
 #### XML Parsing Assumptions:
 - Only the stars that are in actors.xml are added to the database (not casts.xml)
@@ -139,16 +143,37 @@ This repository build Fablix Movie Project
 - Duplicate Stars In Movies: 13683
 
 
-#### Instruction of deployment:
-
-
-
 #### Connection Pooling
-  - Include the filename/path of all code/configuration files in GitHub of using JDBC Connection Pooling.
+Connection Pool Config File:
+  - 2023-fall-cs122b-bobaholic/WebContent/META-INF/context.xml
 
-  - Explain how Connection Pooling is utilized in the Fabflix code.
+List of Files that use Prepared Statement:
+  - 2023-fall-cs122b-bobaholic/src/script/SAXParser/src/main/java/DatabaseHandler.java
+  - 2023-fall-cs122b-bobaholic/src/employee_dashboard/services/DashboardLoginFormService.java
+  - 2023-fall-cs122b-bobaholic/src/employee_dashboard/services/AddStarService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/BrowseByGenreService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/BrowseByTitleService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/LoginFormService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/PaymentService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/Random3Service.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/SearchService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/SingleMovieService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/SingleStarService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/AutocompleteService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/MoviesService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/services/FullTextSearchService.java
+  - 2023-fall-cs122b-bobaholic/src/main_fablix/AllGenresServlet.java
+  
+Info about Connection Pooling Usage:
+  - Connection Pooling is used by all the servlets with Prepared Statements.
+  - By adding the line maxTotal="100" maxIdle="30" maxWaitMillis="10000" in context.xml, we are configuring the database to use connection pooling.
+  - The line "Connection conn = dataSource.getConnection()" in the services for the servlets make the connection to the database which uses connection pooling as we configured it to.
 
-  - Explain how Connection Pooling works with two backend SQL.
+Connection Pooling with two backend SQL:
+  - When an application needs to perform a database operation, it requests a connection from the pool. Instead of establishing a new connection, it borrows an existing connection from the pool.
+  - In the case of two backend SQL databases, connection pooling can be extended to support load balancing. 
+  - The pool is configured to distribute connections evenly between the two databases, helping to optimize resource utilization.
+  - This can be seen in the context.xml file.
 
 
 #### Master/Slave
@@ -158,20 +183,23 @@ This repository build Fablix Movie Project
 
 
 #### JMeter TS/TJ Time Logs
-  - Instructions of how to use the `log_processing.*` script to process the JMeter logs.
+  - The JMeter Time logs can be found under /src/logs.
+  - The log_processing.py file can be found under /src/script.
+  - We can change the log_file_path variable on line 24 of the script to the file path of whichever log you want to process.
+  - Then you can run the .py file from the terminal or from an IDE.
 
 
 #### JMeter TS/TJ Time Measurement Report
 
 | **Single-instance Version Test Plan**          | **Graph Results Screenshot** | **Average Query Time(ms)** | **Average Search Servlet Time(ms)** | **Average JDBC Time(ms)** | **Analysis** |
 |------------------------------------------------|------------------------------|----------------------------|-------------------------------------|---------------------------|--------------|
-| Case 1: HTTP/1 thread                          | ![](path to image in img/)   | ??                         | ??                                  | ??                        | ??           |
-| Case 2: HTTP/10 threads                        | ![](path to image in img/)   | ??                         | ??                                  | ??                        | ??           |
-| Case 3: HTTPS/10 threads                       | ![](path to image in img/)   | ??                         | ??                                  | ??                        | ??           |
-| Case 4: HTTP/10 threads/No connection pooling  | ![](path to image in img/)   | ??                         | ??                                  | ??                        | ??           |
+| Case 1: HTTP/1 thread                          | ![](src/img/test1.png)       | 6214                       | 6639.07                             | 6636.64                   | ??           |
+| Case 2: HTTP/10 threads                        | ![](src/img/test2.png)       | 133                        | 10.70                               | 9.93                      | ??           |
+| Case 3: HTTPS/10 threads                       | ![](src/img/test3.png)       | 94                         | 17.30                               | 16.65                     | ??           |
+| Case 4: HTTP/10 threads/No connection pooling  | ![](src/img/test4.png)       | 123                        | 15.71                               | 15.04                     | ??           |
 
 | **Scaled Version Test Plan**                   | **Graph Results Screenshot** | **Average Query Time(ms)** | **Average Search Servlet Time(ms)** | **Average JDBC Time(ms)** | **Analysis** |
 |------------------------------------------------|------------------------------|----------------------------|-------------------------------------|---------------------------|--------------|
-| Case 1: HTTP/1 thread                          | ![](path to image in img/)   | ??                         | ??                                  | ??                        | ??           |
-| Case 2: HTTP/10 threads                        | ![](path to image in img/)   | ??                         | ??                                  | ??                        | ??           |
-| Case 3: HTTP/10 threads/No connection pooling  | ![](path to image in img/)   | ??                         | ??                                  | ??                        | ??           |
+| Case 1: HTTP/1 thread                          | ![](src/img/test5.png)       | 5980                       | 6191.40                             | 6189.19                   | ??           |
+| Case 2: HTTP/10 threads                        | ![](src/img/test6.png)       | 135                        | 10.08                               | 9.45                      | ??           |
+| Case 3: HTTP/10 threads/No connection pooling  | ![](src/img/test7.png)       | 88                         | 18.19                               | 17.96                     | ??           |

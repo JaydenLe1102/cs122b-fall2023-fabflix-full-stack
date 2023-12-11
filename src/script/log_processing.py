@@ -21,5 +21,5 @@ def process_log_file(log_file_path):
     print("Average JDBC Execution Time (TJ):", avg_jdbc_execution_time, "ms")
 
 # Usage
-log_file_path = "/Users/kashmoney/gitclones/2023-fall-cs122b-bobaholic/src/logs/logfile.txt"
+log_file_path = ""
 process_log_file(log_file_path)
