@@ -1,3 +1,6 @@
+import sys
+import os
+
 def process_log_file(log_file_path):
     total_execution_times = []
     jdbc_execution_times = []
@@ -20,6 +23,17 @@ def process_log_file(log_file_path):
     print("Average Total Execution Time (TS):", avg_total_execution_time, "ms")
     print("Average JDBC Execution Time (TJ):", avg_jdbc_execution_time, "ms")
 
-# Usage
-log_file_path = "/Users/kashmoney/gitclones/2023-fall-cs122b-bobaholic/src/logs/logfile.txt"
-process_log_file(log_file_path)
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <log_file_name>")
+    else:
+        script_directory = os.path.dirname(os.path.abspath(__file__))
+        log_file_name = sys.argv[1]
+        log_file_path = os.path.join(script_directory, log_file_name)
+        
+        print("Processing log file:", log_file_path)
+        
+        if not os.path.isfile(log_file_path):
+            print(f"Error: File '{log_file_path}' not found.")
+        else:
+            process_log_file(log_file_path)
