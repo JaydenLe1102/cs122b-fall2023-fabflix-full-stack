@@ -1,0 +1,4498 @@
+JDBC execution time: 8638076 ns
+Search servlet total execution time: 10421312 ns
+JDBC execution time: 9030361 ns
+Search servlet total execution time: 9841198 ns
+JDBC execution time: 11608152 ns
+Search servlet total execution time: 12631472 ns
+JDBC execution time: 8445866 ns
+Search servlet total execution time: 9059836 ns
+JDBC execution time: 8403094 ns
+Search servlet total execution time: 9374133 ns
+JDBC execution time: 8481893 ns
+Search servlet total execution time: 9230476 ns
+JDBC execution time: 8004252 ns
+Search servlet total execution time: 8717365 ns
+JDBC execution time: 8647103 ns
+Search servlet total execution time: 9338203 ns
+JDBC execution time: 8634320 ns
+Search servlet total execution time: 9021097 ns
+JDBC execution time: 8551131 ns
+Search servlet total execution time: 9532637 ns
+JDBC execution time: 8952599 ns
+Search servlet total execution time: 10012911 ns
+JDBC execution time: 9105144 ns
+Search servlet total execution time: 11174479 ns
+JDBC execution time: 10989914 ns
+Search servlet total execution time: 11870086 ns
+JDBC execution time: 8948465 ns
+Search servlet total execution time: 9893149 ns
+JDBC execution time: 14237151 ns
+Search servlet total execution time: 15167754 ns
+JDBC execution time: 7731254 ns
+Search servlet total execution time: 8507730 ns
+JDBC execution time: 9035040 ns
+Search servlet total execution time: 9976249 ns
+JDBC execution time: 10786167 ns
+Search servlet total execution time: 13356864 ns
+JDBC execution time: 7581164 ns
+Search servlet total execution time: 8358454 ns
+JDBC execution time: 37392325 ns
+Search servlet total execution time: 38723507 ns
+JDBC execution time: 9722058 ns
+Search servlet total execution time: 11142005 ns
+JDBC execution time: 7411773 ns
+Search servlet total execution time: 8124592 ns
+JDBC execution time: 8459870 ns
+Search servlet total execution time: 10993357 ns
+JDBC execution time: 7431558 ns
+Search servlet total execution time: 8363631 ns
+JDBC execution time: 8559735 ns
+Search servlet total execution time: 9426160 ns
+JDBC execution time: 8654255 ns
+Search servlet total execution time: 9731664 ns
+JDBC execution time: 7518061 ns
+Search servlet total execution time: 8189748 ns
+JDBC execution time: 7839426 ns
+Search servlet total execution time: 10837694 ns
+JDBC execution time: 7701040 ns
+Search servlet total execution time: 9219296 ns
+JDBC execution time: 7409638 ns
+Search servlet total execution time: 8099180 ns
+JDBC execution time: 8747409 ns
+Search servlet total execution time: 9351403 ns
+JDBC execution time: 7320104 ns
+Search servlet total execution time: 8000435 ns
+JDBC execution time: 8965100 ns
+Search servlet total execution time: 10088224 ns
+JDBC execution time: 9130844 ns
+Search servlet total execution time: 10049055 ns
+JDBC execution time: 8936343 ns
+Search servlet total execution time: 10456537 ns
+JDBC execution time: 11381779 ns
+Search servlet total execution time: 12327511 ns
+JDBC execution time: 7410990 ns
+Search servlet total execution time: 8120080 ns
+JDBC execution time: 7587217 ns
+Search servlet total execution time: 8163804 ns
+JDBC execution time: 8306982 ns
+Search servlet total execution time: 8736104 ns
+JDBC execution time: 11052283 ns
+Search servlet total execution time: 11990591 ns
+JDBC execution time: 7166400 ns
+Search servlet total execution time: 7610307 ns
+JDBC execution time: 7591621 ns
+Search servlet total execution time: 7856160 ns
+JDBC execution time: 8666752 ns
+Search servlet total execution time: 9514388 ns
+JDBC execution time: 8519152 ns
+Search servlet total execution time: 9464965 ns
+JDBC execution time: 8400740 ns
+Search servlet total execution time: 8800882 ns
+JDBC execution time: 7443702 ns
+Search servlet total execution time: 8223585 ns
+JDBC execution time: 8787889 ns
+Search servlet total execution time: 9579231 ns
+JDBC execution time: 10794075 ns
+Search servlet total execution time: 11562048 ns
+JDBC execution time: 8383229 ns
+Search servlet total execution time: 9221689 ns
+JDBC execution time: 8501049 ns
+Search servlet total execution time: 9281983 ns
+JDBC execution time: 8561055 ns
+Search servlet total execution time: 9674041 ns
+JDBC execution time: 7452912 ns
+Search servlet total execution time: 8139784 ns
+JDBC execution time: 8543143 ns
+Search servlet total execution time: 9650855 ns
+JDBC execution time: 8726679 ns
+Search servlet total execution time: 9380175 ns
+JDBC execution time: 7662343 ns
+Search servlet total execution time: 8140565 ns
+JDBC execution time: 7344757 ns
+Search servlet total execution time: 7993074 ns
+JDBC execution time: 11700785 ns
+Search servlet total execution time: 13244485 ns
+JDBC execution time: 10052688 ns
+Search servlet total execution time: 11203459 ns
+JDBC execution time: 10833000 ns
+Search servlet total execution time: 14171183 ns
+JDBC execution time: 10001537 ns
+Search servlet total execution time: 10841689 ns
+JDBC execution time: 8251867 ns
+Search servlet total execution time: 9375498 ns
+JDBC execution time: 11938820 ns
+Search servlet total execution time: 14960878 ns
+JDBC execution time: 8606246 ns
+Search servlet total execution time: 9467830 ns
+JDBC execution time: 8881968 ns
+Search servlet total execution time: 9516899 ns
+JDBC execution time: 10010186 ns
+Search servlet total execution time: 10959246 ns
+JDBC execution time: 8709240 ns
+Search servlet total execution time: 9577493 ns
+JDBC execution time: 7627154 ns
+Search servlet total execution time: 8383693 ns
+JDBC execution time: 12675258 ns
+Search servlet total execution time: 13551778 ns
+JDBC execution time: 7547051 ns
+Search servlet total execution time: 8177154 ns
+JDBC execution time: 10956538 ns
+Search servlet total execution time: 11830965 ns
+JDBC execution time: 10080923 ns
+Search servlet total execution time: 11188734 ns
+JDBC execution time: 31904748 ns
+Search servlet total execution time: 33126142 ns
+JDBC execution time: 7514354 ns
+Search servlet total execution time: 8247822 ns
+JDBC execution time: 9211311 ns
+Search servlet total execution time: 9720256 ns
+JDBC execution time: 39891445 ns
+Search servlet total execution time: 41743744 ns
+JDBC execution time: 9103857 ns
+Search servlet total execution time: 9982289 ns
+JDBC execution time: 7955693 ns
+Search servlet total execution time: 8658211 ns
+JDBC execution time: 10213267 ns
+Search servlet total execution time: 15211370 ns
+JDBC execution time: 10126623 ns
+Search servlet total execution time: 10972159 ns
+JDBC execution time: 12445565 ns
+Search servlet total execution time: 13662400 ns
+JDBC execution time: 8426192 ns
+Search servlet total execution time: 9485267 ns
+JDBC execution time: 8563834 ns
+Search servlet total execution time: 9578400 ns
+JDBC execution time: 7624748 ns
+Search servlet total execution time: 8309453 ns
+JDBC execution time: 8948561 ns
+Search servlet total execution time: 9755619 ns
+JDBC execution time: 9315564 ns
+Search servlet total execution time: 10297820 ns
+JDBC execution time: 8508201 ns
+Search servlet total execution time: 9052726 ns
+JDBC execution time: 16158476 ns
+Search servlet total execution time: 17080317 ns
+JDBC execution time: 7368041 ns
+Search servlet total execution time: 8148728 ns
+JDBC execution time: 10735174 ns
+Search servlet total execution time: 11343433 ns
+JDBC execution time: 8492932 ns
+Search servlet total execution time: 9323847 ns
+JDBC execution time: 7634043 ns
+Search servlet total execution time: 8263678 ns
+JDBC execution time: 7655556 ns
+Search servlet total execution time: 7934400 ns
+JDBC execution time: 8030350 ns
+Search servlet total execution time: 8363479 ns
+JDBC execution time: 10557118 ns
+Search servlet total execution time: 10861559 ns
+JDBC execution time: 7472054 ns
+Search servlet total execution time: 8068855 ns
+JDBC execution time: 7953801 ns
+Search servlet total execution time: 8223478 ns
+JDBC execution time: 8789856 ns
+Search servlet total execution time: 9620058 ns
+JDBC execution time: 8798718 ns
+Search servlet total execution time: 9677172 ns
+JDBC execution time: 10292016 ns
+Search servlet total execution time: 11289439 ns
+JDBC execution time: 9163594 ns
+Search servlet total execution time: 10092974 ns
+JDBC execution time: 8401269 ns
+Search servlet total execution time: 9272939 ns
+JDBC execution time: 8469636 ns
+Search servlet total execution time: 9615883 ns
+JDBC execution time: 7495118 ns
+Search servlet total execution time: 8091059 ns
+JDBC execution time: 7637067 ns
+Search servlet total execution time: 8307166 ns
+JDBC execution time: 26874734 ns
+Search servlet total execution time: 30767772 ns
+JDBC execution time: 11401126 ns
+Search servlet total execution time: 12250222 ns
+JDBC execution time: 7493408 ns
+Search servlet total execution time: 8218860 ns
+JDBC execution time: 7648820 ns
+Search servlet total execution time: 8305611 ns
+JDBC execution time: 10802347 ns
+Search servlet total execution time: 11415001 ns
+JDBC execution time: 8454884 ns
+Search servlet total execution time: 9233326 ns
+JDBC execution time: 13189794 ns
+Search servlet total execution time: 15348629 ns
+JDBC execution time: 8204628 ns
+Search servlet total execution time: 8831349 ns
+JDBC execution time: 7375703 ns
+Search servlet total execution time: 7930249 ns
+JDBC execution time: 8370191 ns
+Search servlet total execution time: 8820766 ns
+JDBC execution time: 9025044 ns
+Search servlet total execution time: 9593368 ns
+JDBC execution time: 8500214 ns
+Search servlet total execution time: 9278804 ns
+JDBC execution time: 8788312 ns
+Search servlet total execution time: 9425929 ns
+JDBC execution time: 8013615 ns
+Search servlet total execution time: 8311421 ns
+JDBC execution time: 8961090 ns
+Search servlet total execution time: 9390525 ns
+JDBC execution time: 8291853 ns
+Search servlet total execution time: 8877529 ns
+JDBC execution time: 8872669 ns
+Search servlet total execution time: 9729121 ns
+JDBC execution time: 13618519 ns
+Search servlet total execution time: 14704809 ns
+JDBC execution time: 10991760 ns
+Search servlet total execution time: 11869146 ns
+JDBC execution time: 45410448 ns
+Search servlet total execution time: 46464509 ns
+JDBC execution time: 10681116 ns
+Search servlet total execution time: 11966020 ns
+JDBC execution time: 8750947 ns
+Search servlet total execution time: 10233593 ns
+JDBC execution time: 8683586 ns
+Search servlet total execution time: 9515522 ns
+JDBC execution time: 8313347 ns
+Search servlet total execution time: 9322445 ns
+JDBC execution time: 8621142 ns
+Search servlet total execution time: 9621381 ns
+JDBC execution time: 8372511 ns
+Search servlet total execution time: 9138203 ns
+JDBC execution time: 7518311 ns
+Search servlet total execution time: 8162760 ns
+JDBC execution time: 8629658 ns
+Search servlet total execution time: 9091691 ns
+JDBC execution time: 7371684 ns
+Search servlet total execution time: 8044838 ns
+JDBC execution time: 8397232 ns
+Search servlet total execution time: 9205195 ns
+JDBC execution time: 9881738 ns
+Search servlet total execution time: 10861389 ns
+JDBC execution time: 10409761 ns
+Search servlet total execution time: 11239009 ns
+JDBC execution time: 8487817 ns
+Search servlet total execution time: 9356666 ns
+JDBC execution time: 8290784 ns
+Search servlet total execution time: 8983926 ns
+JDBC execution time: 8511492 ns
+Search servlet total execution time: 9331652 ns
+JDBC execution time: 7259463 ns
+Search servlet total execution time: 7835319 ns
+JDBC execution time: 11239679 ns
+Search servlet total execution time: 12052769 ns
+JDBC execution time: 8514321 ns
+Search servlet total execution time: 9834478 ns
+JDBC execution time: 8718640 ns
+Search servlet total execution time: 9306524 ns
+JDBC execution time: 8393517 ns
+Search servlet total execution time: 8726648 ns
+JDBC execution time: 7735438 ns
+Search servlet total execution time: 8604994 ns
+JDBC execution time: 8866313 ns
+Search servlet total execution time: 9260448 ns
+JDBC execution time: 7270603 ns
+Search servlet total execution time: 7776658 ns
+JDBC execution time: 8346306 ns
+Search servlet total execution time: 8774581 ns
+JDBC execution time: 7496800 ns
+Search servlet total execution time: 8357529 ns
+JDBC execution time: 8793206 ns
+Search servlet total execution time: 9256852 ns
+JDBC execution time: 7415027 ns
+Search servlet total execution time: 8337734 ns
+JDBC execution time: 29579962 ns
+Search servlet total execution time: 30189326 ns
+JDBC execution time: 7370816 ns
+Search servlet total execution time: 12758843 ns
+JDBC execution time: 8240683 ns
+Search servlet total execution time: 9219629 ns
+JDBC execution time: 10826328 ns
+Search servlet total execution time: 11801827 ns
+JDBC execution time: 11849545 ns
+Search servlet total execution time: 12513509 ns
+JDBC execution time: 8767776 ns
+Search servlet total execution time: 9506642 ns
+JDBC execution time: 8574949 ns
+Search servlet total execution time: 9523137 ns
+JDBC execution time: 13995042 ns
+Search servlet total execution time: 14750766 ns
+JDBC execution time: 8346736 ns
+Search servlet total execution time: 9232874 ns
+JDBC execution time: 10021661 ns
+Search servlet total execution time: 11053027 ns
+JDBC execution time: 19500459 ns
+Search servlet total execution time: 20470677 ns
+JDBC execution time: 12768263 ns
+Search servlet total execution time: 14001015 ns
+JDBC execution time: 7846003 ns
+Search servlet total execution time: 8473468 ns
+JDBC execution time: 10176171 ns
+Search servlet total execution time: 10656244 ns
+JDBC execution time: 11399700 ns
+Search servlet total execution time: 12336175 ns
+JDBC execution time: 8428459 ns
+Search servlet total execution time: 9226088 ns
+JDBC execution time: 8372359 ns
+Search servlet total execution time: 9179994 ns
+JDBC execution time: 8020669 ns
+Search servlet total execution time: 8922005 ns
+JDBC execution time: 8701269 ns
+Search servlet total execution time: 9345026 ns
+JDBC execution time: 7673348 ns
+Search servlet total execution time: 8631328 ns
+JDBC execution time: 15387274 ns
+Search servlet total execution time: 16222125 ns
+JDBC execution time: 7882794 ns
+Search servlet total execution time: 8598128 ns
+JDBC execution time: 8707561 ns
+Search servlet total execution time: 9209846 ns
+JDBC execution time: 7421751 ns
+Search servlet total execution time: 8024283 ns
+JDBC execution time: 13353873 ns
+Search servlet total execution time: 14498254 ns
+JDBC execution time: 8548314 ns
+Search servlet total execution time: 9221679 ns
+JDBC execution time: 8375620 ns
+Search servlet total execution time: 9226963 ns
+JDBC execution time: 11657081 ns
+Search servlet total execution time: 13148754 ns
+JDBC execution time: 8338288 ns
+Search servlet total execution time: 9207760 ns
+JDBC execution time: 9234816 ns
+Search servlet total execution time: 9812835 ns
+JDBC execution time: 12908712 ns
+Search servlet total execution time: 13751028 ns
+JDBC execution time: 7439961 ns
+Search servlet total execution time: 8026102 ns
+JDBC execution time: 7675362 ns
+Search servlet total execution time: 8135506 ns
+JDBC execution time: 10892480 ns
+Search servlet total execution time: 12056950 ns
+JDBC execution time: 7391995 ns
+Search servlet total execution time: 8413950 ns
+JDBC execution time: 20722349 ns
+Search servlet total execution time: 24099709 ns
+JDBC execution time: 7844778 ns
+Search servlet total execution time: 8535121 ns
+JDBC execution time: 7357951 ns
+Search servlet total execution time: 7938250 ns
+JDBC execution time: 18134600 ns
+Search servlet total execution time: 18629697 ns
+JDBC execution time: 10771860 ns
+Search servlet total execution time: 11632795 ns
+JDBC execution time: 7348883 ns
+Search servlet total execution time: 7917683 ns
+JDBC execution time: 7769489 ns
+Search servlet total execution time: 8490983 ns
+JDBC execution time: 7804680 ns
+Search servlet total execution time: 8357445 ns
+JDBC execution time: 10104313 ns
+Search servlet total execution time: 10631007 ns
+JDBC execution time: 8745183 ns
+Search servlet total execution time: 9484136 ns
+JDBC execution time: 7970296 ns
+Search servlet total execution time: 8223142 ns
+JDBC execution time: 18299913 ns
+Search servlet total execution time: 18978954 ns
+JDBC execution time: 7525942 ns
+Search servlet total execution time: 8279801 ns
+JDBC execution time: 15878105 ns
+Search servlet total execution time: 16981504 ns
+JDBC execution time: 8301752 ns
+Search servlet total execution time: 8990197 ns
+JDBC execution time: 8891576 ns
+Search servlet total execution time: 9531144 ns
+JDBC execution time: 8477163 ns
+Search servlet total execution time: 9377045 ns
+JDBC execution time: 8522602 ns
+Search servlet total execution time: 9277323 ns
+JDBC execution time: 10836713 ns
+Search servlet total execution time: 11716864 ns
+JDBC execution time: 12133740 ns
+Search servlet total execution time: 12929527 ns
+JDBC execution time: 8434008 ns
+Search servlet total execution time: 9366029 ns
+JDBC execution time: 8581387 ns
+Search servlet total execution time: 9290603 ns
+JDBC execution time: 7432476 ns
+Search servlet total execution time: 8000142 ns
+JDBC execution time: 7822131 ns
+Search servlet total execution time: 8089295 ns
+JDBC execution time: 8921249 ns
+Search servlet total execution time: 9382938 ns
+JDBC execution time: 7605435 ns
+Search servlet total execution time: 8291254 ns
+JDBC execution time: 8716970 ns
+Search servlet total execution time: 9849135 ns
+JDBC execution time: 8552064 ns
+Search servlet total execution time: 9308576 ns
+JDBC execution time: 7494494 ns
+Search servlet total execution time: 7983817 ns
+JDBC execution time: 7857339 ns
+Search servlet total execution time: 8160062 ns
+JDBC execution time: 8623916 ns
+Search servlet total execution time: 9197486 ns
+JDBC execution time: 8562525 ns
+Search servlet total execution time: 9617335 ns
+JDBC execution time: 7894203 ns
+Search servlet total execution time: 8580243 ns
+JDBC execution time: 7505626 ns
+Search servlet total execution time: 7870650 ns
+JDBC execution time: 8695554 ns
+Search servlet total execution time: 9206782 ns
+JDBC execution time: 8181572 ns
+Search servlet total execution time: 8880294 ns
+JDBC execution time: 7450181 ns
+Search servlet total execution time: 8310952 ns
+JDBC execution time: 7551806 ns
+Search servlet total execution time: 7874186 ns
+JDBC execution time: 13739011 ns
+Search servlet total execution time: 14086397 ns
+JDBC execution time: 11945046 ns
+Search servlet total execution time: 12336534 ns
+JDBC execution time: 8264747 ns
+Search servlet total execution time: 8907556 ns
+JDBC execution time: 7362183 ns
+Search servlet total execution time: 7967685 ns
+JDBC execution time: 10450536 ns
+Search servlet total execution time: 10777292 ns
+JDBC execution time: 10563182 ns
+Search servlet total execution time: 11267595 ns
+JDBC execution time: 32782934 ns
+Search servlet total execution time: 33813696 ns
+JDBC execution time: 7352703 ns
+Search servlet total execution time: 8388407 ns
+JDBC execution time: 8405920 ns
+Search servlet total execution time: 8684248 ns
+JDBC execution time: 11845839 ns
+Search servlet total execution time: 12834515 ns
+JDBC execution time: 7380668 ns
+Search servlet total execution time: 8013636 ns
+JDBC execution time: 7298109 ns
+Search servlet total execution time: 7825149 ns
+JDBC execution time: 8573519 ns
+Search servlet total execution time: 9003618 ns
+JDBC execution time: 10022352 ns
+Search servlet total execution time: 11102288 ns
+JDBC execution time: 8602145 ns
+Search servlet total execution time: 9265283 ns
+JDBC execution time: 8574511 ns
+Search servlet total execution time: 9102398 ns
+JDBC execution time: 7326424 ns
+Search servlet total execution time: 7986743 ns
+JDBC execution time: 7719515 ns
+Search servlet total execution time: 8036314 ns
+JDBC execution time: 9533035 ns
+Search servlet total execution time: 10083413 ns
+JDBC execution time: 7640077 ns
+Search servlet total execution time: 7959376 ns
+JDBC execution time: 15878758 ns
+Search servlet total execution time: 16371934 ns
+JDBC execution time: 13323425 ns
+Search servlet total execution time: 14176308 ns
+JDBC execution time: 11635722 ns
+Search servlet total execution time: 12172570 ns
+JDBC execution time: 8830824 ns
+Search servlet total execution time: 9682183 ns
+JDBC execution time: 8297208 ns
+Search servlet total execution time: 9171442 ns
+JDBC execution time: 8366372 ns
+Search servlet total execution time: 9191210 ns
+JDBC execution time: 8410756 ns
+Search servlet total execution time: 9252789 ns
+JDBC execution time: 7581910 ns
+Search servlet total execution time: 8280141 ns
+JDBC execution time: 7751960 ns
+Search servlet total execution time: 8120157 ns
+JDBC execution time: 7742500 ns
+Search servlet total execution time: 8069601 ns
+JDBC execution time: 7466618 ns
+Search servlet total execution time: 7878653 ns
+JDBC execution time: 15353890 ns
+Search servlet total execution time: 15844093 ns
+JDBC execution time: 7904829 ns
+Search servlet total execution time: 8491471 ns
+JDBC execution time: 9733024 ns
+Search servlet total execution time: 10065522 ns
+JDBC execution time: 7256679 ns
+Search servlet total execution time: 7820647 ns
+JDBC execution time: 8312482 ns
+Search servlet total execution time: 8757213 ns
+JDBC execution time: 17496850 ns
+Search servlet total execution time: 18455655 ns
+JDBC execution time: 8979960 ns
+Search servlet total execution time: 10118272 ns
+JDBC execution time: 7403684 ns
+Search servlet total execution time: 7982278 ns
+JDBC execution time: 10888726 ns
+Search servlet total execution time: 11779009 ns
+JDBC execution time: 7466054 ns
+Search servlet total execution time: 8154668 ns
+JDBC execution time: 9715503 ns
+Search servlet total execution time: 10128140 ns
+JDBC execution time: 8267997 ns
+Search servlet total execution time: 9002202 ns
+JDBC execution time: 8481494 ns
+Search servlet total execution time: 9284397 ns
+JDBC execution time: 8526572 ns
+Search servlet total execution time: 9178021 ns
+JDBC execution time: 8351160 ns
+Search servlet total execution time: 8613224 ns
+JDBC execution time: 8377252 ns
+Search servlet total execution time: 9453743 ns
+JDBC execution time: 9903077 ns
+Search servlet total execution time: 10689357 ns
+JDBC execution time: 8259232 ns
+Search servlet total execution time: 9013689 ns
+JDBC execution time: 7327301 ns
+Search servlet total execution time: 7967618 ns
+JDBC execution time: 11839163 ns
+Search servlet total execution time: 12108116 ns
+JDBC execution time: 14938576 ns
+Search servlet total execution time: 15507061 ns
+JDBC execution time: 8343461 ns
+Search servlet total execution time: 9334849 ns
+JDBC execution time: 8452581 ns
+Search servlet total execution time: 9223725 ns
+JDBC execution time: 8476611 ns
+Search servlet total execution time: 9334002 ns
+JDBC execution time: 8806284 ns
+Search servlet total execution time: 9703652 ns
+JDBC execution time: 7417411 ns
+Search servlet total execution time: 8051458 ns
+JDBC execution time: 8471944 ns
+Search servlet total execution time: 9204623 ns
+JDBC execution time: 7330043 ns
+Search servlet total execution time: 8310091 ns
+JDBC execution time: 8395183 ns
+Search servlet total execution time: 8872627 ns
+JDBC execution time: 8745261 ns
+Search servlet total execution time: 9576957 ns
+JDBC execution time: 8378990 ns
+Search servlet total execution time: 8870526 ns
+JDBC execution time: 8355416 ns
+Search servlet total execution time: 9103907 ns
+JDBC execution time: 7749630 ns
+Search servlet total execution time: 8325288 ns
+JDBC execution time: 8398868 ns
+Search servlet total execution time: 8745681 ns
+JDBC execution time: 8484367 ns
+Search servlet total execution time: 8751093 ns
+JDBC execution time: 11551876 ns
+Search servlet total execution time: 12523809 ns
+JDBC execution time: 7385786 ns
+Search servlet total execution time: 7955883 ns
+JDBC execution time: 7690566 ns
+Search servlet total execution time: 8283162 ns
+JDBC execution time: 10777383 ns
+Search servlet total execution time: 11300260 ns
+JDBC execution time: 8678235 ns
+Search servlet total execution time: 9539957 ns
+JDBC execution time: 7340530 ns
+Search servlet total execution time: 7995029 ns
+JDBC execution time: 13162746 ns
+Search servlet total execution time: 13721332 ns
+JDBC execution time: 7508240 ns
+Search servlet total execution time: 8157329 ns
+JDBC execution time: 15962875 ns
+Search servlet total execution time: 17317516 ns
+JDBC execution time: 10439634 ns
+Search servlet total execution time: 11172383 ns
+JDBC execution time: 7468712 ns
+Search servlet total execution time: 8003330 ns
+JDBC execution time: 11546571 ns
+Search servlet total execution time: 12014428 ns
+JDBC execution time: 10275749 ns
+Search servlet total execution time: 10999153 ns
+JDBC execution time: 7413066 ns
+Search servlet total execution time: 7971249 ns
+JDBC execution time: 7696214 ns
+Search servlet total execution time: 7994594 ns
+JDBC execution time: 8886918 ns
+Search servlet total execution time: 9178582 ns
+JDBC execution time: 8062408 ns
+Search servlet total execution time: 8414939 ns
+JDBC execution time: 7778456 ns
+Search servlet total execution time: 8494754 ns
+JDBC execution time: 8605449 ns
+Search servlet total execution time: 9438711 ns
+JDBC execution time: 10791604 ns
+Search servlet total execution time: 11750463 ns
+JDBC execution time: 8610976 ns
+Search servlet total execution time: 9381693 ns
+JDBC execution time: 9858393 ns
+Search servlet total execution time: 10603487 ns
+JDBC execution time: 8420863 ns
+Search servlet total execution time: 8951601 ns
+JDBC execution time: 10950678 ns
+Search servlet total execution time: 11904290 ns
+JDBC execution time: 7163371 ns
+Search servlet total execution time: 7764510 ns
+JDBC execution time: 10059499 ns
+Search servlet total execution time: 10331857 ns
+JDBC execution time: 8774742 ns
+Search servlet total execution time: 9494106 ns
+JDBC execution time: 10205695 ns
+Search servlet total execution time: 10852848 ns
+JDBC execution time: 10256656 ns
+Search servlet total execution time: 10966809 ns
+JDBC execution time: 8451298 ns
+Search servlet total execution time: 9498542 ns
+JDBC execution time: 7368133 ns
+Search servlet total execution time: 7975427 ns
+JDBC execution time: 8845817 ns
+Search servlet total execution time: 9673057 ns
+JDBC execution time: 7311234 ns
+Search servlet total execution time: 7930922 ns
+JDBC execution time: 8342204 ns
+Search servlet total execution time: 8860130 ns
+JDBC execution time: 10606688 ns
+Search servlet total execution time: 11373317 ns
+JDBC execution time: 11474569 ns
+Search servlet total execution time: 15041186 ns
+JDBC execution time: 7804478 ns
+Search servlet total execution time: 8490589 ns
+JDBC execution time: 8399827 ns
+Search servlet total execution time: 9190311 ns
+JDBC execution time: 8500538 ns
+Search servlet total execution time: 9351301 ns
+JDBC execution time: 7392155 ns
+Search servlet total execution time: 7978243 ns
+JDBC execution time: 10625581 ns
+Search servlet total execution time: 10951072 ns
+JDBC execution time: 7343354 ns
+Search servlet total execution time: 7925940 ns
+JDBC execution time: 7504898 ns
+Search servlet total execution time: 7763214 ns
+JDBC execution time: 7900313 ns
+Search servlet total execution time: 8150447 ns
+JDBC execution time: 7600339 ns
+Search servlet total execution time: 7853844 ns
+JDBC execution time: 10293638 ns
+Search servlet total execution time: 10723123 ns
+JDBC execution time: 8314220 ns
+Search servlet total execution time: 9084923 ns
+JDBC execution time: 11264753 ns
+Search servlet total execution time: 12055119 ns
+JDBC execution time: 10490814 ns
+Search servlet total execution time: 11324499 ns
+JDBC execution time: 9841504 ns
+Search servlet total execution time: 10523976 ns
+JDBC execution time: 10598378 ns
+Search servlet total execution time: 10937333 ns
+JDBC execution time: 7090034 ns
+Search servlet total execution time: 7923501 ns
+JDBC execution time: 7732604 ns
+Search servlet total execution time: 8258898 ns
+JDBC execution time: 7678936 ns
+Search servlet total execution time: 7963559 ns
+JDBC execution time: 11082926 ns
+Search servlet total execution time: 11776003 ns
+JDBC execution time: 7337172 ns
+Search servlet total execution time: 7882117 ns
+JDBC execution time: 7546669 ns
+Search servlet total execution time: 7832424 ns
+JDBC execution time: 9948590 ns
+Search servlet total execution time: 10271771 ns
+JDBC execution time: 11226849 ns
+Search servlet total execution time: 12323538 ns
+JDBC execution time: 6970983 ns
+Search servlet total execution time: 7521492 ns
+JDBC execution time: 8744055 ns
+Search servlet total execution time: 9222500 ns
+JDBC execution time: 7252727 ns
+Search servlet total execution time: 7806924 ns
+JDBC execution time: 7809301 ns
+Search servlet total execution time: 8131261 ns
+JDBC execution time: 11657488 ns
+Search servlet total execution time: 12338598 ns
+JDBC execution time: 8726247 ns
+Search servlet total execution time: 9519184 ns
+JDBC execution time: 7434828 ns
+Search servlet total execution time: 8301130 ns
+JDBC execution time: 7365797 ns
+Search servlet total execution time: 7592427 ns
+JDBC execution time: 8373549 ns
+Search servlet total execution time: 8646699 ns
+JDBC execution time: 12924737 ns
+Search servlet total execution time: 13622691 ns
+JDBC execution time: 8550129 ns
+Search servlet total execution time: 9330838 ns
+JDBC execution time: 42032645 ns
+Search servlet total execution time: 43879334 ns
+JDBC execution time: 7900085 ns
+Search servlet total execution time: 8491799 ns
+JDBC execution time: 8754469 ns
+Search servlet total execution time: 9149993 ns
+JDBC execution time: 10772867 ns
+Search servlet total execution time: 11447384 ns
+JDBC execution time: 8569060 ns
+Search servlet total execution time: 8846242 ns
+JDBC execution time: 8715675 ns
+Search servlet total execution time: 9149084 ns
+JDBC execution time: 8671420 ns
+Search servlet total execution time: 9229372 ns
+JDBC execution time: 9170943 ns
+Search servlet total execution time: 9582250 ns
+JDBC execution time: 8299216 ns
+Search servlet total execution time: 8741573 ns
+JDBC execution time: 8482620 ns
+Search servlet total execution time: 9087402 ns
+JDBC execution time: 11509692 ns
+Search servlet total execution time: 11849191 ns
+JDBC execution time: 11122445 ns
+Search servlet total execution time: 11758913 ns
+JDBC execution time: 28576596 ns
+Search servlet total execution time: 30261073 ns
+JDBC execution time: 8286821 ns
+Search servlet total execution time: 8968708 ns
+JDBC execution time: 7629559 ns
+Search servlet total execution time: 8148120 ns
+JDBC execution time: 8520482 ns
+Search servlet total execution time: 9189357 ns
+JDBC execution time: 10426906 ns
+Search servlet total execution time: 10783716 ns
+JDBC execution time: 7072828 ns
+Search servlet total execution time: 7700109 ns
+JDBC execution time: 12485634 ns
+Search servlet total execution time: 13124136 ns
+JDBC execution time: 8261646 ns
+Search servlet total execution time: 10936966 ns
+JDBC execution time: 7885549 ns
+Search servlet total execution time: 8455259 ns
+JDBC execution time: 7621608 ns
+Search servlet total execution time: 7880519 ns
+JDBC execution time: 11422945 ns
+Search servlet total execution time: 12284494 ns
+JDBC execution time: 16669925 ns
+Search servlet total execution time: 17570029 ns
+JDBC execution time: 7307231 ns
+Search servlet total execution time: 7918700 ns
+JDBC execution time: 8356216 ns
+Search servlet total execution time: 9134487 ns
+JDBC execution time: 10368319 ns
+Search servlet total execution time: 11090893 ns
+JDBC execution time: 8699586 ns
+Search servlet total execution time: 9471320 ns
+JDBC execution time: 7325214 ns
+Search servlet total execution time: 8255500 ns
+JDBC execution time: 8726397 ns
+Search servlet total execution time: 9219783 ns
+JDBC execution time: 8359959 ns
+Search servlet total execution time: 9104455 ns
+JDBC execution time: 10957800 ns
+Search servlet total execution time: 11821700 ns
+JDBC execution time: 10251518 ns
+Search servlet total execution time: 11054789 ns
+JDBC execution time: 8212397 ns
+Search servlet total execution time: 9004813 ns
+JDBC execution time: 10898951 ns
+Search servlet total execution time: 11702001 ns
+JDBC execution time: 8217925 ns
+Search servlet total execution time: 9238058 ns
+JDBC execution time: 7277466 ns
+Search servlet total execution time: 7900026 ns
+JDBC execution time: 9940983 ns
+Search servlet total execution time: 10290913 ns
+JDBC execution time: 15793472 ns
+Search servlet total execution time: 16713747 ns
+JDBC execution time: 8384967 ns
+Search servlet total execution time: 9141671 ns
+JDBC execution time: 7811739 ns
+Search servlet total execution time: 8455940 ns
+JDBC execution time: 8279177 ns
+Search servlet total execution time: 8547801 ns
+JDBC execution time: 8737430 ns
+Search servlet total execution time: 9087382 ns
+JDBC execution time: 7321345 ns
+Search servlet total execution time: 7868064 ns
+JDBC execution time: 12100432 ns
+Search servlet total execution time: 12674655 ns
+JDBC execution time: 8634149 ns
+Search servlet total execution time: 9358050 ns
+JDBC execution time: 7333970 ns
+Search servlet total execution time: 7947822 ns
+JDBC execution time: 8048652 ns
+Search servlet total execution time: 8314713 ns
+JDBC execution time: 8925502 ns
+Search servlet total execution time: 9373450 ns
+JDBC execution time: 8924528 ns
+Search servlet total execution time: 9706510 ns
+JDBC execution time: 8361537 ns
+Search servlet total execution time: 9184069 ns
+JDBC execution time: 8317449 ns
+Search servlet total execution time: 9136883 ns
+JDBC execution time: 7158197 ns
+Search servlet total execution time: 8152717 ns
+JDBC execution time: 7757028 ns
+Search servlet total execution time: 8385107 ns
+JDBC execution time: 10719944 ns
+Search servlet total execution time: 11056388 ns
+JDBC execution time: 8076421 ns
+Search servlet total execution time: 8386988 ns
+JDBC execution time: 10665934 ns
+Search servlet total execution time: 11023639 ns
+JDBC execution time: 8126381 ns
+Search servlet total execution time: 8590919 ns
+JDBC execution time: 8200595 ns
+Search servlet total execution time: 8915118 ns
+JDBC execution time: 8402202 ns
+Search servlet total execution time: 9070897 ns
+JDBC execution time: 10664750 ns
+Search servlet total execution time: 11552163 ns
+JDBC execution time: 9322937 ns
+Search servlet total execution time: 9918135 ns
+JDBC execution time: 8506654 ns
+Search servlet total execution time: 9695253 ns
+JDBC execution time: 7493830 ns
+Search servlet total execution time: 8308127 ns
+JDBC execution time: 8698159 ns
+Search servlet total execution time: 9012150 ns
+JDBC execution time: 10600971 ns
+Search servlet total execution time: 11434971 ns
+JDBC execution time: 14543655 ns
+Search servlet total execution time: 15486807 ns
+JDBC execution time: 8835101 ns
+Search servlet total execution time: 9667025 ns
+JDBC execution time: 8410614 ns
+Search servlet total execution time: 9173345 ns
+JDBC execution time: 7797307 ns
+Search servlet total execution time: 8394852 ns
+JDBC execution time: 8453402 ns
+Search servlet total execution time: 8727926 ns
+JDBC execution time: 8648114 ns
+Search servlet total execution time: 8914749 ns
+JDBC execution time: 8365059 ns
+Search servlet total execution time: 9186981 ns
+JDBC execution time: 7326544 ns
+Search servlet total execution time: 7991134 ns
+JDBC execution time: 8302711 ns
+Search servlet total execution time: 8787196 ns
+JDBC execution time: 46092350 ns
+Search servlet total execution time: 47217085 ns
+JDBC execution time: 7353495 ns
+Search servlet total execution time: 8553655 ns
+JDBC execution time: 8409917 ns
+Search servlet total execution time: 8682851 ns
+JDBC execution time: 7176049 ns
+Search servlet total execution time: 7789788 ns
+JDBC execution time: 7634655 ns
+Search servlet total execution time: 7926064 ns
+JDBC execution time: 9054902 ns
+Search servlet total execution time: 9388016 ns
+JDBC execution time: 8316438 ns
+Search servlet total execution time: 9082003 ns
+JDBC execution time: 7467339 ns
+Search servlet total execution time: 8060787 ns
+JDBC execution time: 14229095 ns
+Search servlet total execution time: 14894902 ns
+JDBC execution time: 8436091 ns
+Search servlet total execution time: 9266904 ns
+JDBC execution time: 7331960 ns
+Search servlet total execution time: 7996046 ns
+JDBC execution time: 8998989 ns
+Search servlet total execution time: 9575661 ns
+JDBC execution time: 7507443 ns
+Search servlet total execution time: 8175334 ns
+JDBC execution time: 10171393 ns
+Search servlet total execution time: 10722771 ns
+JDBC execution time: 10684568 ns
+Search servlet total execution time: 11828151 ns
+JDBC execution time: 7310249 ns
+Search servlet total execution time: 7998494 ns
+JDBC execution time: 8297789 ns
+Search servlet total execution time: 8754574 ns
+JDBC execution time: 7347992 ns
+Search servlet total execution time: 7843911 ns
+JDBC execution time: 14661146 ns
+Search servlet total execution time: 14920213 ns
+JDBC execution time: 8450733 ns
+Search servlet total execution time: 10438335 ns
+JDBC execution time: 12890428 ns
+Search servlet total execution time: 16418775 ns
+JDBC execution time: 7798457 ns
+Search servlet total execution time: 8356438 ns
+JDBC execution time: 29982575 ns
+Search servlet total execution time: 34776821 ns
+JDBC execution time: 7782687 ns
+Search servlet total execution time: 8415372 ns
+JDBC execution time: 8059818 ns
+Search servlet total execution time: 8331929 ns
+JDBC execution time: 8044790 ns
+Search servlet total execution time: 8316526 ns
+JDBC execution time: 7953843 ns
+Search servlet total execution time: 8210209 ns
+JDBC execution time: 7965545 ns
+Search servlet total execution time: 8258609 ns
+JDBC execution time: 9100181 ns
+Search servlet total execution time: 9387043 ns
+JDBC execution time: 8361445 ns
+Search servlet total execution time: 8647718 ns
+JDBC execution time: 8401057 ns
+Search servlet total execution time: 8997366 ns
+JDBC execution time: 31038423 ns
+Search servlet total execution time: 31943238 ns
+JDBC execution time: 10287206 ns
+Search servlet total execution time: 11033064 ns
+JDBC execution time: 15432810 ns
+Search servlet total execution time: 16324225 ns
+JDBC execution time: 9099870 ns
+Search servlet total execution time: 9356397 ns
+JDBC execution time: 12180421 ns
+Search servlet total execution time: 13076726 ns
+JDBC execution time: 12503515 ns
+Search servlet total execution time: 13489325 ns
+JDBC execution time: 8394476 ns
+Search servlet total execution time: 9326916 ns
+JDBC execution time: 10564154 ns
+Search servlet total execution time: 11325390 ns
+JDBC execution time: 7103322 ns
+Search servlet total execution time: 7705618 ns
+JDBC execution time: 7603537 ns
+Search servlet total execution time: 7883564 ns
+JDBC execution time: 9947216 ns
+Search servlet total execution time: 10482494 ns
+JDBC execution time: 7364109 ns
+Search servlet total execution time: 7989373 ns
+JDBC execution time: 7269073 ns
+Search servlet total execution time: 7484894 ns
+JDBC execution time: 8259315 ns
+Search servlet total execution time: 8521505 ns
+JDBC execution time: 8404458 ns
+Search servlet total execution time: 8717592 ns
+JDBC execution time: 8280669 ns
+Search servlet total execution time: 9077274 ns
+JDBC execution time: 9774853 ns
+Search servlet total execution time: 10768460 ns
+JDBC execution time: 7631168 ns
+Search servlet total execution time: 8666246 ns
+JDBC execution time: 8356034 ns
+Search servlet total execution time: 8650604 ns
+JDBC execution time: 9698326 ns
+Search servlet total execution time: 10329907 ns
+JDBC execution time: 14412025 ns
+Search servlet total execution time: 14925196 ns
+JDBC execution time: 7691765 ns
+Search servlet total execution time: 8306294 ns
+JDBC execution time: 7762543 ns
+Search servlet total execution time: 8032518 ns
+JDBC execution time: 8307873 ns
+Search servlet total execution time: 9335919 ns
+JDBC execution time: 7680159 ns
+Search servlet total execution time: 8462979 ns
+JDBC execution time: 8363782 ns
+Search servlet total execution time: 8797632 ns
+JDBC execution time: 8514620 ns
+Search servlet total execution time: 9268823 ns
+JDBC execution time: 7300309 ns
+Search servlet total execution time: 7973038 ns
+JDBC execution time: 8580286 ns
+Search servlet total execution time: 8846461 ns
+JDBC execution time: 8861021 ns
+Search servlet total execution time: 9713033 ns
+JDBC execution time: 8897390 ns
+Search servlet total execution time: 9950742 ns
+JDBC execution time: 8526079 ns
+Search servlet total execution time: 9420817 ns
+JDBC execution time: 11087269 ns
+Search servlet total execution time: 11991026 ns
+JDBC execution time: 8778063 ns
+Search servlet total execution time: 10855661 ns
+JDBC execution time: 8439964 ns
+Search servlet total execution time: 9430646 ns
+JDBC execution time: 31264308 ns
+Search servlet total execution time: 32799712 ns
+JDBC execution time: 8453784 ns
+Search servlet total execution time: 9304522 ns
+JDBC execution time: 7230104 ns
+Search servlet total execution time: 7884111 ns
+JDBC execution time: 12993010 ns
+Search servlet total execution time: 13605225 ns
+JDBC execution time: 8370734 ns
+Search servlet total execution time: 9263429 ns
+JDBC execution time: 8289279 ns
+Search servlet total execution time: 9113496 ns
+JDBC execution time: 9108710 ns
+Search servlet total execution time: 9859219 ns
+JDBC execution time: 8458883 ns
+Search servlet total execution time: 9448965 ns
+JDBC execution time: 8475525 ns
+Search servlet total execution time: 9292636 ns
+JDBC execution time: 37288630 ns
+Search servlet total execution time: 38286877 ns
+JDBC execution time: 9964839 ns
+Search servlet total execution time: 10787013 ns
+JDBC execution time: 9869284 ns
+Search servlet total execution time: 10725570 ns
+JDBC execution time: 8612554 ns
+Search servlet total execution time: 9744791 ns
+JDBC execution time: 8425062 ns
+Search servlet total execution time: 9186711 ns
+JDBC execution time: 8358814 ns
+Search servlet total execution time: 9163884 ns
+JDBC execution time: 9849251 ns
+Search servlet total execution time: 10768531 ns
+JDBC execution time: 8571314 ns
+Search servlet total execution time: 9120179 ns
+JDBC execution time: 8075102 ns
+Search servlet total execution time: 8351140 ns
+JDBC execution time: 9103013 ns
+Search servlet total execution time: 9508334 ns
+JDBC execution time: 9769009 ns
+Search servlet total execution time: 10757274 ns
+JDBC execution time: 43607657 ns
+Search servlet total execution time: 44696006 ns
+JDBC execution time: 8853369 ns
+Search servlet total execution time: 9467114 ns
+JDBC execution time: 7600420 ns
+Search servlet total execution time: 7890508 ns
+JDBC execution time: 8650853 ns
+Search servlet total execution time: 9365145 ns
+JDBC execution time: 9339990 ns
+Search servlet total execution time: 9950965 ns
+JDBC execution time: 8301550 ns
+Search servlet total execution time: 8782568 ns
+JDBC execution time: 36354395 ns
+Search servlet total execution time: 37293904 ns
+JDBC execution time: 8393004 ns
+Search servlet total execution time: 9158083 ns
+JDBC execution time: 7779493 ns
+Search servlet total execution time: 8643063 ns
+JDBC execution time: 8681055 ns
+Search servlet total execution time: 9134232 ns
+JDBC execution time: 8266069 ns
+Search servlet total execution time: 9102145 ns
+JDBC execution time: 7958622 ns
+Search servlet total execution time: 8550979 ns
+JDBC execution time: 9655853 ns
+Search servlet total execution time: 9980230 ns
+JDBC execution time: 8357234 ns
+Search servlet total execution time: 8604056 ns
+JDBC execution time: 7367667 ns
+Search servlet total execution time: 7968454 ns
+JDBC execution time: 8675952 ns
+Search servlet total execution time: 8930629 ns
+JDBC execution time: 8497751 ns
+Search servlet total execution time: 8825409 ns
+JDBC execution time: 9627899 ns
+Search servlet total execution time: 10379791 ns
+JDBC execution time: 8788701 ns
+Search servlet total execution time: 9242537 ns
+JDBC execution time: 8332378 ns
+Search servlet total execution time: 9223591 ns
+JDBC execution time: 8661804 ns
+Search servlet total execution time: 9327481 ns
+JDBC execution time: 8611961 ns
+Search servlet total execution time: 9467110 ns
+JDBC execution time: 8189919 ns
+Search servlet total execution time: 9309387 ns
+JDBC execution time: 9665364 ns
+Search servlet total execution time: 10240105 ns
+JDBC execution time: 7702453 ns
+Search servlet total execution time: 7984518 ns
+JDBC execution time: 15974212 ns
+Search servlet total execution time: 16657367 ns
+JDBC execution time: 10132657 ns
+Search servlet total execution time: 11123697 ns
+JDBC execution time: 7158297 ns
+Search servlet total execution time: 7972360 ns
+JDBC execution time: 11396024 ns
+Search servlet total execution time: 11929747 ns
+JDBC execution time: 7548830 ns
+Search servlet total execution time: 8168205 ns
+JDBC execution time: 8339023 ns
+Search servlet total execution time: 9205719 ns
+JDBC execution time: 10552416 ns
+Search servlet total execution time: 11300410 ns
+JDBC execution time: 9654172 ns
+Search servlet total execution time: 10361022 ns
+JDBC execution time: 7288509 ns
+Search servlet total execution time: 7847289 ns
+JDBC execution time: 9252804 ns
+Search servlet total execution time: 9513318 ns
+JDBC execution time: 7759869 ns
+Search servlet total execution time: 8047843 ns
+JDBC execution time: 10683969 ns
+Search servlet total execution time: 10999933 ns
+JDBC execution time: 10869839 ns
+Search servlet total execution time: 11754844 ns
+JDBC execution time: 36979361 ns
+Search servlet total execution time: 38285590 ns
+JDBC execution time: 7240912 ns
+Search servlet total execution time: 7814178 ns
+JDBC execution time: 11004222 ns
+Search servlet total execution time: 11484580 ns
+JDBC execution time: 7783283 ns
+Search servlet total execution time: 8395872 ns
+JDBC execution time: 7922926 ns
+Search servlet total execution time: 8175920 ns
+JDBC execution time: 7845801 ns
+Search servlet total execution time: 8118687 ns
+JDBC execution time: 8317762 ns
+Search servlet total execution time: 8720035 ns
+JDBC execution time: 11406969 ns
+Search servlet total execution time: 12350199 ns
+JDBC execution time: 10528628 ns
+Search servlet total execution time: 11337099 ns
+JDBC execution time: 13635382 ns
+Search servlet total execution time: 14908864 ns
+JDBC execution time: 8727618 ns
+Search servlet total execution time: 9575066 ns
+JDBC execution time: 7117410 ns
+Search servlet total execution time: 7745028 ns
+JDBC execution time: 8475764 ns
+Search servlet total execution time: 8732542 ns
+JDBC execution time: 9540530 ns
+Search servlet total execution time: 10170059 ns
+JDBC execution time: 9706079 ns
+Search servlet total execution time: 10034592 ns
+JDBC execution time: 8810436 ns
+Search servlet total execution time: 9224578 ns
+JDBC execution time: 7108760 ns
+Search servlet total execution time: 7727548 ns
+JDBC execution time: 8792659 ns
+Search servlet total execution time: 9051863 ns
+JDBC execution time: 10364020 ns
+Search servlet total execution time: 11107302 ns
+JDBC execution time: 10875253 ns
+Search servlet total execution time: 11746046 ns
+JDBC execution time: 8761774 ns
+Search servlet total execution time: 9337122 ns
+JDBC execution time: 8366822 ns
+Search servlet total execution time: 9156905 ns
+JDBC execution time: 8268102 ns
+Search servlet total execution time: 9081299 ns
+JDBC execution time: 14136954 ns
+Search servlet total execution time: 14908036 ns
+JDBC execution time: 10400231 ns
+Search servlet total execution time: 11196135 ns
+JDBC execution time: 8194159 ns
+Search servlet total execution time: 9262787 ns
+JDBC execution time: 10880860 ns
+Search servlet total execution time: 11774878 ns
+JDBC execution time: 8207946 ns
+Search servlet total execution time: 8999255 ns
+JDBC execution time: 12809089 ns
+Search servlet total execution time: 13701837 ns
+JDBC execution time: 9032056 ns
+Search servlet total execution time: 9817363 ns
+JDBC execution time: 7131446 ns
+Search servlet total execution time: 7926132 ns
+JDBC execution time: 9362950 ns
+Search servlet total execution time: 9733173 ns
+JDBC execution time: 8213106 ns
+Search servlet total execution time: 8720475 ns
+JDBC execution time: 7236888 ns
+Search servlet total execution time: 7833100 ns
+JDBC execution time: 9380457 ns
+Search servlet total execution time: 9626573 ns
+JDBC execution time: 8689977 ns
+Search servlet total execution time: 9117735 ns
+JDBC execution time: 7299070 ns
+Search servlet total execution time: 7947839 ns
+JDBC execution time: 7529071 ns
+Search servlet total execution time: 7796378 ns
+JDBC execution time: 12860216 ns
+Search servlet total execution time: 13118423 ns
+JDBC execution time: 8202657 ns
+Search servlet total execution time: 8975887 ns
+JDBC execution time: 8665183 ns
+Search servlet total execution time: 9497035 ns
+JDBC execution time: 7304583 ns
+Search servlet total execution time: 7871701 ns
+JDBC execution time: 8256951 ns
+Search servlet total execution time: 8672440 ns
+JDBC execution time: 7413097 ns
+Search servlet total execution time: 8038818 ns
+JDBC execution time: 8445543 ns
+Search servlet total execution time: 8925507 ns
+JDBC execution time: 10531308 ns
+Search servlet total execution time: 11075481 ns
+JDBC execution time: 7599502 ns
+Search servlet total execution time: 7897610 ns
+JDBC execution time: 7615517 ns
+Search servlet total execution time: 7865856 ns
+JDBC execution time: 9602297 ns
+Search servlet total execution time: 9915879 ns
+JDBC execution time: 10796910 ns
+Search servlet total execution time: 11255425 ns
+JDBC execution time: 7198269 ns
+Search servlet total execution time: 7763820 ns
+JDBC execution time: 7660866 ns
+Search servlet total execution time: 8010875 ns
+JDBC execution time: 27793077 ns
+Search servlet total execution time: 28957761 ns
+JDBC execution time: 10480006 ns
+Search servlet total execution time: 11358828 ns
+JDBC execution time: 8825643 ns
+Search servlet total execution time: 9562661 ns
+JDBC execution time: 8269724 ns
+Search servlet total execution time: 9040244 ns
+JDBC execution time: 7274545 ns
+Search servlet total execution time: 7829176 ns
+JDBC execution time: 11594239 ns
+Search servlet total execution time: 11910436 ns
+JDBC execution time: 10394371 ns
+Search servlet total execution time: 14356572 ns
+JDBC execution time: 8734543 ns
+Search servlet total execution time: 9430550 ns
+JDBC execution time: 7857993 ns
+Search servlet total execution time: 8113428 ns
+JDBC execution time: 10856092 ns
+Search servlet total execution time: 11314030 ns
+JDBC execution time: 8636683 ns
+Search servlet total execution time: 9367857 ns
+JDBC execution time: 10792668 ns
+Search servlet total execution time: 11502314 ns
+JDBC execution time: 7667882 ns
+Search servlet total execution time: 8243959 ns
+JDBC execution time: 10088567 ns
+Search servlet total execution time: 10342250 ns
+JDBC execution time: 44901249 ns
+Search servlet total execution time: 45608897 ns
+JDBC execution time: 10174297 ns
+Search servlet total execution time: 11248823 ns
+JDBC execution time: 11348066 ns
+Search servlet total execution time: 12084583 ns
+JDBC execution time: 11314137 ns
+Search servlet total execution time: 12292628 ns
+JDBC execution time: 7263438 ns
+Search servlet total execution time: 8089419 ns
+JDBC execution time: 9748655 ns
+Search servlet total execution time: 10076060 ns
+JDBC execution time: 7584986 ns
+Search servlet total execution time: 7860547 ns
+JDBC execution time: 10498378 ns
+Search servlet total execution time: 10945619 ns
+JDBC execution time: 8433786 ns
+Search servlet total execution time: 9231280 ns
+JDBC execution time: 8761868 ns
+Search servlet total execution time: 9668036 ns
+JDBC execution time: 10847050 ns
+Search servlet total execution time: 11478159 ns
+JDBC execution time: 9478474 ns
+Search servlet total execution time: 10126053 ns
+JDBC execution time: 8921852 ns
+Search servlet total execution time: 9406803 ns
+JDBC execution time: 10459188 ns
+Search servlet total execution time: 11348463 ns
+JDBC execution time: 8481236 ns
+Search servlet total execution time: 9483791 ns
+JDBC execution time: 12973042 ns
+Search servlet total execution time: 13821064 ns
+JDBC execution time: 8477781 ns
+Search servlet total execution time: 9504950 ns
+JDBC execution time: 8033466 ns
+Search servlet total execution time: 8281562 ns
+JDBC execution time: 11207269 ns
+Search servlet total execution time: 11868480 ns
+JDBC execution time: 8145510 ns
+Search servlet total execution time: 8413932 ns
+JDBC execution time: 8721003 ns
+Search servlet total execution time: 9157083 ns
+JDBC execution time: 8318810 ns
+Search servlet total execution time: 9176235 ns
+JDBC execution time: 7301165 ns
+Search servlet total execution time: 7877033 ns
+JDBC execution time: 9293096 ns
+Search servlet total execution time: 9559329 ns
+JDBC execution time: 8499544 ns
+Search servlet total execution time: 9341269 ns
+JDBC execution time: 10843709 ns
+Search servlet total execution time: 11110593 ns
+JDBC execution time: 7391445 ns
+Search servlet total execution time: 8054279 ns
+JDBC execution time: 8945121 ns
+Search servlet total execution time: 9293301 ns
+JDBC execution time: 8445791 ns
+Search servlet total execution time: 9237342 ns
+JDBC execution time: 8421515 ns
+Search servlet total execution time: 9275839 ns
+JDBC execution time: 8197252 ns
+Search servlet total execution time: 9033871 ns
+JDBC execution time: 7799222 ns
+Search servlet total execution time: 8470155 ns
+JDBC execution time: 8380432 ns
+Search servlet total execution time: 8860211 ns
+JDBC execution time: 9401101 ns
+Search servlet total execution time: 10078650 ns
+JDBC execution time: 9528907 ns
+Search servlet total execution time: 9822148 ns
+JDBC execution time: 9705935 ns
+Search servlet total execution time: 10026297 ns
+JDBC execution time: 11442847 ns
+Search servlet total execution time: 11892558 ns
+JDBC execution time: 9078199 ns
+Search servlet total execution time: 9686831 ns
+JDBC execution time: 8924992 ns
+Search servlet total execution time: 9569621 ns
+JDBC execution time: 7766302 ns
+Search servlet total execution time: 8393827 ns
+JDBC execution time: 10829827 ns
+Search servlet total execution time: 11559766 ns
+JDBC execution time: 7574859 ns
+Search servlet total execution time: 8267110 ns
+JDBC execution time: 8812429 ns
+Search servlet total execution time: 9127499 ns
+JDBC execution time: 8322328 ns
+Search servlet total execution time: 9204072 ns
+JDBC execution time: 12514968 ns
+Search servlet total execution time: 13468527 ns
+JDBC execution time: 8455419 ns
+Search servlet total execution time: 9276470 ns
+JDBC execution time: 9735557 ns
+Search servlet total execution time: 10658303 ns
+JDBC execution time: 26660578 ns
+Search servlet total execution time: 27619637 ns
+JDBC execution time: 7203557 ns
+Search servlet total execution time: 7784131 ns
+JDBC execution time: 9068814 ns
+Search servlet total execution time: 9334396 ns
+JDBC execution time: 7309969 ns
+Search servlet total execution time: 8218258 ns
+JDBC execution time: 7485491 ns
+Search servlet total execution time: 7771210 ns
+JDBC execution time: 8040228 ns
+Search servlet total execution time: 8818009 ns
+JDBC execution time: 8520352 ns
+Search servlet total execution time: 9092837 ns
+JDBC execution time: 11349852 ns
+Search servlet total execution time: 11613568 ns
+JDBC execution time: 8797531 ns
+Search servlet total execution time: 9239020 ns
+JDBC execution time: 8566056 ns
+Search servlet total execution time: 9220096 ns
+JDBC execution time: 10488571 ns
+Search servlet total execution time: 10867171 ns
+JDBC execution time: 9244530 ns
+Search servlet total execution time: 10188971 ns
+JDBC execution time: 7618787 ns
+Search servlet total execution time: 8477951 ns
+JDBC execution time: 7555408 ns
+Search servlet total execution time: 7836313 ns
+JDBC execution time: 7705870 ns
+Search servlet total execution time: 7971387 ns
+JDBC execution time: 10848591 ns
+Search servlet total execution time: 11407270 ns
+JDBC execution time: 8487421 ns
+Search servlet total execution time: 9274310 ns
+JDBC execution time: 8402514 ns
+Search servlet total execution time: 9139149 ns
+JDBC execution time: 8484100 ns
+Search servlet total execution time: 9274410 ns
+JDBC execution time: 8566071 ns
+Search servlet total execution time: 9431618 ns
+JDBC execution time: 12337368 ns
+Search servlet total execution time: 12970348 ns
+JDBC execution time: 12354664 ns
+Search servlet total execution time: 12841779 ns
+JDBC execution time: 8395662 ns
+Search servlet total execution time: 9189458 ns
+JDBC execution time: 7717908 ns
+Search servlet total execution time: 8554943 ns
+JDBC execution time: 8719612 ns
+Search servlet total execution time: 8978543 ns
+JDBC execution time: 7257462 ns
+Search servlet total execution time: 7886415 ns
+JDBC execution time: 8421872 ns
+Search servlet total execution time: 8685179 ns
+JDBC execution time: 7584618 ns
+Search servlet total execution time: 7840594 ns
+JDBC execution time: 7538756 ns
+Search servlet total execution time: 7790273 ns
+JDBC execution time: 7479358 ns
+Search servlet total execution time: 7737020 ns
+JDBC execution time: 8545709 ns
+Search servlet total execution time: 9048969 ns
+JDBC execution time: 8774247 ns
+Search servlet total execution time: 9557548 ns
+JDBC execution time: 8780818 ns
+Search servlet total execution time: 9835083 ns
+JDBC execution time: 8976770 ns
+Search servlet total execution time: 9578096 ns
+JDBC execution time: 9678246 ns
+Search servlet total execution time: 9995169 ns
+JDBC execution time: 8084282 ns
+Search servlet total execution time: 8364799 ns
+JDBC execution time: 7482825 ns
+Search servlet total execution time: 7739609 ns
+JDBC execution time: 8321458 ns
+Search servlet total execution time: 8613339 ns
+JDBC execution time: 7406092 ns
+Search servlet total execution time: 8018832 ns
+JDBC execution time: 8329356 ns
+Search servlet total execution time: 8585407 ns
+JDBC execution time: 11446457 ns
+Search servlet total execution time: 12673493 ns
+JDBC execution time: 8541895 ns
+Search servlet total execution time: 9270948 ns
+JDBC execution time: 8259705 ns
+Search servlet total execution time: 9037215 ns
+JDBC execution time: 7374219 ns
+Search servlet total execution time: 7995272 ns
+JDBC execution time: 29363771 ns
+Search servlet total execution time: 30211105 ns
+JDBC execution time: 10655294 ns
+Search servlet total execution time: 12337026 ns
+JDBC execution time: 7334236 ns
+Search servlet total execution time: 7928736 ns
+JDBC execution time: 9866752 ns
+Search servlet total execution time: 10207362 ns
+JDBC execution time: 8770098 ns
+Search servlet total execution time: 9020787 ns
+JDBC execution time: 10566300 ns
+Search servlet total execution time: 11379460 ns
+JDBC execution time: 7290665 ns
+Search servlet total execution time: 8142308 ns
+JDBC execution time: 8218260 ns
+Search servlet total execution time: 8478653 ns
+JDBC execution time: 8001515 ns
+Search servlet total execution time: 8258937 ns
+JDBC execution time: 8605095 ns
+Search servlet total execution time: 8900362 ns
+JDBC execution time: 7234624 ns
+Search servlet total execution time: 7870459 ns
+JDBC execution time: 7360901 ns
+Search servlet total execution time: 7669267 ns
+JDBC execution time: 8220172 ns
+Search servlet total execution time: 8464384 ns
+JDBC execution time: 7774740 ns
+Search servlet total execution time: 8381017 ns
+JDBC execution time: 9538620 ns
+Search servlet total execution time: 9976663 ns
+JDBC execution time: 7280879 ns
+Search servlet total execution time: 8434864 ns
+JDBC execution time: 9511212 ns
+Search servlet total execution time: 10064462 ns
+JDBC execution time: 7347600 ns
+Search servlet total execution time: 7893267 ns
+JDBC execution time: 8195840 ns
+Search servlet total execution time: 8448578 ns
+JDBC execution time: 8219485 ns
+Search servlet total execution time: 8512687 ns
+JDBC execution time: 7552818 ns
+Search servlet total execution time: 7860674 ns
+JDBC execution time: 8800660 ns
+Search servlet total execution time: 9139278 ns
+JDBC execution time: 10119375 ns
+Search servlet total execution time: 10542658 ns
+JDBC execution time: 8852573 ns
+Search servlet total execution time: 9685668 ns
+JDBC execution time: 8633091 ns
+Search servlet total execution time: 9667991 ns
+JDBC execution time: 9444695 ns
+Search servlet total execution time: 10077833 ns
+JDBC execution time: 7261545 ns
+Search servlet total execution time: 9350882 ns
+JDBC execution time: 8422913 ns
+Search servlet total execution time: 8704006 ns
+JDBC execution time: 7768049 ns
+Search servlet total execution time: 8344043 ns
+JDBC execution time: 12458298 ns
+Search servlet total execution time: 12713004 ns
+JDBC execution time: 7701819 ns
+Search servlet total execution time: 8019878 ns
+JDBC execution time: 8298969 ns
+Search servlet total execution time: 8644511 ns
+JDBC execution time: 8231372 ns
+Search servlet total execution time: 8479922 ns
+JDBC execution time: 8369045 ns
+Search servlet total execution time: 9145116 ns
+JDBC execution time: 9161155 ns
+Search servlet total execution time: 9985683 ns
+JDBC execution time: 7754764 ns
+Search servlet total execution time: 8303777 ns
+JDBC execution time: 8254607 ns
+Search servlet total execution time: 8702952 ns
+JDBC execution time: 7440071 ns
+Search servlet total execution time: 8087171 ns
+JDBC execution time: 8445463 ns
+Search servlet total execution time: 8683140 ns
+JDBC execution time: 9536252 ns
+Search servlet total execution time: 10034009 ns
+JDBC execution time: 10240272 ns
+Search servlet total execution time: 10720146 ns
+JDBC execution time: 9577793 ns
+Search servlet total execution time: 10389474 ns
+JDBC execution time: 8095279 ns
+Search servlet total execution time: 8798728 ns
+JDBC execution time: 37915082 ns
+Search servlet total execution time: 38811336 ns
+JDBC execution time: 7292435 ns
+Search servlet total execution time: 7915152 ns
+JDBC execution time: 10453800 ns
+Search servlet total execution time: 11240125 ns
+JDBC execution time: 8037128 ns
+Search servlet total execution time: 8606479 ns
+JDBC execution time: 7605496 ns
+Search servlet total execution time: 7879951 ns
+JDBC execution time: 15865274 ns
+Search servlet total execution time: 16329301 ns
+JDBC execution time: 8441848 ns
+Search servlet total execution time: 9161207 ns
+JDBC execution time: 8318738 ns
+Search servlet total execution time: 9110163 ns
+JDBC execution time: 7738909 ns
+Search servlet total execution time: 8304882 ns
+JDBC execution time: 9811893 ns
+Search servlet total execution time: 10347666 ns
+JDBC execution time: 7500518 ns
+Search servlet total execution time: 7763189 ns
+JDBC execution time: 7564122 ns
+Search servlet total execution time: 7971172 ns
+JDBC execution time: 16491825 ns
+Search servlet total execution time: 17073104 ns
+JDBC execution time: 7219071 ns
+Search servlet total execution time: 7826453 ns
+JDBC execution time: 8603502 ns
+Search servlet total execution time: 8874631 ns
+JDBC execution time: 8115636 ns
+Search servlet total execution time: 8338381 ns
+JDBC execution time: 10383312 ns
+Search servlet total execution time: 11115945 ns
+JDBC execution time: 7425703 ns
+Search servlet total execution time: 8072151 ns
+JDBC execution time: 21660871 ns
+Search servlet total execution time: 22081398 ns
+JDBC execution time: 7286691 ns
+Search servlet total execution time: 7804690 ns
+JDBC execution time: 8525835 ns
+Search servlet total execution time: 8777927 ns
+JDBC execution time: 7815067 ns
+Search servlet total execution time: 8319764 ns
+JDBC execution time: 8188627 ns
+Search servlet total execution time: 8647005 ns
+JDBC execution time: 8487591 ns
+Search servlet total execution time: 9307372 ns
+JDBC execution time: 7363562 ns
+Search servlet total execution time: 7877698 ns
+JDBC execution time: 8471867 ns
+Search servlet total execution time: 9192450 ns
+JDBC execution time: 7286701 ns
+Search servlet total execution time: 8245952 ns
+JDBC execution time: 11601520 ns
+Search servlet total execution time: 12180541 ns
+JDBC execution time: 8408319 ns
+Search servlet total execution time: 9121341 ns
+JDBC execution time: 8607202 ns
+Search servlet total execution time: 9324930 ns
+JDBC execution time: 13857567 ns
+Search servlet total execution time: 14581810 ns
+JDBC execution time: 8519824 ns
+Search servlet total execution time: 8956048 ns
+JDBC execution time: 8389076 ns
+Search servlet total execution time: 8933572 ns
+JDBC execution time: 8827200 ns
+Search servlet total execution time: 9099871 ns
+JDBC execution time: 16787201 ns
+Search servlet total execution time: 17418850 ns
+JDBC execution time: 10004166 ns
+Search servlet total execution time: 11139573 ns
+JDBC execution time: 11536999 ns
+Search servlet total execution time: 12392814 ns
+JDBC execution time: 7756958 ns
+Search servlet total execution time: 8339514 ns
+JDBC execution time: 10261716 ns
+Search servlet total execution time: 10607363 ns
+JDBC execution time: 10412147 ns
+Search servlet total execution time: 10705379 ns
+JDBC execution time: 11673905 ns
+Search servlet total execution time: 12266183 ns
+JDBC execution time: 7336981 ns
+Search servlet total execution time: 7925323 ns
+JDBC execution time: 16145824 ns
+Search servlet total execution time: 16714253 ns
+JDBC execution time: 7246521 ns
+Search servlet total execution time: 7954846 ns
+JDBC execution time: 13408335 ns
+Search servlet total execution time: 14047961 ns
+JDBC execution time: 10745695 ns
+Search servlet total execution time: 11647669 ns
+JDBC execution time: 7806632 ns
+Search servlet total execution time: 8396263 ns
+JDBC execution time: 14379679 ns
+Search servlet total execution time: 15155639 ns
+JDBC execution time: 10451999 ns
+Search servlet total execution time: 11345741 ns
+JDBC execution time: 7202357 ns
+Search servlet total execution time: 7812713 ns
+JDBC execution time: 8094285 ns
+Search servlet total execution time: 8566756 ns
+JDBC execution time: 8401455 ns
+Search servlet total execution time: 8640539 ns
+JDBC execution time: 8566940 ns
+Search servlet total execution time: 9342724 ns
+JDBC execution time: 8386658 ns
+Search servlet total execution time: 9453985 ns
+JDBC execution time: 11681488 ns
+Search servlet total execution time: 12544794 ns
+JDBC execution time: 8622482 ns
+Search servlet total execution time: 9522880 ns
+JDBC execution time: 8928656 ns
+Search servlet total execution time: 9663770 ns
+JDBC execution time: 8604249 ns
+Search servlet total execution time: 9442084 ns
+JDBC execution time: 7790725 ns
+Search servlet total execution time: 8212296 ns
+JDBC execution time: 7490930 ns
+Search servlet total execution time: 7784802 ns
+JDBC execution time: 11917442 ns
+Search servlet total execution time: 12192808 ns
+JDBC execution time: 7514353 ns
+Search servlet total execution time: 7796444 ns
+JDBC execution time: 8488113 ns
+Search servlet total execution time: 8739231 ns
+JDBC execution time: 7275201 ns
+Search servlet total execution time: 7904501 ns
+JDBC execution time: 8918493 ns
+Search servlet total execution time: 9251441 ns
+JDBC execution time: 8506718 ns
+Search servlet total execution time: 8778327 ns
+JDBC execution time: 9984760 ns
+Search servlet total execution time: 10912231 ns
+JDBC execution time: 7322852 ns
+Search servlet total execution time: 7949024 ns
+JDBC execution time: 7626369 ns
+Search servlet total execution time: 7906527 ns
+JDBC execution time: 7896243 ns
+Search servlet total execution time: 8147157 ns
+JDBC execution time: 9911965 ns
+Search servlet total execution time: 10286973 ns
+JDBC execution time: 8874023 ns
+Search servlet total execution time: 9121701 ns
+JDBC execution time: 8338324 ns
+Search servlet total execution time: 9083812 ns
+JDBC execution time: 7274620 ns
+Search servlet total execution time: 7910839 ns
+JDBC execution time: 8730776 ns
+Search servlet total execution time: 9494979 ns
+JDBC execution time: 8581564 ns
+Search servlet total execution time: 9187694 ns
+JDBC execution time: 8681989 ns
+Search servlet total execution time: 8938258 ns
+JDBC execution time: 9491609 ns
+Search servlet total execution time: 10230981 ns
+JDBC execution time: 7907527 ns
+Search servlet total execution time: 8226815 ns
+JDBC execution time: 7433866 ns
+Search servlet total execution time: 7754734 ns
+JDBC execution time: 8024909 ns
+Search servlet total execution time: 8351104 ns
+JDBC execution time: 7670404 ns
+Search servlet total execution time: 7994611 ns
+JDBC execution time: 10481917 ns
+Search servlet total execution time: 10829350 ns
+JDBC execution time: 7225250 ns
+Search servlet total execution time: 8050037 ns
+JDBC execution time: 9615518 ns
+Search servlet total execution time: 10046326 ns
+JDBC execution time: 8611741 ns
+Search servlet total execution time: 9423833 ns
+JDBC execution time: 8542810 ns
+Search servlet total execution time: 9277729 ns
+JDBC execution time: 11293262 ns
+Search servlet total execution time: 11603299 ns
+JDBC execution time: 7321531 ns
+Search servlet total execution time: 8336694 ns
+JDBC execution time: 8249860 ns
+Search servlet total execution time: 8715055 ns
+JDBC execution time: 8152590 ns
+Search servlet total execution time: 8884932 ns
+JDBC execution time: 7138724 ns
+Search servlet total execution time: 7753581 ns
+JDBC execution time: 7717526 ns
+Search servlet total execution time: 8034668 ns
+JDBC execution time: 11846841 ns
+Search servlet total execution time: 12193335 ns
+JDBC execution time: 7347359 ns
+Search servlet total execution time: 8043303 ns
+JDBC execution time: 10632790 ns
+Search servlet total execution time: 11112951 ns
+JDBC execution time: 8567031 ns
+Search servlet total execution time: 9382707 ns
+JDBC execution time: 8743600 ns
+Search servlet total execution time: 9899389 ns
+JDBC execution time: 8430749 ns
+Search servlet total execution time: 9272673 ns
+JDBC execution time: 8695181 ns
+Search servlet total execution time: 9363902 ns
+JDBC execution time: 9346980 ns
+Search servlet total execution time: 10196906 ns
+JDBC execution time: 10676566 ns
+Search servlet total execution time: 11015581 ns
+JDBC execution time: 7242765 ns
+Search servlet total execution time: 7880060 ns
+JDBC execution time: 9186915 ns
+Search servlet total execution time: 9767795 ns
+JDBC execution time: 8337951 ns
+Search servlet total execution time: 9184921 ns
+JDBC execution time: 8032590 ns
+Search servlet total execution time: 8639705 ns
+JDBC execution time: 7603682 ns
+Search servlet total execution time: 7935443 ns
+JDBC execution time: 7520270 ns
+Search servlet total execution time: 7849642 ns
+JDBC execution time: 9882776 ns
+Search servlet total execution time: 10233808 ns
+JDBC execution time: 7935884 ns
+Search servlet total execution time: 8251065 ns
+JDBC execution time: 8721165 ns
+Search servlet total execution time: 9245493 ns
+JDBC execution time: 7974348 ns
+Search servlet total execution time: 8629260 ns
+JDBC execution time: 10407972 ns
+Search servlet total execution time: 10976313 ns
+JDBC execution time: 10759615 ns
+Search servlet total execution time: 11648098 ns
+JDBC execution time: 10241901 ns
+Search servlet total execution time: 10945978 ns
+JDBC execution time: 8179702 ns
+Search servlet total execution time: 9233412 ns
+JDBC execution time: 8379553 ns
+Search servlet total execution time: 9221294 ns
+JDBC execution time: 11139863 ns
+Search servlet total execution time: 11926558 ns
+JDBC execution time: 7381907 ns
+Search servlet total execution time: 8061845 ns
+JDBC execution time: 8461793 ns
+Search servlet total execution time: 8927915 ns
+JDBC execution time: 7314455 ns
+Search servlet total execution time: 7948826 ns
+JDBC execution time: 8608648 ns
+Search servlet total execution time: 9480778 ns
+JDBC execution time: 8531189 ns
+Search servlet total execution time: 9759780 ns
+JDBC execution time: 9068853 ns
+Search servlet total execution time: 9850096 ns
+JDBC execution time: 7363508 ns
+Search servlet total execution time: 8063766 ns
+JDBC execution time: 7464285 ns
+Search servlet total execution time: 7815597 ns
+JDBC execution time: 10192525 ns
+Search servlet total execution time: 10536331 ns
+JDBC execution time: 8655062 ns
+Search servlet total execution time: 9485927 ns
+JDBC execution time: 8468383 ns
+Search servlet total execution time: 9134364 ns
+JDBC execution time: 10586299 ns
+Search servlet total execution time: 11106592 ns
+JDBC execution time: 8338896 ns
+Search servlet total execution time: 9150449 ns
+JDBC execution time: 11197376 ns
+Search servlet total execution time: 12481558 ns
+JDBC execution time: 7358526 ns
+Search servlet total execution time: 8061850 ns
+JDBC execution time: 10415971 ns
+Search servlet total execution time: 10745772 ns
+JDBC execution time: 13313642 ns
+Search servlet total execution time: 14205257 ns
+JDBC execution time: 11295441 ns
+Search servlet total execution time: 12194390 ns
+JDBC execution time: 12415932 ns
+Search servlet total execution time: 13222976 ns
+JDBC execution time: 10609864 ns
+Search servlet total execution time: 11360924 ns
+JDBC execution time: 13912778 ns
+Search servlet total execution time: 14968841 ns
+JDBC execution time: 10163960 ns
+Search servlet total execution time: 11006412 ns
+JDBC execution time: 8766374 ns
+Search servlet total execution time: 9527606 ns
+JDBC execution time: 9480679 ns
+Search servlet total execution time: 10275176 ns
+JDBC execution time: 9050151 ns
+Search servlet total execution time: 9761657 ns
+JDBC execution time: 14507596 ns
+Search servlet total execution time: 15478180 ns
+JDBC execution time: 8734370 ns
+Search servlet total execution time: 9351604 ns
+JDBC execution time: 8157897 ns
+Search servlet total execution time: 8393119 ns
+JDBC execution time: 9669323 ns
+Search servlet total execution time: 10377139 ns
+JDBC execution time: 7704306 ns
+Search servlet total execution time: 8239278 ns
+JDBC execution time: 8908901 ns
+Search servlet total execution time: 9130944 ns
+JDBC execution time: 11047337 ns
+Search servlet total execution time: 11799463 ns
+JDBC execution time: 7128057 ns
+Search servlet total execution time: 7598492 ns
+JDBC execution time: 8706155 ns
+Search servlet total execution time: 8947262 ns
+JDBC execution time: 15048700 ns
+Search servlet total execution time: 15482171 ns
+JDBC execution time: 7950956 ns
+Search servlet total execution time: 8201664 ns
+JDBC execution time: 7390825 ns
+Search servlet total execution time: 7694291 ns
+JDBC execution time: 10348696 ns
+Search servlet total execution time: 10608943 ns
+JDBC execution time: 9943323 ns
+Search servlet total execution time: 10527208 ns
+JDBC execution time: 8356531 ns
+Search servlet total execution time: 8797165 ns
+JDBC execution time: 7352794 ns
+Search servlet total execution time: 8121965 ns
+JDBC execution time: 7749709 ns
+Search servlet total execution time: 8018406 ns
+JDBC execution time: 41975394 ns
+Search servlet total execution time: 43259094 ns
+JDBC execution time: 7345864 ns
+Search servlet total execution time: 7909061 ns
+JDBC execution time: 8221347 ns
+Search servlet total execution time: 8478150 ns
+JDBC execution time: 7540424 ns
+Search servlet total execution time: 7810558 ns
+JDBC execution time: 9835468 ns
+Search servlet total execution time: 10103210 ns
+JDBC execution time: 7741150 ns
+Search servlet total execution time: 8325856 ns
+JDBC execution time: 8492090 ns
+Search servlet total execution time: 8939231 ns
+JDBC execution time: 15225542 ns
+Search servlet total execution time: 16923471 ns
+JDBC execution time: 10150463 ns
+Search servlet total execution time: 11001996 ns
+JDBC execution time: 7949129 ns
+Search servlet total execution time: 8560681 ns
+JDBC execution time: 8435361 ns
+Search servlet total execution time: 9256835 ns
+JDBC execution time: 10667455 ns
+Search servlet total execution time: 11524716 ns
+JDBC execution time: 8001089 ns
+Search servlet total execution time: 8583103 ns
+JDBC execution time: 9745380 ns
+Search servlet total execution time: 10098871 ns
+JDBC execution time: 9850009 ns
+Search servlet total execution time: 10155057 ns
+JDBC execution time: 10246709 ns
+Search servlet total execution time: 10996884 ns
+JDBC execution time: 10793316 ns
+Search servlet total execution time: 12080291 ns
+JDBC execution time: 8418580 ns
+Search servlet total execution time: 9180163 ns
+JDBC execution time: 8584492 ns
+Search servlet total execution time: 9348822 ns
+JDBC execution time: 10422308 ns
+Search servlet total execution time: 11244789 ns
+JDBC execution time: 7814691 ns
+Search servlet total execution time: 8443349 ns
+JDBC execution time: 7621301 ns
+Search servlet total execution time: 7930318 ns
+JDBC execution time: 7513462 ns
+Search servlet total execution time: 7831130 ns
+JDBC execution time: 7999950 ns
+Search servlet total execution time: 8335208 ns
+JDBC execution time: 8310874 ns
+Search servlet total execution time: 8659177 ns
+JDBC execution time: 8172343 ns
+Search servlet total execution time: 8703412 ns
+JDBC execution time: 11288269 ns
+Search servlet total execution time: 12324247 ns
+JDBC execution time: 10854652 ns
+Search servlet total execution time: 11692563 ns
+JDBC execution time: 7621011 ns
+Search servlet total execution time: 8213468 ns
+JDBC execution time: 7618493 ns
+Search servlet total execution time: 7941837 ns
+JDBC execution time: 8870802 ns
+Search servlet total execution time: 9301285 ns
+JDBC execution time: 10505813 ns
+Search servlet total execution time: 11348135 ns
+JDBC execution time: 10992553 ns
+Search servlet total execution time: 11769364 ns
+JDBC execution time: 7224495 ns
+Search servlet total execution time: 7894289 ns
+JDBC execution time: 9165022 ns
+Search servlet total execution time: 9451404 ns
+JDBC execution time: 8412928 ns
+Search servlet total execution time: 8927207 ns
+JDBC execution time: 8791185 ns
+Search servlet total execution time: 9600633 ns
+JDBC execution time: 7588873 ns
+Search servlet total execution time: 8384436 ns
+JDBC execution time: 7527180 ns
+Search servlet total execution time: 7773514 ns
+JDBC execution time: 8227619 ns
+Search servlet total execution time: 8667365 ns
+JDBC execution time: 7336427 ns
+Search servlet total execution time: 7888275 ns
+JDBC execution time: 7367073 ns
+Search servlet total execution time: 7962523 ns
+JDBC execution time: 9592550 ns
+Search servlet total execution time: 9897324 ns
+JDBC execution time: 35142196 ns
+Search servlet total execution time: 36143836 ns
+JDBC execution time: 8555166 ns
+Search servlet total execution time: 9341795 ns
+JDBC execution time: 7271950 ns
+Search servlet total execution time: 7752589 ns
+JDBC execution time: 7863513 ns
+Search servlet total execution time: 8115104 ns
+JDBC execution time: 7407388 ns
+Search servlet total execution time: 7992410 ns
+JDBC execution time: 8228679 ns
+Search servlet total execution time: 8653228 ns
+JDBC execution time: 10270479 ns
+Search servlet total execution time: 10924252 ns
+JDBC execution time: 10792777 ns
+Search servlet total execution time: 11417508 ns
+JDBC execution time: 8765086 ns
+Search servlet total execution time: 9504081 ns
+JDBC execution time: 8414131 ns
+Search servlet total execution time: 9183077 ns
+JDBC execution time: 7878109 ns
+Search servlet total execution time: 8475806 ns
+JDBC execution time: 8331564 ns
+Search servlet total execution time: 8567517 ns
+JDBC execution time: 8183074 ns
+Search servlet total execution time: 9017498 ns
+JDBC execution time: 7324892 ns
+Search servlet total execution time: 7799366 ns
+JDBC execution time: 8290424 ns
+Search servlet total execution time: 8565726 ns
+JDBC execution time: 7381661 ns
+Search servlet total execution time: 7647767 ns
+JDBC execution time: 8618273 ns
+Search servlet total execution time: 9026424 ns
+JDBC execution time: 7329101 ns
+Search servlet total execution time: 8107846 ns
+JDBC execution time: 8098501 ns
+Search servlet total execution time: 8364861 ns
+JDBC execution time: 8156440 ns
+Search servlet total execution time: 8431419 ns
+JDBC execution time: 34692739 ns
+Search servlet total execution time: 35421213 ns
+JDBC execution time: 7387713 ns
+Search servlet total execution time: 7940862 ns
+JDBC execution time: 7732879 ns
+Search servlet total execution time: 7974201 ns
+JDBC execution time: 7693102 ns
+Search servlet total execution time: 7973200 ns
+JDBC execution time: 10492219 ns
+Search servlet total execution time: 11064172 ns
+JDBC execution time: 8244707 ns
+Search servlet total execution time: 8870730 ns
+JDBC execution time: 7343624 ns
+Search servlet total execution time: 7902470 ns
+JDBC execution time: 7611587 ns
+Search servlet total execution time: 7886725 ns
+JDBC execution time: 10829229 ns
+Search servlet total execution time: 11696244 ns
+JDBC execution time: 10114912 ns
+Search servlet total execution time: 10869108 ns
+JDBC execution time: 7396891 ns
+Search servlet total execution time: 7980894 ns
+JDBC execution time: 8600590 ns
+Search servlet total execution time: 8840467 ns
+JDBC execution time: 8391836 ns
+Search servlet total execution time: 9522983 ns
+JDBC execution time: 7334617 ns
+Search servlet total execution time: 7871870 ns
+JDBC execution time: 8635830 ns
+Search servlet total execution time: 9147479 ns
+JDBC execution time: 7245561 ns
+Search servlet total execution time: 7857753 ns
+JDBC execution time: 10096933 ns
+Search servlet total execution time: 10365521 ns
+JDBC execution time: 7453770 ns
+Search servlet total execution time: 8053168 ns
+JDBC execution time: 7508014 ns
+Search servlet total execution time: 7802941 ns
+JDBC execution time: 24398067 ns
+Search servlet total execution time: 24720358 ns
+JDBC execution time: 13735807 ns
+Search servlet total execution time: 14247512 ns
+JDBC execution time: 11630645 ns
+Search servlet total execution time: 12416037 ns
+JDBC execution time: 8430399 ns
+Search servlet total execution time: 9402988 ns
+JDBC execution time: 8712934 ns
+Search servlet total execution time: 9410149 ns
+JDBC execution time: 7353292 ns
+Search servlet total execution time: 8031233 ns
+JDBC execution time: 7778782 ns
+Search servlet total execution time: 8032922 ns
+JDBC execution time: 9507206 ns
+Search servlet total execution time: 9763944 ns
+JDBC execution time: 9881977 ns
+Search servlet total execution time: 10362400 ns
+JDBC execution time: 7545159 ns
+Search servlet total execution time: 7943527 ns
+JDBC execution time: 8687186 ns
+Search servlet total execution time: 8860351 ns
+JDBC execution time: 7206681 ns
+Search servlet total execution time: 7554195 ns
+JDBC execution time: 7266065 ns
+Search servlet total execution time: 7490480 ns
+JDBC execution time: 8733746 ns
+Search servlet total execution time: 9185097 ns
+JDBC execution time: 11317020 ns
+Search servlet total execution time: 12287691 ns
+JDBC execution time: 11533845 ns
+Search servlet total execution time: 12215815 ns
+JDBC execution time: 8243486 ns
+Search servlet total execution time: 8989223 ns
+JDBC execution time: 8394175 ns
+Search servlet total execution time: 9164217 ns
+JDBC execution time: 8300982 ns
+Search servlet total execution time: 9044949 ns
+JDBC execution time: 12806726 ns
+Search servlet total execution time: 13668113 ns
+JDBC execution time: 8346830 ns
+Search servlet total execution time: 9128627 ns
+JDBC execution time: 7777090 ns
+Search servlet total execution time: 8446840 ns
+JDBC execution time: 8441240 ns
+Search servlet total execution time: 8904623 ns
+JDBC execution time: 8314108 ns
+Search servlet total execution time: 9484617 ns
+JDBC execution time: 8455962 ns
+Search servlet total execution time: 12289675 ns
+JDBC execution time: 10057100 ns
+Search servlet total execution time: 10766885 ns
+JDBC execution time: 8145255 ns
+Search servlet total execution time: 8461134 ns
+JDBC execution time: 7671791 ns
+Search servlet total execution time: 8108201 ns
+JDBC execution time: 7830633 ns
+Search servlet total execution time: 8152233 ns
+JDBC execution time: 7299188 ns
+Search servlet total execution time: 7919326 ns
+JDBC execution time: 11887588 ns
+Search servlet total execution time: 12459213 ns
+JDBC execution time: 14949880 ns
+Search servlet total execution time: 15594444 ns
+JDBC execution time: 7076201 ns
+Search servlet total execution time: 7560543 ns
+JDBC execution time: 8387160 ns
+Search servlet total execution time: 8643921 ns
+JDBC execution time: 7466253 ns
+Search servlet total execution time: 8063655 ns
+JDBC execution time: 8069336 ns
+Search servlet total execution time: 8342546 ns
+JDBC execution time: 7607714 ns
+Search servlet total execution time: 7871862 ns
+JDBC execution time: 9560237 ns
+Search servlet total execution time: 10378469 ns
+JDBC execution time: 13531295 ns
+Search servlet total execution time: 14336097 ns
+JDBC execution time: 9771418 ns
+Search servlet total execution time: 10537777 ns
+JDBC execution time: 8275585 ns
+Search servlet total execution time: 9029043 ns
+JDBC execution time: 9315669 ns
+Search servlet total execution time: 10170298 ns
+JDBC execution time: 8529658 ns
+Search servlet total execution time: 9140239 ns
+JDBC execution time: 7554958 ns
+Search servlet total execution time: 7864947 ns
+JDBC execution time: 8288483 ns
+Search servlet total execution time: 8645110 ns
+JDBC execution time: 11933652 ns
+Search servlet total execution time: 13157542 ns
+JDBC execution time: 11180926 ns
+Search servlet total execution time: 12015858 ns
+JDBC execution time: 8367172 ns
+Search servlet total execution time: 9101132 ns
+JDBC execution time: 8286970 ns
+Search servlet total execution time: 9080609 ns
+JDBC execution time: 35230483 ns
+Search servlet total execution time: 36027297 ns
+JDBC execution time: 10302370 ns
+Search servlet total execution time: 11121646 ns
+JDBC execution time: 7342582 ns
+Search servlet total execution time: 7963424 ns
+JDBC execution time: 7525331 ns
+Search servlet total execution time: 7790476 ns
+JDBC execution time: 7625663 ns
+Search servlet total execution time: 7904960 ns
+JDBC execution time: 10250246 ns
+Search servlet total execution time: 10790458 ns
+JDBC execution time: 8278842 ns
+Search servlet total execution time: 9369815 ns
+JDBC execution time: 7243328 ns
+Search servlet total execution time: 7835726 ns
+JDBC execution time: 8115104 ns
+Search servlet total execution time: 8397867 ns
+JDBC execution time: 9737075 ns
+Search servlet total execution time: 10055063 ns
+JDBC execution time: 10210549 ns
+Search servlet total execution time: 11056410 ns
+JDBC execution time: 9854577 ns
+Search servlet total execution time: 10473970 ns
+JDBC execution time: 8314396 ns
+Search servlet total execution time: 10443371 ns
+JDBC execution time: 8472603 ns
+Search servlet total execution time: 9155679 ns
+JDBC execution time: 8252153 ns
+Search servlet total execution time: 9022588 ns
+JDBC execution time: 13435666 ns
+Search servlet total execution time: 14413179 ns
+JDBC execution time: 9220287 ns
+Search servlet total execution time: 9479659 ns
+JDBC execution time: 7476552 ns
+Search servlet total execution time: 8047167 ns
+JDBC execution time: 9343925 ns
+Search servlet total execution time: 9565731 ns
+JDBC execution time: 9624318 ns
+Search servlet total execution time: 9980657 ns
+JDBC execution time: 7714710 ns
+Search servlet total execution time: 8153812 ns
+JDBC execution time: 7300279 ns
+Search servlet total execution time: 7486010 ns
+JDBC execution time: 8286134 ns
+Search servlet total execution time: 8546984 ns
+JDBC execution time: 7285430 ns
+Search servlet total execution time: 7921525 ns
+JDBC execution time: 9095162 ns
+Search servlet total execution time: 9355723 ns
+JDBC execution time: 9968327 ns
+Search servlet total execution time: 10766351 ns
+JDBC execution time: 9198501 ns
+Search servlet total execution time: 9839070 ns
+JDBC execution time: 8105561 ns
+Search servlet total execution time: 8362998 ns
+JDBC execution time: 11688340 ns
+Search servlet total execution time: 12368171 ns
+JDBC execution time: 9379377 ns
+Search servlet total execution time: 9629729 ns
+JDBC execution time: 8219159 ns
+Search servlet total execution time: 9205419 ns
+JDBC execution time: 8324552 ns
+Search servlet total execution time: 9163938 ns
+JDBC execution time: 8221194 ns
+Search servlet total execution time: 9014267 ns
+JDBC execution time: 8239497 ns
+Search servlet total execution time: 8941468 ns
+JDBC execution time: 8493066 ns
+Search servlet total execution time: 9280566 ns
+JDBC execution time: 10330934 ns
+Search servlet total execution time: 11442260 ns
+JDBC execution time: 8130701 ns
+Search servlet total execution time: 8839945 ns
+JDBC execution time: 8646899 ns
+Search servlet total execution time: 9453571 ns
+JDBC execution time: 7451320 ns
+Search servlet total execution time: 9094288 ns
+JDBC execution time: 7567775 ns
+Search servlet total execution time: 7863643 ns
+JDBC execution time: 8476467 ns
+Search servlet total execution time: 8798266 ns
+JDBC execution time: 7600295 ns
+Search servlet total execution time: 8043942 ns
+JDBC execution time: 9851081 ns
+Search servlet total execution time: 10209559 ns
+JDBC execution time: 8022788 ns
+Search servlet total execution time: 8369081 ns
+JDBC execution time: 7664261 ns
+Search servlet total execution time: 7935608 ns
+JDBC execution time: 7657009 ns
+Search servlet total execution time: 7984968 ns
+JDBC execution time: 10178019 ns
+Search servlet total execution time: 10651860 ns
+JDBC execution time: 8207094 ns
+Search servlet total execution time: 9032575 ns
+JDBC execution time: 10762704 ns
+Search servlet total execution time: 11573498 ns
+JDBC execution time: 7487220 ns
+Search servlet total execution time: 7984709 ns
+JDBC execution time: 8301387 ns
+Search servlet total execution time: 8834195 ns
+JDBC execution time: 7222067 ns
+Search servlet total execution time: 8182912 ns
+JDBC execution time: 8888474 ns
+Search servlet total execution time: 9379744 ns
+JDBC execution time: 7367876 ns
+Search servlet total execution time: 8188373 ns
+JDBC execution time: 36838226 ns
+Search servlet total execution time: 37527082 ns
+JDBC execution time: 7214004 ns
+Search servlet total execution time: 7809143 ns
+JDBC execution time: 7461328 ns
+Search servlet total execution time: 7733421 ns
+JDBC execution time: 21510020 ns
+Search servlet total execution time: 22085621 ns
+JDBC execution time: 7732265 ns
+Search servlet total execution time: 8340248 ns
+JDBC execution time: 7800082 ns
+Search servlet total execution time: 8074413 ns
+JDBC execution time: 7475577 ns
+Search servlet total execution time: 7775671 ns
+JDBC execution time: 8283915 ns
+Search servlet total execution time: 8721907 ns
+JDBC execution time: 13069913 ns
+Search servlet total execution time: 13912099 ns
+JDBC execution time: 9084566 ns
+Search servlet total execution time: 9973909 ns
+JDBC execution time: 8423010 ns
+Search servlet total execution time: 9165781 ns
+JDBC execution time: 8381007 ns
+Search servlet total execution time: 9164118 ns
+JDBC execution time: 7132196 ns
+Search servlet total execution time: 7769824 ns
+JDBC execution time: 8262769 ns
+Search servlet total execution time: 8517932 ns
+JDBC execution time: 7854831 ns
+Search servlet total execution time: 8147768 ns
+JDBC execution time: 8315101 ns
+Search servlet total execution time: 9069687 ns
+JDBC execution time: 8955501 ns
+Search servlet total execution time: 9712854 ns
+JDBC execution time: 7323459 ns
+Search servlet total execution time: 7940217 ns
+JDBC execution time: 7957043 ns
+Search servlet total execution time: 8226970 ns
+JDBC execution time: 10360155 ns
+Search servlet total execution time: 10693762 ns
+JDBC execution time: 7194294 ns
+Search servlet total execution time: 7881536 ns
+JDBC execution time: 7603840 ns
+Search servlet total execution time: 7938148 ns
+JDBC execution time: 10858197 ns
+Search servlet total execution time: 11400839 ns
+JDBC execution time: 7678555 ns
+Search servlet total execution time: 8645773 ns
+JDBC execution time: 16454760 ns
+Search servlet total execution time: 17096628 ns
+JDBC execution time: 8209947 ns
+Search servlet total execution time: 9067786 ns
+JDBC execution time: 7304082 ns
+Search servlet total execution time: 7924686 ns
+JDBC execution time: 10284908 ns
+Search servlet total execution time: 10822727 ns
+JDBC execution time: 11148987 ns
+Search servlet total execution time: 11898137 ns
+JDBC execution time: 8667515 ns
+Search servlet total execution time: 9575988 ns
+JDBC execution time: 11422872 ns
+Search servlet total execution time: 12298273 ns
+JDBC execution time: 11305229 ns
+Search servlet total execution time: 15107923 ns
+JDBC execution time: 7807436 ns
+Search servlet total execution time: 8507474 ns
+JDBC execution time: 8304346 ns
+Search servlet total execution time: 8822524 ns
+JDBC execution time: 9439262 ns
+Search servlet total execution time: 10223213 ns
+JDBC execution time: 7156077 ns
+Search servlet total execution time: 7749561 ns
+JDBC execution time: 7516527 ns
+Search servlet total execution time: 7827263 ns
+JDBC execution time: 9620422 ns
+Search servlet total execution time: 9953711 ns
+JDBC execution time: 7513345 ns
+Search servlet total execution time: 7845128 ns
+JDBC execution time: 27958450 ns
+Search servlet total execution time: 28780187 ns
+JDBC execution time: 7186241 ns
+Search servlet total execution time: 7805025 ns
+JDBC execution time: 7608463 ns
+Search servlet total execution time: 7872865 ns
+JDBC execution time: 8047481 ns
+Search servlet total execution time: 8319099 ns
+JDBC execution time: 8271128 ns
+Search servlet total execution time: 8533054 ns
+JDBC execution time: 11327260 ns
+Search servlet total execution time: 12244173 ns
+JDBC execution time: 12437734 ns
+Search servlet total execution time: 13234022 ns
+JDBC execution time: 9540565 ns
+Search servlet total execution time: 10425529 ns
+JDBC execution time: 7238269 ns
+Search servlet total execution time: 7444698 ns
+JDBC execution time: 10862227 ns
+Search servlet total execution time: 11107213 ns
+JDBC execution time: 10020461 ns
+Search servlet total execution time: 10447309 ns
+JDBC execution time: 6843375 ns
+Search servlet total execution time: 7062347 ns
+JDBC execution time: 7238661 ns
+Search servlet total execution time: 7711394 ns
+JDBC execution time: 7509815 ns
+Search servlet total execution time: 7832096 ns
+JDBC execution time: 7256913 ns
+Search servlet total execution time: 7521248 ns
+JDBC execution time: 8238331 ns
+Search servlet total execution time: 8529268 ns
+JDBC execution time: 8303849 ns
+Search servlet total execution time: 9302575 ns
+JDBC execution time: 7320411 ns
+Search servlet total execution time: 8150481 ns
+JDBC execution time: 10540502 ns
+Search servlet total execution time: 10847091 ns
+JDBC execution time: 33996590 ns
+Search servlet total execution time: 34928357 ns
+JDBC execution time: 9332482 ns
+Search servlet total execution time: 9995447 ns
+JDBC execution time: 7238297 ns
+Search servlet total execution time: 7710100 ns
+JDBC execution time: 9338712 ns
+Search servlet total execution time: 9664939 ns
+JDBC execution time: 7492651 ns
+Search servlet total execution time: 7701247 ns
+JDBC execution time: 8633626 ns
+Search servlet total execution time: 8877474 ns
+JDBC execution time: 14672655 ns
+Search servlet total execution time: 15072716 ns
+JDBC execution time: 10670585 ns
+Search servlet total execution time: 11175129 ns
+JDBC execution time: 7165365 ns
+Search servlet total execution time: 7740424 ns
+JDBC execution time: 7704866 ns
+Search servlet total execution time: 7971618 ns
+JDBC execution time: 9858115 ns
+Search servlet total execution time: 10171900 ns
+JDBC execution time: 8341129 ns
+Search servlet total execution time: 8812479 ns
+JDBC execution time: 7738882 ns
+Search servlet total execution time: 8318954 ns
+JDBC execution time: 10953567 ns
+Search servlet total execution time: 11300147 ns
+JDBC execution time: 8419319 ns
+Search servlet total execution time: 8667393 ns
+JDBC execution time: 7556217 ns
+Search servlet total execution time: 8073564 ns
+JDBC execution time: 7621374 ns
+Search servlet total execution time: 7955299 ns
+JDBC execution time: 8914272 ns
+Search servlet total execution time: 9195055 ns
+JDBC execution time: 8481658 ns
+Search servlet total execution time: 8738316 ns
+JDBC execution time: 7555317 ns
+Search servlet total execution time: 8112035 ns
+JDBC execution time: 9015574 ns
+Search servlet total execution time: 9930614 ns
+JDBC execution time: 7931321 ns
+Search servlet total execution time: 8371949 ns
+JDBC execution time: 8777880 ns
+Search servlet total execution time: 8999843 ns
+JDBC execution time: 11001904 ns
+Search servlet total execution time: 11726554 ns
+JDBC execution time: 8706481 ns
+Search servlet total execution time: 9590748 ns
+JDBC execution time: 8389966 ns
+Search servlet total execution time: 9489422 ns
+JDBC execution time: 9744208 ns
+Search servlet total execution time: 10427556 ns
+JDBC execution time: 10703546 ns
+Search servlet total execution time: 11410854 ns
+JDBC execution time: 8264309 ns
+Search servlet total execution time: 8841665 ns
+JDBC execution time: 8770226 ns
+Search servlet total execution time: 9585389 ns
+JDBC execution time: 9476270 ns
+Search servlet total execution time: 9970200 ns
+JDBC execution time: 9622284 ns
+Search servlet total execution time: 10085053 ns
+JDBC execution time: 8401539 ns
+Search servlet total execution time: 9132345 ns
+JDBC execution time: 7869133 ns
+Search servlet total execution time: 8513811 ns
+JDBC execution time: 8846358 ns
+Search servlet total execution time: 9118529 ns
+JDBC execution time: 10976013 ns
+Search servlet total execution time: 11234660 ns
+JDBC execution time: 8805966 ns
+Search servlet total execution time: 9280715 ns
+JDBC execution time: 15750459 ns
+Search servlet total execution time: 16445608 ns
+JDBC execution time: 7575058 ns
+Search servlet total execution time: 7836792 ns
+JDBC execution time: 9433677 ns
+Search servlet total execution time: 9694129 ns
+JDBC execution time: 8492167 ns
+Search servlet total execution time: 9276971 ns
+JDBC execution time: 7255731 ns
+Search servlet total execution time: 7730186 ns
+JDBC execution time: 29960188 ns
+Search servlet total execution time: 30748485 ns
+JDBC execution time: 11527355 ns
+Search servlet total execution time: 12220960 ns
+JDBC execution time: 8707307 ns
+Search servlet total execution time: 9421887 ns
+JDBC execution time: 9566870 ns
+Search servlet total execution time: 9960435 ns
+JDBC execution time: 12139746 ns
+Search servlet total execution time: 12410644 ns
+JDBC execution time: 10533444 ns
+Search servlet total execution time: 10792528 ns
+JDBC execution time: 9896817 ns
+Search servlet total execution time: 10234649 ns
+JDBC execution time: 9655289 ns
+Search servlet total execution time: 9915353 ns
+JDBC execution time: 8229245 ns
+Search servlet total execution time: 8687078 ns
+JDBC execution time: 16123245 ns
+Search servlet total execution time: 16938305 ns
+JDBC execution time: 8328443 ns
+Search servlet total execution time: 9042655 ns
+JDBC execution time: 7449913 ns
+Search servlet total execution time: 8137522 ns
+JDBC execution time: 8669602 ns
+Search servlet total execution time: 8908508 ns
+JDBC execution time: 8656614 ns
+Search servlet total execution time: 9361747 ns
+JDBC execution time: 12343112 ns
+Search servlet total execution time: 13031346 ns
+JDBC execution time: 8296265 ns
+Search servlet total execution time: 9134269 ns
+JDBC execution time: 8112667 ns
+Search servlet total execution time: 8897842 ns
+JDBC execution time: 7492140 ns
+Search servlet total execution time: 8048488 ns
+JDBC execution time: 8964965 ns
+Search servlet total execution time: 9364793 ns
+JDBC execution time: 8231078 ns
+Search servlet total execution time: 8864512 ns
+JDBC execution time: 8776178 ns
+Search servlet total execution time: 9367083 ns
+JDBC execution time: 7456317 ns
+Search servlet total execution time: 8259507 ns
+JDBC execution time: 8323603 ns
+Search servlet total execution time: 8798464 ns
+JDBC execution time: 7462619 ns
+Search servlet total execution time: 8048356 ns
+JDBC execution time: 8409189 ns
+Search servlet total execution time: 8928291 ns
+JDBC execution time: 8306658 ns
+Search servlet total execution time: 9194816 ns
+JDBC execution time: 9704202 ns
+Search servlet total execution time: 10683331 ns
+JDBC execution time: 10230136 ns
+Search servlet total execution time: 11315441 ns
+JDBC execution time: 8101312 ns
+Search servlet total execution time: 8773988 ns
+JDBC execution time: 7132791 ns
+Search servlet total execution time: 7660503 ns
+JDBC execution time: 8480809 ns
+Search servlet total execution time: 9046551 ns
+JDBC execution time: 7166167 ns
+Search servlet total execution time: 7729030 ns
+JDBC execution time: 7723920 ns
+Search servlet total execution time: 7964871 ns
+JDBC execution time: 8374993 ns
+Search servlet total execution time: 8545492 ns
+JDBC execution time: 9553490 ns
+Search servlet total execution time: 10109826 ns
+JDBC execution time: 8284723 ns
+Search servlet total execution time: 9384354 ns
+JDBC execution time: 8253108 ns
+Search servlet total execution time: 8980951 ns
+JDBC execution time: 7217937 ns
+Search servlet total execution time: 7673463 ns
+JDBC execution time: 8879817 ns
+Search servlet total execution time: 9131261 ns
+JDBC execution time: 7378495 ns
+Search servlet total execution time: 7927644 ns
+JDBC execution time: 9154779 ns
+Search servlet total execution time: 9612845 ns
+JDBC execution time: 7243444 ns
+Search servlet total execution time: 7895312 ns
+JDBC execution time: 9145282 ns
+Search servlet total execution time: 9394631 ns
+JDBC execution time: 8378168 ns
+Search servlet total execution time: 9152365 ns
+JDBC execution time: 8906461 ns
+Search servlet total execution time: 9999794 ns
+JDBC execution time: 7285927 ns
+Search servlet total execution time: 7938457 ns
+JDBC execution time: 7858852 ns
+Search servlet total execution time: 8161608 ns
+JDBC execution time: 9398728 ns
+Search servlet total execution time: 10032386 ns
+JDBC execution time: 11076991 ns
+Search servlet total execution time: 11621562 ns
+JDBC execution time: 10441339 ns
+Search servlet total execution time: 11267732 ns
+JDBC execution time: 9811135 ns
+Search servlet total execution time: 10441224 ns
+JDBC execution time: 10383134 ns
+Search servlet total execution time: 10861714 ns
+JDBC execution time: 8149742 ns
+Search servlet total execution time: 8774756 ns
+JDBC execution time: 8508445 ns
+Search servlet total execution time: 9634180 ns
+JDBC execution time: 8678500 ns
+Search servlet total execution time: 9455001 ns
+JDBC execution time: 9144197 ns
+Search servlet total execution time: 9980581 ns
+JDBC execution time: 8308858 ns
+Search servlet total execution time: 9135242 ns
+JDBC execution time: 10315793 ns
+Search servlet total execution time: 10953078 ns
+JDBC execution time: 7907574 ns
+Search servlet total execution time: 8222058 ns
+JDBC execution time: 8018174 ns
+Search servlet total execution time: 8339812 ns
+JDBC execution time: 8261498 ns
+Search servlet total execution time: 8771577 ns
+JDBC execution time: 8195586 ns
+Search servlet total execution time: 9312453 ns
+JDBC execution time: 9753120 ns
+Search servlet total execution time: 10399579 ns
+JDBC execution time: 10634242 ns
+Search servlet total execution time: 11130875 ns
+JDBC execution time: 8728942 ns
+Search servlet total execution time: 9556316 ns
+JDBC execution time: 37057638 ns
+Search servlet total execution time: 37989642 ns
+JDBC execution time: 7708037 ns
+Search servlet total execution time: 8225665 ns
+JDBC execution time: 7712021 ns
+Search servlet total execution time: 7989918 ns
+JDBC execution time: 7682142 ns
+Search servlet total execution time: 7925861 ns
+JDBC execution time: 10647495 ns
+Search servlet total execution time: 10911054 ns
+JDBC execution time: 8201885 ns
+Search servlet total execution time: 8877525 ns
+JDBC execution time: 9279046 ns
+Search servlet total execution time: 9858512 ns
+JDBC execution time: 10417584 ns
+Search servlet total execution time: 10671050 ns
+JDBC execution time: 8397543 ns
+Search servlet total execution time: 9164092 ns
+JDBC execution time: 8374878 ns
+Search servlet total execution time: 9105716 ns
+JDBC execution time: 8213797 ns
+Search servlet total execution time: 9173476 ns
+JDBC execution time: 8146333 ns
+Search servlet total execution time: 8849719 ns
+JDBC execution time: 7114360 ns
+Search servlet total execution time: 7720484 ns
+JDBC execution time: 7871251 ns
+Search servlet total execution time: 8116546 ns
+JDBC execution time: 11873753 ns
+Search servlet total execution time: 12277501 ns
+JDBC execution time: 7172715 ns
+Search servlet total execution time: 7648253 ns
+JDBC execution time: 8086703 ns
+Search servlet total execution time: 8325877 ns
+JDBC execution time: 8554768 ns
+Search servlet total execution time: 9039288 ns
+JDBC execution time: 7351340 ns
+Search servlet total execution time: 7847285 ns
+JDBC execution time: 10251318 ns
+Search servlet total execution time: 10551764 ns
+JDBC execution time: 7815780 ns
+Search servlet total execution time: 8445695 ns
+JDBC execution time: 8175734 ns
+Search servlet total execution time: 8431646 ns
+JDBC execution time: 7422439 ns
+Search servlet total execution time: 7663479 ns
+JDBC execution time: 7721915 ns
+Search servlet total execution time: 8072945 ns
+JDBC execution time: 10568848 ns
+Search servlet total execution time: 10992365 ns
+JDBC execution time: 7309075 ns
+Search servlet total execution time: 7741118 ns
+JDBC execution time: 10266801 ns
+Search servlet total execution time: 10474383 ns
+JDBC execution time: 8185177 ns
+Search servlet total execution time: 8378989 ns
+JDBC execution time: 8466088 ns
+Search servlet total execution time: 8867656 ns
+JDBC execution time: 8407569 ns
+Search servlet total execution time: 8618808 ns
+JDBC execution time: 13611614 ns
+Search servlet total execution time: 14205764 ns
+JDBC execution time: 9249874 ns
+Search servlet total execution time: 9728671 ns
+JDBC execution time: 7414445 ns
+Search servlet total execution time: 7660999 ns
+JDBC execution time: 7914477 ns
+Search servlet total execution time: 8143817 ns
+JDBC execution time: 9616998 ns
+Search servlet total execution time: 9825534 ns
+JDBC execution time: 10252119 ns
+Search servlet total execution time: 10483620 ns
+JDBC execution time: 8856877 ns
+Search servlet total execution time: 9555879 ns
+JDBC execution time: 8315570 ns
+Search servlet total execution time: 8873577 ns
+JDBC execution time: 8281075 ns
+Search servlet total execution time: 8898205 ns
+JDBC execution time: 8184864 ns
+Search servlet total execution time: 8792119 ns
+JDBC execution time: 7184676 ns
+Search servlet total execution time: 7719884 ns
+JDBC execution time: 10372231 ns
+Search servlet total execution time: 10602966 ns
+JDBC execution time: 9990153 ns
+Search servlet total execution time: 10457873 ns
+JDBC execution time: 7165460 ns
+Search servlet total execution time: 7664463 ns
+JDBC execution time: 7616594 ns
+Search servlet total execution time: 7889511 ns
+JDBC execution time: 10378158 ns
+Search servlet total execution time: 10636866 ns
+JDBC execution time: 8114932 ns
+Search servlet total execution time: 8606887 ns
+JDBC execution time: 7290886 ns
+Search servlet total execution time: 7926043 ns
+JDBC execution time: 10718458 ns
+Search servlet total execution time: 11183908 ns
+JDBC execution time: 8306404 ns
+Search servlet total execution time: 8916695 ns
+JDBC execution time: 8281416 ns
+Search servlet total execution time: 9130459 ns
+JDBC execution time: 7462508 ns
+Search servlet total execution time: 8077087 ns
+JDBC execution time: 7789387 ns
+Search servlet total execution time: 8279200 ns
+JDBC execution time: 8578853 ns
+Search servlet total execution time: 8830975 ns
+JDBC execution time: 8504714 ns
+Search servlet total execution time: 9085214 ns
+JDBC execution time: 7656495 ns
+Search servlet total execution time: 8222950 ns
+JDBC execution time: 11559733 ns
+Search servlet total execution time: 11866550 ns
+JDBC execution time: 8064344 ns
+Search servlet total execution time: 8333262 ns
+JDBC execution time: 8958499 ns
+Search servlet total execution time: 9417424 ns
+JDBC execution time: 8295267 ns
+Search servlet total execution time: 8971655 ns
+JDBC execution time: 8896676 ns
+Search servlet total execution time: 9626570 ns
+JDBC execution time: 15139861 ns
+Search servlet total execution time: 16044463 ns
+JDBC execution time: 7151729 ns
+Search servlet total execution time: 7778675 ns
+JDBC execution time: 8759271 ns
+Search servlet total execution time: 9298393 ns
+JDBC execution time: 7864180 ns
+Search servlet total execution time: 8499774 ns
+JDBC execution time: 10378236 ns
+Search servlet total execution time: 10737082 ns
+JDBC execution time: 9050518 ns
+Search servlet total execution time: 9759163 ns
+JDBC execution time: 8491135 ns
+Search servlet total execution time: 9538007 ns
+JDBC execution time: 7309299 ns
+Search servlet total execution time: 7911493 ns
+JDBC execution time: 10489823 ns
+Search servlet total execution time: 10835782 ns
+JDBC execution time: 8877931 ns
+Search servlet total execution time: 9294804 ns
+JDBC execution time: 8588515 ns
+Search servlet total execution time: 9274893 ns
+JDBC execution time: 8407725 ns
+Search servlet total execution time: 9155981 ns
+JDBC execution time: 8447100 ns
+Search servlet total execution time: 8917395 ns
+JDBC execution time: 8379988 ns
+Search servlet total execution time: 9160063 ns
+JDBC execution time: 8363906 ns
+Search servlet total execution time: 9027418 ns
+JDBC execution time: 10816696 ns
+Search servlet total execution time: 11467461 ns
+JDBC execution time: 8348899 ns
+Search servlet total execution time: 9353563 ns
+JDBC execution time: 7128852 ns
+Search servlet total execution time: 7748008 ns
+JDBC execution time: 8861246 ns
+Search servlet total execution time: 9318366 ns
+JDBC execution time: 8227870 ns
+Search servlet total execution time: 8774086 ns
+JDBC execution time: 9551637 ns
+Search servlet total execution time: 10122988 ns
+JDBC execution time: 8544201 ns
+Search servlet total execution time: 9042714 ns
+JDBC execution time: 10168289 ns
+Search servlet total execution time: 10625145 ns
+JDBC execution time: 9744899 ns
+Search servlet total execution time: 10029519 ns
+JDBC execution time: 7597198 ns
+Search servlet total execution time: 8351393 ns
+JDBC execution time: 9065415 ns
+Search servlet total execution time: 9491459 ns
+JDBC execution time: 11501845 ns
+Search servlet total execution time: 12607306 ns
+JDBC execution time: 8297499 ns
+Search servlet total execution time: 9229943 ns
+JDBC execution time: 8211811 ns
+Search servlet total execution time: 8916966 ns
+JDBC execution time: 7375792 ns
+Search servlet total execution time: 8132852 ns
+JDBC execution time: 9332866 ns
+Search servlet total execution time: 9651677 ns
+JDBC execution time: 9547114 ns
+Search servlet total execution time: 10210620 ns
+JDBC execution time: 8078821 ns
+Search servlet total execution time: 8408515 ns
+JDBC execution time: 7532691 ns
+Search servlet total execution time: 7857948 ns
+JDBC execution time: 10777330 ns
+Search servlet total execution time: 13942409 ns
+JDBC execution time: 8633974 ns
+Search servlet total execution time: 9490333 ns
+JDBC execution time: 7372183 ns
+Search servlet total execution time: 8132634 ns
+JDBC execution time: 11237222 ns
+Search servlet total execution time: 11676629 ns
+JDBC execution time: 8811201 ns
+Search servlet total execution time: 9509640 ns
+JDBC execution time: 7754857 ns
+Search servlet total execution time: 9436177 ns
+JDBC execution time: 11278335 ns
+Search servlet total execution time: 11788791 ns
+JDBC execution time: 7177650 ns
+Search servlet total execution time: 7734382 ns
+JDBC execution time: 11388167 ns
+Search servlet total execution time: 11887083 ns
+JDBC execution time: 7252551 ns
+Search servlet total execution time: 7928324 ns
+JDBC execution time: 8542248 ns
+Search servlet total execution time: 13531289 ns
+JDBC execution time: 8933586 ns
+Search servlet total execution time: 9742484 ns
+JDBC execution time: 7129219 ns
+Search servlet total execution time: 7685232 ns
+JDBC execution time: 8648863 ns
+Search servlet total execution time: 8891428 ns
+JDBC execution time: 7315506 ns
+Search servlet total execution time: 7790017 ns
+JDBC execution time: 8275285 ns
+Search servlet total execution time: 9153615 ns
+JDBC execution time: 7762524 ns
+Search servlet total execution time: 8399831 ns
+JDBC execution time: 11236066 ns
+Search servlet total execution time: 11888014 ns
+JDBC execution time: 8388081 ns
+Search servlet total execution time: 9248728 ns
+JDBC execution time: 8831127 ns
+Search servlet total execution time: 9593810 ns
+JDBC execution time: 11061143 ns
+Search servlet total execution time: 11789703 ns
+JDBC execution time: 11301505 ns
+Search servlet total execution time: 12225409 ns
+JDBC execution time: 8409568 ns
+Search servlet total execution time: 9283700 ns
+JDBC execution time: 7451149 ns
+Search servlet total execution time: 7955183 ns
+JDBC execution time: 8502022 ns
+Search servlet total execution time: 8757035 ns
+JDBC execution time: 7453061 ns
+Search servlet total execution time: 8107141 ns
+JDBC execution time: 7439538 ns
+Search servlet total execution time: 8006130 ns
+JDBC execution time: 12850191 ns
+Search servlet total execution time: 13410801 ns
+JDBC execution time: 7719746 ns
+Search servlet total execution time: 8336509 ns
+JDBC execution time: 8545966 ns
+Search servlet total execution time: 8876294 ns
+JDBC execution time: 7801007 ns
+Search servlet total execution time: 8384791 ns
+JDBC execution time: 7516599 ns
+Search servlet total execution time: 7856783 ns
+JDBC execution time: 9516524 ns
+Search servlet total execution time: 9836288 ns
+JDBC execution time: 9508896 ns
+Search servlet total execution time: 9859756 ns
+JDBC execution time: 8812343 ns
+Search servlet total execution time: 9201126 ns
+JDBC execution time: 35778611 ns
+Search servlet total execution time: 36642258 ns
+JDBC execution time: 7165979 ns
+Search servlet total execution time: 7771016 ns
+JDBC execution time: 9806596 ns
+Search servlet total execution time: 10247723 ns
+JDBC execution time: 7794671 ns
+Search servlet total execution time: 8714506 ns
+JDBC execution time: 8705180 ns
+Search servlet total execution time: 9233156 ns
+JDBC execution time: 7267352 ns
+Search servlet total execution time: 8964522 ns
+JDBC execution time: 30303363 ns
+Search servlet total execution time: 31034441 ns
+JDBC execution time: 7728664 ns
+Search servlet total execution time: 8351900 ns
+JDBC execution time: 8766144 ns
+Search servlet total execution time: 9007333 ns
+JDBC execution time: 8296070 ns
+Search servlet total execution time: 8993722 ns
+JDBC execution time: 7299552 ns
+Search servlet total execution time: 8006447 ns
+JDBC execution time: 10327813 ns
+Search servlet total execution time: 10596969 ns
+JDBC execution time: 7829356 ns
+Search servlet total execution time: 8100162 ns
+JDBC execution time: 7744368 ns
+Search servlet total execution time: 8024115 ns
+JDBC execution time: 8835705 ns
+Search servlet total execution time: 9104293 ns
+JDBC execution time: 7064841 ns
+Search servlet total execution time: 7583115 ns
+JDBC execution time: 8597411 ns
+Search servlet total execution time: 9454687 ns
+JDBC execution time: 7270244 ns
+Search servlet total execution time: 7905505 ns
+JDBC execution time: 7531453 ns
+Search servlet total execution time: 7788795 ns
+JDBC execution time: 7505291 ns
+Search servlet total execution time: 7769828 ns
+JDBC execution time: 14542176 ns
+Search servlet total execution time: 14951352 ns
+JDBC execution time: 8325632 ns
+Search servlet total execution time: 8594942 ns
+JDBC execution time: 7229365 ns
+Search servlet total execution time: 7825677 ns
+JDBC execution time: 8056528 ns
+Search servlet total execution time: 8315638 ns
+JDBC execution time: 7770897 ns
+Search servlet total execution time: 8296334 ns
+JDBC execution time: 9399610 ns
+Search servlet total execution time: 9607728 ns
+JDBC execution time: 9545541 ns
+Search servlet total execution time: 10180680 ns
+JDBC execution time: 7631309 ns
+Search servlet total execution time: 7891010 ns
+JDBC execution time: 8089403 ns
+Search servlet total execution time: 8335544 ns
+JDBC execution time: 7386230 ns
+Search servlet total execution time: 8267496 ns
+JDBC execution time: 7843995 ns
+Search servlet total execution time: 8207924 ns
+JDBC execution time: 7907448 ns
+Search servlet total execution time: 8174938 ns
+JDBC execution time: 10811656 ns
+Search servlet total execution time: 11264652 ns
+JDBC execution time: 10091875 ns
+Search servlet total execution time: 10648944 ns
+JDBC execution time: 9476010 ns
+Search servlet total execution time: 9735295 ns
+JDBC execution time: 9613327 ns
+Search servlet total execution time: 9912436 ns
+JDBC execution time: 8490137 ns
+Search servlet total execution time: 8919422 ns
+JDBC execution time: 7382272 ns
+Search servlet total execution time: 8319911 ns
+JDBC execution time: 7437858 ns
+Search servlet total execution time: 7904445 ns
+JDBC execution time: 8725797 ns
+Search servlet total execution time: 9074003 ns
+JDBC execution time: 8005361 ns
+Search servlet total execution time: 8360408 ns
+JDBC execution time: 9018987 ns
+Search servlet total execution time: 9289661 ns
+JDBC execution time: 10222797 ns
+Search servlet total execution time: 10770346 ns
+JDBC execution time: 8499727 ns
+Search servlet total execution time: 8908497 ns
+JDBC execution time: 9136985 ns
+Search servlet total execution time: 10160108 ns
+JDBC execution time: 9080773 ns
+Search servlet total execution time: 9829865 ns
+JDBC execution time: 10471181 ns
+Search servlet total execution time: 11366016 ns
+JDBC execution time: 8492575 ns
+Search servlet total execution time: 9428266 ns
+JDBC execution time: 9850300 ns
+Search servlet total execution time: 10713423 ns
+JDBC execution time: 8643460 ns
+Search servlet total execution time: 9408298 ns
+JDBC execution time: 37631353 ns
+Search servlet total execution time: 38382552 ns
+JDBC execution time: 7102014 ns
+Search servlet total execution time: 7885374 ns
+JDBC execution time: 7768900 ns
+Search servlet total execution time: 8028706 ns
+JDBC execution time: 10219763 ns
+Search servlet total execution time: 10417229 ns
+JDBC execution time: 8203277 ns
+Search servlet total execution time: 8503149 ns
+JDBC execution time: 9594845 ns
+Search servlet total execution time: 9876433 ns
+JDBC execution time: 9792152 ns
+Search servlet total execution time: 10395125 ns
+JDBC execution time: 7319324 ns
+Search servlet total execution time: 7972893 ns
+JDBC execution time: 7488652 ns
+Search servlet total execution time: 7762407 ns
+JDBC execution time: 8975957 ns
+Search servlet total execution time: 9227280 ns
+JDBC execution time: 8411194 ns
+Search servlet total execution time: 9564820 ns
+JDBC execution time: 7227264 ns
+Search servlet total execution time: 7848276 ns
+JDBC execution time: 7878006 ns
+Search servlet total execution time: 8129906 ns
+JDBC execution time: 7732897 ns
+Search servlet total execution time: 7974290 ns
+JDBC execution time: 9496039 ns
+Search servlet total execution time: 9764486 ns
+JDBC execution time: 7676200 ns
+Search servlet total execution time: 7912360 ns
+JDBC execution time: 10383218 ns
+Search servlet total execution time: 10654599 ns
+JDBC execution time: 8769225 ns
+Search servlet total execution time: 9033193 ns
+JDBC execution time: 12763336 ns
+Search servlet total execution time: 13611286 ns
+JDBC execution time: 7184002 ns
+Search servlet total execution time: 7547134 ns
+JDBC execution time: 9699828 ns
+Search servlet total execution time: 10069790 ns
+JDBC execution time: 10047152 ns
+Search servlet total execution time: 10536408 ns
+JDBC execution time: 7322211 ns
+Search servlet total execution time: 7909441 ns
+JDBC execution time: 8216413 ns
+Search servlet total execution time: 9064420 ns
+JDBC execution time: 11600914 ns
+Search servlet total execution time: 12424483 ns
+JDBC execution time: 10324830 ns
+Search servlet total execution time: 10977471 ns
+JDBC execution time: 7303556 ns
+Search servlet total execution time: 7528497 ns
+JDBC execution time: 12166864 ns
+Search servlet total execution time: 13318702 ns
+JDBC execution time: 8645670 ns
+Search servlet total execution time: 9375835 ns
+JDBC execution time: 8740725 ns
+Search servlet total execution time: 9524670 ns
+JDBC execution time: 7264225 ns
+Search servlet total execution time: 7806471 ns
+JDBC execution time: 7509866 ns
+Search servlet total execution time: 7773683 ns
+JDBC execution time: 7536784 ns
+Search servlet total execution time: 7798460 ns
+JDBC execution time: 9800825 ns
+Search servlet total execution time: 10053736 ns
+JDBC execution time: 8693199 ns
+Search servlet total execution time: 9383184 ns
+JDBC execution time: 7678680 ns
+Search servlet total execution time: 8305821 ns
+JDBC execution time: 9854481 ns
+Search servlet total execution time: 10904339 ns
+JDBC execution time: 7347844 ns
+Search servlet total execution time: 7892511 ns
+JDBC execution time: 10222545 ns
+Search servlet total execution time: 11143491 ns
+JDBC execution time: 8363965 ns
+Search servlet total execution time: 9087020 ns
+JDBC execution time: 7684768 ns
+Search servlet total execution time: 8266280 ns
+JDBC execution time: 7990382 ns
+Search servlet total execution time: 8268228 ns
+JDBC execution time: 8138907 ns
+Search servlet total execution time: 8387842 ns
+JDBC execution time: 7704194 ns
+Search servlet total execution time: 8314808 ns
+JDBC execution time: 7358289 ns
+Search servlet total execution time: 7722397 ns
+JDBC execution time: 8112632 ns
+Search servlet total execution time: 8365729 ns
+JDBC execution time: 7943383 ns
+Search servlet total execution time: 8210681 ns
+JDBC execution time: 16832631 ns
+Search servlet total execution time: 17281816 ns
+JDBC execution time: 8174685 ns
+Search servlet total execution time: 8934618 ns
+JDBC execution time: 7352901 ns
+Search servlet total execution time: 7982750 ns
+JDBC execution time: 10190894 ns
+Search servlet total execution time: 10450398 ns
+JDBC execution time: 8521196 ns
+Search servlet total execution time: 8778508 ns
+JDBC execution time: 8417496 ns
+Search servlet total execution time: 9533541 ns
+JDBC execution time: 7949884 ns
+Search servlet total execution time: 8577937 ns
+JDBC execution time: 8464859 ns
+Search servlet total execution time: 8736640 ns
+JDBC execution time: 11603260 ns
+Search servlet total execution time: 12342965 ns
+JDBC execution time: 10586907 ns
+Search servlet total execution time: 11312857 ns
+JDBC execution time: 7228988 ns
+Search servlet total execution time: 8092950 ns
+JDBC execution time: 8346701 ns
+Search servlet total execution time: 9152002 ns
+JDBC execution time: 7841957 ns
+Search servlet total execution time: 8328874 ns
+JDBC execution time: 24395506 ns
+Search servlet total execution time: 24927568 ns
+JDBC execution time: 8233129 ns
+Search servlet total execution time: 8660806 ns
+JDBC execution time: 8181026 ns
+Search servlet total execution time: 9386417 ns
+JDBC execution time: 10604568 ns
+Search servlet total execution time: 11148529 ns
+JDBC execution time: 7206340 ns
+Search servlet total execution time: 7603809 ns
+JDBC execution time: 10074220 ns
+Search servlet total execution time: 10393991 ns
+JDBC execution time: 41274340 ns
+Search servlet total execution time: 41849636 ns
+JDBC execution time: 7729014 ns
+Search servlet total execution time: 8362237 ns
+JDBC execution time: 8370325 ns
+Search servlet total execution time: 8681700 ns
+JDBC execution time: 8560892 ns
+Search servlet total execution time: 9355202 ns
+JDBC execution time: 8104404 ns
+Search servlet total execution time: 8739157 ns
+JDBC execution time: 8200784 ns
+Search servlet total execution time: 9187110 ns
+JDBC execution time: 7959297 ns
+Search servlet total execution time: 8489561 ns
+JDBC execution time: 8093070 ns
+Search servlet total execution time: 8661659 ns
+JDBC execution time: 8309128 ns
+Search servlet total execution time: 8882402 ns
+JDBC execution time: 8197991 ns
+Search servlet total execution time: 8739395 ns
+JDBC execution time: 8191615 ns
+Search servlet total execution time: 8795060 ns
+JDBC execution time: 8145085 ns
+Search servlet total execution time: 8723716 ns
+JDBC execution time: 10757356 ns
+Search servlet total execution time: 11626245 ns
+JDBC execution time: 9614606 ns
+Search servlet total execution time: 10113399 ns
+JDBC execution time: 9135656 ns
+Search servlet total execution time: 9539785 ns
+JDBC execution time: 9698322 ns
+Search servlet total execution time: 10041821 ns
+JDBC execution time: 9587229 ns
+Search servlet total execution time: 9756972 ns
+JDBC execution time: 8331407 ns
+Search servlet total execution time: 9254494 ns
+JDBC execution time: 7304233 ns
+Search servlet total execution time: 8009057 ns
+JDBC execution time: 8439139 ns
+Search servlet total execution time: 8890010 ns
+JDBC execution time: 7842149 ns
+Search servlet total execution time: 8597285 ns
+JDBC execution time: 9687110 ns
+Search servlet total execution time: 10028532 ns
+JDBC execution time: 8280941 ns
+Search servlet total execution time: 9462225 ns
+JDBC execution time: 15739596 ns
+Search servlet total execution time: 16502211 ns
+JDBC execution time: 8765778 ns
+Search servlet total execution time: 9577245 ns
+JDBC execution time: 7353959 ns
+Search servlet total execution time: 8105398 ns
+JDBC execution time: 8925958 ns
+Search servlet total execution time: 9367942 ns
+JDBC execution time: 8149716 ns
+Search servlet total execution time: 8898004 ns
+JDBC execution time: 8186724 ns
+Search servlet total execution time: 8924209 ns
+JDBC execution time: 8736087 ns
+Search servlet total execution time: 9557352 ns
+JDBC execution time: 7462457 ns
+Search servlet total execution time: 8149948 ns
+JDBC execution time: 8539442 ns
+Search servlet total execution time: 8760750 ns
+JDBC execution time: 7425703 ns
+Search servlet total execution time: 7923527 ns
+JDBC execution time: 16677512 ns
+Search servlet total execution time: 17162459 ns
+JDBC execution time: 7254758 ns
+Search servlet total execution time: 7854467 ns
+JDBC execution time: 8558587 ns
+Search servlet total execution time: 9046440 ns
+JDBC execution time: 10773057 ns
+Search servlet total execution time: 11657179 ns
+JDBC execution time: 8371901 ns
+Search servlet total execution time: 9273305 ns
+JDBC execution time: 8542598 ns
+Search servlet total execution time: 9424976 ns
+JDBC execution time: 8437307 ns
+Search servlet total execution time: 9268107 ns
+JDBC execution time: 9766622 ns
+Search servlet total execution time: 10580302 ns
+JDBC execution time: 7252362 ns
+Search servlet total execution time: 8190468 ns
+JDBC execution time: 7436467 ns
+Search servlet total execution time: 7698712 ns
+JDBC execution time: 6985231 ns
+Search servlet total execution time: 7567871 ns
+JDBC execution time: 8965656 ns
+Search servlet total execution time: 9267064 ns
+JDBC execution time: 8230802 ns
+Search servlet total execution time: 9095406 ns
+JDBC execution time: 7186271 ns
+Search servlet total execution time: 7854324 ns
+JDBC execution time: 8367351 ns
+Search servlet total execution time: 8906728 ns
+JDBC execution time: 7189738 ns
+Search servlet total execution time: 8034180 ns
+JDBC execution time: 9649371 ns
+Search servlet total execution time: 9975778 ns
+JDBC execution time: 14761645 ns
+Search servlet total execution time: 15551200 ns
+JDBC execution time: 8235548 ns
+Search servlet total execution time: 9314381 ns
+JDBC execution time: 10020342 ns
+Search servlet total execution time: 10684441 ns
+JDBC execution time: 7975577 ns
+Search servlet total execution time: 8235057 ns
+JDBC execution time: 7530983 ns
+Search servlet total execution time: 7779480 ns
+JDBC execution time: 7499232 ns
+Search servlet total execution time: 7761876 ns
+JDBC execution time: 11924271 ns
+Search servlet total execution time: 12426047 ns
+JDBC execution time: 7580670 ns
+Search servlet total execution time: 8158948 ns
+JDBC execution time: 8675613 ns
+Search servlet total execution time: 8955446 ns
+JDBC execution time: 12657711 ns
+Search servlet total execution time: 13459817 ns
+JDBC execution time: 7302303 ns
+Search servlet total execution time: 8193842 ns
+JDBC execution time: 17488247 ns
+Search servlet total execution time: 18077306 ns
+JDBC execution time: 8388501 ns
+Search servlet total execution time: 9212829 ns
+JDBC execution time: 7316683 ns
+Search servlet total execution time: 7854532 ns
+JDBC execution time: 8381101 ns
+Search servlet total execution time: 8651882 ns
+JDBC execution time: 8257764 ns
+Search servlet total execution time: 11177514 ns
+JDBC execution time: 8516344 ns
+Search servlet total execution time: 9580498 ns
+JDBC execution time: 7320100 ns
+Search servlet total execution time: 7893829 ns
+JDBC execution time: 8657331 ns
+Search servlet total execution time: 8892398 ns
+JDBC execution time: 8398433 ns
+Search servlet total execution time: 9263280 ns
+JDBC execution time: 8207116 ns
+Search servlet total execution time: 8805030 ns
+JDBC execution time: 7315474 ns
+Search servlet total execution time: 7919170 ns
+JDBC execution time: 7671490 ns
+Search servlet total execution time: 8045416 ns
+JDBC execution time: 9641508 ns
+Search servlet total execution time: 9953844 ns
+JDBC execution time: 9547170 ns
+Search servlet total execution time: 10072892 ns
+JDBC execution time: 8331176 ns
+Search servlet total execution time: 9497648 ns
+JDBC execution time: 8314809 ns
+Search servlet total execution time: 8987052 ns
+JDBC execution time: 8467299 ns
+Search servlet total execution time: 9397877 ns
+JDBC execution time: 7230083 ns
+Search servlet total execution time: 7801240 ns
+JDBC execution time: 9638508 ns
+Search servlet total execution time: 9957481 ns
+JDBC execution time: 8947038 ns
+Search servlet total execution time: 9210068 ns
+JDBC execution time: 8389816 ns
+Search servlet total execution time: 8796796 ns
+JDBC execution time: 8394831 ns
+Search servlet total execution time: 8920634 ns
+JDBC execution time: 8255412 ns
+Search servlet total execution time: 8523528 ns
+JDBC execution time: 7275890 ns
+Search servlet total execution time: 7882292 ns
+JDBC execution time: 7928627 ns
+Search servlet total execution time: 8265495 ns
+JDBC execution time: 8803203 ns
+Search servlet total execution time: 9306678 ns
+JDBC execution time: 7291673 ns
+Search servlet total execution time: 7906512 ns
+JDBC execution time: 8380597 ns
+Search servlet total execution time: 8844206 ns
+JDBC execution time: 7169574 ns
+Search servlet total execution time: 7998563 ns
+JDBC execution time: 8038140 ns
+Search servlet total execution time: 8346651 ns
+JDBC execution time: 8742288 ns
+Search servlet total execution time: 12478089 ns
+JDBC execution time: 8497976 ns
+Search servlet total execution time: 9536306 ns
+JDBC execution time: 8202241 ns
+Search servlet total execution time: 8929381 ns
+JDBC execution time: 23332672 ns
+Search servlet total execution time: 24136051 ns
+JDBC execution time: 7119065 ns
+Search servlet total execution time: 7647254 ns
+JDBC execution time: 10240437 ns
+Search servlet total execution time: 10767396 ns
+JDBC execution time: 8286074 ns
+Search servlet total execution time: 9002451 ns
+JDBC execution time: 10504372 ns
+Search servlet total execution time: 11276514 ns
+JDBC execution time: 8491495 ns
+Search servlet total execution time: 9194016 ns
+JDBC execution time: 7176551 ns
+Search servlet total execution time: 7757587 ns
+JDBC execution time: 8514304 ns
+Search servlet total execution time: 8912480 ns
+JDBC execution time: 8601203 ns
+Search servlet total execution time: 9305152 ns
+JDBC execution time: 8699920 ns
+Search servlet total execution time: 9385279 ns
+JDBC execution time: 10743759 ns
+Search servlet total execution time: 11759370 ns
+JDBC execution time: 9375196 ns
+Search servlet total execution time: 9943813 ns
+JDBC execution time: 8245145 ns
+Search servlet total execution time: 8942189 ns
+JDBC execution time: 24885360 ns
+Search servlet total execution time: 25959922 ns
+JDBC execution time: 8781804 ns
+Search servlet total execution time: 9664881 ns
+JDBC execution time: 7488147 ns
+Search servlet total execution time: 8246463 ns
+JDBC execution time: 9173626 ns
+Search servlet total execution time: 9411918 ns
+JDBC execution time: 8931050 ns
+Search servlet total execution time: 9622338 ns
+JDBC execution time: 7215162 ns
+Search servlet total execution time: 7652110 ns
+JDBC execution time: 34311773 ns
+Search servlet total execution time: 34895904 ns
+JDBC execution time: 8527123 ns
+Search servlet total execution time: 9220864 ns
+JDBC execution time: 8694649 ns
+Search servlet total execution time: 9689991 ns
+JDBC execution time: 8268046 ns
+Search servlet total execution time: 8921981 ns
+JDBC execution time: 7162076 ns
+Search servlet total execution time: 7611754 ns
+JDBC execution time: 8181021 ns
+Search servlet total execution time: 8418034 ns
+JDBC execution time: 7037565 ns
+Search servlet total execution time: 7571001 ns
+JDBC execution time: 8659754 ns
+Search servlet total execution time: 8878669 ns
+JDBC execution time: 8430480 ns
+Search servlet total execution time: 9122416 ns
+JDBC execution time: 10750674 ns
+Search servlet total execution time: 11308446 ns
+JDBC execution time: 7992452 ns
+Search servlet total execution time: 8244768 ns
+JDBC execution time: 8542978 ns
+Search servlet total execution time: 8795292 ns
+JDBC execution time: 7296793 ns
+Search servlet total execution time: 8382033 ns
+JDBC execution time: 9818286 ns
+Search servlet total execution time: 10076417 ns
+JDBC execution time: 8790913 ns
+Search servlet total execution time: 9671196 ns
+JDBC execution time: 8828085 ns
+Search servlet total execution time: 9732571 ns
+JDBC execution time: 8333554 ns
+Search servlet total execution time: 9091634 ns
+JDBC execution time: 7269558 ns
+Search servlet total execution time: 7842611 ns
+JDBC execution time: 8017661 ns
+Search servlet total execution time: 8279367 ns
+JDBC execution time: 9593118 ns
+Search servlet total execution time: 10529163 ns
+JDBC execution time: 7732595 ns
+Search servlet total execution time: 8362283 ns
+JDBC execution time: 7996795 ns
+Search servlet total execution time: 8341536 ns
+JDBC execution time: 7552464 ns
+Search servlet total execution time: 7938889 ns
+JDBC execution time: 9932235 ns
+Search servlet total execution time: 10293948 ns
+JDBC execution time: 8572330 ns
+Search servlet total execution time: 9102439 ns
+JDBC execution time: 35512104 ns
+Search servlet total execution time: 36586431 ns
+JDBC execution time: 8417959 ns
+Search servlet total execution time: 9188564 ns
+JDBC execution time: 9052787 ns
+Search servlet total execution time: 9901002 ns
+JDBC execution time: 9566704 ns
+Search servlet total execution time: 10197597 ns
+JDBC execution time: 8362900 ns
+Search servlet total execution time: 9135417 ns
+JDBC execution time: 7752225 ns
+Search servlet total execution time: 8352448 ns
+JDBC execution time: 8402739 ns
+Search servlet total execution time: 8677136 ns
+JDBC execution time: 8234018 ns
+Search servlet total execution time: 8995577 ns
+JDBC execution time: 9864648 ns
+Search servlet total execution time: 10827085 ns
+JDBC execution time: 8529037 ns
+Search servlet total execution time: 9278096 ns
+JDBC execution time: 10758681 ns
+Search servlet total execution time: 11649759 ns
+JDBC execution time: 10143221 ns
+Search servlet total execution time: 10837676 ns
+JDBC execution time: 10397304 ns
+Search servlet total execution time: 11212077 ns
+JDBC execution time: 10489060 ns
+Search servlet total execution time: 11397989 ns
+JDBC execution time: 8152759 ns
+Search servlet total execution time: 8886700 ns
+JDBC execution time: 8304572 ns
+Search servlet total execution time: 9137743 ns
+JDBC execution time: 7435221 ns
+Search servlet total execution time: 8374013 ns
+JDBC execution time: 8315087 ns
+Search servlet total execution time: 8573270 ns
+JDBC execution time: 7781770 ns
+Search servlet total execution time: 8343704 ns
+JDBC execution time: 11839035 ns
+Search servlet total execution time: 12101271 ns
+JDBC execution time: 8235444 ns
+Search servlet total execution time: 8750316 ns
+JDBC execution time: 8367614 ns
+Search servlet total execution time: 9006167 ns
+JDBC execution time: 8091047 ns
+Search servlet total execution time: 8350098 ns
+JDBC execution time: 8284746 ns
+Search servlet total execution time: 8782384 ns
+JDBC execution time: 9219105 ns
+Search servlet total execution time: 9468091 ns
+JDBC execution time: 8769313 ns
+Search servlet total execution time: 9477522 ns
+JDBC execution time: 7724671 ns
+Search servlet total execution time: 8365899 ns
+JDBC execution time: 7619279 ns
+Search servlet total execution time: 7927987 ns
+JDBC execution time: 10165887 ns
+Search servlet total execution time: 10409508 ns
+JDBC execution time: 7657949 ns
+Search servlet total execution time: 7916834 ns
+JDBC execution time: 7570403 ns
+Search servlet total execution time: 8049169 ns
+JDBC execution time: 7602037 ns
+Search servlet total execution time: 7871920 ns
+JDBC execution time: 7691152 ns
+Search servlet total execution time: 7954418 ns
+JDBC execution time: 8770594 ns
+Search servlet total execution time: 9080732 ns
+JDBC execution time: 9095907 ns
+Search servlet total execution time: 9820092 ns
+JDBC execution time: 8908768 ns
+Search servlet total execution time: 9690651 ns
+JDBC execution time: 7603469 ns
+Search servlet total execution time: 8481605 ns
+JDBC execution time: 9483364 ns
+Search servlet total execution time: 9732710 ns
+JDBC execution time: 8842665 ns
+Search servlet total execution time: 9108561 ns
+JDBC execution time: 7203751 ns
+Search servlet total execution time: 7756559 ns
+JDBC execution time: 10476165 ns
+Search servlet total execution time: 10727393 ns
+JDBC execution time: 7813879 ns
+Search servlet total execution time: 8327549 ns
+JDBC execution time: 12119658 ns
+Search servlet total execution time: 12744219 ns
+JDBC execution time: 7225529 ns
+Search servlet total execution time: 7764210 ns
+JDBC execution time: 10202688 ns
+Search servlet total execution time: 10467371 ns
+JDBC execution time: 10182838 ns
+Search servlet total execution time: 11062704 ns
+JDBC execution time: 8358106 ns
+Search servlet total execution time: 9401537 ns
+JDBC execution time: 8275698 ns
+Search servlet total execution time: 9061987 ns
+JDBC execution time: 7342183 ns
+Search servlet total execution time: 7980224 ns
+JDBC execution time: 8568946 ns
+Search servlet total execution time: 8888894 ns
+JDBC execution time: 7733054 ns
+Search servlet total execution time: 8088674 ns
+JDBC execution time: 7863296 ns
+Search servlet total execution time: 8133735 ns
+JDBC execution time: 7668583 ns
+Search servlet total execution time: 8000670 ns
+JDBC execution time: 10534140 ns
+Search servlet total execution time: 10853846 ns
+JDBC execution time: 10791705 ns
+Search servlet total execution time: 11356247 ns
+JDBC execution time: 10037672 ns
+Search servlet total execution time: 10698872 ns
+JDBC execution time: 7419625 ns
+Search servlet total execution time: 7732469 ns
+JDBC execution time: 7612738 ns
+Search servlet total execution time: 7922733 ns
+JDBC execution time: 8216788 ns
+Search servlet total execution time: 8556030 ns
+JDBC execution time: 7585421 ns
+Search servlet total execution time: 7913043 ns
+JDBC execution time: 8279377 ns
+Search servlet total execution time: 8739506 ns
+JDBC execution time: 7241797 ns
+Search servlet total execution time: 7921568 ns
+JDBC execution time: 8790216 ns
+Search servlet total execution time: 9030687 ns
+JDBC execution time: 8458765 ns
+Search servlet total execution time: 9143965 ns
+JDBC execution time: 8845087 ns
+Search servlet total execution time: 9431782 ns
+JDBC execution time: 8173998 ns
+Search servlet total execution time: 8576619 ns
+JDBC execution time: 9641427 ns
+Search servlet total execution time: 10426837 ns
+JDBC execution time: 7162290 ns
+Search servlet total execution time: 7836358 ns
+JDBC execution time: 7731198 ns
+Search servlet total execution time: 8199998 ns
+JDBC execution time: 8123100 ns
+Search servlet total execution time: 8554168 ns
+JDBC execution time: 8207167 ns
+Search servlet total execution time: 9193610 ns
+JDBC execution time: 9608474 ns
+Search servlet total execution time: 10412283 ns
+JDBC execution time: 7530910 ns
+Search servlet total execution time: 8104029 ns
+JDBC execution time: 9579225 ns
+Search servlet total execution time: 9842223 ns
+JDBC execution time: 7936883 ns
+Search servlet total execution time: 8195811 ns
+JDBC execution time: 7656089 ns
+Search servlet total execution time: 7909593 ns
+JDBC execution time: 7505542 ns
+Search servlet total execution time: 7764356 ns
+JDBC execution time: 7488345 ns
+Search servlet total execution time: 7754326 ns
+JDBC execution time: 8113740 ns
+Search servlet total execution time: 8360075 ns
+JDBC execution time: 7233548 ns
+Search servlet total execution time: 8144563 ns
+JDBC execution time: 7388084 ns
+Search servlet total execution time: 7681057 ns
+JDBC execution time: 8287722 ns
+Search servlet total execution time: 8722146 ns
+JDBC execution time: 8407064 ns
+Search servlet total execution time: 9223789 ns
+JDBC execution time: 7446603 ns
+Search servlet total execution time: 8031450 ns
+JDBC execution time: 7616324 ns
+Search servlet total execution time: 7946894 ns
+JDBC execution time: 8339313 ns
+Search servlet total execution time: 8582114 ns
+JDBC execution time: 7244915 ns
+Search servlet total execution time: 8038647 ns
+JDBC execution time: 8261606 ns
+Search servlet total execution time: 8523610 ns
+JDBC execution time: 7702598 ns
+Search servlet total execution time: 8232738 ns
+JDBC execution time: 10188341 ns
+Search servlet total execution time: 10512163 ns
+JDBC execution time: 8621635 ns
+Search servlet total execution time: 9339859 ns
+JDBC execution time: 8078833 ns
+Search servlet total execution time: 8821402 ns
+JDBC execution time: 7295673 ns
+Search servlet total execution time: 7919530 ns
+JDBC execution time: 8646455 ns
+Search servlet total execution time: 9063463 ns
+JDBC execution time: 7095448 ns
+Search servlet total execution time: 7655507 ns
+JDBC execution time: 9820482 ns
+Search servlet total execution time: 10160789 ns
+JDBC execution time: 8138402 ns
+Search servlet total execution time: 8842180 ns
+JDBC execution time: 8031212 ns
+Search servlet total execution time: 8688777 ns
+JDBC execution time: 7166943 ns
+Search servlet total execution time: 8115972 ns
+JDBC execution time: 10258587 ns
+Search servlet total execution time: 10751015 ns
+JDBC execution time: 8832161 ns
+Search servlet total execution time: 9681915 ns
+JDBC execution time: 7177660 ns
+Search servlet total execution time: 7776570 ns
+JDBC execution time: 7974807 ns
+Search servlet total execution time: 8279487 ns
+JDBC execution time: 7824531 ns
+Search servlet total execution time: 8358301 ns
+JDBC execution time: 8246996 ns
+Search servlet total execution time: 8715276 ns
+JDBC execution time: 8374600 ns
+Search servlet total execution time: 8842798 ns
+JDBC execution time: 8165996 ns
+Search servlet total execution time: 8806238 ns
+JDBC execution time: 7273036 ns
+Search servlet total execution time: 7904660 ns
+JDBC execution time: 7401157 ns
+Search servlet total execution time: 7688068 ns
+JDBC execution time: 7250367 ns
+Search servlet total execution time: 7549561 ns
+JDBC execution time: 10167359 ns
+Search servlet total execution time: 10423970 ns
+JDBC execution time: 7293952 ns
+Search servlet total execution time: 7608702 ns
+JDBC execution time: 7300811 ns
+Search servlet total execution time: 7554918 ns
+JDBC execution time: 7741231 ns
+Search servlet total execution time: 8044700 ns
+JDBC execution time: 7224920 ns
+Search servlet total execution time: 7456265 ns
+JDBC execution time: 8506269 ns
+Search servlet total execution time: 8760422 ns
+JDBC execution time: 35603066 ns
+Search servlet total execution time: 36334433 ns
+JDBC execution time: 8192658 ns
+Search servlet total execution time: 8885739 ns
+JDBC execution time: 8412519 ns
+Search servlet total execution time: 8989984 ns
+JDBC execution time: 7120182 ns
+Search servlet total execution time: 7499178 ns
+JDBC execution time: 10225315 ns
+Search servlet total execution time: 10434121 ns
+JDBC execution time: 10541606 ns
+Search servlet total execution time: 10873221 ns
+JDBC execution time: 7112319 ns
+Search servlet total execution time: 7649685 ns
+JDBC execution time: 8136022 ns
+Search servlet total execution time: 8353406 ns
+JDBC execution time: 9752929 ns
+Search servlet total execution time: 10382179 ns
+JDBC execution time: 9410490 ns
+Search servlet total execution time: 9887857 ns
+JDBC execution time: 8272943 ns
+Search servlet total execution time: 8570274 ns
+JDBC execution time: 23718661 ns
+Search servlet total execution time: 24421101 ns
+JDBC execution time: 11079197 ns
+Search servlet total execution time: 11666960 ns
+JDBC execution time: 8277136 ns
+Search servlet total execution time: 8665777 ns
+JDBC execution time: 7656675 ns
+Search servlet total execution time: 8461031 ns
+JDBC execution time: 7593148 ns
+Search servlet total execution time: 7851616 ns
+JDBC execution time: 9276428 ns
+Search servlet total execution time: 9537343 ns
+JDBC execution time: 7794582 ns
+Search servlet total execution time: 8369249 ns
+JDBC execution time: 7841774 ns
+Search servlet total execution time: 8068609 ns
+JDBC execution time: 8300080 ns
+Search servlet total execution time: 8534038 ns
+JDBC execution time: 7408326 ns
+Search servlet total execution time: 8001360 ns
+JDBC execution time: 10327931 ns
+Search servlet total execution time: 14233106 ns
+JDBC execution time: 8229515 ns
+Search servlet total execution time: 8928083 ns
+JDBC execution time: 8091977 ns
+Search servlet total execution time: 8905829 ns
+JDBC execution time: 8233231 ns
+Search servlet total execution time: 8943711 ns
+JDBC execution time: 8386503 ns
+Search servlet total execution time: 9074353 ns
+JDBC execution time: 8460831 ns
+Search servlet total execution time: 9154250 ns
+JDBC execution time: 7203429 ns
+Search servlet total execution time: 7748075 ns
+JDBC execution time: 9456428 ns
+Search servlet total execution time: 9728821 ns
+JDBC execution time: 7224006 ns
+Search servlet total execution time: 8106206 ns
+JDBC execution time: 8152769 ns
+Search servlet total execution time: 8346041 ns
+JDBC execution time: 7540361 ns
+Search servlet total execution time: 8061151 ns
+JDBC execution time: 8457235 ns
+Search servlet total execution time: 8904594 ns
+JDBC execution time: 7318217 ns
+Search servlet total execution time: 7895787 ns
+JDBC execution time: 34156327 ns
+Search servlet total execution time: 34530993 ns
+JDBC execution time: 7105439 ns
+Search servlet total execution time: 7717120 ns
+JDBC execution time: 10493805 ns
+Search servlet total execution time: 10818608 ns
+JDBC execution time: 8341847 ns
+Search servlet total execution time: 8590290 ns
+JDBC execution time: 7262559 ns
+Search servlet total execution time: 7784291 ns
+JDBC execution time: 7480566 ns
+Search servlet total execution time: 7750466 ns
+JDBC execution time: 8618172 ns
+Search servlet total execution time: 9033566 ns
+JDBC execution time: 9305256 ns
+Search servlet total execution time: 9708888 ns
+JDBC execution time: 12501822 ns
+Search servlet total execution time: 12824008 ns
+JDBC execution time: 7155932 ns
+Search servlet total execution time: 7700870 ns
+JDBC execution time: 8397794 ns
+Search servlet total execution time: 8997000 ns
+JDBC execution time: 7739273 ns
+Search servlet total execution time: 7954271 ns
+JDBC execution time: 8771860 ns
+Search servlet total execution time: 9009375 ns
+JDBC execution time: 8406366 ns
+Search servlet total execution time: 9177142 ns
+JDBC execution time: 8403289 ns
+Search servlet total execution time: 9061284 ns
+JDBC execution time: 10406687 ns
+Search servlet total execution time: 11214712 ns
+JDBC execution time: 8288512 ns
+Search servlet total execution time: 9006710 ns
+JDBC execution time: 7194743 ns
+Search servlet total execution time: 7666019 ns
+JDBC execution time: 8879855 ns
+Search servlet total execution time: 9093476 ns
+JDBC execution time: 8310737 ns
+Search servlet total execution time: 8972288 ns
+JDBC execution time: 7180787 ns
+Search servlet total execution time: 7830933 ns
+JDBC execution time: 7648378 ns
+Search servlet total execution time: 7876564 ns
+JDBC execution time: 8501028 ns
+Search servlet total execution time: 8889868 ns
+JDBC execution time: 7093229 ns
+Search servlet total execution time: 7484612 ns
+JDBC execution time: 8385632 ns
+Search servlet total execution time: 8640061 ns
+JDBC execution time: 7560702 ns
+Search servlet total execution time: 7874428 ns
+JDBC execution time: 8159345 ns
+Search servlet total execution time: 8402614 ns
+JDBC execution time: 8698479 ns
+Search servlet total execution time: 9590567 ns
+JDBC execution time: 16500200 ns
+Search servlet total execution time: 17772810 ns
+JDBC execution time: 11736254 ns
+Search servlet total execution time: 12565206 ns
+JDBC execution time: 7852700 ns
+Search servlet total execution time: 8313594 ns
+JDBC execution time: 8494689 ns
+Search servlet total execution time: 8709179 ns
+JDBC execution time: 8352350 ns
+Search servlet total execution time: 9079234 ns
+JDBC execution time: 8145205 ns
+Search servlet total execution time: 8330294 ns
+JDBC execution time: 10217651 ns
+Search servlet total execution time: 10500534 ns
+JDBC execution time: 10038055 ns
+Search servlet total execution time: 10772006 ns
+JDBC execution time: 9328029 ns
+Search servlet total execution time: 10013601 ns
+JDBC execution time: 9696967 ns
+Search servlet total execution time: 10055298 ns
+JDBC execution time: 38228069 ns
+Search servlet total execution time: 38820318 ns
+JDBC execution time: 8429273 ns
+Search servlet total execution time: 8950919 ns
+JDBC execution time: 12923962 ns
+Search servlet total execution time: 13237579 ns
+JDBC execution time: 7419127 ns
+Search servlet total execution time: 7611808 ns
+JDBC execution time: 8687369 ns
+Search servlet total execution time: 8925170 ns
+JDBC execution time: 10525694 ns
+Search servlet total execution time: 10950661 ns
+JDBC execution time: 8325595 ns
+Search servlet total execution time: 8842656 ns
+JDBC execution time: 8243758 ns
+Search servlet total execution time: 8840236 ns
+JDBC execution time: 9753735 ns
+Search servlet total execution time: 10346517 ns
+JDBC execution time: 9267726 ns
+Search servlet total execution time: 9835617 ns
+JDBC execution time: 9292886 ns
+Search servlet total execution time: 9787994 ns
+JDBC execution time: 8159515 ns
+Search servlet total execution time: 8417213 ns
+JDBC execution time: 12867887 ns
+Search servlet total execution time: 13327524 ns
+JDBC execution time: 8160741 ns
+Search servlet total execution time: 8726562 ns
+JDBC execution time: 10642491 ns
+Search servlet total execution time: 11830295 ns
+JDBC execution time: 7486667 ns
+Search servlet total execution time: 7947403 ns
+JDBC execution time: 8729421 ns
+Search servlet total execution time: 8925261 ns
+JDBC execution time: 7623925 ns
+Search servlet total execution time: 7960646 ns
+JDBC execution time: 7321014 ns
+Search servlet total execution time: 7484124 ns
+JDBC execution time: 8178505 ns
+Search servlet total execution time: 8388241 ns
+JDBC execution time: 10390638 ns
+Search servlet total execution time: 10801993 ns
+JDBC execution time: 10482755 ns
+Search servlet total execution time: 11352445 ns
+JDBC execution time: 7180015 ns
+Search servlet total execution time: 7736580 ns
+JDBC execution time: 7664803 ns
+Search servlet total execution time: 7894311 ns
+JDBC execution time: 8383843 ns
+Search servlet total execution time: 8623297 ns
+JDBC execution time: 8767069 ns
+Search servlet total execution time: 9257133 ns
+JDBC execution time: 25672572 ns
+Search servlet total execution time: 26406017 ns
+JDBC execution time: 10397209 ns
+Search servlet total execution time: 10846581 ns
+JDBC execution time: 9546277 ns
+Search servlet total execution time: 10244686 ns
+JDBC execution time: 8325017 ns
+Search servlet total execution time: 9111704 ns
+JDBC execution time: 10599582 ns
+Search servlet total execution time: 11420901 ns
+JDBC execution time: 8672440 ns
+Search servlet total execution time: 9458805 ns
+JDBC execution time: 7216652 ns
+Search servlet total execution time: 8056385 ns
+JDBC execution time: 10366649 ns
+Search servlet total execution time: 10590252 ns
+JDBC execution time: 8297001 ns
+Search servlet total execution time: 8976184 ns
+JDBC execution time: 7761892 ns
+Search servlet total execution time: 8370139 ns
+JDBC execution time: 10756861 ns
+Search servlet total execution time: 11239817 ns
+JDBC execution time: 8602974 ns
+Search servlet total execution time: 9349587 ns
+JDBC execution time: 8191847 ns
+Search servlet total execution time: 8961089 ns
+JDBC execution time: 7383162 ns
+Search servlet total execution time: 7979868 ns
+JDBC execution time: 7667268 ns
+Search servlet total execution time: 7917138 ns
+JDBC execution time: 8715264 ns
+Search servlet total execution time: 8928412 ns
+JDBC execution time: 8253203 ns
+Search servlet total execution time: 8936313 ns
+JDBC execution time: 10742016 ns
+Search servlet total execution time: 11024394 ns
+JDBC execution time: 8105384 ns
+Search servlet total execution time: 8726064 ns
+JDBC execution time: 11162444 ns
+Search servlet total execution time: 11944531 ns
+JDBC execution time: 7319861 ns
+Search servlet total execution time: 7889702 ns
+JDBC execution time: 8071120 ns
+Search servlet total execution time: 8378795 ns
+JDBC execution time: 8190708 ns
+Search servlet total execution time: 8653524 ns
+JDBC execution time: 8359045 ns
+Search servlet total execution time: 9131639 ns
+JDBC execution time: 8114952 ns
+Search servlet total execution time: 8730522 ns
+JDBC execution time: 8263404 ns
+Search servlet total execution time: 8828711 ns
+JDBC execution time: 10627494 ns
+Search servlet total execution time: 11433597 ns
+JDBC execution time: 8438240 ns
+Search servlet total execution time: 9573461 ns
+JDBC execution time: 8218104 ns
+Search servlet total execution time: 8896191 ns
+JDBC execution time: 7313438 ns
+Search servlet total execution time: 7738478 ns
+JDBC execution time: 7525144 ns
+Search servlet total execution time: 7778122 ns
+JDBC execution time: 7425843 ns
+Search servlet total execution time: 7740664 ns
+JDBC execution time: 8250513 ns
+Search servlet total execution time: 8554064 ns
+JDBC execution time: 8094646 ns
+Search servlet total execution time: 8793742 ns
+JDBC execution time: 8290949 ns
+Search servlet total execution time: 8992573 ns
+JDBC execution time: 11357103 ns
+Search servlet total execution time: 12265767 ns
+JDBC execution time: 7260057 ns
+Search servlet total execution time: 8167080 ns
+JDBC execution time: 8015090 ns
+Search servlet total execution time: 8525373 ns
+JDBC execution time: 8226858 ns
+Search servlet total execution time: 8885397 ns
+JDBC execution time: 8051514 ns
+Search servlet total execution time: 8679469 ns
+JDBC execution time: 7707368 ns
+Search servlet total execution time: 8063581 ns
+JDBC execution time: 10339118 ns
+Search servlet total execution time: 10585573 ns
+JDBC execution time: 8171495 ns
+Search servlet total execution time: 8591189 ns
+JDBC execution time: 7535174 ns
+Search servlet total execution time: 8098711 ns
+JDBC execution time: 9688464 ns
+Search servlet total execution time: 9985674 ns
+JDBC execution time: 8194877 ns
+Search servlet total execution time: 8472649 ns
+JDBC execution time: 7253629 ns
+Search servlet total execution time: 8162046 ns
+JDBC execution time: 7366474 ns
+Search servlet total execution time: 7674652 ns
+JDBC execution time: 7584639 ns
+Search servlet total execution time: 7903873 ns
+JDBC execution time: 8702332 ns
+Search servlet total execution time: 9022240 ns
+JDBC execution time: 9288142 ns
+Search servlet total execution time: 9599327 ns
+JDBC execution time: 8196509 ns
+Search servlet total execution time: 9064438 ns
+JDBC execution time: 9398643 ns
+Search servlet total execution time: 9970907 ns
+JDBC execution time: 8515108 ns
+Search servlet total execution time: 8856285 ns
+JDBC execution time: 10443967 ns
+Search servlet total execution time: 10987090 ns
+JDBC execution time: 8267883 ns
+Search servlet total execution time: 8751890 ns
+JDBC execution time: 8021879 ns
+Search servlet total execution time: 8262438 ns
+JDBC execution time: 7129500 ns
+Search servlet total execution time: 7550442 ns
+JDBC execution time: 7561303 ns
+Search servlet total execution time: 7825619 ns
+JDBC execution time: 7988632 ns
+Search servlet total execution time: 8285948 ns
+JDBC execution time: 8272071 ns
+Search servlet total execution time: 8573681 ns
+JDBC execution time: 8359628 ns
+Search servlet total execution time: 9247503 ns
+JDBC execution time: 10943612 ns
+Search servlet total execution time: 11628908 ns
+JDBC execution time: 8391446 ns
+Search servlet total execution time: 9204994 ns
+JDBC execution time: 8605200 ns
+Search servlet total execution time: 9177753 ns
+JDBC execution time: 7396210 ns
+Search servlet total execution time: 7936017 ns
+JDBC execution time: 9413097 ns
+Search servlet total execution time: 9695245 ns
+JDBC execution time: 11518216 ns
+Search servlet total execution time: 11839193 ns
+JDBC execution time: 7721236 ns
+Search servlet total execution time: 8338905 ns
+JDBC execution time: 7252388 ns
+Search servlet total execution time: 7528282 ns
+JDBC execution time: 7086510 ns
+Search servlet total execution time: 7325395 ns
+JDBC execution time: 9925079 ns
+Search servlet total execution time: 10194989 ns
+JDBC execution time: 10797550 ns
+Search servlet total execution time: 11241805 ns
+JDBC execution time: 8139336 ns
+Search servlet total execution time: 8980626 ns
+JDBC execution time: 40697444 ns
+Search servlet total execution time: 41349829 ns
+JDBC execution time: 8417276 ns
+Search servlet total execution time: 9125969 ns
+JDBC execution time: 8807041 ns
+Search servlet total execution time: 9838310 ns
+JDBC execution time: 8066998 ns
+Search servlet total execution time: 8650941 ns
+JDBC execution time: 8147796 ns
+Search servlet total execution time: 8721732 ns
+JDBC execution time: 9533479 ns
+Search servlet total execution time: 10320697 ns
+JDBC execution time: 7216332 ns
+Search servlet total execution time: 7749550 ns
+JDBC execution time: 7940577 ns
+Search servlet total execution time: 8184283 ns
+JDBC execution time: 7082175 ns
+Search servlet total execution time: 7287734 ns
+JDBC execution time: 10141410 ns
+Search servlet total execution time: 11000389 ns
+JDBC execution time: 9204128 ns
+Search servlet total execution time: 9808050 ns
+JDBC execution time: 8350574 ns
+Search servlet total execution time: 8670175 ns
+JDBC execution time: 7130178 ns
+Search servlet total execution time: 7459616 ns
+JDBC execution time: 8557077 ns
+Search servlet total execution time: 8795174 ns
+JDBC execution time: 7706694 ns
+Search servlet total execution time: 7962334 ns
+JDBC execution time: 8710817 ns
+Search servlet total execution time: 8938651 ns
+JDBC execution time: 10416531 ns
+Search servlet total execution time: 11548612 ns
+JDBC execution time: 8455084 ns
+Search servlet total execution time: 9237698 ns
+JDBC execution time: 7733297 ns
+Search servlet total execution time: 8253015 ns
+JDBC execution time: 8338810 ns
+Search servlet total execution time: 8806171 ns
+JDBC execution time: 7845403 ns
+Search servlet total execution time: 8529978 ns
+JDBC execution time: 8589237 ns
+Search servlet total execution time: 8924855 ns
+JDBC execution time: 9492867 ns
+Search servlet total execution time: 10104014 ns
+JDBC execution time: 8028583 ns
+Search servlet total execution time: 8328729 ns
+JDBC execution time: 8186221 ns
+Search servlet total execution time: 8428674 ns
+JDBC execution time: 7023686 ns
+Search servlet total execution time: 7573001 ns
+JDBC execution time: 9653272 ns
+Search servlet total execution time: 9972333 ns
+JDBC execution time: 8449918 ns
+Search servlet total execution time: 9181803 ns
+JDBC execution time: 7710922 ns
+Search servlet total execution time: 8571126 ns
+JDBC execution time: 8423006 ns
+Search servlet total execution time: 8723744 ns
+JDBC execution time: 8398878 ns
+Search servlet total execution time: 9120437 ns
+JDBC execution time: 10302343 ns
+Search servlet total execution time: 11188300 ns
+JDBC execution time: 8659008 ns
+Search servlet total execution time: 9471683 ns
+JDBC execution time: 10439053 ns
+Search servlet total execution time: 11274971 ns
+JDBC execution time: 7741074 ns
+Search servlet total execution time: 8457181 ns
+JDBC execution time: 10106636 ns
+Search servlet total execution time: 10418606 ns
+JDBC execution time: 7853288 ns
+Search servlet total execution time: 8199689 ns
+JDBC execution time: 8465165 ns
+Search servlet total execution time: 8925510 ns
+JDBC execution time: 9917930 ns
+Search servlet total execution time: 10517216 ns
+JDBC execution time: 8198011 ns
+Search servlet total execution time: 8951963 ns
+JDBC execution time: 8779346 ns
+Search servlet total execution time: 9500801 ns
+JDBC execution time: 7061280 ns
+Search servlet total execution time: 7627624 ns
+JDBC execution time: 8085772 ns
+Search servlet total execution time: 8502889 ns
+JDBC execution time: 8169904 ns
+Search servlet total execution time: 8876814 ns
+JDBC execution time: 7166272 ns
+Search servlet total execution time: 7787465 ns
+JDBC execution time: 7202506 ns
+Search servlet total execution time: 7708446 ns
+JDBC execution time: 7509081 ns
+Search servlet total execution time: 7803021 ns
+JDBC execution time: 9751924 ns
+Search servlet total execution time: 10055002 ns
+JDBC execution time: 10262893 ns
+Search servlet total execution time: 10748367 ns
+JDBC execution time: 12634544 ns
+Search servlet total execution time: 13347734 ns
+JDBC execution time: 7242507 ns
+Search servlet total execution time: 7822011 ns
+JDBC execution time: 10254363 ns
+Search servlet total execution time: 10792495 ns
+JDBC execution time: 7259606 ns
+Search servlet total execution time: 7907999 ns
+JDBC execution time: 7593920 ns
+Search servlet total execution time: 7909588 ns
+JDBC execution time: 8600104 ns
+Search servlet total execution time: 8897501 ns
+JDBC execution time: 8353113 ns
+Search servlet total execution time: 9204651 ns
+JDBC execution time: 7259175 ns
+Search servlet total execution time: 7909415 ns
+JDBC execution time: 7490472 ns
+Search servlet total execution time: 7799285 ns
+JDBC execution time: 10128846 ns
+Search servlet total execution time: 10447172 ns
+JDBC execution time: 8757186 ns
+Search servlet total execution time: 9220950 ns
+JDBC execution time: 8214061 ns
+Search servlet total execution time: 8704700 ns
+JDBC execution time: 11058473 ns
+Search servlet total execution time: 11939157 ns
+JDBC execution time: 7644951 ns
+Search servlet total execution time: 8263310 ns
+JDBC execution time: 8014575 ns
+Search servlet total execution time: 8287119 ns
+JDBC execution time: 7319366 ns
+Search servlet total execution time: 7591089 ns
+JDBC execution time: 7886143 ns
+Search servlet total execution time: 8208462 ns
+JDBC execution time: 8133422 ns
+Search servlet total execution time: 8458623 ns
+JDBC execution time: 9082620 ns
+Search servlet total execution time: 9609592 ns
+JDBC execution time: 15743792 ns
+Search servlet total execution time: 16639701 ns
+JDBC execution time: 8110122 ns
+Search servlet total execution time: 8806564 ns
+JDBC execution time: 7711566 ns
+Search servlet total execution time: 8350666 ns
+JDBC execution time: 8134508 ns
+Search servlet total execution time: 8541438 ns
+JDBC execution time: 10533312 ns
+Search servlet total execution time: 11392302 ns
+JDBC execution time: 8782650 ns
+Search servlet total execution time: 9519689 ns
+JDBC execution time: 7589867 ns
+Search servlet total execution time: 8088099 ns
+JDBC execution time: 8369027 ns
+Search servlet total execution time: 8638494 ns
+JDBC execution time: 7525780 ns
+Search servlet total execution time: 8066375 ns
+JDBC execution time: 9614585 ns
+Search servlet total execution time: 9928390 ns
+JDBC execution time: 7996472 ns
+Search servlet total execution time: 8306135 ns
+JDBC execution time: 9090143 ns
+Search servlet total execution time: 9819832 ns
+JDBC execution time: 8406349 ns
+Search servlet total execution time: 9350491 ns
+JDBC execution time: 7120242 ns
+Search servlet total execution time: 7795351 ns
+JDBC execution time: 10820207 ns
+Search servlet total execution time: 11319816 ns
+JDBC execution time: 8689598 ns
+Search servlet total execution time: 9857457 ns
+JDBC execution time: 8331308 ns
+Search servlet total execution time: 9101744 ns
+JDBC execution time: 10554300 ns
+Search servlet total execution time: 11234822 ns
+JDBC execution time: 10668325 ns
+Search servlet total execution time: 11538777 ns
+JDBC execution time: 9522343 ns
+Search servlet total execution time: 10146861 ns
+JDBC execution time: 8359387 ns
+Search servlet total execution time: 8858761 ns
+JDBC execution time: 8844815 ns
+Search servlet total execution time: 9810006 ns
+JDBC execution time: 7401701 ns
+Search servlet total execution time: 8071323 ns
+JDBC execution time: 7969738 ns
+Search servlet total execution time: 8277737 ns
+JDBC execution time: 8244192 ns
+Search servlet total execution time: 8768643 ns
+JDBC execution time: 8784787 ns
+Search servlet total execution time: 9598818 ns
+JDBC execution time: 8925231 ns
+Search servlet total execution time: 9770388 ns
+JDBC execution time: 7312980 ns
+Search servlet total execution time: 7939922 ns
+JDBC execution time: 7662078 ns
+Search servlet total execution time: 8339929 ns
+JDBC execution time: 12774345 ns
+Search servlet total execution time: 13337919 ns
+JDBC execution time: 7321225 ns
+Search servlet total execution time: 7845552 ns
+JDBC execution time: 7501336 ns
+Search servlet total execution time: 8031426 ns
+JDBC execution time: 11821693 ns
+Search servlet total execution time: 12303812 ns
+JDBC execution time: 7213626 ns
+Search servlet total execution time: 9665282 ns
+JDBC execution time: 12413865 ns
+Search servlet total execution time: 13021084 ns
+JDBC execution time: 7952313 ns
+Search servlet total execution time: 8211137 ns
+JDBC execution time: 8228998 ns
+Search servlet total execution time: 8462219 ns
+JDBC execution time: 8275072 ns
+Search servlet total execution time: 9001416 ns
+JDBC execution time: 8280707 ns
+Search servlet total execution time: 8972640 ns
+JDBC execution time: 7219075 ns
+Search servlet total execution time: 8020497 ns
+JDBC execution time: 9900103 ns
+Search servlet total execution time: 10236843 ns
+JDBC execution time: 7497170 ns
+Search servlet total execution time: 7808887 ns
+JDBC execution time: 8408111 ns
+Search servlet total execution time: 8944554 ns
+JDBC execution time: 10767801 ns
+Search servlet total execution time: 11659497 ns
+JDBC execution time: 7290644 ns
+Search servlet total execution time: 7992458 ns
+JDBC execution time: 7727791 ns
+Search servlet total execution time: 8009171 ns
+JDBC execution time: 9868438 ns
+Search servlet total execution time: 10204766 ns
+JDBC execution time: 7459962 ns
+Search servlet total execution time: 7708074 ns
+JDBC execution time: 8450043 ns
+Search servlet total execution time: 8698900 ns
+JDBC execution time: 11252922 ns
+Search servlet total execution time: 11895737 ns
+JDBC execution time: 7484570 ns
+Search servlet total execution time: 7798252 ns
+JDBC execution time: 8845808 ns
+Search servlet total execution time: 9283532 ns
+JDBC execution time: 7197965 ns
+Search servlet total execution time: 7824408 ns
+JDBC execution time: 8479157 ns
+Search servlet total execution time: 8782593 ns
+JDBC execution time: 34115885 ns
+Search servlet total execution time: 34772617 ns
+JDBC execution time: 8530116 ns
+Search servlet total execution time: 8955488 ns
+JDBC execution time: 8541216 ns
+Search servlet total execution time: 9258097 ns
+JDBC execution time: 9393545 ns
+Search servlet total execution time: 10010492 ns
+JDBC execution time: 7835773 ns
+Search servlet total execution time: 9526343 ns
+JDBC execution time: 9828240 ns
+Search servlet total execution time: 10115061 ns
+JDBC execution time: 7644073 ns
+Search servlet total execution time: 7948212 ns
+JDBC execution time: 8473885 ns
+Search servlet total execution time: 8709235 ns
+JDBC execution time: 8304378 ns
+Search servlet total execution time: 9122396 ns
+JDBC execution time: 8328595 ns
+Search servlet total execution time: 8980315 ns
+JDBC execution time: 9485821 ns
+Search servlet total execution time: 10124644 ns
+JDBC execution time: 11104138 ns
+Search servlet total execution time: 11657690 ns
+JDBC execution time: 7329874 ns
+Search servlet total execution time: 7720221 ns
+JDBC execution time: 7916427 ns
+Search servlet total execution time: 8161261 ns
+JDBC execution time: 8382538 ns
+Search servlet total execution time: 8633700 ns
+JDBC execution time: 8686994 ns
+Search servlet total execution time: 9475131 ns
+JDBC execution time: 7693208 ns
+Search servlet total execution time: 8221093 ns
+JDBC execution time: 7525935 ns
+Search servlet total execution time: 7785531 ns
+JDBC execution time: 10330215 ns
+Search servlet total execution time: 10578237 ns
+JDBC execution time: 9597795 ns
+Search servlet total execution time: 10058781 ns
+JDBC execution time: 8228372 ns
+Search servlet total execution time: 8796105 ns
+JDBC execution time: 7056107 ns
+Search servlet total execution time: 7511533 ns
+JDBC execution time: 7616410 ns
+Search servlet total execution time: 7836765 ns
+JDBC execution time: 8157429 ns
+Search servlet total execution time: 8403641 ns
+JDBC execution time: 7645260 ns
+Search servlet total execution time: 8103095 ns
+JDBC execution time: 44927710 ns
+Search servlet total execution time: 45658837 ns
+JDBC execution time: 29257608 ns
+Search servlet total execution time: 30074421 ns
+JDBC execution time: 10668505 ns
+Search servlet total execution time: 11510187 ns
+JDBC execution time: 7392611 ns
+Search servlet total execution time: 7817726 ns
+JDBC execution time: 10211223 ns
+Search servlet total execution time: 10508015 ns
+JDBC execution time: 7029614 ns
+Search servlet total execution time: 7446963 ns
+JDBC execution time: 8374611 ns
+Search servlet total execution time: 8765452 ns
+JDBC execution time: 8461303 ns
+Search servlet total execution time: 9157123 ns
+JDBC execution time: 8187658 ns
+Search servlet total execution time: 8839373 ns
+JDBC execution time: 7165030 ns
+Search servlet total execution time: 7761193 ns
+JDBC execution time: 9954464 ns
+Search servlet total execution time: 10319740 ns
+JDBC execution time: 7422899 ns
+Search servlet total execution time: 7885646 ns
+JDBC execution time: 7103846 ns
+Search servlet total execution time: 7298525 ns
+JDBC execution time: 12902555 ns
+Search servlet total execution time: 13341041 ns
+JDBC execution time: 8555414 ns
+Search servlet total execution time: 8790209 ns
+JDBC execution time: 8441160 ns
+Search servlet total execution time: 9278286 ns
+JDBC execution time: 8550453 ns
+Search servlet total execution time: 9014096 ns
+JDBC execution time: 7650111 ns
+Search servlet total execution time: 7893511 ns
+JDBC execution time: 7415790 ns
+Search servlet total execution time: 7626325 ns
+JDBC execution time: 9778369 ns
+Search servlet total execution time: 10466544 ns
+JDBC execution time: 7341339 ns
+Search servlet total execution time: 7873004 ns
+JDBC execution time: 7257720 ns
+Search servlet total execution time: 7504151 ns
+JDBC execution time: 7647129 ns
+Search servlet total execution time: 7875466 ns
+JDBC execution time: 7547555 ns
+Search servlet total execution time: 7833259 ns
+JDBC execution time: 8160372 ns
+Search servlet total execution time: 8384774 ns
+JDBC execution time: 14010119 ns
+Search servlet total execution time: 14794436 ns
+JDBC execution time: 7607981 ns
+Search servlet total execution time: 8057748 ns
+JDBC execution time: 10642035 ns
+Search servlet total execution time: 11066101 ns
+JDBC execution time: 8406749 ns
+Search servlet total execution time: 9255261 ns
+JDBC execution time: 8694345 ns
+Search servlet total execution time: 9363627 ns
+JDBC execution time: 9790916 ns
+Search servlet total execution time: 10442653 ns
+JDBC execution time: 8816312 ns
+Search servlet total execution time: 9234896 ns
+JDBC execution time: 8815672 ns
+Search servlet total execution time: 9623090 ns
+JDBC execution time: 8970241 ns
+Search servlet total execution time: 9614199 ns
+JDBC execution time: 9209148 ns
+Search servlet total execution time: 9908417 ns
+JDBC execution time: 8468652 ns
+Search servlet total execution time: 9279603 ns
+JDBC execution time: 7240825 ns
+Search servlet total execution time: 7838661 ns
+JDBC execution time: 9615738 ns
+Search servlet total execution time: 10002862 ns
+JDBC execution time: 8084741 ns
+Search servlet total execution time: 8396888 ns
+JDBC execution time: 7487970 ns
+Search servlet total execution time: 7805967 ns
+JDBC execution time: 9654488 ns
+Search servlet total execution time: 9970575 ns
+JDBC execution time: 7737875 ns
+Search servlet total execution time: 8047015 ns
+JDBC execution time: 10473120 ns
+Search servlet total execution time: 10777323 ns
+JDBC execution time: 14835270 ns
+Search servlet total execution time: 16732150 ns
+JDBC execution time: 8524501 ns
+Search servlet total execution time: 9589354 ns
+JDBC execution time: 7092900 ns
+Search servlet total execution time: 7575571 ns
+JDBC execution time: 10211779 ns
+Search servlet total execution time: 10488880 ns
+JDBC execution time: 7977859 ns
+Search servlet total execution time: 8363185 ns
+JDBC execution time: 7426822 ns
+Search servlet total execution time: 7664033 ns
+JDBC execution time: 7257366 ns
+Search servlet total execution time: 7589654 ns
+JDBC execution time: 7568528 ns
+Search servlet total execution time: 7882254 ns
+JDBC execution time: 7788387 ns
+Search servlet total execution time: 8023074 ns
+JDBC execution time: 9164206 ns
+Search servlet total execution time: 9450596 ns
+JDBC execution time: 8265175 ns
+Search servlet total execution time: 8742379 ns
+JDBC execution time: 12594557 ns
+Search servlet total execution time: 13439026 ns
+JDBC execution time: 8948401 ns
+Search servlet total execution time: 9739541 ns
+JDBC execution time: 8344738 ns
+Search servlet total execution time: 9028883 ns
+JDBC execution time: 7696811 ns
+Search servlet total execution time: 8277229 ns
+JDBC execution time: 27043399 ns
+Search servlet total execution time: 27791869 ns
+JDBC execution time: 8171309 ns
+Search servlet total execution time: 8767704 ns
+JDBC execution time: 8717934 ns
+Search servlet total execution time: 9494336 ns
+JDBC execution time: 15420960 ns
+Search servlet total execution time: 15892184 ns
+JDBC execution time: 8199830 ns
+Search servlet total execution time: 8970077 ns
+JDBC execution time: 15951387 ns
+Search servlet total execution time: 16539206 ns
+JDBC execution time: 9804720 ns
+Search servlet total execution time: 10344819 ns
+JDBC execution time: 14646393 ns
+Search servlet total execution time: 15087398 ns
+JDBC execution time: 8740342 ns
+Search servlet total execution time: 9246115 ns
+JDBC execution time: 8645457 ns
+Search servlet total execution time: 9172994 ns
+JDBC execution time: 7084066 ns
+Search servlet total execution time: 7485752 ns
+JDBC execution time: 10233593 ns
+Search servlet total execution time: 10545067 ns
+JDBC execution time: 8654844 ns
+Search servlet total execution time: 8922619 ns
+JDBC execution time: 8603153 ns
+Search servlet total execution time: 9254005 ns
+JDBC execution time: 8319184 ns
+Search servlet total execution time: 8972714 ns
+JDBC execution time: 7201911 ns
+Search servlet total execution time: 8031204 ns
+JDBC execution time: 10161152 ns
+Search servlet total execution time: 10618683 ns
+JDBC execution time: 7887688 ns
+Search servlet total execution time: 8106493 ns
+JDBC execution time: 9409873 ns
+Search servlet total execution time: 9634310 ns
+JDBC execution time: 8362745 ns
+Search servlet total execution time: 8661116 ns
+JDBC execution time: 7285047 ns
+Search servlet total execution time: 7529828 ns
+JDBC execution time: 8067748 ns
+Search servlet total execution time: 8381574 ns
+JDBC execution time: 10714864 ns
+Search servlet total execution time: 11499538 ns
+JDBC execution time: 9871293 ns
+Search servlet total execution time: 10491459 ns
+JDBC execution time: 7515384 ns
+Search servlet total execution time: 7774128 ns
+JDBC execution time: 7950433 ns
+Search servlet total execution time: 8204435 ns
+JDBC execution time: 7395798 ns
+Search servlet total execution time: 7639653 ns
+JDBC execution time: 8146460 ns
+Search servlet total execution time: 8390054 ns
+JDBC execution time: 6965509 ns
+Search servlet total execution time: 7541542 ns
+JDBC execution time: 7950343 ns
+Search servlet total execution time: 8193704 ns
+JDBC execution time: 8685541 ns
+Search servlet total execution time: 8928638 ns
+JDBC execution time: 7160143 ns
+Search servlet total execution time: 7793837 ns
+JDBC execution time: 7492156 ns
+Search servlet total execution time: 7829782 ns
+JDBC execution time: 7106563 ns
+Search servlet total execution time: 7713046 ns
+JDBC execution time: 8164489 ns
+Search servlet total execution time: 8611497 ns
+JDBC execution time: 7715972 ns
+Search servlet total execution time: 8304915 ns
+JDBC execution time: 7864964 ns
+Search servlet total execution time: 8129897 ns
+JDBC execution time: 7421090 ns
+Search servlet total execution time: 7659622 ns
+JDBC execution time: 9946850 ns
+Search servlet total execution time: 10304266 ns
+JDBC execution time: 9058430 ns
+Search servlet total execution time: 9310415 ns
+JDBC execution time: 8274083 ns
+Search servlet total execution time: 9015186 ns
+JDBC execution time: 8802470 ns
+Search servlet total execution time: 9488242 ns
+JDBC execution time: 7355163 ns
+Search servlet total execution time: 8049635 ns
+JDBC execution time: 10170272 ns
+Search servlet total execution time: 10781739 ns
+JDBC execution time: 8170092 ns
+Search servlet total execution time: 8961634 ns
+JDBC execution time: 8176640 ns
+Search servlet total execution time: 9131001 ns
+JDBC execution time: 7217052 ns
+Search servlet total execution time: 7806316 ns
+JDBC execution time: 8461794 ns
+Search servlet total execution time: 8756564 ns
+JDBC execution time: 7229527 ns
+Search servlet total execution time: 7818303 ns
+JDBC execution time: 8417855 ns
+Search servlet total execution time: 8862477 ns
+JDBC execution time: 8486899 ns
+Search servlet total execution time: 9114948 ns
+JDBC execution time: 7681870 ns
+Search servlet total execution time: 7996409 ns
+JDBC execution time: 8281843 ns
+Search servlet total execution time: 8585461 ns
+JDBC execution time: 8955046 ns
+Search servlet total execution time: 9264350 ns
+JDBC execution time: 7693531 ns
+Search servlet total execution time: 8300137 ns
+JDBC execution time: 11311931 ns
+Search servlet total execution time: 11910162 ns
+JDBC execution time: 11177005 ns
+Search servlet total execution time: 12027592 ns
+JDBC execution time: 9013828 ns
+Search servlet total execution time: 9765882 ns
+JDBC execution time: 8455403 ns
+Search servlet total execution time: 9594508 ns
+JDBC execution time: 7607498 ns
+Search servlet total execution time: 8203539 ns
+JDBC execution time: 8586174 ns
+Search servlet total execution time: 8898598 ns
+JDBC execution time: 8288088 ns
+Search servlet total execution time: 8602272 ns
+JDBC execution time: 8334412 ns
+Search servlet total execution time: 9021172 ns
+JDBC execution time: 8739379 ns
+Search servlet total execution time: 9548264 ns
+JDBC execution time: 9516655 ns
+Search servlet total execution time: 10115250 ns
+JDBC execution time: 8221298 ns
+Search servlet total execution time: 8686854 ns
+JDBC execution time: 8196267 ns
+Search servlet total execution time: 9013217 ns
+JDBC execution time: 7249815 ns
+Search servlet total execution time: 8126046 ns
+JDBC execution time: 20537231 ns
+Search servlet total execution time: 21560074 ns
+JDBC execution time: 7595284 ns
+Search servlet total execution time: 8232584 ns
+JDBC execution time: 8954270 ns
+Search servlet total execution time: 9214162 ns
+JDBC execution time: 7101877 ns
+Search servlet total execution time: 7645937 ns
+JDBC execution time: 8512304 ns
+Search servlet total execution time: 8752388 ns
+JDBC execution time: 7445220 ns
+Search servlet total execution time: 7708905 ns
+JDBC execution time: 10516927 ns
+Search servlet total execution time: 11265302 ns
+JDBC execution time: 8423626 ns
+Search servlet total execution time: 9133033 ns
+JDBC execution time: 7103845 ns
+Search servlet total execution time: 7548461 ns
+JDBC execution time: 8664805 ns
+Search servlet total execution time: 8860799 ns
+JDBC execution time: 7265226 ns
+Search servlet total execution time: 7610475 ns
+JDBC execution time: 9719902 ns
+Search servlet total execution time: 10065678 ns
+JDBC execution time: 8374911 ns
+Search servlet total execution time: 8644190 ns
+JDBC execution time: 7569759 ns
+Search servlet total execution time: 7969047 ns
+JDBC execution time: 7800576 ns
+Search servlet total execution time: 8025579 ns
+JDBC execution time: 10884568 ns
+Search servlet total execution time: 11225473 ns
+JDBC execution time: 7990799 ns
+Search servlet total execution time: 8256337 ns
+JDBC execution time: 17728851 ns
+Search servlet total execution time: 18180489 ns
+JDBC execution time: 7494207 ns
+Search servlet total execution time: 8082665 ns
+JDBC execution time: 8608344 ns
+Search servlet total execution time: 9199408 ns
+JDBC execution time: 7114576 ns
+Search servlet total execution time: 7613660 ns
+JDBC execution time: 8228883 ns
+Search servlet total execution time: 8466095 ns
+JDBC execution time: 7613144 ns
+Search servlet total execution time: 7889972 ns
+JDBC execution time: 8289396 ns
+Search servlet total execution time: 8740909 ns
+JDBC execution time: 7233519 ns
+Search servlet total execution time: 7845684 ns
+JDBC execution time: 7385933 ns
+Search servlet total execution time: 7622244 ns
+JDBC execution time: 8277205 ns
+Search servlet total execution time: 8429792 ns
+JDBC execution time: 7545480 ns
+Search servlet total execution time: 7806725 ns
+JDBC execution time: 7406350 ns
+Search servlet total execution time: 7674080 ns
+JDBC execution time: 8426658 ns
+Search servlet total execution time: 8726042 ns
+JDBC execution time: 10846945 ns
+Search servlet total execution time: 11043833 ns
+JDBC execution time: 8166649 ns
+Search servlet total execution time: 8411936 ns
+JDBC execution time: 20456428 ns
+Search servlet total execution time: 21177897 ns
+JDBC execution time: 10062906 ns
+Search servlet total execution time: 10651844 ns
+JDBC execution time: 9188357 ns
+Search servlet total execution time: 9365220 ns
