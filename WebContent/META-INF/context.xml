@@ -2,8 +2,8 @@
 
 <Context>
 
-    <!-- Master (Write) DataSource -->
-    <Resource name="jdbc/moviedbMaster"
+
+    <!--<Resource name="jdbc/moviedbMaster"
               auth="Container"
               driverClassName="com.mysql.cj.jdbc.Driver"
               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
@@ -12,7 +12,7 @@
               password="12345"
               url="jdbc:mysql://172.31.27.194:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"/>
 
-    <!-- Slave (Read) DataSource -->
+
     <Resource name="jdbc/moviedbSlave"
               auth="Container"
               driverClassName="com.mysql.cj.jdbc.Driver"
@@ -29,5 +29,34 @@
               type="javax.sql.DataSource"
               username="mytestuser"
               password="12345"
-              url="jdbc:mysql://localhost:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"/>
+              url="jdbc:mysql://localhost:3306/moviedb?autoReconnect=true&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;cachePrepStmts=true"/>-->
+              
+              
+              
+              
+        
+    <Resource name="jdbc/moviedbMaster"
+              auth="Container"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              type="javax.sql.DataSource"
+              username="mytestuser"
+              password="12345"
+              url="jdbc:mysql://172.31.27.194:3306/moviedb"/>
+
+
+    <Resource name="jdbc/moviedbSlave"
+              auth="Container"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              type="javax.sql.DataSource"
+              username="mytestuser"
+              password="12345"
+              url="jdbc:mysql://172.31.16.191:3306/moviedb"/>
+
+    <Resource name="jdbc/moviedb"
+              auth="Container"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              type="javax.sql.DataSource"
+              username="mytestuser"
+              password="12345"
+              url="jdbc:mysql://localhost:3306/moviedb"/>
 </Context>
